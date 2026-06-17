@@ -13,23 +13,14 @@ set -euo pipefail
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 REMOTE_HOST="root@187.127.138.111"
-APP_DIR="/var/www/mrads"
+APP_DIR="/root/mrads"
 GITHUB_REPO="recnos-in/mrads"
 APP_NAME="mrads"
 APP_PORT=3000
 DOMAIN="mr-ads.in"
 # ──────────────────────────────────────────────────────────────────────────────
 
-# Require GitHub token for clone/pull authentication
-if [ -z "${GITHUB_TOKEN:-}" ]; then
-  echo "ERROR: GITHUB_TOKEN is not set."
-  echo "  Create a token at https://github.com/settings/tokens (repo scope)"
-  echo "  Then: export GITHUB_TOKEN=ghp_xxx && ./deploy.sh"
-  exit 1
-fi
-
-# Embed token into HTTPS URL so git can auth non-interactively
-REPO_URL="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git"
+REPO_URL="git@github.com:${GITHUB_REPO}.git"
 
 MODE="setup"  # default
 
@@ -67,20 +58,17 @@ fi
 
 if [ "$MODE" = "update" ]; then
   echo "==> Pulling latest code and rebuilding..."
-  remote bash -s "$REPO_URL" <<'ENDSSH'
+  remote bash -s <<'ENDSSH'
 set -euo pipefail
-REPO_URL="$1"
-APP_DIR="/var/www/mrads"
+APP_DIR="/root/mrads"
 APP_NAME="mrads"
 
 cd "$APP_DIR"
 echo "--- git pull"
-# Update the remote URL with the current token, then pull
-git remote set-url origin "$REPO_URL"
 git pull origin main
 
 echo "--- npm install"
-npm ci --prefer-offline
+npm install
 
 echo "--- npm run build"
 npm run build
@@ -147,7 +135,7 @@ fi
 
 # ── 5. Install deps & build ───────────────────────────────────────────────────
 echo "==> npm install..."
-npm ci
+npm install
 
 echo "==> npm run build..."
 npm run build
