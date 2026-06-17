@@ -17,15 +17,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'Mr. Ads — Hyperlocal Restaurant Advertising in Bengaluru',
+  title: 'Mr. Ads — Hyperlocal Advertising & Digital Solutions Partner',
   description:
-    'Reach 2,000–3,000 customers daily per location through digital displays inside high-footfall restaurants across Bengaluru. Book your ad slot with Mr. Ads.',
+    'Connect with customers across premium digital screens, outdoor transit, offline dark store inserts, corporate gifting, and bespoke Web/AI solutions. Plan your hyperlocal campaign in Bengaluru with Mr. Ads.',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
   openGraph: {
-    title: 'Mr. Ads — Hyperlocal Restaurant Advertising',
-    description: 'Reach 2,000–3,000 customers daily via restaurant digital displays in Bengaluru.',
+    title: 'Mr. Ads — Hyperlocal Advertising & Digital Solutions Partner',
+    description: 'Premium digital displays, outdoor transit, print distribution, gifting, and web/AI solutions in Bengaluru.',
     images: [{ url: '/assets/images/app_logo.png', width: 1200, height: 630 }],
   },
 };

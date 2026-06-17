@@ -5,34 +5,34 @@ import Icon from '@/components/ui/AppIcon';
 
 const benefits = [
   {
-    icon: 'ClockIcon',
-    title: 'High Dwell-Time Audience',
-    description:
-      'Diners spend 30–60 minutes per visit. Your ad has extended, uninterrupted exposure — far beyond a scroll or a glance.',
-  },
-  {
     icon: 'ArrowPathIcon',
-    title: 'Repeated Ad Exposure',
+    title: 'Multi-Channel Synergy',
     description:
-      'Ads replay every 5 minutes. During a single meal, a customer sees your brand 6–12 times, dramatically boosting recall.',
+      'Reach customers multiple times in a single day—as they commute (transit), shop (malls), work (offices), dine (restaurants), and relax (apartments).',
   },
   {
-    icon: 'ShieldCheckIcon',
-    title: 'Distraction-Free Environment',
+    icon: 'HomeIcon',
+    title: 'Deep Household Presence',
     description:
-      'Restaurants are screen-free for phones. The digital display is the only screen in the room — capturing full attention.',
+      'Get inside the living rooms and lift areas of premium apartments using digital screens, flyer drops, and official Quick Commerce bag inserts.',
   },
   {
-    icon: 'EyeIcon',
-    title: 'Strong Brand Visibility',
+    icon: 'ClockIcon',
+    title: 'High Dwell-Time Captivity',
     description:
-      'Strategically placed screens in waiting and dining areas ensure your brand is seen clearly by every customer.',
+      'Capture maximum user attention in locations where people spend 30–60 minutes, like restaurants, lobbies, gym workout areas, and transit stops.',
   },
   {
     icon: 'MapPinIcon',
-    title: 'Hyperlocal Targeting',
+    title: 'Hyperlocal Corridor Targeting',
     description:
-      'Advertise in the exact neighbourhoods where your customers live, work, and dine — no wasted impressions.',
+      'Advertise strictly within the exact neighborhoods and routes where your customers live, work, and buy—minimizing budget wastage.',
+  },
+  {
+    icon: 'SparklesIcon',
+    title: 'Integrated Tech & Creative',
+    description:
+      'Amplify real-world visibility with matching digital assets: custom business/e-commerce websites, AI lead-generation chatbots, and creative video shoots.',
   },
 ];
 
@@ -69,11 +69,11 @@ export default function WhyItWorksSection() {
               The Science Behind It
             </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-white leading-[1.1]">
-              Why In-Restaurant<br />Advertising Works
+              Why Hyperlocal<br />Advertising Works
             </h2>
           </div>
           <p className="text-white/40 max-w-xs text-sm font-medium leading-relaxed">
-            The restaurant environment creates the ideal conditions for brand recall and action.
+            Multi-channel physical presence combined with smart digital tech maximizes brand recall and user action.
           </p>
         </div>
 
@@ -109,16 +109,16 @@ export default function WhyItWorksSection() {
             }}
           >
             <div>
-              <div className="text-3xl font-extrabold text-accent-foreground mb-2">Ready to reach them?</div>
+              <div className="text-3xl font-extrabold text-accent-foreground mb-2">Ready to scale?</div>
               <p className="text-accent-foreground/70 text-sm leading-relaxed">
-                Join Bengaluru's fastest-growing hyperlocal ad network today.
+                Connect your business with our extensive hyperlocal network.
               </p>
             </div>
             <a
               href="#contact"
               className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-background text-foreground rounded-full font-bold text-sm uppercase tracking-widest hover:bg-card transition-colors w-fit"
             >
-              Book a Slot
+              Plan Campaign
               <Icon name="ArrowRightIcon" size={14} />
             </a>
           </div>

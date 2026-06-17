@@ -71,6 +71,19 @@ export default function ContactSection() {
                   </div>
                 </a>
 
+                <a
+                  href="mailto:Knowus@mr-ads.in"
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <Icon name="EnvelopeIcon" size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Email Us</div>
+                    <div className="font-bold text-white">Knowus@mr-ads.in</div>
+                  </div>
+                </a>
+
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
                     <Icon name="MapPinIcon" size={18} className="text-white" />

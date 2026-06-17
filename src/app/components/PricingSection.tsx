@@ -58,10 +58,10 @@ const plans = [
 ];
 
 const included = [
-  'Ad plays every 5 minutes',
-  '2,000–3,000 daily audience per location',
-  'Placement in dining & waiting areas',
-  'High dwell-time exposure',
+  'Ad plays repeatedly as scheduled',
+  'High-dwell waiting & common area views',
+  'Targeted hyperlocal audience reach',
+  'Active network maintenance & hosting',
 ];
 
 export default function PricingSection() {
@@ -96,18 +96,18 @@ export default function PricingSection() {
             Pricing
           </span>
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-foreground mb-4">
-            Flexible Pricing Based on Campaign Scale
+            Digital Display Screen Pricing
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Pricing varies based on number of displays and campaign duration.
-            Lower rates available for higher volume bookings.
+            Flexible packages based on number of display screens and campaign duration.
+            Volume pricing available for multi-location bookings.
           </p>
         </div>
 
         {/* Bold callout */}
         <div className="text-center mb-12">
           <span className="inline-block px-6 py-3 bg-red-950/30 border border-red-900/40 rounded-full text-sm font-bold text-red-300">
-            The more locations you choose, the lower your cost per display.
+            Select more display screens across our network to lower your cost per screen.
           </span>
         </div>
 
@@ -190,7 +190,7 @@ export default function PricingSection() {
         {/* Included in all plans */}
         <div className="mt-12 bg-background rounded-3xl p-8 border border-border">
           <h4 className="text-center font-extrabold text-foreground mb-6 uppercase tracking-widest text-xs">
-            Included in All Plans
+            Included in All Screen Plans
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {included.map((item) => (
@@ -202,11 +202,32 @@ export default function PricingSection() {
           </div>
         </div>
 
+        {/* Custom Pricing Callout for other solutions */}
+        <div className="mt-8 bg-gradient-to-r from-red-950/20 to-slate-900/40 rounded-3xl p-8 border border-red-900/30 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center border border-accent/30 shrink-0">
+              <Icon name="SparklesIcon" size={24} className="text-accent" />
+            </div>
+            <div>
+              <h4 className="font-extrabold text-foreground text-base mb-1">Looking for Transit, Print inserts, Gifting or Tech solutions?</h4>
+              <p className="text-muted-foreground text-sm max-w-xl leading-relaxed">
+                Because these campaigns are customized to your specific geography, audience, products, or software requirements, we offer tailor-made quotes to guarantee the best ROI.
+              </p>
+            </div>
+          </div>
+          <a
+            href="#contact"
+            className="px-6 py-3.5 bg-accent text-white rounded-full font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-colors shrink-0"
+          >
+            Request Custom Quote
+          </a>
+        </div>
+
         {/* Urgency */}
         <div className="mt-8 scarcity-strip rounded-2xl px-6 py-4 flex items-center gap-3 border border-red-900/40">
           <Icon name="ClockIcon" size={18} className="text-red-400 shrink-0" />
           <p className="text-sm font-semibold text-red-300">
-            <strong>Limited ad slots per display.</strong> High-demand locations get booked quickly — secure your slot in advance.
+            <strong>Limited slots per display.</strong> High-demand screens get booked quickly—reserve your slot in advance.
           </p>
         </div>
       </div>

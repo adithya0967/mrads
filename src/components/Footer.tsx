@@ -33,6 +33,13 @@ export default function Footer() {
               <Icon name="PhoneIcon" size={15} className="text-accent" />
               +91 96865 44644
             </a>
+            <a
+              href="mailto:Knowus@mr-ads.in"
+              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent transition-colors mt-1"
+            >
+              <Icon name="EnvelopeIcon" size={15} className="text-accent" />
+              Knowus@mr-ads.in
+            </a>
           </div>
 
           {/* Right: Quick Links + Social */}
@@ -57,6 +64,13 @@ export default function Footer() {
                 aria-label="WhatsApp"
               >
                 <Icon name="ChatBubbleLeftRightIcon" size={16} />
+              </a>
+              <a
+                href="mailto:Knowus@mr-ads.in"
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all text-muted-foreground"
+                aria-label="Email us"
+              >
+                <Icon name="EnvelopeIcon" size={16} />
               </a>
               <a
                 href="tel:+919686544644"

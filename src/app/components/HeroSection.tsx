@@ -5,23 +5,36 @@ import Icon from '@/components/ui/AppIcon';
 
 const adSlides = [
   {
-    bg: 'from-red-700 to-red-900',
-    brand: 'ZEE5',
-    tagline: 'Stream Now',
-    sub: 'India\'s Best OTT Platform',
+    bg: 'from-red-950 to-red-800',
+    brand: 'Zepto Inserts',
+    tagline: 'Direct-to-Home',
+    sub: '100% Delivery Rate via Q-Commerce',
   },
   {
-    bg: 'from-blue-600 to-indigo-700',
-    brand: 'Nandini',
-    tagline: 'Pure & Fresh',
-    sub: 'Karnataka\'s Trusted Dairy',
+    bg: 'from-blue-900 to-indigo-950',
+    brand: 'Apartment Displays',
+    tagline: '30,000+ Active Screens',
+    sub: 'Reach 15M+ Households Daily',
   },
   {
-    bg: 'from-emerald-600 to-teal-700',
-    brand: 'Bachpan',
-    tagline: 'Enroll Now',
-    sub: 'Play School Admissions Open',
+    bg: 'from-emerald-900 to-teal-950',
+    brand: 'Transit Branding',
+    tagline: 'Auto, Cab & Bus Shelter',
+    sub: 'High-Impact Outdoor Visibility',
   },
+  {
+    bg: 'from-amber-900 to-orange-950',
+    brand: 'Web & AI Chatbots',
+    tagline: 'Smart Tech Solutions',
+    sub: 'Modern E-Commerce & Business Sites',
+  },
+];
+
+const highlightChips = [
+  { label: '30,000+ Active Screens', icon: 'TvIcon', color: 'text-red-400 bg-red-950/30 border-red-900/40 hover:bg-red-950/50 hover:border-red-700/60' },
+  { label: 'Zepto & Instamart Inserts', icon: 'ShoppingBagIcon', color: 'text-amber-400 bg-amber-950/30 border-amber-900/40 hover:bg-amber-950/50 hover:border-amber-700/60' },
+  { label: 'Transit & Outdoor Media', icon: 'TruckIcon', color: 'text-blue-400 bg-blue-950/30 border-blue-900/40 hover:bg-blue-950/50 hover:border-blue-700/60' },
+  { label: 'Gifting & Tech Solutions', icon: 'SparklesIcon', color: 'text-emerald-400 bg-emerald-950/30 border-emerald-900/40 hover:bg-emerald-950/50 hover:border-emerald-700/60' },
 ];
 
 export default function HeroSection() {
@@ -64,33 +77,33 @@ export default function HeroSection() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/40 border border-red-800/40 w-fit">
               <span className="w-2 h-2 rounded-full bg-accent animate-blink" />
               <span className="text-xs font-bold tracking-widest uppercase text-red-400">
-                Bengaluru's Hyperlocal Ad Network
+                Bengaluru's Premier Hyperlocal Ad & Tech Network
               </span>
             </div>
 
-            <h1 className="text-[clamp(2.6rem,6vw,4.2rem)] font-extrabold leading-[1.05] tracking-tight text-foreground">
+            <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold leading-[1.1] tracking-tight text-foreground">
               Reach Customers<br />
-              <span className="text-accent">Where They Spend</span> Time
+              <span className="text-accent block mt-1">Everywhere They Live & Work</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-xl">
-              Reach <strong className="text-foreground font-bold">2,000–3,000 customers daily</strong> per location through
-              digital displays inside high-footfall restaurants across Bengaluru.
+              Connect your brand through <strong className="text-foreground font-bold">30,000+ screens</strong>, outdoor transit media, official Q-Commerce inserts, premium corporate gifting, and bespoke digital/AI solutions.
             </p>
 
             <p className="text-sm font-semibold text-foreground/70 flex items-center gap-2">
-              <Icon name="ArrowPathIcon" size={16} className="text-accent" />
-              Your ad is seen multiple times during a single customer visit.
+              <Icon name="CheckCircleIcon" size={16} className="text-accent" />
+              From outdoor displays and print inserts to professional video production and AI bots.
             </p>
 
             {/* Highlight chips */}
             <div className="flex flex-wrap gap-3">
-              {['30-sec ad', 'Plays every 5 minutes', '2,000–3,000 daily audience per location'].map((chip) => (
+              {highlightChips.map((chip) => (
                 <span
-                  key={chip}
-                  className="px-4 py-2 rounded-full bg-muted border border-border text-xs font-bold text-foreground/80 tracking-wide"
+                  key={chip.label}
+                  className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs font-bold tracking-wide shadow-sm transition-all duration-300 hover:scale-[1.02] ${chip.color}`}
                 >
-                  {chip}
+                  <Icon name={chip.icon} size={14} className="shrink-0" />
+                  {chip.label}
                 </span>
               ))}
             </div>
@@ -101,13 +114,13 @@ export default function HeroSection() {
                 href="#contact"
                 className="magnetic-btn px-7 py-4 bg-accent text-accent-foreground rounded-full font-bold text-sm uppercase tracking-widest hover:bg-red-700 transition-all amber-glow"
               >
-                Block Your Ad Slot
+                Plan Your Campaign
               </a>
               <a
                 href="#locations"
                 className="magnetic-btn px-7 py-4 bg-card border-2 border-border text-foreground rounded-full font-bold text-sm uppercase tracking-widest hover:border-accent hover:text-accent transition-all"
               >
-                View Locations
+                Explore Networks
               </a>
               <a
                 href="https://wa.me/919686544644?text=Hi%2C%20I%27m%20interested%20in%20advertising%20with%20Mr.%20Ads.%20Please%20share%20available%20locations%2C%20pricing%2C%20and%20current%20slot%20availability."
@@ -183,13 +196,13 @@ export default function HeroSection() {
 
               {/* Floating stats */}
               <div className="absolute -top-4 -right-4 bg-card border border-border rounded-2xl px-4 py-3 shadow-lg shadow-black/40">
-                <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Daily Reach</div>
-                <div className="text-xl font-extrabold text-foreground tracking-tight">2,000–3,000</div>
-                <div className="text-[10px] text-muted-foreground font-semibold">/ Location</div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Total Reach</div>
+                <div className="text-xl font-extrabold text-foreground tracking-tight">20 Million+</div>
+                <div className="text-[10px] text-muted-foreground font-semibold">Bengaluru Audience</div>
               </div>
               <div className="absolute -bottom-2 -left-4 bg-accent text-accent-foreground rounded-2xl px-4 py-3 shadow-lg">
-                <div className="text-[10px] font-bold uppercase tracking-widest opacity-70">Repeats</div>
-                <div className="text-base font-extrabold">Every 5 min</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest opacity-70">Solutions</div>
+                <div className="text-base font-extrabold">6 Core Channels</div>
               </div>
             </div>
           </div>
