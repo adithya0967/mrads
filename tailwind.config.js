@@ -15,7 +15,14 @@ module.exports = {
         foreground: 'var(--foreground)',
         primary: {
           DEFAULT: 'var(--primary)',
+          hover: 'var(--primary-hover)',
           foreground: 'var(--primary-foreground)',
+        },
+        headline: {
+          accent: 'var(--headline-accent)',
+        },
+        subtle: {
+          accent: 'var(--subtle-accent)',
         },
         secondary: {
           DEFAULT: 'var(--secondary)',
@@ -36,6 +43,9 @@ module.exports = {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+        emerald: {
+          status: '#16C784',
+        },
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',

@@ -11,9 +11,9 @@ const stats = [
 
 export default function HeroStatsSection() {
   return (
-    <section className="bg-[#14151A] border-b border-[#22242B] py-10">
+    <section className="bg-[#111318] border-b border-[#252830] py-10">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#22242B]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#252830]">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
@@ -22,12 +22,12 @@ export default function HeroStatsSection() {
               }`}
             >
               <div className="flex items-center gap-2 mb-1">
-                <span className="w-1.5 h-6 bg-[#DC2626] rounded-full" />
-                <span className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                <span className="w-1.5 h-6 bg-[#B4233C] rounded-full" />
+                <span className="text-3xl md:text-4xl font-extrabold text-[#F5F5F5] tracking-tight">
                   {stat.value}
                 </span>
               </div>
-              <span className="text-xs md:text-sm font-semibold text-[#9A9AA4] tracking-wide uppercase pl-3.5">
+              <span className="text-xs md:text-sm font-semibold text-[#9A9CA5] tracking-wide uppercase pl-3.5">
                 {stat.label}
               </span>
             </div>

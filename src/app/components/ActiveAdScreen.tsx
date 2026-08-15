@@ -105,7 +105,7 @@ export default function ActiveAdScreen() {
   return (
     <div className="flex flex-col gap-4">
       {/* Active Digital Ad Screen Mockup */}
-      <div className="relative rounded-2xl overflow-hidden border border-[#22242B] shadow-2xl shadow-black/80 bg-[#14151A] aspect-[4/3] sm:aspect-[14/10] select-none">
+      <div className="relative rounded-2xl overflow-hidden border border-[#252830] shadow-2xl shadow-black/80 bg-[#111318] aspect-[4/3] sm:aspect-[14/10] select-none">
         {/* Background Restaurant Venue Setting */}
         <div className="absolute inset-0 z-0">
           <AppImage
@@ -116,11 +116,11 @@ export default function ActiveAdScreen() {
             className="object-cover blur-[2px] opacity-40 brightness-75 scale-105 transition-all duration-700"
             sizes="(max-width: 1024px) 100vw, 40vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/60 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#090A0C] via-[#090A0C]/60 to-black/40" />
         </div>
 
         {/* Screen Frame Mockup (DOOH Display Unit inside venue) */}
-        <div className="absolute inset-3 sm:inset-4 rounded-xl overflow-hidden border border-[#323644] bg-[#000] shadow-inner flex flex-col justify-between z-10 ring-1 ring-white/10">
+        <div className="absolute inset-3 sm:inset-4 rounded-xl overflow-hidden border border-[#252830] bg-[#000] shadow-inner flex flex-col justify-between z-10 ring-1 ring-white/10">
           {/* Dynamic Ad Image with Smooth Slide/Fade effect */}
           {AD_SPOTS.map((ad, idx) => {
             const isActive = idx === currentIndex;
@@ -152,10 +152,10 @@ export default function ActiveAdScreen() {
             {/* Live Broadcasting Status Badge - ONLY LIVE */}
             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#DC2626] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#DC2626]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16C784] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16C784]" />
               </span>
-              <span className="text-[10px] sm:text-xs font-bold tracking-widest text-white uppercase">
+              <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#F5F5F5] uppercase">
                 LIVE
               </span>
             </div>
@@ -200,32 +200,32 @@ export default function ActiveAdScreen() {
       </div>
 
       {/* STAT BADGE PLACED BELOW THE ADVERTISING SCREEN */}
-      <div className="bg-[#14151A] border border-[#22242B] rounded-xl p-3.5 sm:p-4 flex items-center justify-between shadow-xl">
+      <div className="bg-[#111318] border border-[#252830] rounded-xl p-3.5 sm:p-4 flex items-center justify-between shadow-xl">
         <div className="flex items-center gap-3">
           <div className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16C784] opacity-75" />
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#16C784]" />
           </div>
           <div>
-            <div className="text-[10px] sm:text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">
+            <div className="text-[10px] sm:text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
               Active Screens
             </div>
-            <div className="text-lg sm:text-xl font-extrabold text-white flex items-center gap-1.5">
+            <div className="text-lg sm:text-xl font-extrabold text-[#F5F5F5] flex items-center gap-1.5">
               30,000+
-              <span className="text-[10px] font-normal text-emerald-400 bg-emerald-400/10 px-1.5 py-0.2 rounded border border-emerald-400/20">
+              <span className="text-[10px] font-normal text-[#16C784] bg-[#16C784]/10 px-1.5 py-0.2 rounded border border-[#16C784]/20">
                 ONLINE NOW
               </span>
             </div>
           </div>
         </div>
 
-        <div className="h-8 w-[1px] bg-[#22242B]" />
+        <div className="h-8 w-[1px] bg-[#252830]" />
 
         <div>
-          <div className="text-[10px] sm:text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">
+          <div className="text-[10px] sm:text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
             Combined Reach
           </div>
-          <div className="text-lg sm:text-xl font-extrabold text-[#DC2626]">20M+</div>
+          <div className="text-lg sm:text-xl font-extrabold text-[#B4233C]">20M+</div>
         </div>
       </div>
     </div>

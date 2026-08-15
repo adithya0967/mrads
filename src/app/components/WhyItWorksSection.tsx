@@ -28,14 +28,14 @@ const whyPoints = [
 
 export default function WhyItWorksSection() {
   return (
-    <section id="why" className="py-20 md:py-28 bg-[#0B0C0E] border-b border-[#22242B]">
+    <section id="why" className="py-20 md:py-28 bg-[#090A0C] border-b border-[#252830]">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-3 block">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
             WHY MR. ADS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F5F5F5] leading-[1.15]">
             Built for Maximum Brand Impact & Recall
           </h2>
         </div>
@@ -45,16 +45,16 @@ export default function WhyItWorksSection() {
           {whyPoints.map((point) => (
             <div
               key={point.title}
-              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#DC2626] transition-all duration-300 shadow-md"
+              className="bg-[#111318] border border-[#252830] rounded-xl p-8 flex flex-col justify-between hover:border-[#B4233C] transition-all duration-300 shadow-md"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6">
-                  <Icon name={point.icon as any} size={20} className="text-[#DC2626]" />
+                <div className="w-10 h-10 rounded-lg bg-[#090A0C] border border-[#252830] flex items-center justify-center mb-6">
+                  <Icon name={point.icon as any} size={20} className="text-[#B4233C]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-white mb-3 tracking-tight">
+                <h3 className="text-xl font-extrabold text-[#F5F5F5] mb-3 tracking-tight">
                   {point.title}
                 </h3>
-                <p className="text-sm text-[#9A9AA4] leading-relaxed font-normal">
+                <p className="text-sm text-[#9A9CA5] leading-relaxed font-normal">
                   {point.description}
                 </p>
               </div>

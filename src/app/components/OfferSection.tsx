@@ -51,19 +51,19 @@ const services = [
 
 export default function OfferSection() {
   return (
-    <section id="solutions" className="py-20 md:py-28 bg-[#0B0C0E] border-b border-[#22242B]">
+    <section id="solutions" className="py-20 md:py-28 bg-[#090A0C] border-b border-[#252830]">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-3 block">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
               WHAT WE DO
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F5F5F5] leading-[1.15]">
               Advertising Solutions Built for Real-World Reach
             </h2>
           </div>
-          <p className="text-[#9A9AA4] text-base font-normal max-w-md leading-relaxed">
+          <p className="text-[#9A9CA5] text-base font-normal max-w-md leading-relaxed">
             Advertising solutions designed to reach your audience wherever they live, work, dine, travel, and buy.
           </p>
         </div>
@@ -73,69 +73,69 @@ export default function OfferSection() {
           {services.map((svc) => (
             <div
               key={svc.title}
-              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#DC2626] hover:shadow-md hover:shadow-black/50 transition-all duration-300 group"
+              className="bg-[#111318] border border-[#252830] rounded-xl p-8 flex flex-col justify-between hover:border-[#B4233C] hover:shadow-md hover:shadow-black/50 transition-all duration-300 group"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6 group-hover:border-[#DC2626]/50 transition-colors">
-                  <Icon name={svc.icon} size={20} className="text-white group-hover:text-[#DC2626] transition-colors" />
+                <div className="w-10 h-10 rounded-lg bg-[#090A0C] border border-[#252830] flex items-center justify-center mb-6 group-hover:border-[#B4233C]/50 transition-colors">
+                  <Icon name={svc.icon} size={20} className="text-[#F5F5F5] group-hover:text-[#B4233C] transition-colors" />
                 </div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#9A9AA4] mb-2 block">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#9A9CA5] mb-2 block">
                   {svc.category}
                 </span>
-                <h3 className="text-xl font-extrabold text-white mb-3 tracking-tight">
+                <h3 className="text-xl font-extrabold text-[#F5F5F5] mb-3 tracking-tight">
                   {svc.title}
                 </h3>
-                <p className="text-sm text-[#9A9AA4] leading-relaxed mb-6 font-normal">
+                <p className="text-sm text-[#9A9CA5] leading-relaxed mb-6 font-normal">
                   {svc.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#22242B] flex items-center justify-between">
-                <span className="text-xs font-bold text-white">{svc.metric}</span>
-                <Icon name="ArrowRightIcon" size={14} className="text-[#DC2626]" />
+              <div className="pt-4 border-t border-[#252830] flex items-center justify-between">
+                <span className="text-xs font-bold text-[#F5F5F5]">{svc.metric}</span>
+                <Icon name="ArrowRightIcon" size={14} className="text-[#B4233C]" />
               </div>
             </div>
           ))}
         </div>
 
         {/* Featured Solution Section: Content Creation & Production */}
-        <div className="bg-[#14151A] border border-[#22242B] rounded-2xl p-8 md:p-12">
+        <div className="bg-[#111318] border border-[#252830] rounded-2xl p-8 md:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Featured Copy */}
             <div className="lg:col-span-6 flex flex-col items-start gap-4">
-              <span className="inline-block px-3 py-1 bg-[#DC2626]/15 border border-[#DC2626]/30 rounded-md text-xs font-bold uppercase tracking-wider text-[#DC2626]">
+              <span className="inline-block px-3 py-1 bg-[#641C2B]/30 border border-[#641C2B] rounded-md text-xs font-bold uppercase tracking-wider text-[#C83A4B]">
                 FEATURED SERVICE
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                Content Creation & <span className="text-[#DC2626]">Production</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F5F5F5] tracking-tight leading-tight">
+                Content Creation & <span className="text-[#C83A4B]">Production</span>
               </h3>
-              <p className="text-base text-[#9A9AA4] leading-relaxed font-normal">
+              <p className="text-base text-[#9A9CA5] leading-relaxed font-normal">
                 High-impact visual stories tailored for digital screen networks and digital media. We handle end-to-end creative scriptwriting, professional promo video shoots, motion graphics, and ready-to-publish vertical ads.
               </p>
 
               <div className="grid grid-cols-2 gap-4 w-full pt-2">
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
-                  <span className="text-xs font-semibold text-white">Promo Video Shoots</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B4233C]" />
+                  <span className="text-xs font-semibold text-[#F5F5F5]">Promo Video Shoots</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
-                  <span className="text-xs font-semibold text-white">Motion Graphics & VFX</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B4233C]" />
+                  <span className="text-xs font-semibold text-[#F5F5F5]">Motion Graphics & VFX</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
-                  <span className="text-xs font-semibold text-white">Campaign Strategy</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B4233C]" />
+                  <span className="text-xs font-semibold text-[#F5F5F5]">Campaign Strategy</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
-                  <span className="text-xs font-semibold text-white">Ready-to-Publish Ads</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B4233C]" />
+                  <span className="text-xs font-semibold text-[#F5F5F5]">Ready-to-Publish Ads</span>
                 </div>
               </div>
 
               <div className="pt-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#DC2626] text-white rounded-lg font-bold text-sm hover:bg-[#B91C1C] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#B4233C] text-white rounded-lg font-bold text-sm hover:bg-[#D13B55] transition-colors"
                 >
                   Request Production Portfolio
                   <Icon name="ArrowRightIcon" size={14} />
@@ -145,7 +145,7 @@ export default function OfferSection() {
 
             {/* Right: Editorial Photo Thumbnail */}
             <div className="lg:col-span-6">
-              <div className="relative rounded-xl overflow-hidden border border-[#22242B] bg-[#0B0C0E] aspect-[16/10] shadow-md">
+              <div className="relative rounded-xl overflow-hidden border border-[#252830] bg-[#090A0C] aspect-[16/10] shadow-md">
                 <AppImage
                   src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d"
                   alt="Professional video production team shooting commercial advertisement content"
@@ -161,5 +161,3 @@ export default function OfferSection() {
     </section>
   );
 }
-
-

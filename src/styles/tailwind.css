@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #0B0C0E;
-  --foreground: #FFFFFF;
-  --primary: #DC2626;
+  --background: #090A0C;
+  --foreground: #F5F5F5;
+  --primary: #B4233C;
+  --primary-hover: #D13B55;
   --primary-foreground: #ffffff;
-  --secondary: #14151A;
-  --secondary-foreground: #ffffff;
-  --accent: #DC2626;
+  --headline-accent: #C83A4B;
+  --subtle-accent: #641C2B;
+  --secondary: #111318;
+  --secondary-foreground: #F5F5F5;
+  --accent: #B4233C;
   --accent-foreground: #ffffff;
-  --muted: #1A1C23;
-  --muted-foreground: #9A9AA4;
-  --card: #14151A;
-  --card-foreground: #ffffff;
-  --border: #22242B;
-  --input: #22242B;
-  --ring: #DC2626;
+  --muted: #111318;
+  --muted-foreground: #9A9CA5;
+  --card: #111318;
+  --card-foreground: #F5F5F5;
+  --border: #252830;
+  --input: #252830;
+  --ring: #B4233C;
+  --status-emerald: #16C784;
   --radius: 0.75rem;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
@@ -46,18 +50,18 @@
 
 @layer components {
   .subtle-border {
-    border: 1px solid #22242B;
+    border: 1px solid #252830;
   }
 
   .clean-card {
-    background-color: #14151A;
-    border: 1px solid #22242B;
+    background-color: #111318;
+    border: 1px solid #252830;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .clean-card:hover {
-    border-color: #DC2626;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-color: #B4233C;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
 }
 

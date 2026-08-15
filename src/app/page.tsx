@@ -17,7 +17,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0B0C0E] text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#090A0C] text-[#F5F5F5] font-sans antialiased">
       <Header />
 
       <main>
