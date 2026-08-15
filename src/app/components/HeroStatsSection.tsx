@@ -17,9 +17,7 @@ export default function HeroStatsSection() {
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-start ${
-                idx > 0 ? 'pt-6 md:pt-0 md:pl-8' : ''
-              }`}
+              className={`flex flex-col items-start ${idx > 0 ? 'pt-6 md:pt-0 md:pl-8' : ''}`}
             >
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-1.5 h-6 bg-[#B4233C] rounded-full" />
@@ -37,4 +35,3 @@ export default function HeroStatsSection() {
     </section>
   );
 }
-

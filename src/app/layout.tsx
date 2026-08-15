@@ -25,19 +25,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Mr. Ads — Hyperlocal Advertising & Digital Solutions Partner',
-    description: 'Premium digital displays, outdoor transit, print distribution, gifting, and web/AI solutions in Bengaluru.',
+    description:
+      'Premium digital displays, outdoor transit, print distribution, gifting, and web/AI solutions in Bengaluru.',
     images: [{ url: '/assets/images/app_logo.png', width: 1200, height: 630 }],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={plusJakartaSans.variable}>
-      <body className={plusJakartaSans.className}>
-        {children}
-</body>
+      <body className={plusJakartaSans.className}>{children}</body>
     </html>
   );
 }

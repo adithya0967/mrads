@@ -21,7 +21,9 @@ export default function ContactSection() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -78,7 +80,8 @@ export default function ContactSection() {
                   Speak Directly With Our Campaign Team
                 </h3>
                 <p className="text-[#9A9CA5] text-base leading-relaxed mb-8">
-                  We'll provide exact screen counts, location availability, and campaign estimates for your brand.
+                  We'll provide exact screen counts, location availability, and campaign estimates
+                  for your brand.
                 </p>
 
                 <div className="flex flex-col gap-6">
@@ -87,7 +90,9 @@ export default function ContactSection() {
                       <Icon name="PhoneIcon" size={18} className="text-[#B4233C]" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">Phone & WhatsApp</div>
+                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                        Phone & WhatsApp
+                      </div>
                       <div className="text-base font-extrabold text-[#F5F5F5]">+91 96865 44644</div>
                     </div>
                   </a>
@@ -97,8 +102,12 @@ export default function ContactSection() {
                       <Icon name="EnvelopeIcon" size={18} className="text-[#B4233C]" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">Email Inquiry</div>
-                      <div className="text-base font-extrabold text-[#F5F5F5]">Knowus@mr-ads.in</div>
+                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                        Email Inquiry
+                      </div>
+                      <div className="text-base font-extrabold text-[#F5F5F5]">
+                        Knowus@mr-ads.in
+                      </div>
                     </div>
                   </a>
 
@@ -107,8 +116,12 @@ export default function ContactSection() {
                       <Icon name="MapPinIcon" size={18} className="text-[#B4233C]" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">Headquarters</div>
-                      <div className="text-base font-extrabold text-[#F5F5F5]">Bengaluru, Karnataka, India</div>
+                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                        Headquarters
+                      </div>
+                      <div className="text-base font-extrabold text-[#F5F5F5]">
+                        Bengaluru, Karnataka, India
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -132,7 +145,8 @@ export default function ContactSection() {
                     </div>
                     <h4 className="text-2xl font-extrabold text-[#F5F5F5]">Inquiry Received</h4>
                     <p className="text-sm text-[#9A9CA5] max-w-sm">
-                      Thank you. Our advertising specialists will contact you shortly with campaign recommendations.
+                      Thank you. Our advertising specialists will contact you shortly with campaign
+                      recommendations.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -145,7 +159,10 @@ export default function ContactSection() {
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]">
+                        <label
+                          htmlFor="name"
+                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
+                        >
                           Your Name *
                         </label>
                         <input
@@ -161,7 +178,10 @@ export default function ContactSection() {
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="business" className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]">
+                        <label
+                          htmlFor="business"
+                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
+                        >
                           Company / Brand *
                         </label>
                         <input
@@ -179,7 +199,10 @@ export default function ContactSection() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]">
+                        <label
+                          htmlFor="phone"
+                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
+                        >
                           Phone Number *
                         </label>
                         <input
@@ -195,7 +218,10 @@ export default function ContactSection() {
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="budget" className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]">
+                        <label
+                          htmlFor="budget"
+                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
+                        >
                           Monthly Campaign Budget
                         </label>
                         <select
@@ -215,7 +241,10 @@ export default function ContactSection() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]">
+                      <label
+                        htmlFor="message"
+                        className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
+                      >
                         Campaign Requirements (Optional)
                       </label>
                       <textarea
@@ -245,5 +274,3 @@ export default function ContactSection() {
     </section>
   );
 }
-
-

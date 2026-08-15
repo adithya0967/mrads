@@ -13,7 +13,7 @@ export default function HeroSection() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#641C2B]/30 border border-[#641C2B]">
               <span className="w-2 h-2 rounded-full bg-[#B4233C]" />
               <span className="text-xs font-bold uppercase tracking-wider text-[#C83A4B]">
-                Bengaluru's Premium Advertising Network
+                Bengaluru&apos;s Premium Advertising Network
               </span>
             </div>
 
@@ -23,7 +23,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl text-[#9A9CA5] font-normal leading-relaxed max-w-2xl">
-              Mr. Ads connects brands with high-intent audiences across Bengaluru through digital screens, transit media, Q-commerce inserts, corporate gifting, and digital solutions.
+              Mr. Ads connects brands with high-intent audiences across Bengaluru through digital
+              screens, transit media, Q-commerce inserts, corporate gifting, and digital solutions.
             </p>
 
             {/* CTAs */}
@@ -52,5 +53,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-

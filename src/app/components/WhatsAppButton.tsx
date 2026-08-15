@@ -14,4 +14,4 @@ export default function WhatsAppButton() {
       <span className="font-bold text-xs hidden sm:block uppercase tracking-wider">WhatsApp</span>
     </a>
   );
-}
+}

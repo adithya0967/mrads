@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #090A0C;
-  --foreground: #F5F5F5;
-  --primary: #B4233C;
-  --primary-hover: #D13B55;
+  --background: #090a0c;
+  --foreground: #f5f5f5;
+  --primary: #b4233c;
+  --primary-hover: #d13b55;
   --primary-foreground: #ffffff;
-  --headline-accent: #C83A4B;
-  --subtle-accent: #641C2B;
+  --headline-accent: #c83a4b;
+  --subtle-accent: #641c2b;
   --secondary: #111318;
-  --secondary-foreground: #F5F5F5;
-  --accent: #B4233C;
+  --secondary-foreground: #f5f5f5;
+  --accent: #b4233c;
   --accent-foreground: #ffffff;
   --muted: #111318;
-  --muted-foreground: #9A9CA5;
+  --muted-foreground: #9a9ca5;
   --card: #111318;
-  --card-foreground: #F5F5F5;
+  --card-foreground: #f5f5f5;
   --border: #252830;
   --input: #252830;
-  --ring: #B4233C;
-  --status-emerald: #16C784;
+  --ring: #b4233c;
+  --status-emerald: #16c784;
   --radius: 0.75rem;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
@@ -43,7 +43,13 @@
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6, p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
     margin: 0;
   }
 }
@@ -56,23 +62,83 @@
   .clean-card {
     background-color: #111318;
     border: 1px solid #252830;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .clean-card:hover {
-    border-color: #B4233C;
+    border-color: #b4233c;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Professional Dark Glassmorphism Card System */
+  .pro-card {
+    background: linear-gradient(180deg, #151821 0%, #101217 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 10px 30px -10px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pro-card:hover {
+    border-color: rgba(180, 35, 60, 0.6);
+    box-shadow:
+      0 20px 40px -15px rgba(180, 35, 60, 0.25),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .glass-card-glow {
+    background: linear-gradient(135deg, rgba(21, 24, 33, 0.95) 0%, rgba(13, 15, 20, 0.98) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-glow:hover {
+    border-color: rgba(180, 35, 60, 0.5);
+    box-shadow:
+      0 16px 36px -12px rgba(180, 35, 60, 0.25),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
   }
 }
 
+/* Scrollbar utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom horizontal scroll styling */
+.custom-horizontal-scroll {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.custom-horizontal-scroll > * {
+  scroll-snap-align: start;
+}
+
 @keyframes kenburnsZoomIn {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.15); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
 }
 
 @keyframes kenburnsZoomOut {
-  0% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .animate-kenburns-in {
@@ -84,19 +150,35 @@
 }
 
 @keyframes adProgress {
-  0% { transform: scaleX(0); transform-origin: left; }
-  100% { transform: scaleX(1); transform-origin: left; }
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 @keyframes float-subtle {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-float-subtle {
@@ -117,4 +199,3 @@
     animation: none;
   }
 }
-

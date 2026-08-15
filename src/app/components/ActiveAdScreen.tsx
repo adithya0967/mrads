@@ -118,7 +118,6 @@ export default function ActiveAdScreen() {
 
         {/* Screen Frame Mockup (DOOH Display Unit inside venue) */}
         <div className="absolute inset-3 sm:inset-4 rounded-xl overflow-hidden border border-[#252830] bg-[#000] shadow-inner flex flex-col justify-between z-10 ring-1 ring-white/10">
-
           {/* TOP FIXED STATUS BAR: LIVE BADGE */}
           <div className="relative z-30 p-3 sm:p-4 flex items-center justify-between pointer-events-none">
             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 shadow-lg">
@@ -218,9 +217,6 @@ export default function ActiveAdScreen() {
               </div>
             );
           })}
-
-
-
         </div>
       </div>
 
@@ -256,5 +252,3 @@ export default function ActiveAdScreen() {
     </div>
   );
 }
-
-

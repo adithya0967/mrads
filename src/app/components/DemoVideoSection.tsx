@@ -17,7 +17,8 @@ export default function DemoVideoSection() {
           See Mr. Ads in Action Across Venues
         </h2>
         <p className="text-[#9A9CA5] text-base mb-10 max-w-xl mx-auto font-normal">
-          Experience how your brand appears on high-dwell screens inside Bengaluru's leading dining and consumer spaces.
+          Experience how your brand appears on high-dwell screens inside Bengaluru's leading dining
+          and consumer spaces.
         </p>
 
         {/* Video player container */}
@@ -39,7 +40,12 @@ export default function DemoVideoSection() {
               aria-label="Play demo video"
             >
               <div className="w-16 h-16 bg-[#111318]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#252830] shadow-md group-hover:scale-110 group-hover:bg-[#B4233C] group-hover:text-white transition-all">
-                <Icon name="PlayIcon" size={24} variant="solid" className="text-white group-hover:text-white ml-1 transition-colors" />
+                <Icon
+                  name="PlayIcon"
+                  size={24}
+                  variant="solid"
+                  className="text-white group-hover:text-white ml-1 transition-colors"
+                />
               </div>
               <span className="text-[#F5F5F5] text-xs font-extrabold uppercase tracking-widest">
                 Watch Screen Demo
@@ -52,7 +58,9 @@ export default function DemoVideoSection() {
               <div className="text-center">
                 <Icon name="TvIcon" size={40} className="text-[#B4233C] mx-auto mb-3" />
                 <p className="font-bold text-base">Mr. Ads Live Network Feed</p>
-                <p className="text-[#F5F5F5]/60 text-xs mt-1">30s Ad Spot Loop · High Dwell Visibility</p>
+                <p className="text-[#F5F5F5]/60 text-xs mt-1">
+                  30s Ad Spot Loop · High Dwell Visibility
+                </p>
               </div>
             </div>
           )}
@@ -61,4 +69,3 @@ export default function DemoVideoSection() {
     </section>
   );
 }
-

@@ -27,7 +27,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-[#9A9CA5] font-normal leading-relaxed max-w-sm">
-              Hyperlocal Advertising & Digital Solutions network across Bengaluru. Connecting brands with high-intent audiences where they live, work, dine, and travel.
+              Hyperlocal Advertising & Digital Solutions network across Bengaluru. Connecting brands
+              with high-intent audiences where they live, work, dine, and travel.
             </p>
           </div>
 
@@ -38,7 +39,11 @@ export default function Footer() {
             </span>
             <div className="flex flex-col gap-2.5 text-sm font-semibold text-[#9A9CA5]">
               {quickLinks.map((link) => (
-                <a key={link.href} href={link.href} className="hover:text-[#B4233C] transition-colors">
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-[#B4233C] transition-colors"
+                >
                   {link.label}
                 </a>
               ))}
@@ -51,11 +56,17 @@ export default function Footer() {
               Contact Us
             </span>
             <div className="flex flex-col gap-2.5 text-sm font-medium text-[#9A9CA5]">
-              <a href="tel:+919686544644" className="hover:text-[#B4233C] transition-colors flex items-center gap-2">
+              <a
+                href="tel:+919686544644"
+                className="hover:text-[#B4233C] transition-colors flex items-center gap-2"
+              >
                 <Icon name="PhoneIcon" size={15} className="text-[#B4233C]" />
                 +91 96865 44644
               </a>
-              <a href="mailto:Knowus@mr-ads.in" className="hover:text-[#B4233C] transition-colors flex items-center gap-2">
+              <a
+                href="mailto:Knowus@mr-ads.in"
+                className="hover:text-[#B4233C] transition-colors flex items-center gap-2"
+              >
                 <Icon name="EnvelopeIcon" size={15} className="text-[#B4233C]" />
                 Knowus@mr-ads.in
               </a>
@@ -71,12 +82,15 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-[#9A9CA5]">
           <p>© 2026 Mr. Ads. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#F5F5F5] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#F5F5F5] transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-[#F5F5F5] transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-[#F5F5F5] transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-

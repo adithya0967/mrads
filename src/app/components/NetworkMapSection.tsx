@@ -6,7 +6,11 @@ const bengaluruHubs = [
   { name: 'Koramangala & HSR', type: 'Tech & Dining Corridor', screens: '8,500+ Screens' },
   { name: 'Indiranagar & MG Road', type: 'Premium Retail & F&B', screens: '6,200+ Screens' },
   { name: 'Whitefield & Marathahalli', type: 'IT Parks & Residential', screens: '9,000+ Screens' },
-  { name: 'Malleshwaram & Rajajinagar', type: 'Heritage & High Footfall', screens: '4,500+ Screens' },
+  {
+    name: 'Malleshwaram & Rajajinagar',
+    type: 'Heritage & High Footfall',
+    screens: '4,500+ Screens',
+  },
   { name: 'Jayanagar & JP Nagar', type: 'Residential & Commercial', screens: '5,000+ Screens' },
 ];
 
@@ -26,7 +30,8 @@ export default function NetworkMapSection() {
             </h2>
 
             <p className="text-base sm:text-lg text-[#9A9CA5] leading-relaxed font-normal">
-              Mr. Ads connects your brand directly to decision-makers across Bengaluru's highest density IT corridors, dining precincts, and premium residential neighborhoods.
+              Mr. Ads connects your brand directly to decision-makers across Bengaluru's highest
+              density IT corridors, dining precincts, and premium residential neighborhoods.
             </p>
 
             <div className="grid grid-cols-2 gap-6 w-full pt-4 border-t border-[#252830]">
@@ -95,4 +100,3 @@ export default function NetworkMapSection() {
     </section>
   );
 }
-
