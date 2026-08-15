@@ -1,112 +1,63 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import Icon from '@/components/ui/AppIcon';
+import React from 'react';
 import AppImage from '@/components/ui/AppImage';
 
-const stats = [
-{ value: '70+', label: 'Active Locations' },
-{ value: '2,000–3,000', label: 'Daily Viewers / Location' },
-{ value: '30s', label: 'Ad Duration' },
-{ value: '12×', label: 'Plays Per Hour' }];
-
-
 export default function AboutSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal-item').forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).style.opacity = '1';
-                (el as HTMLElement).style.transform = 'translateY(0)';
-              }, i * 120);
-            });
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="about" ref={sectionRef} className="py-24 md:py-32 bg-card overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-          {/* Left: Image with floating card */}
-          <div className="lg:col-span-5 relative reveal-item" style={{ opacity: 0, transform: 'translateY(40px)', transition: 'all 0.8s cubic-bezier(0.23,1,0.32,1)' }}>
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-slate-900/12">
+    <section id="about" className="py-20 md:py-28 bg-[#0B0C0E] border-b border-[#22242B]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Large Photography */}
+          <div className="lg:col-span-6">
+            <div className="relative rounded-2xl overflow-hidden border border-[#22242B] bg-[#14151A] aspect-[4/3] shadow-md">
               <AppImage
-                src="https://images.unsplash.com/photo-1556700485-cc335d219007"
-                alt="Restaurant interior with warm lighting, dining tables, and ambient atmosphere perfect for digital advertising displays"
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
+                alt="High footfall premium restaurant in Bengaluru with elegant seating and digital display"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 42vw" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
-            </div>
-
-            {/* Floating quote card */}
-            <div className="absolute -bottom-6 -right-4 md:-right-8 bg-accent text-accent-foreground p-6 rounded-2xl shadow-2xl max-w-[220px]">
-              <Icon name="EyeIcon" size={20} className="text-accent mb-3" />
-              <p className="text-sm font-semibold leading-relaxed opacity-90">
-                Customers are relaxed, engaged, and attentive — your ideal ad moment.
-              </p>
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
             </div>
           </div>
 
-          {/* Right: Text content */}
-          <div className="lg:col-span-7 flex flex-col gap-8">
-            <div
-              className="reveal-item"
-              style={{ opacity: 0, transform: 'translateY(40px)', transition: 'all 0.8s cubic-bezier(0.23,1,0.32,1) 0.1s' }}>
-              
-              <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-                Who We Are
-              </span>
-              <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-tight leading-[1.1] text-foreground">
-                Bengaluru's
-                <span className="text-accent"> Hyperlocal Advertising</span> Network
-              </h2>
-            </div>
+          {/* Right Column: Editorial Copy */}
+          <div className="lg:col-span-6 flex flex-col items-start gap-5">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345]">
+              WHO WE ARE
+            </span>
 
-            <div
-              className="flex flex-col gap-4 reveal-item"
-              style={{ opacity: 0, transform: 'translateY(40px)', transition: 'all 0.8s cubic-bezier(0.23,1,0.32,1) 0.2s' }}>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Mr. Ads helps brands connect with customers inside high-footfall restaurants across Bengaluru.
-                Our digital displays are placed in dining and waiting areas, ensuring your brand gets repeated
-                visibility when customers are relaxed and attentive. Ads play every 5 minutes, ensuring
-                repeated visibility during dining time.
-              </p>
-              <p className="text-sm font-semibold text-foreground/70">
-                Your ad is seen multiple times during a single customer visit.
-              </p>
-            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+              Bengaluru's Hyperlocal <br />
+              <span className="text-[#E52345]">Advertising Network</span>
+            </h2>
 
-            {/* Stats grid */}
-            <div
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 reveal-item"
-              style={{ opacity: 0, transform: 'translateY(40px)', transition: 'all 0.8s cubic-bezier(0.23,1,0.32,1) 0.3s' }}>
-              
-              {stats.map((stat) =>
-              <div key={stat.label} className="border-l-2 border-accent pl-4">
-                  <div className="text-2xl font-extrabold text-foreground tracking-tight">{stat.value}</div>
-                  <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
-                    {stat.label}
-                  </div>
+            <p className="text-base sm:text-lg text-[#9A9AA4] leading-relaxed font-normal">
+              Mr. Ads helps brands connect with target audiences inside high-footfall restaurants, corporate hubs, residential elevators, and transit routes across Bengaluru.
+            </p>
+
+            <p className="text-base text-[#9A9AA4] leading-relaxed font-normal">
+              Our digital displays and direct placement networks ensure repeated visibility when customers are relaxed, attentive, and actively making purchasing decisions.
+            </p>
+
+            <div className="pt-4 grid grid-cols-2 gap-6 border-t border-[#22242B] w-full">
+              <div>
+                <div className="text-2xl font-extrabold text-white">2,000–3,000</div>
+                <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider mt-0.5">
+                  Daily Viewers / Location
                 </div>
-              )}
+              </div>
+              <div>
+                <div className="text-2xl font-extrabold text-[#E52345]">12× / Hr</div>
+                <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider mt-0.5">
+                  Repeated Ad Frequency
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
+

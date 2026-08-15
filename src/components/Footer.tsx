@@ -1,9 +1,11 @@
+'use client';
+
 import React from 'react';
-import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
 
 const quickLinks = [
-  { label: 'Home', href: '#' },
+  { label: 'About', href: '#about' },
+  { label: 'Solutions', href: '#solutions' },
   { label: 'Locations', href: '#locations' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
@@ -11,89 +13,70 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-16">
-        {/* Arc Split Layout */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
-          {/* Left: Logo + Tagline */}
-          <div className="flex flex-col gap-3 max-w-xs">
-            <div className="flex items-center gap-2">
-              <AppLogo size={32} iconName="TvIcon" />
-              <span className="font-extrabold text-lg tracking-tight text-foreground">
-                Mr.<span className="text-accent">Ads</span>
+    <footer className="bg-[#0B0C0E] border-t border-[#22242B] py-16">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#22242B]">
+          {/* Logo & Tagline */}
+          <div className="md:col-span-5 flex flex-col items-start gap-4">
+            <a href="#" className="flex items-center gap-2" aria-label="Mr. Ads Home">
+              <span className="w-8 h-8 rounded-lg bg-[#E52345] text-white flex items-center justify-center font-extrabold text-sm tracking-tight shadow-sm">
+                MA
               </span>
-            </div>
-            <p className="text-sm text-muted-foreground font-medium leading-relaxed">
-              India's Emerging Hyperlocal Advertising Network
+              <span className="font-extrabold text-xl tracking-tight text-white">
+                Mr.<span className="text-[#E52345]">Ads</span>
+              </span>
+            </a>
+            <p className="text-sm text-[#9A9AA4] font-normal leading-relaxed max-w-sm">
+              Hyperlocal Advertising & Digital Solutions network across Bengaluru. Connecting brands with high-intent audiences where they live, work, dine, and travel.
             </p>
-            <a
-              href="tel:+919686544644"
-              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent transition-colors mt-1"
-            >
-              <Icon name="PhoneIcon" size={15} className="text-accent" />
-              +91 96865 44644
-            </a>
-            <a
-              href="mailto:Knowus@mr-ads.in"
-              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent transition-colors mt-1"
-            >
-              <Icon name="EnvelopeIcon" size={15} className="text-accent" />
-              Knowus@mr-ads.in
-            </a>
           </div>
 
-          {/* Right: Quick Links + Social */}
-          <div className="flex flex-col items-start md:items-end gap-5">
-            <div className="flex flex-wrap gap-x-8 gap-y-3">
-              {quickLinks?.map((link) => (
-                <a
-                  key={link?.href}
-                  href={link?.href}
-                  className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link?.label}
+          {/* Quick Nav Links */}
+          <div className="md:col-span-3 flex flex-col items-start gap-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-white">
+              Navigation
+            </span>
+            <div className="flex flex-col gap-2.5 text-sm font-semibold text-[#9A9AA4]">
+              {quickLinks.map((link) => (
+                <a key={link.href} href={link.href} className="hover:text-[#E52345] transition-colors">
+                  {link.label}
                 </a>
               ))}
             </div>
-            <div className="flex items-center gap-4">
-              <a
-                href="https://wa.me/919686544644?text=Hi%2C%20I%27m%20interested%20in%20advertising%20with%20Mr.%20Ads.%20Please%20share%20available%20locations%2C%20pricing%2C%20and%20current%20slot%20availability."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all text-muted-foreground"
-                aria-label="WhatsApp"
-              >
-                <Icon name="ChatBubbleLeftRightIcon" size={16} />
+          </div>
+
+          {/* Direct Contact Info */}
+          <div className="md:col-span-4 flex flex-col items-start gap-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-white">
+              Contact Us
+            </span>
+            <div className="flex flex-col gap-2.5 text-sm font-medium text-[#9A9AA4]">
+              <a href="tel:+919686544644" className="hover:text-[#E52345] transition-colors flex items-center gap-2">
+                <Icon name="PhoneIcon" size={15} className="text-[#E52345]" />
+                +91 96865 44644
               </a>
-              <a
-                href="mailto:Knowus@mr-ads.in"
-                className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all text-muted-foreground"
-                aria-label="Email us"
-              >
-                <Icon name="EnvelopeIcon" size={16} />
+              <a href="mailto:Knowus@mr-ads.in" className="hover:text-[#E52345] transition-colors flex items-center gap-2">
+                <Icon name="EnvelopeIcon" size={15} className="text-[#E52345]" />
+                Knowus@mr-ads.in
               </a>
-              <a
-                href="tel:+919686544644"
-                className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all text-muted-foreground"
-                aria-label="Call us"
-              >
-                <Icon name="PhoneIcon" size={16} />
-              </a>
+              <div className="flex items-center gap-2">
+                <Icon name="MapPinIcon" size={15} className="text-[#E52345]" />
+                Bengaluru, Karnataka, India
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs font-medium text-muted-foreground">
-            © 2026 Mr. Ads. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-xs font-semibold text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+        {/* Bottom Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-[#9A9AA4]">
+          <p>© 2026 Mr. Ads. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

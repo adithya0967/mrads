@@ -27,227 +27,217 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder submit handler — connect to backend/CRM here
     setSubmitted(true);
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-            Get In Touch
-          </span>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-foreground mb-4">
-            Get Your Brand Featured in High-Footfall Restaurants.
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Explore available locations and start reaching 2,000–3,000 customers daily per location.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Contact details panel */}
-          <div className="lg:col-span-2 flex flex-col gap-5">
-            {/* Contact info card */}
-            <div className="bg-accent text-accent-foreground rounded-3xl p-8 flex flex-col gap-6">
-              <div>
-                <div className="text-white/60 text-xs font-bold uppercase tracking-[0.4em] mb-2">Contact Us</div>
-                <h3 className="font-extrabold text-xl text-white">Connect with us to plan your campaign across high-footfall locations.</h3>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                <a
-                  href="tel:+919686544644"
-                  className="flex items-center gap-3 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                    <Icon name="PhoneIcon" size={18} className="text-white" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Call / WhatsApp</div>
-                    <div className="font-bold text-white">+91 96865 44644</div>
-                  </div>
-                </a>
-
-                <a
-                  href="mailto:Knowus@mr-ads.in"
-                  className="flex items-center gap-3 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                    <Icon name="EnvelopeIcon" size={18} className="text-white" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Email Us</div>
-                    <div className="font-bold text-white">Knowus@mr-ads.in</div>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-                    <Icon name="MapPinIcon" size={18} className="text-white" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Location</div>
-                    <div className="font-bold text-white">Bengaluru, Karnataka</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action buttons */}
-              <div className="flex flex-col gap-3 pt-2">
-                <a
-                  href="tel:+919686544644"
-                  className="flex items-center justify-center gap-2 px-5 py-3 bg-white text-accent rounded-full font-bold text-sm hover:bg-white/90 transition-colors"
-                >
-                  <Icon name="PhoneIcon" size={16} />
-                  Click to Call
-                </a>
-                <a
-                  href="https://wa.me/919686544644?text=Hi%2C%20I%27m%20interested%20in%20advertising%20with%20Mr.%20Ads.%20Please%20share%20available%20locations%2C%20pricing%2C%20and%20current%20slot%20availability."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 bg-[#25D366] text-white rounded-full font-bold text-sm hover:bg-[#20ba59] transition-colors"
-                >
-                  <Icon name="ChatBubbleLeftRightIcon" size={16} />
-                  Chat on WhatsApp
-                </a>
-              </div>
-            </div>
-
-            {/* Scarcity card */}
-            <div className="scarcity-strip rounded-2xl p-6 border border-red-900/40">
-              <div className="flex items-start gap-3">
-                <Icon name="ExclamationTriangleIcon" size={18} className="text-red-400 shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold text-red-300 text-sm mb-1">Slots Filling Fast</div>
-                  <p className="text-red-400/80 text-xs leading-relaxed">
-                    High-demand locations fill quickly. Secure your ad slot in advance.
-                  </p>
-                </div>
-              </div>
-            </div>
+    <section id="contact" className="bg-[#0B0C0E]">
+      {/* Major CTA Block */}
+      <div className="bg-[#14151A] text-white py-20 md:py-28 border-b border-[#22242B]">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+          <div className="max-w-2xl">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+              GET STARTED TODAY
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15] mb-4">
+              Ready to Reach Your Next Customer?
+            </h2>
+            <p className="text-[#9A9AA4] text-base md:text-lg font-normal leading-relaxed">
+              Let's build a hyperlocal campaign around your audience, locations, and goals.
+            </p>
           </div>
 
-          {/* Lead form */}
-          <div className="lg:col-span-3">
-            <div className="bg-card rounded-3xl p-8 border border-border shadow-sm">
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-green-900/30 flex items-center justify-center">
-                    <Icon name="CheckCircleIcon" size={32} variant="solid" className="text-green-400" />
+          <div className="flex flex-wrap items-center gap-4 shrink-0">
+            <a
+              href="#inquiry-form"
+              className="px-7 py-3.5 bg-[#E52345] text-white rounded-lg font-bold text-base hover:bg-[#c91837] transition-colors shadow-md shadow-black/50"
+            >
+              Book Your Ad Slot
+            </a>
+            <a
+              href="tel:+919686544644"
+              className="px-7 py-3.5 bg-[#0B0C0E] text-white border border-[#22242B] rounded-lg font-bold text-base hover:border-white transition-colors"
+            >
+              Talk to Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Clean Lead Inquiry Form & Details */}
+      <div id="inquiry-form" className="py-20 md:py-28 border-b border-[#22242B]">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            {/* Left: Direct Contact Information */}
+            <div className="lg:col-span-5 flex flex-col justify-between items-start gap-8">
+              <div>
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+                  CONTACT DETAILS
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
+                  Speak Directly With Our Campaign Team
+                </h3>
+                <p className="text-[#9A9AA4] text-base leading-relaxed mb-8">
+                  We'll provide exact screen counts, location availability, and campaign estimates for your brand.
+                </p>
+
+                <div className="flex flex-col gap-6">
+                  <a href="tel:+919686544644" className="flex items-center gap-4 group">
+                    <div className="w-11 h-11 rounded-lg bg-[#14151A] border border-[#22242B] flex items-center justify-center group-hover:border-[#E52345] transition-colors">
+                      <Icon name="PhoneIcon" size={18} className="text-[#E52345]" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">Phone & WhatsApp</div>
+                      <div className="text-base font-extrabold text-white">+91 96865 44644</div>
+                    </div>
+                  </a>
+
+                  <a href="mailto:Knowus@mr-ads.in" className="flex items-center gap-4 group">
+                    <div className="w-11 h-11 rounded-lg bg-[#14151A] border border-[#22242B] flex items-center justify-center group-hover:border-[#E52345] transition-colors">
+                      <Icon name="EnvelopeIcon" size={18} className="text-[#E52345]" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">Email Inquiry</div>
+                      <div className="text-base font-extrabold text-white">Knowus@mr-ads.in</div>
+                    </div>
+                  </a>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 rounded-lg bg-[#14151A] border border-[#22242B] flex items-center justify-center">
+                      <Icon name="MapPinIcon" size={18} className="text-[#E52345]" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">Headquarters</div>
+                      <div className="text-base font-extrabold text-white">Bengaluru, Karnataka, India</div>
+                    </div>
                   </div>
-                  <h3 className="font-extrabold text-xl text-foreground">Request Received!</h3>
-                  <p className="text-muted-foreground text-sm max-w-xs">
-                    Thank you for your interest. Our team will call you back within 24 hours to discuss available slots.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-2 text-accent font-bold text-sm hover:underline"
-                  >
-                    Submit another request
-                  </button>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              </div>
+
+              <div className="bg-[#14151A] border border-[#22242B] rounded-xl p-5 w-full">
+                <div className="text-xs font-bold text-white mb-1">Response Commitment</div>
+                <p className="text-xs text-[#9A9AA4]">
+                  All campaign inquiries receive a custom proposal within 24 business hours.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: B2B Lead Form */}
+            <div className="lg:col-span-7">
+              <div className="bg-[#14151A] border border-[#22242B] rounded-2xl p-8 md:p-10 shadow-md">
+                {submitted ? (
+                  <div className="py-12 text-center flex flex-col items-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-[#E52345]/15 flex items-center justify-center text-[#E52345]">
+                      <Icon name="CheckCircleIcon" size={28} />
+                    </div>
+                    <h4 className="text-2xl font-extrabold text-white">Inquiry Received</h4>
+                    <p className="text-sm text-[#9A9AA4] max-w-sm">
+                      Thank you. Our advertising specialists will contact you shortly with campaign recommendations.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="mt-2 text-xs font-bold text-[#E52345] uppercase tracking-wider hover:underline"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="flex flex-col gap-2">
+                        <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-white">
+                          Your Name *
+                        </label>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          value={form.name}
+                          onChange={handleChange}
+                          placeholder="e.g. Vikram Sharma"
+                          className="px-4 py-3 bg-[#0B0C0E] border border-[#22242B] rounded-lg text-sm text-white placeholder:text-[#666666] focus:outline-none focus:border-[#E52345] transition-colors"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <label htmlFor="business" className="text-xs font-bold uppercase tracking-wider text-white">
+                          Company / Brand *
+                        </label>
+                        <input
+                          id="business"
+                          name="business"
+                          type="text"
+                          required
+                          value={form.business}
+                          onChange={handleChange}
+                          placeholder="e.g. Acme Tech Solutions"
+                          className="px-4 py-3 bg-[#0B0C0E] border border-[#22242B] rounded-lg text-sm text-white placeholder:text-[#666666] focus:outline-none focus:border-[#E52345] transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="flex flex-col gap-2">
+                        <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-white">
+                          Phone Number *
+                        </label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          required
+                          value={form.phone}
+                          onChange={handleChange}
+                          placeholder="+91 98765 43210"
+                          className="px-4 py-3 bg-[#0B0C0E] border border-[#22242B] rounded-lg text-sm text-white placeholder:text-[#666666] focus:outline-none focus:border-[#E52345] transition-colors"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <label htmlFor="budget" className="text-xs font-bold uppercase tracking-wider text-white">
+                          Monthly Campaign Budget
+                        </label>
+                        <select
+                          id="budget"
+                          name="budget"
+                          value={form.budget}
+                          onChange={handleChange}
+                          className="px-4 py-3 bg-[#0B0C0E] border border-[#22242B] rounded-lg text-sm text-white focus:outline-none focus:border-[#E52345] transition-colors cursor-pointer"
+                        >
+                          {budgetOptions.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                              {opt.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                        Your Name *
+                      <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-white">
+                        Campaign Requirements (Optional)
                       </label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={form.name}
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={form.message}
                         onChange={handleChange}
-                        placeholder="Ravi Kumar"
-                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+                        placeholder="Tell us your target areas in Bengaluru, desired advertising channels, or start date..."
+                        className="px-4 py-3 bg-[#0B0C0E] border border-[#22242B] rounded-lg text-sm text-white placeholder:text-[#666666] focus:outline-none focus:border-[#E52345] transition-colors resize-none"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="business" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                        Business Name *
-                      </label>
-                      <input
-                        id="business"
-                        name="business"
-                        type="text"
-                        required
-                        value={form.business}
-                        onChange={handleChange}
-                        placeholder="Your Brand / Company"
-                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                      />
-                    </div>
-                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                        Phone Number *
-                      </label>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        value={form.phone}
-                        onChange={handleChange}
-                        placeholder="+91 98765 43210"
-                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="budget" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                        Monthly Budget
-                      </label>
-                      <select
-                        id="budget"
-                        name="budget"
-                        value={form.budget}
-                        onChange={handleChange}
-                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all appearance-none cursor-pointer"
-                      >
-                        {budgetOptions.map((opt) => (
-                          <option key={opt.value} value={opt.value}>
-                            {opt.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                      Message (Optional)
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your campaign goals, target areas, or any specific requirements..."
-                      className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-4 bg-accent text-accent-foreground rounded-full font-extrabold text-sm uppercase tracking-widest hover:bg-red-700 transition-all duration-300 amber-glow flex items-center justify-center gap-2"
-                  >
-                    <Icon name="PhoneArrowDownLeftIcon" size={18} />
-                    Request a Callback
-                  </button>
-
-                  <p className="text-center text-xs text-muted-foreground">
-                    No commitment required. We'll reach out within 24 hours.
-                  </p>
-                </form>
-              )}
+                    <button
+                      type="submit"
+                      className="w-full py-4 bg-[#E52345] text-white rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-[#c91837] transition-colors shadow-md shadow-black/50"
+                    >
+                      Submit Campaign Request
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -255,3 +245,5 @@ export default function ContactSection() {
     </section>
   );
 }
+
+

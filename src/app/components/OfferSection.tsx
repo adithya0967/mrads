@@ -1,223 +1,165 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Icon from '@/components/ui/AppIcon';
+import AppImage from '@/components/ui/AppImage';
 
-const categories = [
+const services = [
   {
     icon: 'TvIcon',
+    category: 'Digital Screens',
     title: 'Digital Display Network',
-    tagline: 'High-Impact Digital Screens',
     description: 'Get premium visibility on carefully placed digital screens where your target audience naturally gathers and dwells.',
-    metrics: '30,000+ Screens · 20M+ Combined Reach',
-    accent: false,
-    colSpan: 'lg:col-span-6',
-    items: [
-      { label: 'Apartments', spec: '30,000+ screens' },
-      { label: 'Restaurants', spec: '100+ screens' },
-      { label: 'Corporate Offices', spec: '1,300+ screens' },
-      { label: 'Gyms & Malls', spec: '300+ screens' },
-      { label: 'Playzones / Hostels', spec: 'Common zones' }
-    ]
+    metric: '30,000+ Screens · 20M+ Combined Reach',
   },
   {
     icon: 'TruckIcon',
+    category: 'Transit & Outdoor',
     title: 'Transit & Outdoor Media',
-    tagline: 'Advertising on the Move',
     description: 'Drive city-wide brand awareness by placing your message on moving vehicles and highly visible transit corridors.',
-    metrics: 'Mysuru & Bengaluru Key Routes',
-    accent: false,
-    colSpan: 'lg:col-span-6',
-    items: [
-      { label: 'Auto Branding', spec: 'City-wide' },
-      { label: 'Cab Branding', spec: 'Urban routes' },
-      { label: 'Bus Branding', spec: 'High-traffic' },
-      { label: 'Bus Shelters', spec: 'Mysuru (10 Shelters)' },
-      { label: 'Mobile Vans & Road Shows', spec: 'Promotional' }
-    ]
+    metric: 'Mysuru & Bengaluru Key Routes',
   },
   {
     icon: 'DocumentTextIcon',
-    title: 'Offline & Dark Store inserts',
-    tagline: 'Direct-to-Home Delivery',
+    category: 'Print & Direct',
+    title: 'Offline & Dark Store Inserts',
     description: 'Reach customers straight at home through flyers and official inserts inside bags from top quick-commerce apps.',
-    metrics: 'Swiggy Instamart · Zepto · Blinkit Partner',
-    accent: false,
-    colSpan: 'lg:col-span-7',
-    items: [
-      { label: 'Quick Commerce Inserts', spec: 'Zepto, Instamart, Blinkit' },
-      { label: 'Newspaper Inserts', spec: 'Hyperlocal targeting' },
-      { label: 'Pharmacy Cover Ads', spec: 'Take-home branding' },
-      { label: 'Flyer Distribution', spec: 'Hand-to-Hand & Door-to-Door' },
-      { label: 'Apartment Campaigns', spec: 'Event promotions' }
-    ]
+    metric: 'Swiggy Instamart · Zepto · Blinkit Partner',
   },
   {
     icon: 'FilmIcon',
+    category: 'Featured Creative',
     title: 'Content Creation & Production',
-    tagline: 'End-to-End Creative Assets',
-    description: 'From creative concept to final delivery, we produce engaging promotional videos and motion graphics that convert.',
-    metrics: 'Plan · Shoot · Edit · Deliver',
-    accent: true,
-    colSpan: 'lg:col-span-5',
-    items: [
-      { label: 'Promo Video Shoots', spec: 'Professional' },
-      { label: 'Motion Graphics & VFX', spec: 'Modern' },
-      { label: 'Creative Campaign Concepts', spec: 'Tailored' },
-      { label: 'Ready-to-Publish Ads', spec: 'Optimized' }
-    ]
+    description: 'From creative concept to final delivery, we produce engaging promotional videos, motion graphics, and ad assets that convert.',
+    metric: 'Plan · Shoot · Edit · Deliver',
   },
   {
     icon: 'GiftIcon',
+    category: 'Corporate Gifting',
     title: 'Corporate Gifting Solutions',
-    tagline: 'Premium Custom Merchandise',
     description: 'Strengthen business relationships and build internal brand affinity with thoughtful, premium, custom-branded gifts.',
-    metrics: 'Curated & Customized Products',
-    accent: false,
-    colSpan: 'lg:col-span-5',
-    items: [
-      { label: 'Employee Welcome Kits', spec: 'Onboarding' },
-      { label: 'Joining & Milestone Kits', spec: 'Corporate' },
-      { label: 'Festive Gift Hampers', spec: 'Premium curated' },
-      { label: 'Custom Merchandise', spec: 'Branded shirts, bags' },
-      { label: 'Event & Conference Gifts', spec: 'Bulk order' }
-    ]
+    metric: 'Curated & Customized Products',
   },
   {
     icon: 'CodeBracketIcon',
+    category: 'Digital Tech',
     title: 'Web Design & AI Solutions',
-    tagline: 'Smart Digital Tech',
     description: 'Establish a powerful, scalable online presence with modern web development, e-commerce stores, and custom AI integrations.',
-    metrics: 'Mobile Friendly · SEO Ready · Secure',
-    accent: false,
-    colSpan: 'lg:col-span-7',
-    items: [
-      { label: 'Business Web Development', spec: 'Modern UI' },
-      { label: 'E-Commerce Platforms', spec: 'Shopify / Custom' },
-      { label: 'Custom AI Chatbots', spec: 'Lead generation' },
-      { label: 'Hosting & Maintenance', spec: '24x7 support' },
-      { label: 'Website Redesigns', spec: 'Optimized speed' }
-    ]
-  }
+    metric: 'Mobile Friendly · SEO Ready · Secure',
+  },
 ];
 
 export default function OfferSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.offer-card').forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).style.opacity = '1';
-                (el as HTMLElement).style.transform = 'translateY(0)';
-              }, i * 120);
-            });
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="offer" ref={sectionRef} className="py-24 md:py-32 bg-background">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+    <section id="solutions" className="py-20 md:py-28 bg-[#0B0C0E] border-b border-[#22242B]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
-        <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div>
-            <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-              What We Do
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="max-w-2xl">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+              WHAT WE DO
             </span>
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight leading-[1.1] text-foreground">
-              Hyperlocal Advertising.<br />Digital Solutions.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+              Advertising Solutions Built for Real-World Reach
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm text-sm font-medium leading-relaxed">
-            Every campaign is built on high-impact channels—reaching your audience where they live, work, dine, travel, and buy.
+          <p className="text-[#9A9AA4] text-base font-normal max-w-md leading-relaxed">
+            Advertising solutions designed to reach your audience wherever they live, work, dine, travel, and buy.
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {categories.map((cat, i) => (
+        {/* 6 Core Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {services.map((svc) => (
             <div
-              key={cat.title}
-              className={`offer-card ${cat.colSpan} rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[360px] border transition-all duration-500 hover:scale-[0.99] ${
-                cat.accent
-                  ? 'bg-accent text-accent-foreground border-transparent shadow-xl'
-                  : 'bg-card border-border hover:border-accent/30 hover:shadow-lg'
-              }`}
-              style={{
-                opacity: 0,
-                transform: 'translateY(40px)',
-                transition: 'opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)'
-              }}
+              key={svc.title}
+              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#E52345] hover:shadow-md hover:shadow-black/50 transition-all duration-300 group"
             >
-              {/* Card Header */}
               <div>
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 border ${
-                  cat.accent
-                    ? 'bg-white/20 border-white/30'
-                    : 'bg-accent/10 border-accent/20'
-                }`}>
-                  <Icon
-                    name={cat.icon}
-                    size={24}
-                    className={cat.accent ? 'text-white' : 'text-accent'}
-                  />
+                <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6 group-hover:border-[#E52345]/50 transition-colors">
+                  <Icon name={svc.icon} size={20} className="text-white group-hover:text-[#E52345] transition-colors" />
                 </div>
-                
-                <span className={`text-[10px] font-bold uppercase tracking-widest ${cat.accent ? 'text-white/60' : 'text-accent/80'} mb-1.5 block`}>
-                  {cat.tagline}
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#9A9AA4] mb-2 block">
+                  {svc.category}
                 </span>
-                
-                <h3 className={`text-2xl font-extrabold mb-3 tracking-tight ${cat.accent ? 'text-white' : 'text-foreground'}`}>
-                  {cat.title}
+                <h3 className="text-xl font-extrabold text-white mb-3 tracking-tight">
+                  {svc.title}
                 </h3>
-                
-                <p className={`text-sm leading-relaxed mb-6 ${cat.accent ? 'text-white/70' : 'text-muted-foreground'}`}>
-                  {cat.description}
+                <p className="text-sm text-[#9A9AA4] leading-relaxed mb-6 font-normal">
+                  {svc.description}
                 </p>
               </div>
 
-              {/* Sub-items / Features */}
-              <div className="mb-6 flex flex-wrap gap-2">
-                {cat.items.map((item) => (
-                  <span
-                    key={item.label}
-                    className={`px-3 py-1.5 rounded-full text-xs font-semibold ${
-                      cat.accent
-                        ? 'bg-white/10 text-white border border-white/10'
-                        : 'bg-muted text-foreground/80 border border-border hover:border-accent/20'
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                ))}
-              </div>
-
-              {/* Card Footer Metric info */}
-              <div className={`pt-4 border-t flex items-center justify-between ${
-                cat.accent ? 'border-white/10 text-white/80' : 'border-border text-muted-foreground'
-              }`}>
-                <span className="text-xs font-extrabold uppercase tracking-wider">
-                  {cat.metrics}
-                </span>
-                <Icon
-                  name="ArrowRightIcon"
-                  size={14}
-                  className={cat.accent ? 'text-white' : 'text-accent'}
-                />
+              <div className="pt-4 border-t border-[#22242B] flex items-center justify-between">
+                <span className="text-xs font-bold text-white">{svc.metric}</span>
+                <Icon name="ArrowRightIcon" size={14} className="text-[#E52345]" />
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Featured Solution Section: Content Creation & Production */}
+        <div className="bg-[#14151A] border border-[#22242B] rounded-2xl p-8 md:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left: Featured Copy */}
+            <div className="lg:col-span-6 flex flex-col items-start gap-4">
+              <span className="inline-block px-3 py-1 bg-[#E52345]/15 border border-[#E52345]/30 rounded-md text-xs font-bold uppercase tracking-wider text-[#E52345]">
+                FEATURED SERVICE
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                Content Creation & <span className="text-[#E52345]">Production</span>
+              </h3>
+              <p className="text-base text-[#9A9AA4] leading-relaxed font-normal">
+                High-impact visual stories tailored for digital screen networks and digital media. We handle end-to-end creative scriptwriting, professional promo video shoots, motion graphics, and ready-to-publish vertical ads.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 w-full pt-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="text-xs font-semibold text-white">Promo Video Shoots</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="text-xs font-semibold text-white">Motion Graphics & VFX</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="text-xs font-semibold text-white">Campaign Strategy</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="text-xs font-semibold text-white">Ready-to-Publish Ads</span>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#E52345] text-white rounded-lg font-bold text-sm hover:bg-[#c91837] transition-colors"
+                >
+                  Request Production Portfolio
+                  <Icon name="ArrowRightIcon" size={14} />
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Editorial Photo Thumbnail */}
+            <div className="lg:col-span-6">
+              <div className="relative rounded-xl overflow-hidden border border-[#22242B] bg-[#0B0C0E] aspect-[16/10] shadow-md">
+                <AppImage
+                  src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d"
+                  alt="Professional video production team shooting commercial advertisement content"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+

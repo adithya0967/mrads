@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #0d0d1a;
-  --foreground: #ffffff;
-  --primary: #cc1530;
+  --background: #0B0C0E;
+  --foreground: #FFFFFF;
+  --primary: #E52345;
   --primary-foreground: #ffffff;
-  --secondary: #1a1929;
+  --secondary: #14151A;
   --secondary-foreground: #ffffff;
-  --accent: #cc1530;
+  --accent: #E52345;
   --accent-foreground: #ffffff;
-  --muted: #1e1e2e;
-  --muted-foreground: #a0a0b8;
-  --card: #161624;
+  --muted: #1A1C23;
+  --muted-foreground: #9A9AA4;
+  --card: #14151A;
   --card-foreground: #ffffff;
-  --border: #2a2a3e;
-  --input: #2a2a3e;
-  --ring: #cc1530;
-  --radius: 1rem;
+  --border: #22242B;
+  --input: #22242B;
+  --ring: #E52345;
+  --radius: 0.75rem;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -45,76 +45,25 @@
 }
 
 @layer components {
-  .grain-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  .subtle-border {
+    border: 1px solid #22242B;
   }
 
-  .glass-nav {
-    background: rgba(13, 13, 26, 0.88);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(204, 21, 48, 0.2);
+  .clean-card {
+    background-color: #14151A;
+    border: 1px solid #22242B;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .tv-screen-glow {
-    box-shadow:
-      0 0 0 1px rgba(204, 21, 48, 0.2),
-      0 0 40px rgba(204, 21, 48, 0.12),
-      0 40px 80px rgba(0, 0, 0, 0.5);
-  }
-
-  .magnetic-btn {
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .section-reveal {
-    opacity: 1;
-  }
-
-  .pricing-card-popular {
-    background: linear-gradient(135deg, #cc1530 0%, #a01025 50%, #cc1530 100%);
-  }
-
-  .amber-glow {
-    box-shadow: 0 0 30px rgba(204, 21, 48, 0.25), 0 8px 32px rgba(204, 21, 48, 0.2);
-  }
-
-  .scarcity-strip {
-    background: linear-gradient(90deg, rgba(204, 21, 48, 0.15) 0%, rgba(204, 21, 48, 0.08) 50%, rgba(204, 21, 48, 0.15) 100%);
+  .clean-card:hover {
+    border-color: #E52345;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 }
 
-@keyframes tv-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(0.95); }
-}
-
-@keyframes ad-slide {
-  0% { transform: translateX(0%); opacity: 1; }
-  45% { transform: translateX(0%); opacity: 1; }
-  50% { transform: translateX(-5%); opacity: 0; }
-  55% { transform: translateX(5%); opacity: 0; }
-  60% { transform: translateX(0%); opacity: 1; }
-  100% { transform: translateX(0%); opacity: 1; }
-}
-
-@keyframes blink-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-@keyframes float-up {
+@keyframes float-subtle {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-4px); }
   100% { transform: translateY(0px); }
 }
 
@@ -123,24 +72,12 @@
   100% { transform: translateX(-50%); }
 }
 
-.animate-tv-pulse {
-  animation: tv-pulse 3s ease-in-out infinite;
-}
-
-.animate-ad-slide {
-  animation: ad-slide 8s ease-in-out infinite;
-}
-
-.animate-blink {
-  animation: blink-dot 1.2s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float-up 4s ease-in-out infinite;
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
 }
 
 .animate-marquee {
-  animation: marquee-scroll 30s linear infinite;
+  animation: marquee-scroll 35s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -148,11 +85,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-tv-pulse,
-  .animate-ad-slide,
-  .animate-blink,
-  .animate-float,
+  .animate-float-subtle,
   .animate-marquee {
     animation: none;
   }
 }
+

@@ -1,129 +1,68 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Icon from '@/components/ui/AppIcon';
 
-const benefits = [
-  {
-    icon: 'ArrowPathIcon',
-    title: 'Multi-Channel Synergy',
-    description:
-      'Reach customers multiple times in a single day—as they commute (transit), shop (malls), work (offices), dine (restaurants), and relax (apartments).',
-  },
-  {
-    icon: 'HomeIcon',
-    title: 'Deep Household Presence',
-    description:
-      'Get inside the living rooms and lift areas of premium apartments using digital screens, flyer drops, and official Quick Commerce bag inserts.',
-  },
-  {
-    icon: 'ClockIcon',
-    title: 'High Dwell-Time Captivity',
-    description:
-      'Capture maximum user attention in locations where people spend 30–60 minutes, like restaurants, lobbies, gym workout areas, and transit stops.',
-  },
+const whyPoints = [
   {
     icon: 'MapPinIcon',
-    title: 'Hyperlocal Corridor Targeting',
-    description:
-      'Advertise strictly within the exact neighborhoods and routes where your customers live, work, and buy—minimizing budget wastage.',
+    title: 'Hyperlocal Reach',
+    description: 'Reach customers where they naturally spend time across dining venues, corporate offices, and residential hubs.',
+  },
+  {
+    icon: 'ArrowPathIcon',
+    title: 'Repeated Visibility',
+    description: 'Your message is seen multiple times during a customer visit, driving high brand recall and impression efficiency.',
+  },
+  {
+    icon: 'EyeIcon',
+    title: 'High-Intent Environments',
+    description: 'Reach audiences while they are relaxed, attentive, and engaged—away from digital clutter and skip buttons.',
   },
   {
     icon: 'SparklesIcon',
-    title: 'Integrated Tech & Creative',
-    description:
-      'Amplify real-world visibility with matching digital assets: custom business/e-commerce websites, AI lead-generation chatbots, and creative video shoots.',
+    title: 'Multi-Channel Network',
+    description: 'Combine digital screens, transit, Q-commerce inserts, corporate gifting, and video production under one partner.',
   },
 ];
 
 export default function WhyItWorksSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.benefit-tile').forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).style.opacity = '1';
-                (el as HTMLElement).style.transform = 'translateY(0)';
-              }, i * 100);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="why" ref={sectionRef} className="py-24 md:py-32 bg-[#0a0a14] text-foreground overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+    <section id="why" className="py-20 md:py-28 bg-[#0B0C0E] border-b border-[#22242B]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
-        <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div>
-            <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-              The Science Behind It
-            </span>
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-white leading-[1.1]">
-              Why Hyperlocal<br />Advertising Works
-            </h2>
-          </div>
-          <p className="text-white/40 max-w-xs text-sm font-medium leading-relaxed">
-            Multi-channel physical presence combined with smart digital tech maximizes brand recall and user action.
-          </p>
+        <div className="max-w-2xl mb-16">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+            WHY MR. ADS
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+            Built for Maximum Brand Impact & Recall
+          </h2>
         </div>
 
-        {/* Benefit tiles — 3 top, 2 bottom */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {benefits.map((b, i) => (
+        {/* 4 Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {whyPoints.map((point) => (
             <div
-              key={b.title}
-              className={`benefit-tile group bg-white/5 border border-white/8 rounded-2xl p-7 hover:bg-white/10 hover:border-accent/30 transition-all duration-500 ${
-                i === 3 ? 'lg:col-start-1' : ''
-              }`}
-              style={{
-                opacity: 0,
-                transform: 'translateY(30px)',
-                transition: `opacity 0.6s cubic-bezier(0.23,1,0.32,1) ${i * 0.1}s, transform 0.6s cubic-bezier(0.23,1,0.32,1) ${i * 0.1}s`,
-              }}
+              key={point.title}
+              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#E52345] transition-all duration-300 shadow-md"
             >
-              <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-5 group-hover:bg-accent/25 transition-colors">
-                <Icon name={b.icon as any} size={20} className="text-accent" />
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6">
+                  <Icon name={point.icon as any} size={20} className="text-[#E52345]" />
+                </div>
+                <h3 className="text-xl font-extrabold text-white mb-3 tracking-tight">
+                  {point.title}
+                </h3>
+                <p className="text-sm text-[#9A9AA4] leading-relaxed font-normal">
+                  {point.description}
+                </p>
               </div>
-              <h3 className="font-extrabold text-white text-base mb-2 leading-tight">{b.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{b.description}</p>
             </div>
           ))}
-
-          {/* Last tile — CTA */}
-          <div
-            className="benefit-tile bg-accent rounded-2xl p-7 flex flex-col justify-between"
-            style={{
-              opacity: 0,
-              transform: 'translateY(30px)',
-              transition: `opacity 0.6s cubic-bezier(0.23,1,0.32,1) 0.5s, transform 0.6s cubic-bezier(0.23,1,0.32,1) 0.5s`,
-            }}
-          >
-            <div>
-              <div className="text-3xl font-extrabold text-accent-foreground mb-2">Ready to scale?</div>
-              <p className="text-accent-foreground/70 text-sm leading-relaxed">
-                Connect your business with our extensive hyperlocal network.
-              </p>
-            </div>
-            <a
-              href="#contact"
-              className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-background text-foreground rounded-full font-bold text-sm uppercase tracking-widest hover:bg-card transition-colors w-fit"
-            >
-              Plan Campaign
-              <Icon name="ArrowRightIcon" size={14} />
-            </a>
-          </div>
         </div>
       </div>
     </section>
   );
 }
+

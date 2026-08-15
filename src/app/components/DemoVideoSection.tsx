@@ -8,79 +8,57 @@ export default function DemoVideoSection() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <section id="demo" className="py-24 md:py-32 bg-card">
-      <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-        <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-          See It Live
+    <section id="demo" className="py-20 md:py-28 bg-[#14151A] border-b border-[#22242B]">
+      <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
+        <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+          NETWORK DEMO
         </span>
-        <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-foreground mb-4">
-          See Mr. Ads in Action
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+          See Mr. Ads in Action Across Venues
         </h2>
-        <p className="text-muted-foreground text-base mb-10 max-w-xl mx-auto">
-          Experience how your brand appears across our restaurant display network.
+        <p className="text-[#9A9AA4] text-base mb-10 max-w-xl mx-auto font-normal">
+          Experience how your brand appears on high-dwell screens inside Bengaluru's leading dining and consumer spaces.
         </p>
 
-        {/* Video player mockup */}
-        <div className="relative rounded-3xl overflow-hidden border border-border shadow-2xl shadow-black/40 group cursor-pointer aspect-video bg-background">
-          {/* Poster image */}
+        {/* Video player container */}
+        <div className="relative rounded-2xl overflow-hidden border border-[#22242B] shadow-md cursor-pointer aspect-video bg-[#0B0C0E]">
           <AppImage
             src="https://images.unsplash.com/photo-1698265539672-f27e28ee0578"
-            alt="Restaurant interior with digital display screen showing advertisement, warm ambient lighting, occupied dining tables"
+            alt="Restaurant interior with digital display screen showing advertisement"
             fill
-            className="object-cover opacity-60"
-            priority />
-          
+            className="object-cover opacity-80"
+            priority
+          />
 
-          {/* Dark scrim */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/30 to-transparent" />
+          <div className="absolute inset-0 bg-black/40" />
 
-          {/* Play button overlay */}
-          {!playing &&
-          <button
-            onClick={() => setPlaying(true)}
-            className="absolute inset-0 flex flex-col items-center justify-center gap-4 group/btn"
-            aria-label="Play demo video">
-            
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-2xl group-hover/btn:scale-110 group-hover/btn:bg-accent/80 transition-all duration-300">
-                <Icon name="PlayIcon" size={32} variant="solid" className="text-white ml-1" />
+          {!playing && (
+            <button
+              onClick={() => setPlaying(true)}
+              className="absolute inset-0 flex flex-col items-center justify-center gap-3 group"
+              aria-label="Play demo video"
+            >
+              <div className="w-16 h-16 bg-[#14151A]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#22242B] shadow-md group-hover:scale-110 group-hover:bg-[#E52345] group-hover:text-white transition-all">
+                <Icon name="PlayIcon" size={24} variant="solid" className="text-white group-hover:text-white ml-1 transition-colors" />
               </div>
-              <span className="text-white text-sm font-bold uppercase tracking-widest opacity-80">
-                Watch Demo
+              <span className="text-white text-xs font-extrabold uppercase tracking-widest">
+                Watch Screen Demo
               </span>
             </button>
-          }
+          )}
 
-          {playing &&
-          <div className="absolute inset-0 flex items-center justify-center bg-background">
-              <div className="text-center text-white">
-                <Icon name="TvIcon" size={48} className="text-accent mx-auto mb-4" />
-                <p className="font-bold text-lg">Demo Video</p>
-                <p className="text-white/50 text-sm mt-1">
-                  Connect your video source here
-                </p>
+          {playing && (
+            <div className="absolute inset-0 flex items-center justify-center bg-[#0B0C0E] text-white">
+              <div className="text-center">
+                <Icon name="TvIcon" size={40} className="text-[#E52345] mx-auto mb-3" />
+                <p className="font-bold text-base">Mr. Ads Live Network Feed</p>
+                <p className="text-white/60 text-xs mt-1">30s Ad Spot Loop · High Dwell Visibility</p>
               </div>
             </div>
-          }
-
-          {/* Bottom info bar */}
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-            <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-              <span className="w-2 h-2 rounded-full bg-red-400 animate-blink" />
-              <span className="text-white text-xs font-bold uppercase tracking-widest">Mr. Ads Network</span>
-            </div>
-            <div className="bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-              <span className="text-white text-xs font-bold">30s spot · Bengaluru</span>
-            </div>
-          </div>
+          )}
         </div>
-
-        <p className="mt-6 text-muted-foreground text-sm">
-          Want to see your brand on these screens?{' '}
-          <a href="#contact" className="text-accent font-bold hover:underline">
-            Book a slot today →
-          </a>
-        </p>
       </div>
-    </section>);
-
+    </section>
+  );
 }
+
