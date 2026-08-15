@@ -65,6 +65,29 @@
   }
 }
 
+@keyframes kenburnsZoomIn {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+@keyframes kenburnsZoomOut {
+  0% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.animate-kenburns-in {
+  animation: kenburnsZoomIn 5.5s ease-out forwards;
+}
+
+.animate-kenburns-out {
+  animation: kenburnsZoomOut 5.5s ease-out forwards;
+}
+
+@keyframes adProgress {
+  0% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
 @keyframes float-subtle {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-4px); }

@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppImage from '@/components/ui/AppImage';
-import Icon from '@/components/ui/AppIcon';
 
 export interface AdSpot {
   id: string;
@@ -91,9 +90,7 @@ const AD_DURATION = 4500; // 4.5 seconds per ad
 export default function ActiveAdScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const currentAd = AD_SPOTS[currentIndex];
-
-  // Continuous auto-switching of ads every 4 seconds without media controls
+  // Continuous auto-switching of ads every 4.5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % AD_SPOTS.length);
@@ -105,7 +102,7 @@ export default function ActiveAdScreen() {
   return (
     <div className="flex flex-col gap-4">
       {/* Active Digital Ad Screen Mockup */}
-      <div className="relative rounded-2xl overflow-hidden border border-[#252830] shadow-2xl shadow-black/80 bg-[#111318] aspect-[4/3] sm:aspect-[14/10] select-none">
+      <div className="relative rounded-2xl overflow-hidden border border-[#252830] shadow-2xl shadow-black/80 bg-[#111318] aspect-[4/3] sm:aspect-[14/10] select-none group">
         {/* Background Restaurant Venue Setting */}
         <div className="absolute inset-0 z-0">
           <AppImage
@@ -121,36 +118,10 @@ export default function ActiveAdScreen() {
 
         {/* Screen Frame Mockup (DOOH Display Unit inside venue) */}
         <div className="absolute inset-3 sm:inset-4 rounded-xl overflow-hidden border border-[#252830] bg-[#000] shadow-inner flex flex-col justify-between z-10 ring-1 ring-white/10">
-          {/* Dynamic Ad Image with Smooth Slide/Fade effect */}
-          {AD_SPOTS.map((ad, idx) => {
-            const isActive = idx === currentIndex;
-            return (
-              <div
-                key={ad.id}
-                className={`absolute inset-0 transition-all duration-700 ease-out ${
-                  isActive
-                    ? 'opacity-100 scale-100 pointer-events-auto z-10'
-                    : 'opacity-0 scale-105 pointer-events-none z-0'
-                }`}
-              >
-                <AppImage
-                  src={ad.imageSrc}
-                  alt={ad.headline}
-                  fill
-                  priority={idx === 0}
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-                {/* Vignette Gradients for High Contrast Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-black/50" />
-              </div>
-            );
-          })}
 
-          {/* TOP STATUS BAR ON DIGITAL DISPLAY */}
-          <div className="relative z-20 p-3 sm:p-4 flex items-center justify-between">
-            {/* Live Broadcasting Status Badge - ONLY LIVE */}
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15">
+          {/* TOP FIXED STATUS BAR: LIVE BADGE */}
+          <div className="relative z-30 p-3 sm:p-4 flex items-center justify-between pointer-events-none">
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 shadow-lg">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16C784] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16C784]" />
@@ -159,43 +130,97 @@ export default function ActiveAdScreen() {
                 LIVE
               </span>
             </div>
+          </div>
 
-            {/* Ad Category */}
-            <div className="flex items-center gap-2">
-              <span
-                className={`text-[9px] sm:text-[10px] font-extrabold uppercase px-2 py-0.5 rounded border backdrop-blur-md transition-colors ${currentAd.badgeColor}`}
+          {/* DYNAMIC AD SPOTS CAROUSEL WITH CONTINUOUS KEN BURNS ZOOM IN / OUT ANIMATION */}
+          {AD_SPOTS.map((ad, idx) => {
+            const isActive = idx === currentIndex;
+            const isZoomIn = idx % 2 === 0;
+
+            return (
+              <div
+                key={ad.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  isActive
+                    ? 'opacity-100 pointer-events-auto z-10'
+                    : 'opacity-0 pointer-events-none z-0'
+                }`}
               >
-                {currentAd.category}
-              </span>
-            </div>
-          </div>
+                {/* Background Image Container with Ken Burns Zoom animation */}
+                <div
+                  className={`w-full h-full relative transition-transform duration-1000 overflow-hidden ${
+                    isActive
+                      ? isZoomIn
+                        ? 'animate-kenburns-in'
+                        : 'animate-kenburns-out'
+                      : 'scale-100'
+                  }`}
+                >
+                  <AppImage
+                    src={ad.imageSrc}
+                    alt={ad.headline}
+                    fill
+                    priority={idx === 0}
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </div>
 
-          {/* CENTER & BOTTOM CONTENT: AD BRAND CREATIVE OVERLAY */}
-          <div className="relative z-20 px-4 sm:px-5 pb-4 sm:pb-5 pt-2 flex-1 flex flex-col justify-end">
-            <div className="space-y-1.5 sm:space-y-2 transition-all duration-500 transform">
-              {/* Brand Title */}
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: currentAd.accentColor }}
-                />
-                <span className="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase text-white/90">
-                  {currentAd.brand}
-                </span>
+                {/* Vignette Gradients for High Contrast Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/50 z-10 pointer-events-none" />
+
+                {/* Category Badge - Per Ad */}
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-20">
+                  <span
+                    className={`text-[9px] sm:text-[10px] font-extrabold uppercase px-2.5 py-1 rounded border backdrop-blur-md transition-all duration-700 block shadow-md ${
+                      ad.badgeColor
+                    } ${
+                      isActive
+                        ? 'opacity-100 translate-y-0 scale-100'
+                        : 'opacity-0 -translate-y-2 scale-90'
+                    }`}
+                  >
+                    {ad.category}
+                  </span>
+                </div>
+
+                {/* Bottom Content: Brand, Headline, Subhead - Zoom & Fade Transition */}
+                <div className="absolute bottom-0 left-0 right-0 z-20 p-4 sm:p-5 flex flex-col justify-end">
+                  <div
+                    className={`space-y-1.5 sm:space-y-2 transition-all duration-700 ease-out ${
+                      isActive
+                        ? 'opacity-100 translate-y-0 scale-100'
+                        : 'opacity-0 translate-y-3 scale-95'
+                    }`}
+                  >
+                    {/* Brand Title */}
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="w-2.5 h-2.5 rounded-full shadow-sm"
+                        style={{ backgroundColor: ad.accentColor }}
+                      />
+                      <span className="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase text-white/90">
+                        {ad.brand}
+                      </span>
+                    </div>
+
+                    {/* Headline */}
+                    <h3 className="text-base sm:text-xl lg:text-2xl font-black text-white leading-tight tracking-tight drop-shadow-lg">
+                      {ad.headline}
+                    </h3>
+
+                    {/* Subhead / Tagline */}
+                    <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 max-w-md font-medium opacity-90 hidden sm:block">
+                      {ad.subhead}
+                    </p>
+                  </div>
+                </div>
               </div>
+            );
+          })}
 
-              {/* Headline */}
-              <h3 className="text-base sm:text-xl lg:text-2xl font-black text-white leading-tight tracking-tight drop-shadow-md">
-                {currentAd.headline}
-              </h3>
 
-              {/* Subhead / Tagline */}
-              <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 max-w-md font-medium opacity-90 hidden sm:block">
-                {currentAd.subhead}
-              </p>
 
-            </div>
-          </div>
         </div>
       </div>
 
@@ -231,3 +256,5 @@ export default function ActiveAdScreen() {
     </div>
   );
 }
+
+
