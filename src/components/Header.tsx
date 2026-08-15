@@ -42,11 +42,11 @@ export default function Header() {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group" aria-label="Mr. Ads Home">
-          <span className="w-8 h-8 rounded-lg bg-[#E52345] text-white flex items-center justify-center font-extrabold text-sm tracking-tight shadow-sm">
+          <span className="w-8 h-8 rounded-lg bg-[#DC2626] text-white flex items-center justify-center font-extrabold text-sm tracking-tight shadow-sm">
             MA
           </span>
           <span className="font-extrabold text-xl tracking-tight text-white">
-            Mr.<span className="text-[#E52345]">Ads</span>
+            Mr.<span className="text-[#DC2626]">Ads</span>
           </span>
         </a>
 
@@ -67,7 +67,7 @@ export default function Header() {
         <div className="hidden md:flex items-center">
           <a
             href="#contact"
-            className="px-5 py-2.5 bg-[#E52345] text-white rounded-lg font-bold text-sm hover:bg-[#c91837] transition-colors shadow-sm"
+            className="px-5 py-2.5 bg-[#DC2626] text-white rounded-lg font-bold text-sm hover:bg-[#B91C1C] transition-colors shadow-sm"
           >
             Book Your Ad Slot
           </a>
@@ -107,7 +107,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={handleNavClick}
-                className="py-2 border-b border-[#22242B]/60 hover:text-[#E52345] transition-colors"
+                className="py-2 border-b border-[#22242B]/60 hover:text-[#DC2626] transition-colors"
               >
                 {link.label}
               </a>
@@ -116,7 +116,7 @@ export default function Header() {
           <a
             href="#contact"
             onClick={handleNavClick}
-            className="mt-4 w-full text-center py-3.5 bg-[#E52345] text-white rounded-lg font-bold text-base hover:bg-[#c91837] transition-colors shadow-sm"
+            className="mt-4 w-full text-center py-3.5 bg-[#DC2626] text-white rounded-lg font-bold text-base hover:bg-[#B91C1C] transition-colors shadow-sm"
           >
             Book Your Ad Slot
           </a>

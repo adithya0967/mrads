@@ -152,8 +152,8 @@ export default function ActiveAdScreen() {
             {/* Live Broadcasting Status Badge - ONLY LIVE */}
             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E52345] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E52345]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#DC2626] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#DC2626]" />
               </span>
               <span className="text-[10px] sm:text-xs font-bold tracking-widest text-white uppercase">
                 LIVE
@@ -225,7 +225,7 @@ export default function ActiveAdScreen() {
           <div className="text-[10px] sm:text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">
             Combined Reach
           </div>
-          <div className="text-lg sm:text-xl font-extrabold text-[#E52345]">20M+</div>
+          <div className="text-lg sm:text-xl font-extrabold text-[#DC2626]">20M+</div>
         </div>
       </div>
     </div>

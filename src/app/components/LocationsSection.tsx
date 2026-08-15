@@ -61,7 +61,7 @@ export default function LocationsSection() {
         {/* Header */}
         <div className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-3 block">
               NETWORK COVERAGE
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -78,14 +78,14 @@ export default function LocationsSection() {
           {environmentCategories.map((cat) => (
             <div
               key={cat.name}
-              className="bg-[#14151A] border border-[#22242B] rounded-xl p-4 flex flex-col items-start gap-2 hover:border-[#E52345] transition-colors shadow-sm"
+              className="bg-[#14151A] border border-[#22242B] rounded-xl p-4 flex flex-col items-start gap-2 hover:border-[#DC2626] transition-colors shadow-sm"
             >
               <div className="w-8 h-8 rounded-lg bg-[#0B0C0E] flex items-center justify-center border border-[#22242B]">
                 <Icon name={cat.icon} size={16} className="text-white" />
               </div>
               <div>
                 <div className="text-sm font-extrabold text-white leading-snug">{cat.name}</div>
-                <div className="text-[11px] font-semibold text-[#E52345]">{cat.count}</div>
+                <div className="text-[11px] font-semibold text-[#DC2626]">{cat.count}</div>
               </div>
             </div>
           ))}
@@ -105,7 +105,7 @@ export default function LocationsSection() {
           {featuredVenues.map((venue) => (
             <div
               key={venue.name}
-              className="bg-[#14151A] border border-[#22242B] rounded-xl overflow-hidden hover:border-[#E52345] transition-all duration-300 group shadow-md"
+              className="bg-[#14151A] border border-[#22242B] rounded-xl overflow-hidden hover:border-[#DC2626] transition-all duration-300 group shadow-md"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-[#0B0C0E]">
                 <AppImage
@@ -120,7 +120,7 @@ export default function LocationsSection() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#E52345] mb-1">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#DC2626] mb-1">
                   {venue.type}
                 </div>
                 <h4 className="text-lg font-extrabold text-white mb-1 tracking-tight">
@@ -132,14 +132,14 @@ export default function LocationsSection() {
 
                 <div className="pt-3 border-t border-[#22242B] flex items-center justify-between text-xs font-semibold text-white">
                   <span>Reach per location</span>
-                  <span className="text-[#E52345]">{venue.viewers}</span>
+                  <span className="text-[#DC2626]">{venue.viewers}</span>
                 </div>
               </div>
             </div>
           ))}
 
           {/* Request Full List Card */}
-          <div className="bg-[#14151A] border border-dashed border-[#22242B] rounded-xl p-8 flex flex-col justify-between items-start hover:border-[#E52345] transition-colors">
+          <div className="bg-[#14151A] border border-dashed border-[#22242B] rounded-xl p-8 flex flex-col justify-between items-start hover:border-[#DC2626] transition-colors">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#9A9AA4] mb-2 block">
                 FULL NETWORK
@@ -153,7 +153,7 @@ export default function LocationsSection() {
             </div>
             <a
               href="#contact"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#E52345] hover:underline"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#DC2626] hover:underline"
             >
               Request Full Location List & Map →
             </a>

@@ -5,11 +5,11 @@
 :root {
   --background: #0B0C0E;
   --foreground: #FFFFFF;
-  --primary: #E52345;
+  --primary: #DC2626;
   --primary-foreground: #ffffff;
   --secondary: #14151A;
   --secondary-foreground: #ffffff;
-  --accent: #E52345;
+  --accent: #DC2626;
   --accent-foreground: #ffffff;
   --muted: #1A1C23;
   --muted-foreground: #9A9AA4;
@@ -17,7 +17,7 @@
   --card-foreground: #ffffff;
   --border: #22242B;
   --input: #22242B;
-  --ring: #E52345;
+  --ring: #DC2626;
   --radius: 0.75rem;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
@@ -56,7 +56,7 @@
   }
 
   .clean-card:hover {
-    border-color: #E52345;
+    border-color: #DC2626;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 }

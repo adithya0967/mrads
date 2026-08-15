@@ -17,7 +17,7 @@ export default function NetworkMapSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Scale & Metrics */}
           <div className="lg:col-span-6 flex flex-col items-start gap-6">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345]">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626]">
               BENGALURU NETWORK SCALE
             </span>
 
@@ -43,7 +43,7 @@ export default function NetworkMapSection() {
                 </div>
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-[#E52345]">20M+</div>
+                <div className="text-3xl font-extrabold text-[#DC2626]">20M+</div>
                 <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider mt-1">
                   Combined Reach
                 </div>
@@ -69,20 +69,20 @@ export default function NetworkMapSection() {
                     Greater Bengaluru Zones
                   </div>
                 </div>
-                <span className="w-2.5 h-2.5 rounded-full bg-[#E52345]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#DC2626]" />
               </div>
 
               <div className="flex flex-col gap-4">
                 {bengaluruHubs.map((hub) => (
                   <div
                     key={hub.name}
-                    className="bg-[#14151A] border border-[#22242B] rounded-xl p-4 flex items-center justify-between hover:border-[#E52345] transition-colors"
+                    className="bg-[#14151A] border border-[#22242B] rounded-xl p-4 flex items-center justify-between hover:border-[#DC2626] transition-colors"
                   >
                     <div>
                       <div className="text-sm font-extrabold text-white">{hub.name}</div>
                       <div className="text-xs text-[#9A9AA4] font-normal">{hub.type}</div>
                     </div>
-                    <span className="text-xs font-bold text-[#E52345] bg-[#E52345]/15 px-3 py-1 rounded-md border border-[#E52345]/30">
+                    <span className="text-xs font-bold text-[#DC2626] bg-[#DC2626]/15 px-3 py-1 rounded-md border border-[#DC2626]/30">
                       {hub.screens}
                     </span>
                   </div>

@@ -56,7 +56,7 @@ export default function OfferSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-3 block">
               WHAT WE DO
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -73,11 +73,11 @@ export default function OfferSection() {
           {services.map((svc) => (
             <div
               key={svc.title}
-              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#E52345] hover:shadow-md hover:shadow-black/50 transition-all duration-300 group"
+              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#DC2626] hover:shadow-md hover:shadow-black/50 transition-all duration-300 group"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6 group-hover:border-[#E52345]/50 transition-colors">
-                  <Icon name={svc.icon} size={20} className="text-white group-hover:text-[#E52345] transition-colors" />
+                <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6 group-hover:border-[#DC2626]/50 transition-colors">
+                  <Icon name={svc.icon} size={20} className="text-white group-hover:text-[#DC2626] transition-colors" />
                 </div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#9A9AA4] mb-2 block">
                   {svc.category}
@@ -92,7 +92,7 @@ export default function OfferSection() {
 
               <div className="pt-4 border-t border-[#22242B] flex items-center justify-between">
                 <span className="text-xs font-bold text-white">{svc.metric}</span>
-                <Icon name="ArrowRightIcon" size={14} className="text-[#E52345]" />
+                <Icon name="ArrowRightIcon" size={14} className="text-[#DC2626]" />
               </div>
             </div>
           ))}
@@ -103,11 +103,11 @@ export default function OfferSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Featured Copy */}
             <div className="lg:col-span-6 flex flex-col items-start gap-4">
-              <span className="inline-block px-3 py-1 bg-[#E52345]/15 border border-[#E52345]/30 rounded-md text-xs font-bold uppercase tracking-wider text-[#E52345]">
+              <span className="inline-block px-3 py-1 bg-[#DC2626]/15 border border-[#DC2626]/30 rounded-md text-xs font-bold uppercase tracking-wider text-[#DC2626]">
                 FEATURED SERVICE
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                Content Creation & <span className="text-[#E52345]">Production</span>
+                Content Creation & <span className="text-[#DC2626]">Production</span>
               </h3>
               <p className="text-base text-[#9A9AA4] leading-relaxed font-normal">
                 High-impact visual stories tailored for digital screen networks and digital media. We handle end-to-end creative scriptwriting, professional promo video shoots, motion graphics, and ready-to-publish vertical ads.
@@ -115,19 +115,19 @@ export default function OfferSection() {
 
               <div className="grid grid-cols-2 gap-4 w-full pt-2">
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
                   <span className="text-xs font-semibold text-white">Promo Video Shoots</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
                   <span className="text-xs font-semibold text-white">Motion Graphics & VFX</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
                   <span className="text-xs font-semibold text-white">Campaign Strategy</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E52345]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
                   <span className="text-xs font-semibold text-white">Ready-to-Publish Ads</span>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function OfferSection() {
               <div className="pt-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#E52345] text-white rounded-lg font-bold text-sm hover:bg-[#c91837] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#DC2626] text-white rounded-lg font-bold text-sm hover:bg-[#B91C1C] transition-colors"
                 >
                   Request Production Portfolio
                   <Icon name="ArrowRightIcon" size={14} />

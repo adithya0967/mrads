@@ -23,13 +23,13 @@ export default function AboutSection() {
 
           {/* Right Column: Editorial Copy */}
           <div className="lg:col-span-6 flex flex-col items-start gap-5">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345]">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626]">
               WHO WE ARE
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
               Bengaluru's Hyperlocal <br />
-              <span className="text-[#E52345]">Advertising Network</span>
+              <span className="text-[#DC2626]">Advertising Network</span>
             </h2>
 
             <p className="text-base sm:text-lg text-[#9A9AA4] leading-relaxed font-normal">
@@ -48,7 +48,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div>
-                <div className="text-2xl font-extrabold text-[#E52345]">12× / Hr</div>
+                <div className="text-2xl font-extrabold text-[#DC2626]">12× / Hr</div>
                 <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider mt-0.5">
                   Repeated Ad Frequency
                 </div>

@@ -19,11 +19,11 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="md:col-span-5 flex flex-col items-start gap-4">
             <a href="#" className="flex items-center gap-2" aria-label="Mr. Ads Home">
-              <span className="w-8 h-8 rounded-lg bg-[#E52345] text-white flex items-center justify-center font-extrabold text-sm tracking-tight shadow-sm">
+              <span className="w-8 h-8 rounded-lg bg-[#DC2626] text-white flex items-center justify-center font-extrabold text-sm tracking-tight shadow-sm">
                 MA
               </span>
               <span className="font-extrabold text-xl tracking-tight text-white">
-                Mr.<span className="text-[#E52345]">Ads</span>
+                Mr.<span className="text-[#DC2626]">Ads</span>
               </span>
             </a>
             <p className="text-sm text-[#9A9AA4] font-normal leading-relaxed max-w-sm">
@@ -38,7 +38,7 @@ export default function Footer() {
             </span>
             <div className="flex flex-col gap-2.5 text-sm font-semibold text-[#9A9AA4]">
               {quickLinks.map((link) => (
-                <a key={link.href} href={link.href} className="hover:text-[#E52345] transition-colors">
+                <a key={link.href} href={link.href} className="hover:text-[#DC2626] transition-colors">
                   {link.label}
                 </a>
               ))}
@@ -51,16 +51,16 @@ export default function Footer() {
               Contact Us
             </span>
             <div className="flex flex-col gap-2.5 text-sm font-medium text-[#9A9AA4]">
-              <a href="tel:+919686544644" className="hover:text-[#E52345] transition-colors flex items-center gap-2">
-                <Icon name="PhoneIcon" size={15} className="text-[#E52345]" />
+              <a href="tel:+919686544644" className="hover:text-[#DC2626] transition-colors flex items-center gap-2">
+                <Icon name="PhoneIcon" size={15} className="text-[#DC2626]" />
                 +91 96865 44644
               </a>
-              <a href="mailto:Knowus@mr-ads.in" className="hover:text-[#E52345] transition-colors flex items-center gap-2">
-                <Icon name="EnvelopeIcon" size={15} className="text-[#E52345]" />
+              <a href="mailto:Knowus@mr-ads.in" className="hover:text-[#DC2626] transition-colors flex items-center gap-2">
+                <Icon name="EnvelopeIcon" size={15} className="text-[#DC2626]" />
                 Knowus@mr-ads.in
               </a>
               <div className="flex items-center gap-2">
-                <Icon name="MapPinIcon" size={15} className="text-[#E52345]" />
+                <Icon name="MapPinIcon" size={15} className="text-[#DC2626]" />
                 Bengaluru, Karnataka, India
               </div>
             </div>

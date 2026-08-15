@@ -57,7 +57,7 @@ export default function PricingSection() {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-3 block">
             PRICING & PACKAGES
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -74,11 +74,11 @@ export default function PricingSection() {
             <div
               key={plan.name}
               className={`bg-[#14151A] border rounded-xl p-8 flex flex-col justify-between transition-all duration-300 relative shadow-md ${
-                plan.popular ? 'border-[#E52345] ring-1 ring-[#E52345]' : 'border-[#22242B] hover:border-white'
+                plan.popular ? 'border-[#DC2626] ring-1 ring-[#DC2626]' : 'border-[#22242B] hover:border-white'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#E52345] text-white px-3.5 py-1 rounded-md text-[11px] font-extrabold uppercase tracking-wider">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#DC2626] text-white px-3.5 py-1 rounded-md text-[11px] font-extrabold uppercase tracking-wider">
                   Most Popular
                 </div>
               )}
@@ -101,7 +101,7 @@ export default function PricingSection() {
                 <ul className="flex flex-col gap-3 mb-8">
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex items-center gap-2.5 text-xs text-white font-medium">
-                      <Icon name="CheckCircleIcon" size={16} className="text-[#E52345] shrink-0" />
+                      <Icon name="CheckCircleIcon" size={16} className="text-[#DC2626] shrink-0" />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -112,7 +112,7 @@ export default function PricingSection() {
                 href="#contact"
                 className={`w-full text-center py-3.5 rounded-lg font-bold text-sm transition-colors ${
                   plan.popular
-                    ? 'bg-[#E52345] text-white hover:bg-[#c91837]'
+                    ? 'bg-[#DC2626] text-white hover:bg-[#B91C1C]'
                     : 'bg-[#1E2028] text-white hover:bg-[#2A2D37]'
                 }`}
               >
@@ -129,7 +129,7 @@ export default function PricingSection() {
           </div>
           <a
             href="#contact"
-            className="text-xs font-bold text-[#E52345] uppercase tracking-wider hover:underline shrink-0"
+            className="text-xs font-bold text-[#DC2626] uppercase tracking-wider hover:underline shrink-0"
           >
             Request Custom Channel Quote →
           </a>

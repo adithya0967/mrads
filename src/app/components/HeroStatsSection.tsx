@@ -22,7 +22,7 @@ export default function HeroStatsSection() {
               }`}
             >
               <div className="flex items-center gap-2 mb-1">
-                <span className="w-1.5 h-6 bg-[#E52345] rounded-full" />
+                <span className="w-1.5 h-6 bg-[#DC2626] rounded-full" />
                 <span className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
                   {stat.value}
                 </span>

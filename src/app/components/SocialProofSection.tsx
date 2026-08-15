@@ -19,7 +19,7 @@ export default function SocialProofSection() {
   return (
     <section id="clients" className="py-16 bg-[#0B0C0E] border-b border-[#22242B] overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 mb-8 text-center">
-        <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-2 block">
+        <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-2 block">
           TRUSTED PARTNERS
         </span>
         <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">

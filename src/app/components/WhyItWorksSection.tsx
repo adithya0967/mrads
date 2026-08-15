@@ -32,7 +32,7 @@ export default function WhyItWorksSection() {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-[#E52345] mb-3 block">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#DC2626] mb-3 block">
             WHY MR. ADS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -45,11 +45,11 @@ export default function WhyItWorksSection() {
           {whyPoints.map((point) => (
             <div
               key={point.title}
-              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#E52345] transition-all duration-300 shadow-md"
+              className="bg-[#14151A] border border-[#22242B] rounded-xl p-8 flex flex-col justify-between hover:border-[#DC2626] transition-all duration-300 shadow-md"
             >
               <div>
                 <div className="w-10 h-10 rounded-lg bg-[#0B0C0E] border border-[#22242B] flex items-center justify-center mb-6">
-                  <Icon name={point.icon as any} size={20} className="text-[#E52345]" />
+                  <Icon name={point.icon as any} size={20} className="text-[#DC2626]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-white mb-3 tracking-tight">
                   {point.title}

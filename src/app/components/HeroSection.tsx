@@ -10,16 +10,16 @@ export default function HeroSection() {
           {/* Left Column: Text & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start gap-6">
             {/* Small red eyebrow label */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#E52345]/15 border border-[#E52345]/30">
-              <span className="w-2 h-2 rounded-full bg-[#E52345]" />
-              <span className="text-xs font-bold uppercase tracking-wider text-[#E52345]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#DC2626]/15 border border-[#DC2626]/30">
+              <span className="w-2 h-2 rounded-full bg-[#DC2626]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#DC2626]">
                 Bengaluru's Premium Advertising Network
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
               Reach Customers <br />
-              <span className="text-[#E52345]">Where They Live, Work & Dine</span>
+              <span className="text-[#DC2626]">Where They Live, Work & Dine</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[#9A9AA4] font-normal leading-relaxed max-w-2xl">
@@ -30,7 +30,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#contact"
-                className="px-7 py-3.5 bg-[#E52345] text-white rounded-lg font-bold text-base hover:bg-[#c91837] transition-colors shadow-md shadow-black/50"
+                className="px-7 py-3.5 bg-[#DC2626] text-white rounded-lg font-bold text-base hover:bg-[#B91C1C] transition-colors shadow-md shadow-black/50"
               >
                 Plan Your Campaign
               </a>
