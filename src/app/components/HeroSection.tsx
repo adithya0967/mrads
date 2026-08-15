@@ -1,7 +1,6 @@
 'use client';
 
-import React from 'react';
-import AppImage from '@/components/ui/AppImage';
+import ActiveAdScreen from './ActiveAdScreen';
 
 export default function HeroSection() {
   return (
@@ -44,32 +43,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Premium Photography with Understated Stat Badge */}
+          {/* Right Column: Active Live Digital Ad Screen */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-[#22242B] shadow-lg shadow-black/50 bg-[#14151A] aspect-[4/3] sm:aspect-[14/10]">
-              <AppImage
-                src="https://images.unsplash.com/photo-1556700485-cc335d219007"
-                alt="Premium restaurant in Bengaluru with subtle digital display screen for advertising"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-
-              {/* Small, understated stat overlay */}
-              <div className="absolute bottom-5 left-5 right-5 bg-[#14151A]/95 backdrop-blur-md border border-[#22242B] rounded-xl p-4 flex items-center justify-between shadow-md">
-                <div>
-                  <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">Active Screens</div>
-                  <div className="text-xl font-extrabold text-white">30,000+</div>
-                </div>
-                <div className="h-8 w-[1px] bg-[#22242B]" />
-                <div>
-                  <div className="text-xs font-semibold text-[#9A9AA4] uppercase tracking-wider">Combined Reach</div>
-                  <div className="text-xl font-extrabold text-[#E52345]">20M+</div>
-                </div>
-              </div>
-            </div>
+            <ActiveAdScreen />
           </div>
         </div>
       </div>
