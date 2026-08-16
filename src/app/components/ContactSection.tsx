@@ -87,38 +87,38 @@ export default function ContactSection() {
                   </p>
 
                   <div className="flex flex-col gap-6">
-                    <a href="tel:+919686544644" className="flex items-center gap-4 group">
-                      <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center group-hover:border-[#B4233C] transition-colors">
-                        <Icon name="PhoneIcon" size={18} className="text-[#B4233C]" />
+                    <a href="tel:+919686544644" className="pro-card p-4 rounded-2xl border border-white/10 flex items-center gap-4 group">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center group-hover:border-[#B4233C]/60 group-hover:scale-110 shadow-md transition-all">
+                        <Icon name="PhoneIcon" size={20} className="text-[#E85D75]" />
                       </div>
                       <div>
-                        <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                        <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider">
                           Phone & WhatsApp
                         </div>
-                        <div className="text-base font-extrabold text-[#F5F5F5]">+91 96865 44644</div>
+                        <div className="text-base font-extrabold text-[#F5F5F5] group-hover:text-white transition-colors">+91 96865 44644</div>
                       </div>
                     </a>
 
-                    <a href="mailto:Knowus@mr-ads.in" className="flex items-center gap-4 group">
-                      <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center group-hover:border-[#B4233C] transition-colors">
-                        <Icon name="EnvelopeIcon" size={18} className="text-[#B4233C]" />
+                    <a href="mailto:Knowus@mr-ads.in" className="pro-card p-4 rounded-2xl border border-white/10 flex items-center gap-4 group">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center group-hover:border-[#B4233C]/60 group-hover:scale-110 shadow-md transition-all">
+                        <Icon name="EnvelopeIcon" size={20} className="text-[#E85D75]" />
                       </div>
                       <div>
-                        <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                        <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider">
                           Email Inquiry
                         </div>
-                        <div className="text-base font-extrabold text-[#F5F5F5]">
+                        <div className="text-base font-extrabold text-[#F5F5F5] group-hover:text-white transition-colors">
                           Knowus@mr-ads.in
                         </div>
                       </div>
                     </a>
 
-                    <div className="flex items-center gap-4">
-                      <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center">
-                        <Icon name="MapPinIcon" size={18} className="text-[#B4233C]" />
+                    <div className="pro-card p-4 rounded-2xl border border-white/10 flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center shadow-md">
+                        <Icon name="MapPinIcon" size={20} className="text-[#E85D75]" />
                       </div>
                       <div>
-                        <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                        <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider">
                           Headquarters
                         </div>
                         <div className="text-base font-extrabold text-[#F5F5F5]">
@@ -129,9 +129,12 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="bg-[#111318] border border-[#252830] rounded-xl p-5 w-full mt-8">
-                  <div className="text-xs font-bold text-[#F5F5F5] mb-1">Response Commitment</div>
-                  <p className="text-xs text-[#9A9CA5]">
+                <div className="glass-card-glow border border-white/10 rounded-2xl p-5 w-full mt-8 shadow-lg">
+                  <div className="text-xs font-extrabold text-[#F5F5F5] mb-1 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#16C784]" />
+                    Response Commitment
+                  </div>
+                  <p className="text-xs text-[#9A9CA5] leading-relaxed font-normal">
                     All campaign inquiries receive a custom proposal within 24 business hours.
                   </p>
                 </div>
@@ -141,7 +144,7 @@ export default function ContactSection() {
             {/* Right: B2B Lead Form */}
             <div className="lg:col-span-7">
               <ScrollReveal direction="left" delay={100}>
-              <div className="bg-[#111318] border border-[#252830] rounded-2xl p-8 md:p-10 shadow-md">
+              <div className="glass-card-glow border border-white/15 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
                 {submitted ? (
                   <div className="py-12 text-center flex flex-col items-center gap-4">
                     <div className="w-14 h-14 rounded-full bg-[#641C2B]/30 flex items-center justify-center text-[#B4233C]">

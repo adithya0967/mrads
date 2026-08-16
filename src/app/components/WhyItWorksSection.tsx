@@ -60,19 +60,19 @@ export default function WhyItWorksSection() {
               totalItems={whyPoints.length}
               staggerDelay={160}
             >
-              <div className="pro-card rounded-2xl p-8 flex flex-col justify-between h-full group">
+              <div className="pro-card rounded-3xl p-8 flex flex-col justify-between h-full group overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[#B4233C] before:to-transparent before:opacity-0 group-hover:before:opacity-100 before:transition-opacity duration-300">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E222D] to-[#111318] border border-[#2D313E] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#B4233C]/50 group-hover:shadow-[0_0_20px_rgba(180,35,60,0.3)] transition-all duration-300">
+                  <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-[#252B3B] to-[#141720] border border-white/15 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#B4233C]/60 group-hover:shadow-[0_0_24px_rgba(180,35,60,0.35)] transition-all duration-300">
                     <Icon
                       name={point.icon}
-                      size={22}
-                      className="text-[#B4233C] group-hover:scale-110 transition-transform"
+                      size={24}
+                      className="text-[#E85D75] group-hover:scale-110 transition-transform"
                     />
                   </div>
                   <h3 className="text-xl font-extrabold text-[#F5F5F5] mb-3 tracking-tight group-hover:text-white transition-colors">
                     {point.title}
                   </h3>
-                  <p className="text-sm text-[#9A9CA5] leading-relaxed font-normal">
+                  <p className="text-sm text-[#9A9CA5] leading-relaxed font-normal group-hover:text-[#B0B3C3] transition-colors">
                     {point.description}
                   </p>
                 </div>

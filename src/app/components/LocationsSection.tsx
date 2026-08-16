@@ -97,11 +97,11 @@ export default function LocationsSection() {
               totalItems={environmentCategories.length}
               staggerDelay={90}
             >
-              <div className="pro-card rounded-xl p-4 flex flex-col items-start gap-2 group cursor-pointer hover:border-[#B4233C]">
-                <div className="w-8 h-8 rounded-lg bg-[#090A0C] flex items-center justify-center border border-[#252830] group-hover:border-[#B4233C]/50 transition-colors">
+              <div className="pro-card rounded-2xl p-4 flex flex-col items-start gap-2.5 group cursor-pointer border border-white/10 hover:border-[#B4233C]/60 hover:shadow-[0_8px_24px_rgba(180,35,60,0.2)] transition-all duration-300">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1E222D] to-[#111318] flex items-center justify-center border border-white/10 group-hover:border-[#B4233C]/60 group-hover:scale-110 transition-all duration-300">
                   <Icon
                     name={cat.icon}
-                    size={16}
+                    size={17}
                     className="text-[#F5F5F5] group-hover:text-[#B4233C] transition-colors"
                   />
                 </div>
@@ -109,7 +109,7 @@ export default function LocationsSection() {
                   <div className="text-sm font-extrabold text-[#F5F5F5] leading-snug group-hover:text-white transition-colors">
                     {cat.name}
                   </div>
-                  <div className="text-[11px] font-semibold text-[#B4233C]">{cat.count}</div>
+                  <div className="text-[11px] font-extrabold text-[#E85D75] mt-0.5">{cat.count}</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -120,7 +120,7 @@ export default function LocationsSection() {
         <ScrollReveal direction="up" delay={100}>
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h3 className="text-xl font-extrabold text-[#F5F5F5] tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#F5F5F5] tracking-tight">
                 Featured Venue Partners in Bengaluru
               </h3>
               <p className="text-xs font-medium text-[#9A9CA5] mt-1">
@@ -133,14 +133,14 @@ export default function LocationsSection() {
               <button
                 onClick={() => scroll('left')}
                 aria-label="Scroll left"
-                className="w-9 h-9 rounded-xl bg-[#111318] border border-[#252830] flex items-center justify-center text-[#F5F5F5] hover:bg-[#1E222D] hover:border-[#B4233C] transition-all"
+                className="w-10 h-10 rounded-xl bg-[#141720] border border-white/15 flex items-center justify-center text-[#F5F5F5] hover:bg-[#1E2332] hover:border-[#B4233C] hover:text-white transition-all shadow-md active:scale-95"
               >
                 <Icon name="ChevronLeftIcon" size={18} />
               </button>
               <button
                 onClick={() => scroll('right')}
                 aria-label="Scroll right"
-                className="w-9 h-9 rounded-xl bg-[#111318] border border-[#252830] flex items-center justify-center text-[#F5F5F5] hover:bg-[#1E222D] hover:border-[#B4233C] transition-all"
+                className="w-10 h-10 rounded-xl bg-[#141720] border border-white/15 flex items-center justify-center text-[#F5F5F5] hover:bg-[#1E2332] hover:border-[#B4233C] hover:text-white transition-all shadow-md active:scale-95"
               >
                 <Icon name="ChevronRightIcon" size={18} />
               </button>
@@ -152,12 +152,12 @@ export default function LocationsSection() {
         <ScrollReveal direction="up" delay={150}>
           <div
             ref={scrollRef}
-            className="flex gap-8 overflow-x-auto pb-4 no-scrollbar custom-horizontal-scroll"
+            className="flex gap-8 overflow-x-auto pb-6 no-scrollbar custom-horizontal-scroll"
           >
             {featuredVenues.map((venue) => (
               <div
                 key={venue.name}
-                className="pro-card rounded-2xl overflow-hidden shrink-0 w-[300px] sm:w-[360px] group flex flex-col justify-between"
+                className="pro-card rounded-3xl overflow-hidden shrink-0 w-[300px] sm:w-[360px] group flex flex-col justify-between border border-white/10"
               >
                 <div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#090A0C]">
@@ -168,35 +168,42 @@ export default function LocationsSection() {
                       className="object-cover group-hover:scale-108 transition-transform duration-700"
                       sizes="(max-width: 768px) 300px, 360px"
                     />
-                    <div className="absolute top-3 right-3 bg-[#090A0C]/90 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 text-[11px] font-bold text-[#F5F5F5] flex items-center gap-1.5 shadow-md">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1016] via-transparent to-black/30" />
+                    <div className="absolute top-3 right-3 bg-[#090A0C]/90 backdrop-blur-md border border-white/15 rounded-full px-3 py-1 text-[11px] font-extrabold text-[#F5F5F5] flex items-center gap-1.5 shadow-lg">
                       <span className="w-2 h-2 rounded-full bg-[#16C784] animate-pulse" />
                       Active Screen
                     </div>
                   </div>
                   <div className="p-6">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#B4233C] mb-1">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#641C2B]/30 border border-[#B4233C]/40 text-[10px] font-extrabold uppercase tracking-wider text-[#E85D75] mb-2">
                       {venue.type}
-                    </div>
+                    </span>
                     <h4 className="text-lg font-extrabold text-[#F5F5F5] mb-1 tracking-tight group-hover:text-white transition-colors">
                       {venue.name}
                     </h4>
-                    <p className="text-xs font-medium text-[#9A9CA5] mb-4">{venue.area}</p>
+                    <p className="text-xs font-medium text-[#9A9CA5] flex items-center gap-1.5 mt-1">
+                      <Icon name="MapPinIcon" size={13} className="text-[#B4233C] shrink-0" />
+                      {venue.area}
+                    </p>
                   </div>
                 </div>
 
                 <div className="px-6 pb-6">
-                  <div className="pt-3 border-t border-[#252830] flex items-center justify-between text-xs font-semibold text-[#F5F5F5]">
+                  <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-[#F5F5F5]">
                     <span className="text-[#9A9CA5]">Reach per location</span>
-                    <span className="text-[#B4233C] font-extrabold">{venue.viewers}</span>
+                    <span className="text-[#E85D75] font-extrabold px-2.5 py-1 rounded-lg bg-[#181C26] border border-white/10">
+                      {venue.viewers}
+                    </span>
                   </div>
                 </div>
               </div>
             ))}
 
             {/* Request Full List Card */}
-            <div className="pro-card border-dashed border-[#252830] rounded-2xl p-8 shrink-0 w-[300px] sm:w-[360px] flex flex-col justify-between items-start hover:border-[#B4233C] transition-all group">
+            <div className="glass-card-glow border border-dashed border-white/20 rounded-3xl p-8 shrink-0 w-[300px] sm:w-[360px] flex flex-col justify-between items-start hover:border-[#B4233C] transition-all group shadow-xl">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#B4233C] mb-2 block">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1E2B] border border-white/10 text-[10px] font-extrabold uppercase tracking-wider text-[#E85D75] mb-4">
+                  <Icon name="SparklesIcon" size={12} />
                   FULL NETWORK
                 </span>
                 <h4 className="text-xl font-extrabold text-[#F5F5F5] mb-3 tracking-tight group-hover:text-white transition-colors">
@@ -209,9 +216,9 @@ export default function LocationsSection() {
               </div>
               <a
                 href="#contact"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#B4233C] hover:text-[#D13B55] transition-colors group-hover:translate-x-1"
+                className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#B4233C] to-[#D13B55] text-white text-xs font-bold hover:from-[#C82A45] hover:to-[#E54863] transition-all shadow-lg shadow-[#B4233C]/20 group-hover:translate-x-1"
               >
-                Request Full Location Map & List
+                Request Location Map & List
                 <Icon name="ArrowRightIcon" size={14} />
               </a>
             </div>

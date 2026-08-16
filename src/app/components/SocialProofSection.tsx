@@ -38,16 +38,16 @@ export default function SocialProofSection() {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#090A0C] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#090A0C] to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-6 animate-marquee w-max py-3">
+        <div className="flex gap-6 animate-marquee w-max py-4">
           {doubledLogos.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl border border-white/10 bg-gradient-to-b from-[#161922] to-[#101217] shadow-lg hover:border-[#B4233C]/60 hover:scale-105 transition-all duration-300 group cursor-default"
+              className="pro-card shrink-0 flex items-center gap-3.5 px-6 py-3.5 rounded-2xl border border-white/10 bg-gradient-to-r from-[#181C26]/90 to-[#10121A]/90 backdrop-blur-md shadow-xl hover:border-[#B4233C]/70 hover:scale-105 transition-all duration-300 group cursor-default"
             >
-              <div className="w-8 h-8 rounded-lg bg-[#090A0C] border border-[#2B2F3D] flex items-center justify-center text-xs font-extrabold text-[#F5F5F5] group-hover:border-[#B4233C] group-hover:text-[#B4233C] transition-colors">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center text-xs font-extrabold text-[#F5F5F5] group-hover:border-[#B4233C]/60 group-hover:text-[#E85D75] group-hover:shadow-[0_0_12px_rgba(180,35,60,0.4)] transition-all">
                 {logo.initials}
               </div>
-              <span className="font-bold text-sm text-[#F5F5F5] group-hover:text-white transition-colors">
+              <span className="font-extrabold text-sm text-[#F5F5F5] group-hover:text-white tracking-tight transition-colors">
                 {logo.name}
               </span>
             </div>

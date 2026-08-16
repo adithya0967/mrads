@@ -58,20 +58,20 @@ export default function HowItWorksSection() {
               totalItems={processSteps.length}
               staggerDelay={160}
             >
-              <div className="pro-card rounded-2xl p-8 flex flex-col justify-between h-full group relative">
+              <div className="pro-card rounded-3xl p-8 flex flex-col justify-between h-full group relative overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[#B4233C] before:to-transparent before:opacity-0 group-hover:before:opacity-100 before:transition-opacity duration-300">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-extrabold text-[#B4233C] tracking-tight group-hover:scale-110 transition-transform block">
+                    <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B4233C] to-[#E85D75] tracking-tight group-hover:scale-110 transition-transform block">
                       {stepItem.step}
                     </span>
-                    <span className="w-8 h-8 rounded-full bg-[#1A1D26] border border-[#2D313E] flex items-center justify-center text-xs font-extrabold text-[#9A9CA5] group-hover:border-[#B4233C]/50 group-hover:text-white transition-colors">
-                      Step
+                    <span className="px-3 py-1 rounded-full bg-[#181C26] border border-white/10 text-[10px] font-extrabold uppercase tracking-widest text-[#9A9CA5] group-hover:border-[#B4233C]/50 group-hover:text-white transition-colors">
+                      Step {stepItem.step}
                     </span>
                   </div>
                   <h3 className="text-xl font-extrabold text-[#F5F5F5] mb-3 tracking-tight group-hover:text-white transition-colors">
                     {stepItem.title}
                   </h3>
-                  <p className="text-sm text-[#9A9CA5] leading-relaxed font-normal">
+                  <p className="text-sm text-[#9A9CA5] leading-relaxed font-normal group-hover:text-[#B0B3C3] transition-colors">
                     {stepItem.description}
                   </p>
                 </div>

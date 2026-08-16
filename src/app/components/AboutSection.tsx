@@ -52,16 +52,22 @@ export default function AboutSection() {
                   customers are relaxed, attentive, and actively making purchasing decisions.
                 </p>
 
-                <div className="pt-6 grid grid-cols-2 gap-6 border-t border-[#252830] w-full">
-                  <div className="pro-card p-4 rounded-xl">
-                    <div className="text-2xl font-extrabold text-[#F5F5F5]">2,000–3,000</div>
-                    <div className="text-[11px] font-semibold text-[#9A9CA5] uppercase tracking-wider mt-0.5">
+                <div className="pt-6 grid grid-cols-2 gap-6 border-t border-white/10 w-full">
+                  <div className="pro-card p-5 rounded-2xl border border-white/10 shadow-lg group">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#F5F5F5] group-hover:text-white transition-colors">
+                      2,000–3,000
+                    </div>
+                    <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider mt-1 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#16C784]" />
                       Daily Viewers / Location
                     </div>
                   </div>
-                  <div className="pro-card p-4 rounded-xl">
-                    <div className="text-2xl font-extrabold text-[#B4233C]">12× / Hr</div>
-                    <div className="text-[11px] font-semibold text-[#9A9CA5] uppercase tracking-wider mt-0.5">
+                  <div className="pro-card p-5 rounded-2xl border border-white/10 shadow-lg group">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#E85D75] group-hover:text-[#F06E84] transition-colors">
+                      12× / Hr
+                    </div>
+                    <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider mt-1 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#B4233C]" />
                       Repeated Ad Frequency
                     </div>
                   </div>
