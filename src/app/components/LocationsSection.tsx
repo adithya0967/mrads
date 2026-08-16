@@ -90,7 +90,13 @@ export default function LocationsSection() {
         {/* Environment Categories Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 mb-16">
           {environmentCategories.map((cat, idx) => (
-            <ScrollReveal key={cat.name} direction="up" delay={idx * 50}>
+            <ScrollReveal
+              key={cat.name}
+              direction="up"
+              staggerIndex={idx}
+              totalItems={environmentCategories.length}
+              staggerDelay={90}
+            >
               <div className="pro-card rounded-xl p-4 flex flex-col items-start gap-2 group cursor-pointer hover:border-[#B4233C]">
                 <div className="w-8 h-8 rounded-lg bg-[#090A0C] flex items-center justify-center border border-[#252830] group-hover:border-[#B4233C]/50 transition-colors">
                   <Icon

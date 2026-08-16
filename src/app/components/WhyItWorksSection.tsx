@@ -53,7 +53,13 @@ export default function WhyItWorksSection() {
         {/* 4 Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyPoints.map((point, idx) => (
-            <ScrollReveal key={point.title} direction="up" delay={idx * 90}>
+            <ScrollReveal
+              key={point.title}
+              direction="up"
+              staggerIndex={idx}
+              totalItems={whyPoints.length}
+              staggerDelay={160}
+            >
               <div className="pro-card rounded-2xl p-8 flex flex-col justify-between h-full group">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E222D] to-[#111318] border border-[#2D313E] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#B4233C]/50 group-hover:shadow-[0_0_20px_rgba(180,35,60,0.3)] transition-all duration-300">

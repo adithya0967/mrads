@@ -51,7 +51,13 @@ export default function HowItWorksSection() {
         {/* 4-Step Horizontal Timeline */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           {processSteps.map((stepItem, idx) => (
-            <ScrollReveal key={stepItem.step} direction="up" delay={idx * 100}>
+            <ScrollReveal
+              key={stepItem.step}
+              direction="up"
+              staggerIndex={idx}
+              totalItems={processSteps.length}
+              staggerDelay={160}
+            >
               <div className="pro-card rounded-2xl p-8 flex flex-col justify-between h-full group relative">
                 <div>
                   <div className="flex items-center justify-between mb-6">

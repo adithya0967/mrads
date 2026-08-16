@@ -5,11 +5,14 @@ import React, { useEffect, useRef, useState } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // Delay in milliseconds
+  delay?: number; // Delay in milliseconds (fallback if staggerIndex not provided)
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   duration?: number; // Duration in milliseconds
   threshold?: number;
   once?: boolean;
+  staggerIndex?: number; // Index of item in grid/list (0, 1, 2, ...)
+  totalItems?: number; // Total number of items in grid/list
+  staggerDelay?: number; // Delay per item in ms (default 140ms)
 }
 
 export default function ScrollReveal({
@@ -17,9 +20,11 @@ export default function ScrollReveal({
   className = '',
   delay = 0,
   direction = 'up',
-  duration = 600,
-  threshold = 0.15,
-  once = true,
+  duration = 550,
+  threshold = 0.12,
+  once = false,
+  staggerIndex,
+  staggerDelay = 140,
 }: ScrollRevealProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -41,7 +46,7 @@ export default function ScrollReveal({
           if (once) {
             observer.unobserve(node);
           }
-        } else if (!once) {
+        } else {
           setIsVisible(false);
         }
       },
@@ -55,23 +60,33 @@ export default function ScrollReveal({
     };
   }, [threshold, once]);
 
-  // Initial transform based on direction
+  // Compute standard stagger delay
+  const getComputedDelay = (): number => {
+    if (staggerIndex !== undefined) {
+      return staggerIndex * staggerDelay;
+    }
+    return delay;
+  };
+
+  // Standard transform based on direction
   const getTransform = () => {
-    if (isVisible) return 'translate3d(0, 0, 0)';
+    if (isVisible) return 'translate3d(0, 0, 0) scale(1)';
     switch (direction) {
       case 'up':
-        return 'translate3d(0, 32px, 0)';
+        return 'translate3d(0, 36px, 0) scale(0.97)';
       case 'down':
-        return 'translate3d(0, -32px, 0)';
+        return 'translate3d(0, -36px, 0) scale(0.97)';
       case 'left':
-        return 'translate3d(32px, 0, 0)';
+        return 'translate3d(36px, 0, 0) scale(0.97)';
       case 'right':
-        return 'translate3d(-32px, 0, 0)';
+        return 'translate3d(-36px, 0, 0) scale(0.97)';
       case 'none':
       default:
-        return 'translate3d(0, 0, 0)';
+        return 'translate3d(0, 20px, 0) scale(0.97)';
     }
   };
+
+  const computedDelay = isVisible ? getComputedDelay() : 0;
 
   return (
     <div
@@ -83,7 +98,7 @@ export default function ScrollReveal({
         transitionProperty: 'opacity, transform',
         transitionDuration: `${duration}ms`,
         transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-        transitionDelay: `${delay}ms`,
+        transitionDelay: `${computedDelay}ms`,
         willChange: 'opacity, transform',
       }}
     >

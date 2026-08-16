@@ -78,7 +78,13 @@ export default function PricingSection() {
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-12">
           {plans.map((plan, idx) => (
-            <ScrollReveal key={plan.name} direction="up" delay={idx * 100}>
+            <ScrollReveal
+              key={plan.name}
+              direction="up"
+              staggerIndex={idx}
+              totalItems={plans.length}
+              staggerDelay={180}
+            >
               <div
                 className={`pro-card rounded-2xl p-8 flex flex-col justify-between h-full transition-all duration-300 relative group ${
                   plan.popular

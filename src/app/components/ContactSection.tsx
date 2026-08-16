@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const budgetOptions = [
   { value: '', label: 'Select Monthly Budget' },
@@ -37,7 +38,7 @@ export default function ContactSection() {
       {/* Major CTA Block */}
       <div className="bg-[#111318] text-[#F5F5F5] py-20 md:py-28 border-b border-[#252830]">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
-          <div className="max-w-2xl">
+          <ScrollReveal direction="up" delay={0} className="max-w-2xl">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
               GET STARTED TODAY
             </span>
@@ -47,9 +48,9 @@ export default function ContactSection() {
             <p className="text-[#9A9CA5] text-base md:text-lg font-normal leading-relaxed">
               Let's build a hyperlocal campaign around your audience, locations, and goals.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="flex flex-wrap items-center gap-4 shrink-0">
+          <ScrollReveal direction="up" delay={100} className="flex flex-wrap items-center gap-4 shrink-0">
             <a
               href="#inquiry-form"
               className="px-7 py-3.5 bg-[#B4233C] text-white rounded-lg font-bold text-base hover:bg-[#D13B55] transition-colors shadow-md shadow-black/50"
@@ -62,7 +63,7 @@ export default function ContactSection() {
             >
               Talk to Our Team
             </a>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 
@@ -72,71 +73,74 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left: Direct Contact Information */}
             <div className="lg:col-span-5 flex flex-col justify-between items-start gap-8">
-              <div>
-                <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
-                  CONTACT DETAILS
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F5F5F5] tracking-tight mb-4">
-                  Speak Directly With Our Campaign Team
-                </h3>
-                <p className="text-[#9A9CA5] text-base leading-relaxed mb-8">
-                  We'll provide exact screen counts, location availability, and campaign estimates
-                  for your brand.
-                </p>
+              <ScrollReveal direction="right" delay={0}>
+                <div>
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
+                    CONTACT DETAILS
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F5F5F5] tracking-tight mb-4">
+                    Speak Directly With Our Campaign Team
+                  </h3>
+                  <p className="text-[#9A9CA5] text-base leading-relaxed mb-8">
+                    We'll provide exact screen counts, location availability, and campaign estimates
+                    for your brand.
+                  </p>
 
-                <div className="flex flex-col gap-6">
-                  <a href="tel:+919686544644" className="flex items-center gap-4 group">
-                    <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center group-hover:border-[#B4233C] transition-colors">
-                      <Icon name="PhoneIcon" size={18} className="text-[#B4233C]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
-                        Phone & WhatsApp
+                  <div className="flex flex-col gap-6">
+                    <a href="tel:+919686544644" className="flex items-center gap-4 group">
+                      <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center group-hover:border-[#B4233C] transition-colors">
+                        <Icon name="PhoneIcon" size={18} className="text-[#B4233C]" />
                       </div>
-                      <div className="text-base font-extrabold text-[#F5F5F5]">+91 96865 44644</div>
-                    </div>
-                  </a>
+                      <div>
+                        <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                          Phone & WhatsApp
+                        </div>
+                        <div className="text-base font-extrabold text-[#F5F5F5]">+91 96865 44644</div>
+                      </div>
+                    </a>
 
-                  <a href="mailto:Knowus@mr-ads.in" className="flex items-center gap-4 group">
-                    <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center group-hover:border-[#B4233C] transition-colors">
-                      <Icon name="EnvelopeIcon" size={18} className="text-[#B4233C]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
-                        Email Inquiry
+                    <a href="mailto:Knowus@mr-ads.in" className="flex items-center gap-4 group">
+                      <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center group-hover:border-[#B4233C] transition-colors">
+                        <Icon name="EnvelopeIcon" size={18} className="text-[#B4233C]" />
                       </div>
-                      <div className="text-base font-extrabold text-[#F5F5F5]">
-                        Knowus@mr-ads.in
+                      <div>
+                        <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                          Email Inquiry
+                        </div>
+                        <div className="text-base font-extrabold text-[#F5F5F5]">
+                          Knowus@mr-ads.in
+                        </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center">
-                      <Icon name="MapPinIcon" size={18} className="text-[#B4233C]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
-                        Headquarters
+                    <div className="flex items-center gap-4">
+                      <div className="w-11 h-11 rounded-lg bg-[#111318] border border-[#252830] flex items-center justify-center">
+                        <Icon name="MapPinIcon" size={18} className="text-[#B4233C]" />
                       </div>
-                      <div className="text-base font-extrabold text-[#F5F5F5]">
-                        Bengaluru, Karnataka, India
+                      <div>
+                        <div className="text-xs font-semibold text-[#9A9CA5] uppercase tracking-wider">
+                          Headquarters
+                        </div>
+                        <div className="text-base font-extrabold text-[#F5F5F5]">
+                          Bengaluru, Karnataka, India
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-[#111318] border border-[#252830] rounded-xl p-5 w-full">
-                <div className="text-xs font-bold text-[#F5F5F5] mb-1">Response Commitment</div>
-                <p className="text-xs text-[#9A9CA5]">
-                  All campaign inquiries receive a custom proposal within 24 business hours.
-                </p>
-              </div>
+                <div className="bg-[#111318] border border-[#252830] rounded-xl p-5 w-full mt-8">
+                  <div className="text-xs font-bold text-[#F5F5F5] mb-1">Response Commitment</div>
+                  <p className="text-xs text-[#9A9CA5]">
+                    All campaign inquiries receive a custom proposal within 24 business hours.
+                  </p>
+                </div>
+              </ScrollReveal>
             </div>
 
             {/* Right: B2B Lead Form */}
             <div className="lg:col-span-7">
+              <ScrollReveal direction="left" delay={100}>
               <div className="bg-[#111318] border border-[#252830] rounded-2xl p-8 md:p-10 shadow-md">
                 {submitted ? (
                   <div className="py-12 text-center flex flex-col items-center gap-4">
@@ -267,6 +271,7 @@ export default function ContactSection() {
                   </form>
                 )}
               </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>

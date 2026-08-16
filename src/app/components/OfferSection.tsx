@@ -87,7 +87,13 @@ export default function OfferSection() {
         {/* 6 Core Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((svc, idx) => (
-            <ScrollReveal key={svc.title} direction="up" delay={idx * 80}>
+            <ScrollReveal
+              key={svc.title}
+              direction="up"
+              staggerIndex={idx}
+              totalItems={services.length}
+              staggerDelay={130}
+            >
               <div className="pro-card rounded-2xl p-8 flex flex-col justify-between h-full group">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E222D] to-[#111318] border border-[#2D313E] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#B4233C]/50 group-hover:shadow-[0_0_20px_rgba(180,35,60,0.3)] transition-all duration-300">
