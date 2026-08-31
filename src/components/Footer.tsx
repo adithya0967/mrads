@@ -3,17 +3,11 @@ import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
 
 const quickLinks = [
-<<<<<<< Updated upstream
-  { label: 'Home', href: '#' },
-  { label: 'Locations', href: '#locations' },
-  { label: 'Pricing', href: '#pricing' },
-=======
   { label: 'Display Advertising', href: '#display-advertising' },
   { label: 'On the Move', href: '#on-the-move' },
   { label: 'Offline & Creative', href: '#offline-creative' },
   { label: 'Website & AI', href: '#website-ai' },
   { label: 'Why Mr. Ads', href: '#why-mr-ads' },
->>>>>>> Stashed changes
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -30,19 +24,10 @@ export default function Footer() {
               <span className="font-extrabold text-lg tracking-tight text-foreground">
                 Mr.<span className="text-accent">Ads</span>
               </span>
-<<<<<<< Updated upstream
             </div>
             <p className="text-sm text-muted-foreground font-medium leading-relaxed">
-              India's Emerging Hyperlocal Advertising Network
-=======
-              <span className="font-extrabold text-xl tracking-tight text-[#F5F5F5]">
-                Mr.<span className="text-[#B4233C]">Ads</span>
-              </span>
-            </a>
-            <p className="text-sm text-[#9A9CA5] font-normal leading-relaxed max-w-sm">
               Connecting brands with the right audience through innovative hyperlocal advertising
               solutions — where people live, work, dine, and travel.
->>>>>>> Stashed changes
             </p>
             <a
               href="tel:+919686544644"
