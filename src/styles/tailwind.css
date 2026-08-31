@@ -35,11 +35,21 @@
     -webkit-font-smoothing: antialiased;
   }
 
+<<<<<<< Updated upstream
   html {
     scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6, p {
+=======
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+>>>>>>> Stashed changes
     margin: 0;
   }
 }
@@ -57,6 +67,7 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
+<<<<<<< Updated upstream
   .glass-nav {
     background: rgba(13, 13, 26, 0.88);
     backdrop-filter: blur(20px);
@@ -91,6 +102,21 @@
   .scarcity-strip {
     background: linear-gradient(90deg, rgba(204, 21, 48, 0.15) 0%, rgba(204, 21, 48, 0.08) 50%, rgba(204, 21, 48, 0.15) 100%);
   }
+=======
+  .clean-card {
+    background-color: #111318;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .clean-card:hover {
+    border-color: rgba(180, 35, 60, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+>>>>>>> Stashed changes
 }
 
 @keyframes tv-pulse {
@@ -107,6 +133,7 @@
   100% { transform: translateX(0%); opacity: 1; }
 }
 
+<<<<<<< Updated upstream
 @keyframes blink-dot {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -156,3 +183,5 @@
     animation: none;
   }
 }
+=======
+>>>>>>> Stashed changes
