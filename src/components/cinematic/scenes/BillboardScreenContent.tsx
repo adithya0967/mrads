@@ -3,9 +3,13 @@
 import React, { useRef } from 'react';
 import { MotionValue } from 'framer-motion';
 import type { AdCampaign } from '../data/adCampaigns.data';
-import PlaceholderMedia from './PlaceholderMedia';
 import { useMotionStyle } from '../useMotionStyle';
 
+// Renders only the caption layer (headline/subhead/brand) for one campaign's
+// slot in the immersion cycle. The screen's actual creative is a single
+// shared video (BillboardAdVideo in CinematicJourney) sitting behind the
+// whole stack of these, so campaigns crossfade their captions over one
+// continuous ad reel instead of each mounting its own background.
 export default function BillboardScreenContent({
   campaign,
   opacity,
@@ -18,9 +22,6 @@ export default function BillboardScreenContent({
 
   return (
     <div ref={ref} className="absolute inset-0">
-      <div className="absolute inset-0" style={{ backgroundColor: campaign.palette.base }}>
-        <PlaceholderMedia label={campaign.imageSlot} tone="warm" className="opacity-90" />
-      </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
 
       <div className="absolute inset-0 flex flex-col justify-end p-[4%] sm:p-[3%]">

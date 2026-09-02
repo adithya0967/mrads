@@ -2,7 +2,7 @@ import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { mrAdsFacts } from '@/data/mrAdsFacts.data';
 import { adCampaigns } from './data/adCampaigns.data';
-import PlaceholderMedia from './scenes/PlaceholderMedia';
+import AdArt from './scenes/surfaces/AdArt';
 
 /**
  * Static, non-pinned rendering of the same story beats for
@@ -30,7 +30,7 @@ export default function CinematicJourneyReduced() {
         </ScrollReveal>
         <ScrollReveal direction="left" delay={120} className="flex-1 w-full">
           <div className="relative w-full aspect-[16/9] rounded-[6px] bg-[#050506] border-[10px] border-[#1c1e24] shadow-2xl overflow-hidden">
-            <PlaceholderMedia label={adCampaigns[0].imageSlot} tone="warm" />
+            <AdArt campaign={adCampaigns[0]} />
           </div>
         </ScrollReveal>
       </div>
@@ -42,7 +42,7 @@ export default function CinematicJourneyReduced() {
             className="min-h-[70vh] flex flex-col justify-end p-8 md:p-16 relative overflow-hidden"
             style={{ backgroundColor: campaign.palette.base }}
           >
-            <PlaceholderMedia label={campaign.imageSlot} tone="warm" className="absolute inset-0" />
+            <AdArt campaign={campaign} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
             <div className="relative z-10">
               {campaign.poweredByMrAds && (
@@ -73,10 +73,13 @@ export default function CinematicJourneyReduced() {
           <div
             className="absolute inset-0"
             style={{
-              background:
-                'linear-gradient(180deg, #1a1420 0%, #2a1f2e 20%, #4a2f38 40%, #6b3f3a 55%, #191a1f 75%, #0a0b0d 100%)',
+              backgroundImage: 'url(/assets/images/highway_dusk_skyline.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+              backgroundRepeat: 'no-repeat',
             }}
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b32]/25 via-transparent to-[#0a0b0d]/85" />
           <div className="relative z-10 w-full p-8 md:p-16">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/50 block mb-3">
               The Mr. Ads Network

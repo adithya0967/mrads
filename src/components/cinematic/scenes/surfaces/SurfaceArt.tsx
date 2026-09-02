@@ -1,7 +1,10 @@
 import React from 'react';
+import type { MotionValue } from 'framer-motion';
 import type { SurfaceType } from '../../data/surfaces.data';
 import type { AdCampaign } from '../../data/adCampaigns.data';
-import PlaceholderMedia from '../PlaceholderMedia';
+import ScreenVideo from './ScreenVideo';
+
+const AD_VIDEO_SRC = '/assets/videos/billboard-ad-cycle.mp4';
 
 function ScreenLabel({ campaign }: { campaign?: AdCampaign }) {
   if (!campaign) return null;
@@ -23,21 +26,19 @@ function ScreenLabel({ campaign }: { campaign?: AdCampaign }) {
 export default function SurfaceArt({
   type,
   campaign,
+  videoProgress,
 }: {
   type: SurfaceType;
   campaign?: AdCampaign;
+  videoProgress?: MotionValue<number> | number;
 }) {
-  const base = campaign?.palette.base ?? '#111318';
-
   switch (type) {
     case 'roadside-billboard':
     case 'static-billboard':
       return (
         <div className="flex flex-col items-center">
           <div className="relative w-[26vw] max-w-[300px] aspect-[16/9] rounded-sm border-4 border-[#1c1e24] bg-[#050506] overflow-hidden shadow-2xl">
-            <div className="absolute inset-0" style={{ backgroundColor: base }}>
-              <PlaceholderMedia label={campaign?.imageSlot ?? 'Billboard ad'} tone="warm" />
-            </div>
+            <ScreenVideo src={AD_VIDEO_SRC} progress={videoProgress} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
             <ScreenLabel campaign={campaign} />
           </div>
@@ -48,9 +49,7 @@ export default function SurfaceArt({
     case 'building-screen':
       return (
         <div className="relative w-[14vw] max-w-[160px] aspect-[3/5] rounded-sm border-2 border-[#1c1e24] bg-[#050506] overflow-hidden shadow-2xl">
-          <div className="absolute inset-0" style={{ backgroundColor: base }}>
-            <PlaceholderMedia label={campaign?.imageSlot ?? 'Building screen'} tone="cool" />
-          </div>
+          <ScreenVideo src={AD_VIDEO_SRC} progress={videoProgress} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
           <ScreenLabel campaign={campaign} />
         </div>
@@ -59,9 +58,7 @@ export default function SurfaceArt({
     case 'building-facade':
       return (
         <div className="relative w-[30vw] max-w-[360px] aspect-[4/5] rounded-sm bg-[#101114] overflow-hidden shadow-2xl border border-white/5">
-          <div className="absolute inset-0" style={{ backgroundColor: base, opacity: 0.9 }}>
-            <PlaceholderMedia label={campaign?.imageSlot ?? 'Building facade'} tone="cool" />
-          </div>
+          <ScreenVideo src={AD_VIDEO_SRC} progress={videoProgress} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20" />
           <ScreenLabel campaign={campaign} />
         </div>
@@ -72,9 +69,7 @@ export default function SurfaceArt({
         <div className="relative w-[20vw] max-w-[220px]">
           <div className="absolute -top-3 left-0 right-0 h-2 bg-[#1c1e24] rounded-t-sm" />
           <div className="relative aspect-[16/9] border-2 border-[#1c1e24] bg-[#050506] overflow-hidden shadow-2xl">
-            <div className="absolute inset-0" style={{ backgroundColor: base }}>
-              <PlaceholderMedia label={campaign?.imageSlot ?? 'Bus shelter ad'} tone="warm" />
-            </div>
+            <ScreenVideo src={AD_VIDEO_SRC} progress={videoProgress} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
             <ScreenLabel campaign={campaign} />
           </div>
@@ -88,9 +83,7 @@ export default function SurfaceArt({
     case 'branded-vehicle':
       return (
         <div className="relative w-[18vw] max-w-[200px] aspect-[16/9] rounded-md bg-[#111318] overflow-hidden shadow-2xl border border-white/10">
-          <div className="absolute inset-0" style={{ backgroundColor: base }}>
-            <PlaceholderMedia label={campaign?.imageSlot ?? 'Branded vehicle'} tone="neutral" />
-          </div>
+          <ScreenVideo src={AD_VIDEO_SRC} progress={videoProgress} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
           <ScreenLabel campaign={campaign} />
         </div>

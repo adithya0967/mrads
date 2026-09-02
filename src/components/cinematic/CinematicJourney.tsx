@@ -13,6 +13,7 @@ import {
 import HeroScene from './scenes/HeroScene';
 import BillboardRig from './scenes/BillboardRig';
 import BillboardScreenContent from './scenes/BillboardScreenContent';
+import ScreenVideo from './scenes/surfaces/ScreenVideo';
 import ImmersionOverlay from './scenes/ImmersionOverlay';
 import HighwayEnvironment from './scenes/HighwayEnvironment';
 import RoadLanesLayer from './scenes/RoadLanesLayer';
@@ -144,6 +145,33 @@ export default function CinematicJourney({ mobile = false }: { mobile?: boolean 
   // slot — most of each ad's screen time was spent mid-blend with its
   // neighbor. 0.10 keeps transitions brief and each ad readable at rest.
   const fadeMargin = slotWidth * 0.1;
+  const immersionSpan = immersionEnd - immersionStart;
+
+  // Screen video layers: the zoom/reveal reel plays while the billboard is
+  // scaling up empty during approach, crossfading into the ad-cycle reel
+  // right as the first campaign caption starts (immersionStart) — replacing
+  // what used to be a blank screen and per-campaign graphic placeholders.
+  const zoomVideoOpacity = useTransform(
+    scrollYProgress,
+    [
+      approachStart,
+      approachStart + (approachEnd - approachStart) * 0.15,
+      immersionStart - immersionSpan * 0.03,
+      immersionStart,
+    ],
+    [0, 1, 1, 0]
+  );
+  const adVideoOpacity = useTransform(
+    scrollYProgress,
+    [
+      immersionStart,
+      immersionStart + immersionSpan * 0.03,
+      immersionEnd - immersionSpan * 0.03,
+      immersionEnd,
+    ],
+    [0, 1, 1, 0]
+  );
+
   const overlayOpacity = useTransform(
     scrollYProgress,
     [
@@ -188,6 +216,16 @@ export default function CinematicJourney({ mobile = false }: { mobile?: boolean 
           opacity={billboardOpacity}
           structureOpacity={billboardStructureOpacity}
         >
+          <ScreenVideo
+            src="/assets/videos/billboard-zoom-reveal.mp4"
+            progress={zoomVideoOpacity}
+            applyOpacity
+          />
+          <ScreenVideo
+            src="/assets/videos/billboard-ad-cycle.mp4"
+            progress={adVideoOpacity}
+            applyOpacity
+          />
           {adCampaigns.map((campaign, i) => {
             const slotStart = immersionStart + i * slotWidth;
             const slotEnd = slotStart + slotWidth;

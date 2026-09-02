@@ -34,7 +34,7 @@ export default function PassingSurface({
       style={{ bottom: DEPTH_BOTTOM[surface.depth] }}
     >
       <div ref={ref}>
-        <SurfaceArt type={surface.type} campaign={campaign} />
+        <SurfaceArt type={surface.type} campaign={campaign} videoProgress={opacity} />
       </div>
     </div>
   );
