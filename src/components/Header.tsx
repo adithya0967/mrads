@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { TOTAL_JOURNEY_VH, TOTAL_JOURNEY_VH_MOBILE } from '@/components/cinematic/data/phases.data';
+import { useViewportProfile } from '@/hooks/useViewportProfile';
 
 const navLinks = [
   { label: 'Markets', href: '#display-advertising' },
@@ -14,14 +16,24 @@ const navLinks = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [recede, setRecede] = useState(1);
   const [menuOpen, setMenuOpen] = useState(false);
+  const viewport = useViewportProfile();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const totalVh = viewport === 'mobile' ? TOTAL_JOURNEY_VH_MOBILE : TOTAL_JOURNEY_VH;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      const journeyPx = (totalVh / 100) * window.innerHeight;
+      const ratio = Math.min(1, y / journeyPx);
+      // recede to ~15% opacity through most of the journey, snap back near its end
+      setRecede(ratio < 0.92 ? 1 - ratio * 0.85 : 1);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [viewport]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -34,7 +46,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[100] w-full">
+      <header
+        className="fixed top-0 left-0 right-0 z-[100] w-full transition-opacity duration-500"
+        style={{ opacity: recede }}
+      >
         <div
           className={`w-full transition-all duration-500 ${
             scrolled ? 'bg-[#090A0C]/85 backdrop-blur-xl border-b border-[#252830] py-4' : 'py-6'
