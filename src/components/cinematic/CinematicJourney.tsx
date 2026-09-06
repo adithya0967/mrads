@@ -1,26 +1,31 @@
 'use client';
 
 import React from 'react';
-import { useReducedMotion } from 'framer-motion';
 import HeroScene from './scenes/HeroScene';
 import BillboardRig from './scenes/BillboardRig';
-import ScreenVideo from './scenes/surfaces/ScreenVideo';
+import BillboardAdCarousel from './scenes/surfaces/BillboardAdCarousel';
 
-// Static hero: headline + a physical billboard rig playing one ambient ad
-// reel. No scroll-jacking, no ad-cycle track — just the opening frame.
 export default function CinematicJourney() {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#050506]">
-      <HeroScene opacity={1} x={0} />
+    <section className="relative min-h-[90vh] lg:h-screen w-full overflow-hidden bg-[#050506] flex items-center pt-20 lg:pt-0">
+      {/* Background Ambient Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-[#050506] to-[#050506] pointer-events-none" />
 
-      <BillboardRig scale={0.34} rotateY={-20} x="27vw" opacity={1} structureOpacity={1}>
-        <ScreenVideo
-          src="/assets/videos/billboard-zoom-reveal.mp4"
-          progress={prefersReducedMotion ? 0 : 1}
-        />
-      </BillboardRig>
+      <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center z-10">
+        {/* Left Side: Headline Text */}
+        <div className="lg:col-span-5 flex flex-col justify-center">
+          <div className="relative">
+            <HeroScene opacity={1} x={0} />
+          </div>
+        </div>
+
+        {/* Right Side: Highway Billboard Rig with Dynamic Ads */}
+        <div className="lg:col-span-7 flex items-center justify-center">
+          <BillboardRig>
+            <BillboardAdCarousel />
+          </BillboardRig>
+        </div>
+      </div>
     </section>
   );
 }
