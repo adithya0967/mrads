@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CinematicJourneyRouter from '@/components/cinematic/CinematicJourneyRouter';
+import CinematicJourney from '@/components/cinematic/CinematicJourney';
 import ServicesDisplayAdvertising from './components/services/ServicesDisplayAdvertising';
 import ServicesOnTheMove from './components/services/ServicesOnTheMove';
 import ServicesOfflineCreative from './components/services/ServicesOfflineCreative';
@@ -21,7 +21,7 @@ export default function LandingPage() {
       <Header />
 
       <main>
-        <CinematicJourneyRouter />
+        <CinematicJourney />
         <ServicesDisplayAdvertising />
         <ServicesOnTheMove />
         <ServicesOfflineCreative />
