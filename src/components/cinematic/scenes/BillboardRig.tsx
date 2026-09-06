@@ -15,8 +15,9 @@ interface BillboardRigProps {
 
 /**
  * The physical billboard: steel pillar, mounting frame, and an LED "glass"
- * area that hosts the screen content passed as children. Structure is drawn
- * in SVG/CSS since no photographic asset exists for it.
+ * area that hosts BillboardScreenContent. Structure is drawn in SVG/CSS since
+ * no photographic asset exists for it; the screen content itself is where
+ * real ad creative photography will slot in.
  */
 export default function BillboardRig({
   scale,
