@@ -11,7 +11,6 @@ interface PageShellProps {
 }
 
 export default function PageShell({ children }: PageShellProps) {
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [navShadow, setNavShadow] = useState(false);
   const [showToTop, setShowToTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,8 +49,6 @@ export default function PageShell({ children }: PageShellProps) {
   useEffect(() => {
     const handleScroll = () => {
       const h = document.documentElement;
-      const progress = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-      setScrollProgress(progress);
       setNavShadow(h.scrollTop > 10);
       setShowToTop(h.scrollTop > 600);
     };
@@ -66,9 +63,6 @@ export default function PageShell({ children }: PageShellProps) {
 
   return (
     <div className="bg-[#090D16] text-slate-100 min-h-screen">
-      {/* Scroll Progress Bar */}
-      <div id="progress" style={{ width: `${scrollProgress}%` }}></div>
-
       {/* Header / Navbar */}
       <Navbar
         mobileMenuOpen={mobileMenuOpen}

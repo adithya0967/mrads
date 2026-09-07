@@ -283,15 +283,6 @@ body {
   color: #fff;
   border-color: #D9232D;
 }
-#progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: #D9232D;
-  z-index: 80;
-  width: 0;
-}
 .marquee {
   overflow: hidden;
   white-space: nowrap;
