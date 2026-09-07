@@ -11,6 +11,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        navy: { DEFAULT: '#0B1E3B', 800: '#102849', 900: '#0A1930', 950: '#071224' },
+        brand: { DEFAULT: '#D9232D', dark: '#B91A22', light: '#FEF0F0' },
+        paper: '#F7F8FA',
+        line: '#E6E9EF',
+        muted: '#5B6B84',
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         primary: {
@@ -25,10 +30,6 @@ module.exports = {
           DEFAULT: 'var(--accent)',
           foreground: 'var(--accent-foreground)',
         },
-        muted: {
-          DEFAULT: 'var(--muted)',
-          foreground: 'var(--muted-foreground)',
-        },
         card: {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)',
@@ -36,6 +37,11 @@ module.exports = {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+      },
+      boxShadow: {
+        soft: '0 10px 30px -12px rgba(11,30,59,.18)',
+        card: '0 8px 24px -10px rgba(11,30,59,.12)',
+        lift: '0 18px 44px -14px rgba(11,30,59,.25)',
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',
@@ -47,7 +53,8 @@ module.exports = {
         '3xl': 'calc(var(--radius) * 4)',
       },
       fontFamily: {
-        sans: ['var(--font-plus-jakarta-sans)', 'sans-serif'],
+        sans: ['Inter', 'var(--font-plus-jakarta-sans)', 'system-ui', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
       },
     },
   },
