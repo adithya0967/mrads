@@ -346,12 +346,71 @@ input:focus, select:focus, textarea:focus {
 details[open] .faq-plus { transform: rotate(45deg); }
 .faq-plus { transition: .25s; }
 
+/* Cinematic Digital Billboard Animations */
+@keyframes slow-ken-burns {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.04) translate(-1%, -0.5%); }
+  100% { transform: scale(1.06) translate(0.5%, -1%); }
+}
+
+@keyframes specular-sweep {
+  0% { transform: translateX(-100%) rotate(25deg); opacity: 0; }
+  30% { opacity: 0.18; }
+  60% { opacity: 0.08; }
+  100% { transform: translateX(250%) rotate(25deg); opacity: 0; }
+}
+
+@keyframes ad-fade-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ad-badge-glow {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 8px currentColor); }
+  50% { opacity: 1; filter: drop-shadow(0 0 16px currentColor); }
+}
+
+.animate-slow-ken-burns {
+  animation: slow-ken-burns 16s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+.animate-specular-sweep {
+  animation: specular-sweep 8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-ad-fade-up {
+  animation: ad-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-ad-fade-up-d1 {
+  animation: ad-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+  opacity: 0;
+}
+
+.animate-ad-fade-up-d2 {
+  animation: ad-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
+  opacity: 0;
+}
+
+.animate-ad-fade-up-d3 {
+  animation: ad-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards;
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-tv-pulse,
   .animate-ad-slide,
   .animate-blink,
   .animate-float,
-  .animate-marquee {
+  .animate-marquee,
+  .animate-slow-ken-burns,
+  .animate-specular-sweep,
+  .animate-ad-fade-up,
+  .animate-ad-fade-up-d1,
+  .animate-ad-fade-up-d2,
+  .animate-ad-fade-up-d3 {
     animation: none;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

@@ -8,25 +8,25 @@ const adSlides = [
     bg: 'from-red-950 to-red-800',
     brand: 'Zepto Inserts',
     tagline: 'Direct-to-Home',
-    sub: '100% Delivery Rate via Q-Commerce',
+    sub: '100% Delivery Rate',
   },
   {
     bg: 'from-blue-900 to-indigo-950',
     brand: 'Apartment Displays',
     tagline: '30,000+ Active Screens',
-    sub: 'Reach 15M+ Households Daily',
+    sub: 'Reach 15M+ Daily',
   },
   {
     bg: 'from-emerald-900 to-teal-950',
     brand: 'Transit Branding',
-    tagline: 'Auto, Cab & Bus Shelter',
-    sub: 'High-Impact Outdoor Visibility',
+    tagline: 'Outdoor Media',
+    sub: 'High-Impact Visibility',
   },
   {
     bg: 'from-amber-900 to-orange-950',
     brand: 'Web & AI Chatbots',
-    tagline: 'Smart Tech Solutions',
-    sub: 'Modern E-Commerce & Business Sites',
+    tagline: 'Smart Tech',
+    sub: 'Modern Solutions',
   },
 ];
 
