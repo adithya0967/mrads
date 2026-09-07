@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import TopBar from './landing/TopBar';
 import Navbar from './landing/Navbar';
 import Footer from './landing/Footer';
 import LightboxModal from './landing/LightboxModal';
@@ -69,9 +68,6 @@ export default function PageShell({ children }: PageShellProps) {
     <div className="bg-[#090D16] text-slate-100 min-h-screen">
       {/* Scroll Progress Bar */}
       <div id="progress" style={{ width: `${scrollProgress}%` }}></div>
-
-      {/* Top Bar */}
-      <TopBar />
 
       {/* Header / Navbar */}
       <Navbar

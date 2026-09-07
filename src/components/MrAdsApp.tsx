@@ -1,7 +1,6 @@
 'use client';
 
 import React, { FormEvent, useEffect, useState } from 'react';
-import TopBar from './landing/TopBar';
 import Navbar from './landing/Navbar';
 import HeroSection from './landing/HeroSection';
 import AdvantageSection from './landing/AdvantageSection';
@@ -236,9 +235,6 @@ export default function MrAdsApp() {
     <div className="bg-[#090D16] text-slate-100 min-h-screen">
       {/* Scroll Progress Bar */}
       <div id="progress" style={{ width: `${scrollProgress}%` }}></div>
-
-      {/* Top Bar */}
-      <TopBar />
 
       {/* Header / Navbar */}
       <Navbar
