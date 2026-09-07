@@ -233,7 +233,7 @@ export default function MrAdsApp() {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#090D16] text-slate-100 min-h-screen">
       {/* Scroll Progress Bar */}
       <div id="progress" style={{ width: `${scrollProgress}%` }}></div>
 
@@ -291,8 +291,8 @@ export default function MrAdsApp() {
       <Footer />
 
       {/* Mobile sticky CTA */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-line px-4 py-3 flex gap-2">
-        <a href="tel:+919686544644" className="btn-ghost flex-1 text-center font-bold text-sm py-3 rounded-full text-navy">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur border-t border-slate-800 px-4 py-3 flex gap-2">
+        <a href="tel:+919686544644" className="btn-ghost flex-1 text-center font-bold text-sm py-3 rounded-full text-slate-100">
           <i className="fa-solid fa-phone mr-1.5 text-xs"></i> Call
         </a>
         <a href="#contact" className="btn-primary flex-[2] text-center font-bold text-sm py-3 rounded-full">
@@ -311,7 +311,7 @@ export default function MrAdsApp() {
 
       {/* Toast Notification */}
       <div id="toast" className={`fixed bottom-24 sm:bottom-6 left-1/2 -translate-x-1/2 z-[95] ${showToast ? 'block' : 'hidden'}`}>
-        <div className="bg-navy text-white text-[13.5px] font-bold px-5 py-3.5 rounded-full shadow-lift flex items-center gap-2.5 whitespace-nowrap">
+        <div className="bg-[#121B2D] border border-slate-700 text-white text-[13.5px] font-bold px-5 py-3.5 rounded-full shadow-lift flex items-center gap-2.5 whitespace-nowrap">
           <i className="fa-solid fa-circle-check text-emerald-400"></i>
           <span id="toastMsg">{toastMsg}</span>
         </div>
@@ -321,9 +321,9 @@ export default function MrAdsApp() {
       <button
         id="toTop"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-24 sm:bottom-6 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-navy text-white shadow-lift ${
+        className={`fixed bottom-24 sm:bottom-6 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-[#1E293B] border border-slate-700 text-white shadow-lift ${
           showToTop ? 'flex' : 'hidden'
-        } items-center justify-center hover:bg-brand transition`}
+        } items-center justify-center hover:bg-brand hover:border-brand transition`}
         aria-label="Back to top"
       >
         <i className="fa-solid fa-arrow-up text-sm"></i>

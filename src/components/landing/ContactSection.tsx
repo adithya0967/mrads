@@ -77,96 +77,96 @@ export default function ContactSection({
   onSubmit,
 }: ContactSectionProps) {
   return (
-    <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
+    <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="reveal in">
         <p className="crumb">
           <a href="#home">Home</a> / Contact · Request a Media Plan
         </p>
-        <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2">Request a Media Plan</h2>
-        <p className="text-muted mt-3 max-w-2xl">
+        <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Request a Media Plan</h2>
+        <p className="text-slate-400 mt-3 max-w-2xl">
           Tell us where your audience is — we’ll come back with environments, locations, pricing and creative options.
         </p>
       </div>
 
       <div className="grid lg:grid-cols-12 gap-6 mt-10">
         <div className="lg:col-span-4 grid gap-5">
-          <div className="bg-navy text-white rounded-3xl p-7 shadow-lift reveal in">
+          <div className="bg-[#162238] border border-slate-700 text-white rounded-3xl p-7 shadow-lift reveal in">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-extrabold">
+              <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-extrabold text-white">
                 MR
               </div>
               <div>
-                <p className="font-extrabold">Mr. Ads (MR)</p>
-                <p className="text-[12px] text-white/60 font-semibold">Your Hyperlocal Advertising Partner</p>
+                <p className="font-extrabold text-white">Mr. Ads (MR)</p>
+                <p className="text-[12px] text-slate-400 font-semibold">Your Hyperlocal Advertising Partner</p>
               </div>
             </div>
             <div className="mt-6 grid gap-3">
               <a
                 href="tel:+919686544644"
-                className="flex items-center gap-3 bg-white/[.08] hover:bg-white/[.14] border border-white/10 rounded-2xl p-4 transition"
+                className="flex items-center gap-3 bg-[#121B2D] hover:bg-[#1C2A44] border border-slate-700/80 rounded-2xl p-4 transition"
               >
-                <span className="w-10 h-10 rounded-xl bg-brand flex items-center justify-center shrink-0">
+                <span className="w-10 h-10 rounded-xl bg-brand flex items-center justify-center shrink-0 text-white">
                   <i className="fa-solid fa-phone text-sm"></i>
                 </span>
                 <span>
-                  <span className="block text-[11px] font-bold tracking-widest uppercase text-white/50">Call us</span>
-                  <span className="font-extrabold">+91 96865 44644</span>
+                  <span className="block text-[11px] font-bold tracking-widest uppercase text-slate-400">Call us</span>
+                  <span className="font-extrabold text-white">+91 96865 44644</span>
                 </span>
               </a>
               <a
                 href="mailto:knowus@mr-ads.in"
-                className="flex items-center gap-3 bg-white/[.08] hover:bg-white/[.14] border border-white/10 rounded-2xl p-4 transition"
+                className="flex items-center gap-3 bg-[#121B2D] hover:bg-[#1C2A44] border border-slate-700/80 rounded-2xl p-4 transition"
               >
-                <span className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <span className="w-10 h-10 rounded-xl bg-[#162238] border border-slate-700 text-brand flex items-center justify-center shrink-0">
                   <i className="fa-regular fa-envelope"></i>
                 </span>
                 <span>
-                  <span className="block text-[11px] font-bold tracking-widest uppercase text-white/50">Email</span>
-                  <span className="font-extrabold break-all">knowus@mr-ads.in</span>
+                  <span className="block text-[11px] font-bold tracking-widest uppercase text-slate-400">Email</span>
+                  <span className="font-extrabold break-all text-white">knowus@mr-ads.in</span>
                 </span>
               </a>
             </div>
             <div className="mt-5 flex gap-2">
               <a
                 href="tel:+919686544644"
-                className="flex-1 bg-white text-navy text-center font-extrabold text-sm py-3 rounded-full hover:bg-brand hover:text-white transition"
+                className="flex-1 bg-brand text-white text-center font-extrabold text-sm py-3 rounded-full hover:bg-brand-dark transition"
               >
                 Call now
               </a>
               <a
                 href="mailto:knowus@mr-ads.in?subject=Media%20Plan%20Request%20—%20Mr.%20Ads"
-                className="flex-1 border border-white/25 text-center font-bold text-sm py-3 rounded-full hover:bg-white/10 transition"
+                className="flex-1 border border-slate-700 text-center font-bold text-sm py-3 rounded-full text-slate-200 hover:text-white hover:border-slate-500 transition"
               >
                 Email us
               </a>
             </div>
           </div>
 
-          <div className="bg-white border border-line rounded-3xl p-6 shadow-card reveal in reveal-d1">
-            <p className="font-extrabold">What happens next?</p>
-            <ol className="mt-3 space-y-2.5 text-[13.5px] text-muted">
+          <div className="bg-[#121B2D] border border-slate-800 rounded-3xl p-6 shadow-card reveal in reveal-d1 text-white">
+            <p className="font-extrabold text-white">What happens next?</p>
+            <ol className="mt-3 space-y-2.5 text-[13.5px] text-slate-400">
               <li className="flex gap-2.5">
-                <span className="w-6 h-6 shrink-0 rounded-full bg-paper border border-line text-navy text-[11px] font-bold flex items-center justify-center">
+                <span className="w-6 h-6 shrink-0 rounded-full bg-[#162238] border border-slate-700 text-white text-[11px] font-bold flex items-center justify-center">
                   1
                 </span>{' '}
                 We review your requirement & city.
               </li>
               <li className="flex gap-2.5">
-                <span className="w-6 h-6 shrink-0 rounded-full bg-paper border border-line text-navy text-[11px] font-bold flex items-center justify-center">
+                <span className="w-6 h-6 shrink-0 rounded-full bg-[#162238] border border-slate-700 text-white text-[11px] font-bold flex items-center justify-center">
                   2
                 </span>{' '}
                 You receive a tailored media plan + pricing.
               </li>
               <li className="flex gap-2.5">
-                <span className="w-6 h-6 shrink-0 rounded-full bg-paper border border-line text-navy text-[11px] font-bold flex items-center justify-center">
+                <span className="w-6 h-6 shrink-0 rounded-full bg-[#162238] border border-slate-700 text-white text-[11px] font-bold flex items-center justify-center">
                   3
                 </span>{' '}
                 On approval: creatives, locations & launch.
               </li>
             </ol>
-            <div className="mt-4 bg-paper border border-line rounded-2xl p-4 text-[12.5px] text-muted">
+            <div className="mt-4 bg-[#162238] border border-slate-700/80 rounded-2xl p-4 text-[12.5px] text-slate-400">
               <i className="fa-solid fa-circle-info text-brand mr-1.5"></i>Prefer talking? Call{' '}
-              <a className="font-bold text-navy" href="tel:+919686544644">
+              <a className="font-bold text-white hover:text-brand" href="tel:+919686544644">
                 +91 96865 44644
               </a>{' '}
               — Mon–Sat, business hours.
@@ -178,19 +178,19 @@ export default function ContactSection({
           <form
             id="leadForm"
             onSubmit={onSubmit}
-            className="bg-white border border-line rounded-3xl p-6 sm:p-9 shadow-card reveal in reveal-d1"
+            className="bg-[#121B2D] border border-slate-800 rounded-3xl p-6 sm:p-9 shadow-card reveal in reveal-d1 text-white"
             noValidate
           >
             <div className="flex items-center justify-between flex-wrap gap-2">
-              <h3 className="font-extrabold text-xl">High-conversion enquiry form</h3>
-              <span className="text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full">
+              <h3 className="font-extrabold text-xl text-white">High-conversion enquiry form</h3>
+              <span className="text-[11px] font-bold bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 px-3 py-1.5 rounded-full">
                 <i className="fa-solid fa-bolt mr-1"></i> Replies within 1 business day
               </span>
             </div>
 
-            <p className="spec-label mt-6 mb-3">
+            <p className="spec-label mt-6 mb-3 text-slate-400">
               I’m interested in <span className="text-brand">*</span>{' '}
-              <span className="normal-case font-medium tracking-normal">(tap all that apply)</span>
+              <span className="normal-case font-medium tracking-normal text-slate-400">(tap all that apply)</span>
             </p>
             <div className="flex flex-wrap gap-2" id="interestChips">
               {interestOptions.map((opt) => {
@@ -211,7 +211,7 @@ export default function ContactSection({
 
             <div className="grid sm:grid-cols-2 gap-4 mt-6">
               <div>
-                <label className="spec-label" htmlFor="fName">
+                <label className="spec-label text-slate-400" htmlFor="fName">
                   Name *
                 </label>
                 <input
@@ -221,12 +221,12 @@ export default function ContactSection({
                   value={formName}
                   onChange={(e) => setFormName(e.target.value)}
                   placeholder="Your full name"
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper placeholder:text-slate-400"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder:text-slate-500"
                 />
               </div>
 
               <div>
-                <label className="spec-label" htmlFor="fCompany">
+                <label className="spec-label text-slate-400" htmlFor="fCompany">
                   Company
                 </label>
                 <input
@@ -235,12 +235,12 @@ export default function ContactSection({
                   value={formCompany}
                   onChange={(e) => setFormCompany(e.target.value)}
                   placeholder="Brand / business name"
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper placeholder:text-slate-400"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder:text-slate-500"
                 />
               </div>
 
               <div>
-                <label className="spec-label" htmlFor="fPhone">
+                <label className="spec-label text-slate-400" htmlFor="fPhone">
                   Phone *
                 </label>
                 <input
@@ -251,12 +251,12 @@ export default function ContactSection({
                   value={formPhone}
                   onChange={(e) => setFormPhone(e.target.value)}
                   placeholder="+91 …"
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper placeholder:text-slate-400"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder:text-slate-500"
                 />
               </div>
 
               <div>
-                <label className="spec-label" htmlFor="fEmail">
+                <label className="spec-label text-slate-400" htmlFor="fEmail">
                   Email *
                 </label>
                 <input
@@ -266,12 +266,12 @@ export default function ContactSection({
                   value={formEmail}
                   onChange={(e) => setFormEmail(e.target.value)}
                   placeholder="you@company.com"
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper placeholder:text-slate-400"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder:text-slate-500"
                 />
               </div>
 
               <div>
-                <label className="spec-label" htmlFor="fCity">
+                <label className="spec-label text-slate-400" htmlFor="fCity">
                   City / Location *
                 </label>
                 <input
@@ -281,12 +281,12 @@ export default function ContactSection({
                   value={formCity}
                   onChange={(e) => setFormCity(e.target.value)}
                   placeholder="e.g., Bengaluru — Koramangala"
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper placeholder:text-slate-400"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder:text-slate-500"
                 />
               </div>
 
               <div>
-                <label className="spec-label" htmlFor="fReq">
+                <label className="spec-label text-slate-400" htmlFor="fReq">
                   Advertising Requirement *
                 </label>
                 <select
@@ -294,11 +294,11 @@ export default function ContactSection({
                   required
                   value={formReq}
                   onChange={(e) => setFormReq(e.target.value)}
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper font-semibold"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white font-semibold"
                 >
-                  <option value="">Select a requirement…</option>
+                  <option value="" className="bg-[#090D16]">Select a requirement…</option>
                   {requirementOptions.map((opt) => (
-                    <option key={opt} value={opt}>
+                    <option key={opt} value={opt} className="bg-[#090D16]">
                       {opt}
                     </option>
                   ))}
@@ -306,7 +306,7 @@ export default function ContactSection({
               </div>
 
               <div className="sm:col-span-2">
-                <label className="spec-label" htmlFor="fMsg">
+                <label className="spec-label text-slate-400" htmlFor="fMsg">
                   Message
                 </label>
                 <textarea
@@ -315,13 +315,13 @@ export default function ContactSection({
                   value={formMsg}
                   onChange={(e) => setFormMsg(e.target.value)}
                   placeholder="Audience, locations, timing, budget — anything that helps us plan better."
-                  className="mt-2 w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper placeholder:text-slate-400 resize-y"
+                  className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder:text-slate-500 resize-y"
                 ></textarea>
               </div>
             </div>
 
             {formErr && (
-              <p id="formErr" className="mt-4 text-[13px] font-bold text-brand bg-brand-light border border-red-200 rounded-xl px-4 py-3">
+              <p id="formErr" className="mt-4 text-[13px] font-bold text-brand bg-brand/10 border border-brand/40 rounded-xl px-4 py-3">
                 {formErr}
               </p>
             )}
@@ -335,24 +335,24 @@ export default function ContactSection({
               </button>
               <a
                 href="tel:+919686544644"
-                className="btn-ghost font-bold text-[15px] px-7 py-4 rounded-full text-navy inline-flex justify-center items-center gap-2"
+                className="btn-ghost font-bold text-[15px] px-7 py-4 rounded-full text-slate-200 hover:text-white inline-flex justify-center items-center gap-2"
               >
                 <i className="fa-solid fa-phone text-xs"></i> +91 96865 44644
               </a>
             </div>
 
-            <p className="text-[12px] text-muted mt-4 text-center">
+            <p className="text-[12px] text-slate-400 mt-4 text-center">
               By submitting, you agree to be contacted about your enquiry at the details provided.
             </p>
 
             {formSuccess && (
-              <div id="formSuccess" className="mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center">
+              <div id="formSuccess" className="mt-6 bg-emerald-950/80 border border-emerald-800/80 rounded-2xl p-6 text-center text-white">
                 <span className="w-12 h-12 rounded-full bg-emerald-500 text-white inline-flex items-center justify-center text-xl">
                   <i className="fa-solid fa-check"></i>
                 </span>
-                <h4 className="font-extrabold text-lg mt-3 text-emerald-900">Brief received. We’ll be in touch shortly.</h4>
-                <p className="text-[13.5px] text-emerald-800/80 mt-1">
-                  Reference: <b id="refId">{refId}</b> · A copy of your brief is ready below — or reach us instantly:
+                <h4 className="font-extrabold text-lg mt-3 text-white">Brief received. We’ll be in touch shortly.</h4>
+                <p className="text-[13.5px] text-slate-300 mt-1">
+                  Reference: <b id="refId" className="text-emerald-400">{refId}</b> · A copy of your brief is ready below — or reach us instantly:
                 </p>
                 <div className="mt-4 flex flex-col sm:flex-row gap-2 justify-center">
                   <a
@@ -364,7 +364,7 @@ export default function ContactSection({
                   <a
                     id="mailBrief"
                     href={mailtoUrl}
-                    className="bg-white border border-emerald-300 text-emerald-800 font-bold text-sm px-6 py-3 rounded-full hover:bg-emerald-100 transition"
+                    className="bg-[#121B2D] border border-emerald-500 text-emerald-400 font-bold text-sm px-6 py-3 rounded-full hover:bg-[#162238] transition"
                   >
                     Email your brief
                   </a>

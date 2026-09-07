@@ -59,19 +59,19 @@ export default function MediaPlanBuilderSection({
   const displayCity = city.trim() || 'Your city';
 
   return (
-    <section id="builder" className="bg-paper border-y border-line">
+    <section id="builder" className="bg-[#0B101D] border-y border-slate-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="bg-white rounded-[28px] border border-line shadow-lift overflow-hidden reveal in">
+        <div className="bg-[#121B2D] rounded-[28px] border border-slate-800 shadow-lift overflow-hidden reveal in text-white">
           <div className="grid lg:grid-cols-5">
             <div className="lg:col-span-3 p-6 sm:p-10">
               <p className="crumb">Interactive · Build your brief in 30 seconds</p>
-              <h2 className="serif text-3xl sm:text-[36px] tracking-tight mt-2">
+              <h2 className="serif text-3xl sm:text-[36px] tracking-tight mt-2 text-white">
                 Media-plan starter
               </h2>
-              <p className="text-muted text-[14.5px] mt-2">
+              <p className="text-slate-400 text-[14.5px] mt-2">
                 Select channels, set a city & duration — we’ll draft your brief instantly and pre-fill the enquiry form.
               </p>
-              <p className="spec-label mt-7 mb-3">1 · Choose channels (tap to select)</p>
+              <p className="spec-label mt-7 mb-3 text-slate-400">1 · Choose channels (tap to select)</p>
               <div className="flex flex-wrap gap-2" id="builderChips">
                 {channelsList.map((ch) => {
                   const isSelected = selectedChannels.includes(ch);
@@ -91,54 +91,54 @@ export default function MediaPlanBuilderSection({
               </div>
               <div className="grid sm:grid-cols-3 gap-3 mt-6">
                 <div>
-                  <p className="spec-label mb-2">2 · City</p>
+                  <p className="spec-label mb-2 text-slate-400">2 · City</p>
                   <input
                     id="bCity"
                     type="text"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="e.g., Bengaluru"
-                    className="w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper"
+                    className="w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white placeholder-slate-500"
                   />
                 </div>
                 <div>
-                  <p className="spec-label mb-2">Duration</p>
+                  <p className="spec-label mb-2 text-slate-400">Duration</p>
                   <select
                     id="bDur"
                     value={duration}
                     onChange={(e) => setDuration(e.target.value)}
-                    className="w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper font-semibold"
+                    className="w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white font-semibold"
                   >
-                    <option>2 weeks</option>
-                    <option>1 month</option>
-                    <option>2–3 months</option>
-                    <option>3+ months</option>
+                    <option className="bg-[#090D16]">2 weeks</option>
+                    <option className="bg-[#090D16]">1 month</option>
+                    <option className="bg-[#090D16]">2–3 months</option>
+                    <option className="bg-[#090D16]">3+ months</option>
                   </select>
                 </div>
                 <div>
-                  <p className="spec-label mb-2">Monthly budget</p>
+                  <p className="spec-label mb-2 text-slate-400">Monthly budget</p>
                   <select
                     id="bBud"
                     value={budget}
                     onChange={(e) => setBudget(e.target.value)}
-                    className="w-full border border-line rounded-xl px-4 py-3 text-sm bg-paper font-semibold"
+                    className="w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white font-semibold"
                   >
-                    <option>Under ₹50k</option>
-                    <option>₹50k – ₹1.5L</option>
-                    <option>₹1.5L – ₹5L</option>
-                    <option>₹5L+</option>
+                    <option className="bg-[#090D16]">Under ₹50k</option>
+                    <option className="bg-[#090D16]">₹50k – ₹1.5L</option>
+                    <option className="bg-[#090D16]">₹1.5L – ₹5L</option>
+                    <option className="bg-[#090D16]">₹5L+</option>
                   </select>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-2 bg-navy text-white p-6 sm:p-10 flex flex-col">
-              <p className="text-[11px] font-bold tracking-[.18em] uppercase text-white/50">
+            <div className="lg:col-span-2 bg-[#162238] border-l border-slate-800 text-white p-6 sm:p-10 flex flex-col">
+              <p className="text-[11px] font-bold tracking-[.18em] uppercase text-slate-400">
                 Your brief · live preview
               </p>
               <div
                 id="builderOut"
-                className="mt-4 bg-white/[.07] border border-white/10 rounded-2xl p-5 text-[13.5px] leading-relaxed text-white/80 min-h-[150px]"
+                className="mt-4 bg-[#090D16] border border-slate-700 rounded-2xl p-5 text-[13.5px] leading-relaxed text-slate-300 min-h-[150px]"
               >
                 {selectedChannels.length === 0 ? (
                   'Select at least one channel to generate your brief…'
@@ -151,7 +151,7 @@ export default function MediaPlanBuilderSection({
                       {selectedChannels.map((v) => (
                         <span
                           key={v}
-                          className="text-[11.5px] font-bold bg-white/10 border border-white/15 px-2.5 py-1 rounded-full"
+                          className="text-[11.5px] font-bold bg-[#121B2D] border border-slate-700 text-brand px-2.5 py-1 rounded-full"
                         >
                           {v}
                         </span>
@@ -165,11 +165,11 @@ export default function MediaPlanBuilderSection({
                   </>
                 )}
               </div>
-              <div className="mt-4 flex items-center justify-between text-[12.5px] font-bold text-white/60">
+              <div className="mt-4 flex items-center justify-between text-[12.5px] font-bold text-slate-400">
                 <span id="chanCount">
                   {selectedChannels.length} channel{selectedChannels.length === 1 ? '' : 's'} selected
                 </span>
-                <button id="builderClear" type="button" onClick={handleClear} className="underline hover:text-white">
+                <button id="builderClear" type="button" onClick={handleClear} className="underline text-slate-300 hover:text-white">
                   Clear
                 </button>
               </div>
@@ -177,11 +177,11 @@ export default function MediaPlanBuilderSection({
                 id="builderSend"
                 type="button"
                 onClick={handleSend}
-                className="mt-4 bg-brand hover:bg-white hover:text-navy transition text-white font-extrabold text-sm px-6 py-4 rounded-full w-full"
+                className="mt-4 bg-brand hover:bg-brand-dark transition text-white font-extrabold text-sm px-6 py-4 rounded-full w-full shadow-card"
               >
                 Send this brief → Request Media Plan
               </button>
-              <p className="text-[11.5px] text-white/45 mt-3 text-center">
+              <p className="text-[11.5px] text-slate-400 mt-3 text-center">
                 No spam. We reply with plan, pricing & location list.
               </p>
             </div>

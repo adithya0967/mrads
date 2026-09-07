@@ -27,10 +27,10 @@ export default function Navbar({
   return (
     <header
       id="navbar"
-      className={`sticky top-0 z-50 bg-white/92 backdrop-blur-md border-b border-line transition-all ${
+      className={`sticky top-0 z-50 bg-[#090D16]/92 backdrop-blur-md border-b border-slate-800 transition-all ${
         navShadow ? 'shadow-card' : ''
       }`}
-      style={{ background: 'rgba(255,255,255,.94)' }}
+      style={{ background: 'rgba(9,13,22,.92)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[72px]">
@@ -39,8 +39,8 @@ export default function Navbar({
               MR
             </div>
             <div className="leading-none">
-              <div className="font-extrabold text-[19px] tracking-tight text-navy">
-                Mr. Ads <span className="font-medium text-muted text-[13px] align-middle">| MR</span>
+              <div className="font-extrabold text-[19px] tracking-tight text-white">
+                Mr. Ads <span className="font-medium text-slate-400 text-[13px] align-middle">| MR</span>
               </div>
               <div className="text-[11px] font-semibold tracking-[.16em] uppercase text-brand mt-1">
                 Hyperlocal Advertising
@@ -64,7 +64,7 @@ export default function Navbar({
           <div className="flex items-center gap-3">
             <a
               href="tel:+919686544644"
-              className="hidden md:inline-flex w-10 h-10 rounded-full btn-ghost items-center justify-center text-navy"
+              className="hidden md:inline-flex w-10 h-10 rounded-full btn-ghost items-center justify-center text-slate-200 hover:text-white"
               aria-label="Call Mr Ads"
             >
               <i className="fa-solid fa-phone text-sm"></i>
@@ -79,7 +79,7 @@ export default function Navbar({
             <button
               id="menuBtn"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="lg:hidden w-11 h-11 rounded-xl border border-line flex items-center justify-center text-navy"
+              className="lg:hidden w-11 h-11 rounded-xl border border-slate-700 bg-[#121B2D] flex items-center justify-center text-slate-200"
               aria-label="Open menu"
             >
               <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
@@ -89,33 +89,33 @@ export default function Navbar({
       </div>
 
       {/* Mobile menu */}
-      <div id="mobileMenu" className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} border-t border-line bg-white`}>
+      <div id="mobileMenu" className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} border-t border-slate-800 bg-[#090D16] text-slate-100`}>
         <div className="px-5 py-4 grid gap-1 max-h-[70vh] overflow-auto">
-          <a href="#home" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#home" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Home
           </a>
-          <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Solutions
           </a>
-          <a href="#display" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#display" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Display Advertising
           </a>
-          <a href="#moving" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#moving" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Moving Media
           </a>
-          <a href="#offline" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#offline" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Offline & Print
           </a>
-          <a href="#creative" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#creative" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Print & Creative
           </a>
-          <a href="#digital" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#digital" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Digital & AI
           </a>
-          <a href="#why" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-line font-semibold">
+          <a href="#why" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
             Why Mr. Ads
           </a>
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 font-semibold">
+          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 font-semibold text-slate-200 hover:text-white">
             Contact
           </a>
           <div className="flex gap-3 py-3">
@@ -126,11 +126,11 @@ export default function Navbar({
             >
               Get a Media Plan
             </a>
-            <a href="tel:+919686544644" className="btn-ghost px-5 py-3.5 rounded-full font-bold text-sm">
+            <a href="tel:+919686544644" className="btn-ghost px-5 py-3.5 rounded-full font-bold text-sm text-slate-200">
               <i className="fa-solid fa-phone"></i>
             </a>
           </div>
-          <p className="text-xs text-muted pb-2">knowus@mr-ads.in · +91 96865 44644</p>
+          <p className="text-xs text-slate-400 pb-2">knowus@mr-ads.in · +91 96865 44644</p>
         </div>
       </div>
     </header>

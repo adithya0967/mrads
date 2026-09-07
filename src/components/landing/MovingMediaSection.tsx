@@ -64,15 +64,15 @@ export default function MovingMediaSection({ onOpenLightbox, onPrefill }: Moving
   ];
 
   return (
-    <section id="moving" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
+    <section id="moving" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="reveal in">
         <p className="crumb">
           <a href="#home">Home</a> / <a href="#solutions">Solutions</a> / Advertising on the Move
         </p>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mt-2">
           <div>
-            <h2 className="serif text-3xl sm:text-[42px] tracking-tight">Advertising on the Move</h2>
-            <p className="text-muted mt-3 max-w-2xl">
+            <h2 className="serif text-3xl sm:text-[42px] tracking-tight text-white">Advertising on the Move</h2>
+            <p className="text-slate-400 mt-3 max-w-2xl">
               Brand visibility across high-traffic urban locations — your message travels with the city. Tap any visual to view.
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function MovingMediaSection({ onOpenLightbox, onPrefill }: Moving
             href="#contact"
             onClick={() => onPrefill('Auto / Cab / Bus Branding')}
             data-env="Moving Media Campaign"
-            className="btn-navy shrink-0 inline-flex items-center gap-2 font-bold text-sm px-6 py-3.5 rounded-full"
+            className="btn-primary shrink-0 inline-flex items-center gap-2 font-bold text-sm px-6 py-3.5 rounded-full text-white"
           >
             Plan a moving-media route <i className="fa-solid fa-arrow-right text-xs"></i>
           </a>
@@ -92,20 +92,20 @@ export default function MovingMediaSection({ onOpenLightbox, onPrefill }: Moving
           <button
             key={i}
             onClick={() => onOpenLightbox(card.title, card.img, card.desc)}
-            className={`gal group text-left bg-white border border-line rounded-3xl overflow-hidden shadow-card card-hover reveal in ${card.delayClass}`}
+            className={`gal group text-left bg-[#121B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-card card-hover reveal in ${card.delayClass}`}
             data-title={card.title}
             data-img={card.img}
             data-desc={card.desc}
           >
             <div className="h-56 overflow-hidden img-zoom relative">
               <img src={card.thumb} alt={card.alt} className="w-full h-full object-cover" loading="lazy" />
-              <span className="absolute bottom-3 left-3 bg-white/95 text-navy text-[12px] font-bold px-3 py-1.5 rounded-full">
+              <span className="absolute bottom-3 left-3 bg-[#121B2D]/90 backdrop-blur border border-slate-700 text-white text-[12px] font-bold px-3 py-1.5 rounded-full">
                 <i className="fa-solid fa-expand mr-1 text-[11px]"></i> View
               </span>
             </div>
             <div className="p-5">
-              <h3 className="font-extrabold">{card.title}</h3>
-              <p className="text-muted text-[13.5px] mt-1.5">{card.summary}</p>
+              <h3 className="font-extrabold text-white group-hover:text-brand transition">{card.title}</h3>
+              <p className="text-slate-400 text-[13.5px] mt-1.5">{card.summary}</p>
               <p className="text-brand text-[13px] font-bold mt-3">
                 Enquire <i className="fa-solid fa-arrow-right text-[11px]"></i>
               </p>
@@ -113,7 +113,7 @@ export default function MovingMediaSection({ onOpenLightbox, onPrefill }: Moving
           </button>
         ))}
       </div>
-      <p className="text-center text-[12.5px] text-muted mt-6 font-medium">
+      <p className="text-center text-[12.5px] text-slate-500 mt-6 font-medium">
         Imagery is illustrative of formats. No performance statistics are claimed for moving media.
       </p>
     </section>

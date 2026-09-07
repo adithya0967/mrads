@@ -11,11 +11,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        navy: { DEFAULT: '#0B1E3B', 800: '#102849', 900: '#0A1930', 950: '#071224' },
-        brand: { DEFAULT: '#D9232D', dark: '#B91A22', light: '#FEF0F0' },
-        paper: '#F7F8FA',
-        line: '#E6E9EF',
-        muted: '#5B6B84',
+        navy: { DEFAULT: '#F8FAFC', 800: '#E2E8F0', 900: '#CBD5E1', 950: '#060A12' },
+        brand: { DEFAULT: '#D9232D', dark: '#B91A22', light: 'rgba(217, 35, 45, 0.15)' },
+        paper: '#121B2D',
+        line: '#1E293B',
+        muted: '#94A3B8',
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         primary: {
@@ -39,9 +39,9 @@ module.exports = {
         ring: 'var(--ring)',
       },
       boxShadow: {
-        soft: '0 10px 30px -12px rgba(11,30,59,.18)',
-        card: '0 8px 24px -10px rgba(11,30,59,.12)',
-        lift: '0 18px 44px -14px rgba(11,30,59,.25)',
+        soft: '0 10px 30px -12px rgba(0, 0, 0, 0.5)',
+        card: '0 8px 24px -10px rgba(0, 0, 0, 0.4)',
+        lift: '0 18px 44px -14px rgba(0, 0, 0, 0.6)',
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',

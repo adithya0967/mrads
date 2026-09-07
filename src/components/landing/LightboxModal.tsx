@@ -37,23 +37,23 @@ export default function LightboxModal({ isOpen, data, onClose, onEnquire }: Ligh
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-3xl overflow-hidden max-w-2xl w-full shadow-lift">
+      <div className="bg-[#121B2D] border border-slate-800 rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl">
         <div className="relative h-64 sm:h-80">
           <img id="lbImg" src={data.img} alt={data.title} className="w-full h-full object-cover" />
           <button
             id="lbClose"
             onClick={onClose}
-            className="absolute top-3 right-3 w-10 h-10 rounded-full bg-white shadow font-bold text-navy flex items-center justify-center"
+            className="absolute top-3 right-3 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-slate-900 border border-slate-700 text-white font-bold flex items-center justify-center transition"
             aria-label="Close"
           >
             ✕
           </button>
         </div>
         <div className="p-6">
-          <h3 id="lbTitle" className="font-extrabold text-xl">
+          <h3 id="lbTitle" className="font-extrabold text-xl text-white">
             {data.title}
           </h3>
-          <p id="lbDesc" className="text-muted text-[14px] mt-2 leading-relaxed">
+          <p id="lbDesc" className="text-slate-400 text-[14px] mt-2 leading-relaxed">
             {data.desc}
           </p>
           <div className="mt-5 flex gap-2">
@@ -67,7 +67,7 @@ export default function LightboxModal({ isOpen, data, onClose, onEnquire }: Ligh
             <button
               id="lbBack"
               onClick={onClose}
-              className="btn-ghost font-bold text-sm px-5 py-3 rounded-full text-navy"
+              className="btn-ghost font-bold text-sm px-5 py-3 rounded-full text-slate-300 hover:text-white"
             >
               Back
             </button>

@@ -123,11 +123,11 @@ export default function ReachSection({
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} id="reach" className="bg-navy text-white relative overflow-hidden">
+    <section ref={sectionRef} id="reach" className="bg-[#090D16] text-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute left-1/2 -translate-x-1/2 -top-40 w-[700px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse,rgba(217,35,45,.28),transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse,rgba(217,35,45,.25),transparent 70%)' }}
         ></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 relative">
@@ -135,10 +135,10 @@ export default function ReachSection({
           <p className="text-[12px] font-bold tracking-[.2em] uppercase" style={{ color: '#FF8A8E' }}>
             Impact & Reach
           </p>
-          <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-3">
+          <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-3 text-white">
             Opportunity to reach, at neighbourhood scale
           </h2>
-          <p className="text-white/60 mt-3 text-[14.5px]">
+          <p className="text-slate-400 mt-3 text-[14.5px]">
             Figures below represent network opportunity to reach (not guaranteed impressions). Actual delivery depends on plan, locations and duration.
           </p>
         </div>
@@ -148,18 +148,18 @@ export default function ReachSection({
               return (
                 <div
                   key={item.key}
-                  className="bg-white rounded-3xl p-6 text-center text-navy card-hover reveal in reveal-d1 border-2 border-brand"
+                  className="bg-[#121B2D] rounded-3xl p-6 text-center text-white card-hover reveal in reveal-d1 border-2 border-brand shadow-lift"
                 >
                   <p className="text-[11px] font-bold tracking-[.14em] uppercase text-brand">
                     {item.category} {item.badge}
                   </p>
-                  <p className="num text-[40px] font-extrabold mt-2">
+                  <p className="num text-[40px] font-extrabold mt-2 text-white">
                     <span>{counts[item.key]}</span>M+
                   </p>
-                  <p className="text-[13px] text-muted font-semibold mt-1">{item.subtitle}</p>
-                  <div className="mt-4 h-1.5 rounded-full bg-paper overflow-hidden">
+                  <p className="text-[13px] text-slate-400 font-semibold mt-1">{item.subtitle}</p>
+                  <div className="mt-4 h-1.5 rounded-full bg-[#162238] overflow-hidden">
                     <div
-                      className="reach-bar h-full rounded-full bg-navy transition-all duration-1000"
+                      className="reach-bar h-full rounded-full bg-brand transition-all duration-1000"
                       style={{ width: hasAnimated ? item.barWidth : '0%' }}
                     ></div>
                   </div>
@@ -170,18 +170,18 @@ export default function ReachSection({
             return (
               <div
                 key={item.key}
-                className={`bg-white/[.07] border border-white/10 rounded-3xl p-6 text-center card-hover reveal in ${
+                className={`bg-[#121B2D]/70 border border-slate-800 rounded-3xl p-6 text-center card-hover reveal in ${
                   idx % 2 === 1 ? 'reveal-d1' : idx === 2 ? 'reveal-d2' : ''
                 }`}
               >
-                <p className="text-[11px] font-bold tracking-[.14em] uppercase text-white/55">{item.category}</p>
-                <p className="num text-[40px] font-extrabold mt-2">
+                <p className="text-[11px] font-bold tracking-[.14em] uppercase text-slate-400">{item.category}</p>
+                <p className="num text-[40px] font-extrabold mt-2 text-white">
                   <span>{counts[item.key]}</span>M+
                 </p>
-                <p className="text-[13px] text-white/65 font-semibold mt-1">{item.subtitle}</p>
-                <div className="mt-4 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                <p className="text-[13px] text-slate-400 font-semibold mt-1">{item.subtitle}</p>
+                <div className="mt-4 h-1.5 rounded-full bg-[#162238] overflow-hidden">
                   <div
-                    className="reach-bar h-full rounded-full bg-brand transition-all duration-1000"
+                    className="reach-bar h-full rounded-full bg-brand/80 transition-all duration-1000"
                     style={{ width: hasAnimated ? item.barWidth : '0%' }}
                   ></div>
                 </div>
@@ -194,13 +194,13 @@ export default function ReachSection({
             href="#contact"
             onClick={() => onPrefill(null, 'Location List')}
             data-cta="Reach Estimate"
-            className="bg-brand hover:bg-white hover:text-navy transition text-white font-bold text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2"
+            className="bg-brand hover:bg-brand-dark transition text-white font-bold text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2"
           >
             Get a location list <i className="fa-solid fa-arrow-right text-xs"></i>
           </a>
           <a
             href="#display"
-            className="border border-white/25 hover:border-white transition font-bold text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2"
+            className="border border-slate-700 hover:border-slate-500 transition font-bold text-sm text-slate-200 hover:text-white px-7 py-3.5 rounded-full inline-flex items-center gap-2"
           >
             Explore display specs
           </a>
