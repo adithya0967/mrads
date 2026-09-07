@@ -6,7 +6,7 @@ export default function AdvantageSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
         <div className="max-w-3xl reveal in">
           <p className="crumb">
-            <a href="#home">Home</a> / The Hyperlocal Advantage
+            <a href="#home">Home</a>{' / The Hyperlocal Advantage'}
           </p>
           <h2 className="serif text-3xl sm:text-[42px] leading-tight tracking-tight mt-3 text-white">
             The Hyperlocal Advantage

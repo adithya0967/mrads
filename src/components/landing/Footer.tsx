@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -32,24 +33,29 @@ export default function Footer() {
             <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">Explore</p>
             <ul className="mt-4 space-y-2.5 text-[14px] font-semibold text-white/75">
               <li>
-                <a href="#home" className="hover:text-white">
+                <Link href="/" className="hover:text-white">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-white">
-                  Solutions
-                </a>
+                <Link href="/about" className="hover:text-white">
+                  About
+                </Link>
               </li>
               <li>
-                <a href="#why" className="hover:text-white">
-                  Why Mr. Ads
-                </a>
+                <Link href="/locations" className="hover:text-white">
+                  Locations
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white">
+                <Link href="/pricing" className="hover:text-white">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -58,29 +64,29 @@ export default function Footer() {
             <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">Services</p>
             <ul className="mt-4 space-y-2.5 text-[14px] font-semibold text-white/75">
               <li>
-                <a href="#display" className="hover:text-white">
+                <Link href="/locations" className="hover:text-white">
                   Display Advertising
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#moving" className="hover:text-white">
+                <Link href="/locations" className="hover:text-white">
                   Advertising on the Move
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#offline" className="hover:text-white">
+                <Link href="/locations" className="hover:text-white">
                   Offline & Print Distribution
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#creative" className="hover:text-white">
+                <Link href="/pricing" className="hover:text-white">
                   Print & Creative Design
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#digital" className="hover:text-white">
+                <Link href="/pricing" className="hover:text-white">
                   Website, Development & AI
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -90,12 +96,12 @@ export default function Footer() {
             <p className="text-white/60 text-[13.5px] mt-4">
               Share your city & goal — receive environments, locations & pricing.
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="mt-4 inline-flex items-center gap-2 bg-brand hover:bg-white hover:text-navy transition text-white font-bold text-sm px-6 py-3.5 rounded-full"
             >
               Get a Media Plan <i className="fa-solid fa-arrow-right text-xs"></i>
-            </a>
+            </Link>
           </div>
         </div>
 

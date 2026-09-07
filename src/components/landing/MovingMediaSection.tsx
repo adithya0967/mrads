@@ -67,7 +67,7 @@ export default function MovingMediaSection({ onOpenLightbox, onPrefill }: Moving
     <section id="moving" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="reveal in">
         <p className="crumb">
-          <a href="#home">Home</a> / <a href="#solutions">Solutions</a> / Advertising on the Move
+          <a href="#home">Home</a>{' / '}<a href="#solutions">Solutions</a>{' / Advertising on the Move'}
         </p>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mt-2">
           <div>

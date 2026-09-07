@@ -10,7 +10,7 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
       <div className="grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4 reveal in">
           <p className="crumb">
-            <a href="#home">Home</a> / Print & Creative
+            <a href="#home">Home</a>{' / Print & Creative'}
           </p>
           <h2 className="serif text-3xl sm:text-[40px] tracking-tight mt-2 text-white">
             Print & Creative Design Solutions

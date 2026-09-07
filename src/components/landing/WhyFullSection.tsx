@@ -5,7 +5,7 @@ export default function WhyFullSection() {
     <section id="why" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="text-center max-w-3xl mx-auto reveal in">
         <p className="crumb">
-          <a href="#home">Home</a> / Why Mr. Ads
+          <a href="#home">Home</a>{' / Why Mr. Ads'}
         </p>
         <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Why Mr. Ads</h2>
         <p className="text-slate-400 mt-3">Six deck-supported differentiators — told simply, delivered consistently.</p>

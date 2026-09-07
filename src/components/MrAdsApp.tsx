@@ -209,7 +209,7 @@ export default function MrAdsApp() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    const secIds = ['home', 'solutions', 'display', 'moving', 'offline', 'digital', 'why', 'contact'];
+    const secIds = ['home', 'why', 'reach', 'builder', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -242,7 +242,6 @@ export default function MrAdsApp() {
 
       {/* Header / Navbar */}
       <Navbar
-        activeNav={activeNav}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
         navShadow={navShadow}

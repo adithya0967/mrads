@@ -80,7 +80,7 @@ export default function ContactSection({
     <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="reveal in">
         <p className="crumb">
-          <a href="#home">Home</a> / Contact · Request a Media Plan
+          <a href="#home">Home</a>{' / Contact · Request a Media Plan'}
         </p>
         <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Request a Media Plan</h2>
         <p className="text-slate-400 mt-3 max-w-2xl">

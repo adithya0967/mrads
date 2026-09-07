@@ -1,27 +1,28 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavbarProps {
-  activeNav: string;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   navShadow: boolean;
 }
 
 export default function Navbar({
-  activeNav,
   mobileMenuOpen,
   setMobileMenuOpen,
   navShadow,
 }: NavbarProps) {
+  const pathname = usePathname();
+
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'solutions', label: 'Solutions' },
-    { id: 'display', label: 'Display' },
-    { id: 'moving', label: 'Moving Media' },
-    { id: 'offline', label: 'Offline & Print' },
-    { id: 'digital', label: 'Digital & AI' },
-    { id: 'why', label: 'Why Mr. Ads' },
-    { id: 'contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/locations', label: 'Locations' },
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -34,7 +35,7 @@ export default function Navbar({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[72px]">
-          <a href="#home" className="flex items-center gap-3 group" aria-label="Mr Ads Home">
+          <Link href="/" className="flex items-center gap-3 group" aria-label="Mr Ads Home">
             <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center text-white font-extrabold text-lg tracking-tight shadow-card group-hover:scale-105 transition">
               MR
             </div>
@@ -46,19 +47,21 @@ export default function Navbar({
                 Hyperlocal Advertising
               </div>
             </div>
-          </a>
+          </Link>
 
           <nav className="nav-desktop hidden lg:flex items-center gap-6" aria-label="Primary">
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className={`nav-link ${activeNav === item.id ? 'active' : ''}`}
-                data-nav={item.id}
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`nav-link ${isActive ? 'active' : ''}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -69,13 +72,13 @@ export default function Navbar({
             >
               <i className="fa-solid fa-phone text-sm"></i>
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               data-cta="Get a Media Plan"
               className="btn-primary hidden sm:inline-flex items-center gap-2 font-bold text-sm px-5 py-3 rounded-full"
             >
               Get a Media Plan <i className="fa-solid fa-arrow-right text-xs"></i>
-            </a>
+            </Link>
             <button
               id="menuBtn"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -91,41 +94,24 @@ export default function Navbar({
       {/* Mobile menu */}
       <div id="mobileMenu" className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} border-t border-slate-800 bg-[#090D16] text-slate-100`}>
         <div className="px-5 py-4 grid gap-1 max-h-[70vh] overflow-auto">
-          <a href="#home" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Home
-          </a>
-          <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Solutions
-          </a>
-          <a href="#display" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Display Advertising
-          </a>
-          <a href="#moving" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Moving Media
-          </a>
-          <a href="#offline" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Offline & Print
-          </a>
-          <a href="#creative" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Print & Creative
-          </a>
-          <a href="#digital" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Digital & AI
-          </a>
-          <a href="#why" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white">
-            Why Mr. Ads
-          </a>
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="m-link py-3 font-semibold text-slate-200 hover:text-white">
-            Contact
-          </a>
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="m-link py-3 border-b border-slate-800 font-semibold text-slate-200 hover:text-white"
+            >
+              {item.label}
+            </Link>
+          ))}
           <div className="flex gap-3 py-3">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="m-link btn-primary flex-1 text-center font-bold text-sm px-5 py-3.5 rounded-full"
             >
               Get a Media Plan
-            </a>
+            </Link>
             <a href="tel:+919686544644" className="btn-ghost px-5 py-3.5 rounded-full font-bold text-sm text-slate-200">
               <i className="fa-solid fa-phone"></i>
             </a>

@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 import AppLogo from '@/components/ui/AppLogo';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Locations', href: '#locations' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#why' },
+  { label: 'Locations', href: '#reach' },
+  { label: 'Pricing', href: '#builder' },
   { label: 'Contact', href: '#contact' },
 ];
 

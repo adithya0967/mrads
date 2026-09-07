@@ -1,6 +1,19 @@
-import React from 'react';
-import MrAdsApp from '@/components/MrAdsApp';
+'use client';
 
-export default function LandingPage() {
-  return <MrAdsApp />;
+import React from 'react';
+import PageShell from '@/components/PageShell';
+import HeroSection from '@/components/landing/HeroSection';
+import AdvantageSection from '@/components/landing/AdvantageSection';
+import WhyPreviewSection from '@/components/landing/WhyPreviewSection';
+import SolutionsPreviewSection from '@/components/landing/SolutionsPreviewSection';
+
+export default function HomePage() {
+  return (
+    <PageShell>
+      <HeroSection />
+      <AdvantageSection />
+      <WhyPreviewSection />
+      <SolutionsPreviewSection />
+    </PageShell>
+  );
 }

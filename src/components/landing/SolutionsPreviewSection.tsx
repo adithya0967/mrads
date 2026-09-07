@@ -5,7 +5,7 @@ export default function SolutionsPreviewSection() {
     <section id="solutions" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
       <div className="max-w-3xl reveal in">
         <p className="crumb text-slate-400 text-sm">
-          <a href="#home" className="hover:text-slate-200">Home</a> / Advertising Solutions
+          <a href="#home" className="hover:text-slate-200">Home</a>{' / Advertising Solutions'}
         </p>
         <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Solutions preview</h2>
         <p className="text-slate-400 mt-3">Seven solution families. Pick one channel or combine them into a single hyperlocal plan.</p>

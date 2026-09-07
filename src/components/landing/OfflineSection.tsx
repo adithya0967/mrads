@@ -10,7 +10,7 @@ export default function OfflineSection({ onPrefill }: OfflineSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
         <div className="reveal in">
           <p className="crumb">
-            <a href="#home">Home</a> / <a href="#solutions">Solutions</a> / Offline & Print
+            <a href="#home">Home</a>{' / '}<a href="#solutions">Solutions</a>{' / Offline & Print'}
           </p>
           <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Offline & Print</h2>
           <p className="text-slate-400 mt-3 max-w-2xl">

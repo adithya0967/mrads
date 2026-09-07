@@ -22,7 +22,7 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
         <div className="reveal in">
           <p className="crumb">
-            <a href="#home">Home</a> / <a href="#solutions">Solutions</a> / Display Advertising
+            <a href="#home">Home</a>{' / '}<a href="#solutions">Solutions</a>{' / Display Advertising'}
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mt-2">
             <div>
