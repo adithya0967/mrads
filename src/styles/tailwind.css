@@ -405,3 +405,51 @@ details[open] .faq-plus { transform: rotate(45deg); }
     transform: none !important;
   }
 }
+
+/* Target site design system classes */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap');
+
+.container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-site {
+    padding-inline: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .container-site {
+    padding-inline: 1.5rem;
+  }
+}
+
+.eyebrow {
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #8c8a85;
+  font-size: .6875rem;
+  font-weight: 500;
+}
+
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform .28s ease;
+}
+.img-zoom:hover img {
+  transform: scale(1.04);
+}
+
+.btn-arrow svg {
+  transition: transform .2s ease;
+}
+.btn-arrow:hover svg {
+  transform: translate(3px);
+}

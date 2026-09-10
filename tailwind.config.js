@@ -11,11 +11,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        ink: '#0c0c0c',
+        graphite: '#141414',
+        slate: '#1b1b1b',
+        line: '#2c2c2c',
+        'line-soft': '#242424',
+        paper: '#f3f0ea',
+        mute: '#8c8a85',
+        'mute-2': '#6e6c68',
         navy: { DEFAULT: '#F8FAFC', 800: '#E2E8F0', 900: '#CBD5E1', 950: '#060A12' },
-        brand: { DEFAULT: '#D9232D', dark: '#B91A22', light: 'rgba(217, 35, 45, 0.15)' },
-        paper: '#121B2D',
-        line: '#1E293B',
-        muted: '#94A3B8',
+        brand: { DEFAULT: '#c41e3a', hover: '#d32a48', dark: '#B91A22', light: 'rgba(196, 30, 58, 0.15)' },
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         primary: {
@@ -54,7 +59,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'var(--font-plus-jakarta-sans)', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        serif: ['var(--font-serif)', 'Instrument Serif', 'Fraunces', 'Georgia', 'serif'],
       },
     },
   },
