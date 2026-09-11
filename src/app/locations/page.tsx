@@ -6,7 +6,7 @@ import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 
-export const categories = [
+const categories = [
   { id: 'restaurant', label: 'Restaurant', image: '/images/restaurant.jpg' },
   { id: 'apartment', label: 'Apartment', image: '/images/apartment.jpg' },
   { id: 'corporate', label: 'Corporate', image: '/images/corporate.jpg' },
@@ -16,7 +16,7 @@ export const categories = [
   { id: 'pg-hostel', label: 'PG & Hostel', image: '/images/hostel.jpg' },
 ];
 
-export const networkStats = [
+const networkStats = [
   { value: '2,400+', label: 'Restaurant screens', note: 'Network opportunity' },
   { value: '1,100+', label: 'Apartment screens', note: 'Network opportunity' },
   { value: '420+', label: 'Corporate locations', note: 'Network opportunity' },
@@ -26,7 +26,7 @@ export const networkStats = [
   { value: '180+', label: 'PG & Hostel clusters', note: 'Network opportunity' },
 ];
 
-export const locationDisplays = [
+const locationDisplays = [
   {
     id: 'restaurant',
     title: 'Restaurant Displays',

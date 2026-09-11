@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 
-export const pricingChannels = [
+const pricingChannels = [
   { id: 'restaurant', label: 'Restaurant' },
   { id: 'apartment', label: 'Apartment' },
   { id: 'corporate', label: 'Corporate' },
@@ -22,9 +22,9 @@ export const pricingChannels = [
   { id: 'digital', label: 'Website / AI' },
 ];
 
-export const durationOptions = ['1 month', '3 months', '6 months', '12 months'];
+const durationOptions = ['1 month', '3 months', '6 months', '12 months'];
 
-export const budgetOptions = [
+const budgetOptions = [
   'To be discussed',
   'Under ₹50,000 / month',
   '₹50,000 – ₹1.5 lakh / month',

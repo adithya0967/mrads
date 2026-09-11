@@ -452,4 +452,24 @@ details[open] .faq-plus { transform: rotate(45deg); }
 }
 .btn-arrow:hover svg {
   transform: translate(3px);
-}
+}
+
+.nav-link {
+  color: #8c8a85;
+  transition: color 0.18s ease;
+  position: relative;
+}
+.nav-link:hover,
+.nav-link.is-active {
+  color: #f3f0ea;
+}
+.nav-link.is-active:after {
+  content: "";
+  background: #c41e3a;
+  height: 1px;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+}
+
