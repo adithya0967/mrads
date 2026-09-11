@@ -19,7 +19,18 @@
   --input: #1e293b;
   --ring: #d9232d;
   --radius: 1rem;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --color-ink: #0c0c0c;
+  --color-graphite: #141414;
+  --color-slate: #1b1b1b;
+  --color-line: #2c2c2c;
+  --color-line-soft: #242424;
+  --color-paper: #f3f0ea;
+  --color-mute: #8c8a85;
+  --color-mute-2: #6e6c68;
+  --color-brand: #c41e3a;
+  --color-brand-hover: #d32a48;
 }
 
 @layer base {
@@ -471,5 +482,13 @@ details[open] .faq-plus { transform: rotate(45deg); }
   bottom: -7px;
   left: 0;
   right: 0;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
 }
 

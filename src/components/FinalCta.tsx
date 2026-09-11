@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import Reveal from '@/components/ui/Reveal';
 
 interface FinalCtaProps {
   title?: string;
@@ -14,7 +15,7 @@ export default function FinalCta({
   return (
     <section className="border-t border-line bg-graphite">
       <div className="container-site py-20 md:py-28">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="eyebrow">Next step</p>
           <h2 className="mt-5 font-serif text-[34px] leading-[1.12] tracking-tight text-paper md:text-[46px]">
             {title}
@@ -29,7 +30,7 @@ export default function FinalCta({
               <ArrowRight size={14} strokeWidth={1.75} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

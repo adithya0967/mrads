@@ -1,14 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { phoneText, phoneTel, contactEmail, contactMailto, navLinks } from './SiteHeader';
-
-const servicesLinks = [
-  { to: '/locations', label: 'Display Advertising' },
-  { to: '/advertising-on-the-move', label: 'Advertising on the Move' },
-  { to: '/offline-print', label: 'Offline & Print Distribution' },
-  { to: '/print-creative', label: 'Print & Creative' },
-  { to: '/digital', label: 'Digital Solutions' },
-];
+import { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLinks } from '@/data/siteNavigation';
 
 export default function SiteFooter() {
   return (
