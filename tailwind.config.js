@@ -25,7 +25,14 @@ module.exports = {
         foreground: 'var(--foreground)',
         primary: {
           DEFAULT: 'var(--primary)',
+          hover: 'var(--primary-hover)',
           foreground: 'var(--primary-foreground)',
+        },
+        headline: {
+          accent: 'var(--headline-accent)',
+        },
+        subtle: {
+          accent: 'var(--subtle-accent)',
         },
         secondary: {
           DEFAULT: 'var(--secondary)',
@@ -42,6 +49,9 @@ module.exports = {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+        emerald: {
+          status: '#16C784',
+        },
       },
       boxShadow: {
         soft: '0 10px 30px -12px rgba(0, 0, 0, 0.5)',
