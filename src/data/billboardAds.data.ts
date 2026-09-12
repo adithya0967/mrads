@@ -35,6 +35,31 @@ export interface AdCampaign {
 
 export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
   {
+    id: 'campaign-dining',
+    category: 'culinary',
+    brandName: 'ARTISAN BISTRO & LOUNGE',
+    brandSub: 'GOURMET DINING',
+    badge: 'GOURMET DINING',
+    headline: 'Wood-Fired Pizza & Craft Cocktails.',
+    subheadline: 'Award-winning Italian gastronomy right around the corner.',
+    supportingCopy: 'Handcrafted sourdough pizzas, artisanal small plates & signature mixology.',
+    ctaText: 'RESERVE TABLE',
+    ctaSubtext: 'Indiranagar & Lavelle Road',
+    locationOrTag: 'Indiranagar & Lavelle Road',
+    specs: [
+      { label: 'CUISINE', value: 'Artisan Italian' },
+      { label: 'ATMOSPHERE', value: 'Rooftop Lounge' },
+      { label: 'RATING', value: '4.9 ★★★★★' },
+    ],
+    qrNotice: 'SCAN FOR RESERVATIONS',
+    visualUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop',
+    visualAlt: 'Artisan wood-fired pizza and craft cocktails spread on dark rustic table',
+    accentColor: '#10B981',
+    accentGlow: 'rgba(16, 185, 129, 0.35)',
+    duration: 10,
+    layoutVariant: 'culinary',
+  },
+  {
     id: 'campaign-telecom',
     category: 'telecom',
     brandName: 'AURA',

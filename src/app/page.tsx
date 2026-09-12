@@ -2,7 +2,7 @@
 
 import React from 'react';
 import TargetShell from '@/components/TargetShell';
-import HeroSection from '@/components/landing/HeroSection';
+import Hero from '@/components/hero/Hero';
 import PresenceSection from '@/components/landing/PresenceSection';
 import AdvantageSection from '@/components/landing/AdvantageSection';
 import WhySection from '@/components/landing/WhySection';
@@ -13,8 +13,8 @@ import FinalCta from '@/components/FinalCta';
 export default function HomePage() {
   return (
     <TargetShell>
-      {/* 1. Preserved Hero section from user screenshot (including 4K DOOH billboard and marquee ticker) */}
-      <HeroSection />
+      {/* Production-Quality Mr. Ads Hero Experience: Own the City's Attention */}
+      <Hero />
 
       {/* 2. Presence section: Where your audience is. */}
       <PresenceSection />

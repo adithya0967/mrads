@@ -3,34 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --background: #090d16;
-  --foreground: #f8fafc;
-  --primary: #d9232d;
+  --background: #080808;
+  --foreground: #F4F1EC;
+  --primary: #D81F42;
   --primary-foreground: #ffffff;
-  --secondary: #121b2d;
-  --secondary-foreground: #f8fafc;
-  --accent: #d9232d;
+  --secondary: #0D0D0D;
+  --secondary-foreground: #F4F1EC;
+  --accent: #D81F42;
   --accent-foreground: #ffffff;
-  --muted: #121b2d;
-  --muted-foreground: #94a3b8;
-  --card: #121b2d;
-  --card-foreground: #f8fafc;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #d9232d;
+  --muted: #141414;
+  --muted-foreground: #929292;
+  --card: #0D0D0D;
+  --card-foreground: #F4F1EC;
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.10);
+  --ring: #D81F42;
   --radius: 1rem;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --color-ink: #0c0c0c;
-  --color-graphite: #141414;
-  --color-slate: #1b1b1b;
-  --color-line: #2c2c2c;
-  --color-line-soft: #242424;
-  --color-paper: #f3f0ea;
-  --color-mute: #8c8a85;
-  --color-mute-2: #6e6c68;
-  --color-brand: #c41e3a;
-  --color-brand-hover: #d32a48;
+  --font-serif: 'Cormorant Garamond', 'Instrument Serif', 'DM Serif Display', Georgia, serif;
+  --color-ink: #080808;
+  --color-graphite: #0D0D0D;
+  --color-slate: #141414;
+  --color-line: rgba(255, 255, 255, 0.10);
+  --color-line-soft: rgba(255, 255, 255, 0.06);
+  --color-paper: #F4F1EC;
+  --color-mute: #929292;
+  --color-mute-2: #666666;
+  --color-brand: #D81F42;
+  --color-brand-hover: #ED3153;
 }
 
 @layer base {
@@ -101,6 +101,42 @@
 
   .scarcity-strip {
     background: linear-gradient(90deg, rgba(217, 35, 45, 0.2) 0%, rgba(217, 35, 45, 0.08) 50%, rgba(217, 35, 45, 0.2) 100%);
+  }
+
+  .billboard-backlight {
+    background: radial-gradient(
+      ellipse 70% 60% at 60% 45%,
+      rgba(216, 31, 66, 0.22) 0%,
+      rgba(216, 31, 66, 0.06) 55%,
+      transparent 80%
+    );
+  }
+
+  .screen-mesh {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.18) 0px,
+      rgba(0, 0, 0, 0.18) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+
+  .screen-glare {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(255, 255, 255, 0.03) 30%,
+      transparent 55%,
+      rgba(255, 255, 255, 0.02) 80%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .editorial-serif {
+    font-family: 'Cormorant Garamond', 'Instrument Serif', 'DM Serif Display', Georgia, serif;
   }
 }
 

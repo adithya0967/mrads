@@ -121,33 +121,43 @@ export default function AdCreative({ campaign, isActive = true }: AdCreativeProp
        * ========================================================================= */
       case 'culinary':
         return (
-          <div className="relative z-10 w-full h-full flex flex-col justify-between p-5 sm:p-8 lg:p-10 text-white">
+          <div className="relative z-10 w-full h-full flex flex-col justify-between p-5 sm:p-7 lg:p-8 text-white">
             {/* Minimal Brand Lockup */}
-            <div className="flex items-center gap-3 animate-ad-fade-up">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-amber-400/80 bg-stone-950/80 flex items-center justify-center text-amber-400 text-sm shadow-[0_0_15px_rgba(230,156,36,0.5)]">
-                <i className="fa-solid fa-mug-hot text-xs"></i>
+            <div className="flex items-center gap-2.5 animate-ad-fade-up">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-amber-400/80 bg-stone-950/80 flex items-center justify-center text-amber-400 text-xs shadow-[0_0_15px_rgba(230,156,36,0.5)]">
+                <i className="fa-solid fa-utensils text-[10px]"></i>
               </div>
               <div>
-                <span className="serif text-lg sm:text-2xl font-bold tracking-wider leading-none block text-amber-100">
+                <span className="text-xs sm:text-sm font-black tracking-widest leading-none block text-amber-100 uppercase">
                   {campaign.brandName}
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-400 block uppercase mt-0.5">
-                  {campaign.brandSub || 'ARTISAN COFFEE'}
+                <span className="text-[8.5px] sm:text-[9.5px] font-bold tracking-[0.2em] text-amber-400/90 block uppercase mt-0.5">
+                  {campaign.brandSub || 'GOURMET DINING'}
                 </span>
               </div>
             </div>
 
             {/* Sensory Headline & CTA */}
-            <div className="max-w-xl mt-auto pb-2">
-              <h2 className="serif text-2xl sm:text-4xl lg:text-5xl font-normal leading-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] animate-ad-fade-up-d1">
+            <div className="max-w-xl mt-auto pb-1">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] animate-ad-fade-up-d1">
                 {campaign.headline}
               </h2>
+              {campaign.subheadline && (
+                <p className="mt-1 sm:mt-1.5 text-xs sm:text-sm text-slate-200 font-medium max-w-md drop-shadow line-clamp-2">
+                  {campaign.subheadline}
+                </p>
+              )}
 
-              <div className="mt-4 sm:mt-5 flex items-center gap-4 animate-ad-fade-up-d2">
-                <div className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-black text-xs sm:text-sm tracking-wider uppercase flex items-center gap-2 shadow-[0_0_25px_rgba(230,156,36,0.6)] transition-all">
+              <div className="mt-3 sm:mt-4 flex items-center gap-3 animate-ad-fade-up-d2">
+                <div className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-black text-[11px] sm:text-xs tracking-wider uppercase flex items-center gap-1.5 shadow-[0_0_25px_rgba(230,156,36,0.6)] transition-all">
                   <span>{campaign.ctaText}</span>
-                  <i className="fa-solid fa-arrow-right text-xs"></i>
+                  <i className="fa-solid fa-arrow-right text-[10px]"></i>
                 </div>
+                {campaign.locationOrTag && (
+                  <span className="text-[10px] sm:text-xs font-semibold text-white/80 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-sm border border-white/10 hidden sm:inline-block">
+                    📍 {campaign.locationOrTag}
+                  </span>
+                )}
               </div>
             </div>
           </div>
