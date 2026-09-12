@@ -1,12 +1,19 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter, Fraunces } from 'next/font/google';
 import '../styles/tailwind.css';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-plus-jakarta-sans',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-fraunces',
   display: 'swap',
 });
 
@@ -16,10 +23,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'Mr. Ads — Hyperlocal Advertising & Digital Solutions Partner',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://mr-ads.in'),
+  title: 'Mr. Ads (MR) — Hyperlocal Advertising Partner | Display, Outdoor, Offline & Digital',
   description:
-    'Connect with customers across premium digital screens, outdoor transit, offline dark store inserts, corporate gifting, and bespoke Web/AI solutions. Plan your hyperlocal campaign in Bengaluru with Mr. Ads.',
+    'Mr. Ads connects brands with the right local audience through restaurant, apartment, corporate, mall & fitness displays, moving media, offline distribution, print & creative, and website & AI solutions. Request a media plan.',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
