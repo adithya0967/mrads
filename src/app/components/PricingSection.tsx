@@ -1,235 +1,177 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Icon from '@/components/ui/AppIcon';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const plans = [
   {
-    emoji: '💼',
     name: 'Basic Plan',
     price: '₹3,500',
     unit: 'per display / month',
-    description: 'Perfect for testing your first campaign in a single location.',
-    badge: null,
+    description: 'Ideal for testing campaigns in single locations.',
+    popular: false,
     features: [
       'Minimum 3 months or 3 displays',
-      '30-second ad slot',
-      'Plays every 5 minutes',
-      'Ideal for testing',
-      'Single location focus',
+      '30-second ad duration slot',
+      'Plays every 5 minutes (12× / hr)',
+      'High-dwell restaurant visibility',
+      'Standard ad rotation',
     ],
-    cta: 'Get Started',
-    highlight: false,
+    cta: 'Select Basic Plan',
   },
   {
-    emoji: '📈',
     name: 'Growth Plan',
     price: '₹2,800–₹3,000',
     unit: 'per display / month',
-    description: 'Best value for growing brands seeking multi-location visibility.',
-    badge: 'Most Popular',
+    description: 'Best value for multi-location brand expansion across Bengaluru.',
+    popular: true,
     features: [
-      '5–9 displays',
-      'Multi-location visibility',
-      '30-second ad slot',
-      'Better reach & repeated exposure',
-      'Discounted pricing',
+      '5–9 displays across active locations',
+      'Multi-neighborhood coverage',
+      '30-second ad duration slot',
+      'High repeated exposure',
+      'Discounted volume rates',
     ],
-    cta: 'Block Slots Now',
-    highlight: true,
+    cta: 'Book Growth Slots',
   },
   {
-    emoji: '🚀',
     name: 'Scale Plan',
     price: 'Custom Pricing',
     unit: '10+ displays',
-    description: 'Maximum city-wide coverage for brands ready to dominate Bengaluru.',
-    badge: null,
+    description: 'Maximum city-wide dominance for corporate enterprise brands.',
+    popular: false,
     features: [
-      '10+ displays',
-      'Maximum city-wide visibility',
-      '30-second ad slot',
-      'Priority placement',
-      'Best rates available',
+      '10+ displays city-wide',
+      'Priority location placement',
+      'Integrated multi-channel bundling',
+      'Dedicated account manager',
+      'Custom frequency options',
     ],
-    cta: 'Contact Us',
-    highlight: false,
+    cta: 'Contact for Quote',
   },
 ];
 
-const included = [
-  'Ad plays repeatedly as scheduled',
-  'High-dwell waiting & common area views',
-  'Targeted hyperlocal audience reach',
-  'Active network maintenance & hosting',
-];
-
 export default function PricingSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.price-card').forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).style.opacity = '1';
-                (el as HTMLElement).style.transform = 'translateY(0) scale(1)';
-              }, i * 150);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="pricing" ref={sectionRef} className="py-24 md:py-32 bg-card">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+    <section
+      id="pricing"
+      className="py-20 md:py-28 bg-[#090A0C] border-b border-[#252830] relative overflow-hidden"
+    >
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         {/* Header */}
-        <div className="text-center mb-5">
-          <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
-            Pricing
-          </span>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-foreground mb-4">
-            Digital Display Screen Pricing
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Flexible packages based on number of display screens and campaign duration.
-            Volume pricing available for multi-location bookings.
-          </p>
-        </div>
+        <ScrollReveal direction="up" delay={0}>
+          <div className="max-w-2xl mb-16">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
+              PRICING & PACKAGES
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F5F5F5] leading-[1.15]">
+              Transparent Display Screen Packages
+            </h2>
+            <p className="text-[#9A9CA5] text-base font-normal leading-relaxed mt-3">
+              Scale your physical campaign coverage across Bengaluru venues with volume-based screen
+              pricing.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* Bold callout */}
-        <div className="text-center mb-12">
-          <span className="inline-block px-6 py-3 bg-red-950/30 border border-red-900/40 rounded-full text-sm font-bold text-red-300">
-            Select more display screens across our network to lower your cost per screen.
-          </span>
-        </div>
-
-        {/* Pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {plans.map((plan, i) => (
-            <div
+        {/* Pricing Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-12">
+          {plans.map((plan, idx) => (
+            <ScrollReveal
               key={plan.name}
-              className={`price-card relative rounded-3xl p-8 flex flex-col gap-6 border transition-all duration-500 ${
-                plan.highlight
-                  ? 'pricing-card-popular text-primary-foreground border-transparent shadow-2xl shadow-black/40 scale-105 md:scale-[1.04]'
-                  : 'bg-background border-border hover:border-accent/30 hover:shadow-lg'
-              }`}
-              style={{
-                opacity: 0,
-                transform: `translateY(40px) scale(${plan.highlight ? '1.04' : '1'})`,
-                transition: `opacity 0.7s cubic-bezier(0.23,1,0.32,1) ${i * 0.15}s, transform 0.7s cubic-bezier(0.23,1,0.32,1) ${i * 0.15}s`,
-              }}
+              direction="up"
+              staggerIndex={idx}
+              totalItems={plans.length}
+              staggerDelay={180}
             >
-              {/* Badge */}
-              {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-accent text-accent-foreground rounded-full text-xs font-extrabold uppercase tracking-widest shadow-lg">
-                  {plan.badge}
-                </div>
-              )}
-
-              {/* Plan header */}
-              <div>
-                <div className="text-2xl mb-2">{plan.emoji}</div>
-                <h3 className={`font-extrabold text-xl mb-1 ${plan.highlight ? 'text-white' : 'text-foreground'}`}>
-                  {plan.name}
-                </h3>
-                <p className={`text-sm leading-relaxed ${plan.highlight ? 'text-white/60' : 'text-muted-foreground'}`}>
-                  {plan.description}
-                </p>
-              </div>
-
-              {/* Price */}
-              <div className={`border-t border-b py-5 ${plan.highlight ? 'border-white/10' : 'border-border'}`}>
-                <div className={`text-3xl font-extrabold tracking-tight ${plan.highlight ? 'text-white' : 'text-foreground'}`}>
-                  {plan.price}
-                </div>
-                <div className={`text-xs font-bold uppercase tracking-widest mt-1 ${plan.highlight ? 'text-white/50' : 'text-muted-foreground'}`}>
-                  {plan.unit}
-                </div>
-              </div>
-
-              {/* Features */}
-              <ul className="flex flex-col gap-3 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <Icon
-                      name="CheckCircleIcon"
-                      size={16}
-                      variant="solid"
-                      className="shrink-0 mt-0.5 text-accent"
-                    />
-                    <span className={`text-sm font-medium ${plan.highlight ? 'text-white/80' : 'text-foreground/80'}`}>
-                      {f}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href="#contact"
-                className={`mt-auto w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest text-center transition-all duration-300 ${
-                  plan.highlight
-                    ? 'bg-white text-accent hover:bg-white/90'
-                    : 'bg-accent text-accent-foreground hover:bg-red-700'
-                }`}
+              <div
+                className={`${
+                  plan.popular ? 'pro-card-popular' : 'pro-card'
+                } rounded-3xl p-8 flex flex-col justify-between h-full relative group overflow-hidden`}
               >
-                {plan.cta}
-              </a>
-            </div>
+                {/* Top glow accent line */}
+                <div
+                  className={`absolute inset-x-0 top-0 h-[2px] transition-opacity duration-300 ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-transparent via-[#E85D75] to-transparent opacity-100'
+                      : 'bg-gradient-to-r from-transparent via-[#B4233C] to-transparent opacity-0 group-hover:opacity-100'
+                  }`}
+                />
+
+                {plan.popular && (
+                  <div className="absolute -top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#B4233C] to-[#E85D75] text-white px-5 py-1 rounded-b-xl text-[11px] font-extrabold uppercase tracking-widest shadow-lg shadow-[#B4233C]/50 border-x border-b border-white/20 z-10">
+                    ★ Most Popular
+                  </div>
+                )}
+
+                <div className={plan.popular ? 'pt-3' : ''}>
+                  <div className="text-xl font-extrabold text-[#F5F5F5] mb-1 group-hover:text-white transition-colors">
+                    {plan.name}
+                  </div>
+                  <p className="text-xs text-[#9A9CA5] mb-6 leading-relaxed font-normal group-hover:text-[#B0B3C3] transition-colors">
+                    {plan.description}
+                  </p>
+
+                  <div className="py-5 border-t border-b border-white/10 mb-6 bg-white/[0.02] -mx-8 px-8">
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[#F5F5F5] tracking-tight group-hover:text-[#E85D75] transition-colors">
+                      {plan.price}
+                    </div>
+                    <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-widest mt-1">
+                      {plan.unit}
+                    </div>
+                  </div>
+
+                  <ul className="flex flex-col gap-3.5 mb-8">
+                    {plan.features.map((feat) => (
+                      <li
+                        key={feat}
+                        className="flex items-center gap-3 text-xs text-[#D0D2DC] font-medium"
+                      >
+                        <div className="w-5 h-5 rounded-full bg-[#B4233C]/20 border border-[#B4233C]/50 flex items-center justify-center shrink-0">
+                          <Icon
+                            name="CheckCircleIcon"
+                            size={13}
+                            className="text-[#E85D75]"
+                          />
+                        </div>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href="#contact"
+                  className={`w-full text-center py-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-md ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-[#B4233C] to-[#E85D75] text-white hover:from-[#C82A45] hover:to-[#F06E84] shadow-lg shadow-[#B4233C]/30 hover:-translate-y-0.5'
+                      : 'bg-[#181C26] text-[#F5F5F5] border border-white/15 hover:bg-[#222838] hover:border-[#B4233C]/60 hover:text-white'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* Included in all plans */}
-        <div className="mt-12 bg-background rounded-3xl p-8 border border-border">
-          <h4 className="text-center font-extrabold text-foreground mb-6 uppercase tracking-widest text-xs">
-            Included in All Screen Plans
-          </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {included.map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <Icon name="CheckCircleIcon" size={18} variant="solid" className="text-accent shrink-0" />
-                <span className="text-sm font-semibold text-foreground/80">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Custom Pricing Callout for other solutions */}
-        <div className="mt-8 bg-gradient-to-r from-red-950/20 to-slate-900/40 rounded-3xl p-8 border border-red-900/30 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center border border-accent/30 shrink-0">
-              <Icon name="SparklesIcon" size={24} className="text-accent" />
+        {/* Note on Custom Formats */}
+        <ScrollReveal direction="up" delay={250}>
+          <div className="glass-card-glow border border-white/10 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
+            <div className="text-sm font-semibold text-[#F5F5F5] flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#B4233C] shrink-0" />
+              Need Transit Media, Q-Commerce bag inserts, Corporate Gifting or Web/AI custom quotes?
             </div>
-            <div>
-              <h4 className="font-extrabold text-foreground text-base mb-1">Looking for Transit, Print inserts, Gifting or Tech solutions?</h4>
-              <p className="text-muted-foreground text-sm max-w-xl leading-relaxed">
-                Because these campaigns are customized to your specific geography, audience, products, or software requirements, we offer tailor-made quotes to guarantee the best ROI.
-              </p>
-            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#E85D75] uppercase tracking-wider hover:text-white transition-colors shrink-0 group"
+            >
+              Request Custom Channel Quote
+              <Icon name="ArrowRightIcon" size={13} className="group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
-          <a
-            href="#contact"
-            className="px-6 py-3.5 bg-accent text-white rounded-full font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-colors shrink-0"
-          >
-            Request Custom Quote
-          </a>
-        </div>
-
-        {/* Urgency */}
-        <div className="mt-8 scarcity-strip rounded-2xl px-6 py-4 flex items-center gap-3 border border-red-900/40">
-          <Icon name="ClockIcon" size={18} className="text-red-400 shrink-0" />
-          <p className="text-sm font-semibold text-red-300">
-            <strong>Limited slots per display.</strong> High-demand screens get booked quickly—reserve your slot in advance.
-          </p>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
