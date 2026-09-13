@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export interface CampaignItem {
@@ -86,35 +86,72 @@ export const HERO_CAMPAIGNS: CampaignItem[] = [
 
 interface CampaignDisplayProps {
   currentIndex: number;
-  onSelectCampaign: (index: number) => void;
-  progress: number;
 }
 
 export default function CampaignDisplay({
   currentIndex,
-  onSelectCampaign,
-  progress,
 }: CampaignDisplayProps) {
-  const active = HERO_CAMPAIGNS[currentIndex % HERO_CAMPAIGNS.length];
+  const [activeIdx, setActiveIdx] = useState(currentIndex);
+  const [prevIdx, setPrevIdx] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const isInitial = useRef(true);
 
-  // Prebuffer next image to ensure zero black flicker
+  // Handle smooth transition animation whenever currentIndex changes
+  useEffect(() => {
+    if (isInitial.current) {
+      isInitial.current = false;
+      return;
+    }
+
+    if (currentIndex !== activeIdx) {
+      setPrevIdx(activeIdx);
+      setActiveIdx(currentIndex);
+      setIsTransitioning(true);
+
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setPrevIdx(null);
+      }, 1150);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, activeIdx]);
+
+  // Prebuffer upcoming images to ensure zero flicker
   useEffect(() => {
     const nextIdx = (currentIndex + 1) % HERO_CAMPAIGNS.length;
     const img = new window.Image();
     img.src = HERO_CAMPAIGNS[nextIdx].imageUrl;
   }, [currentIndex]);
 
+  // Alternate between deep zoom push-in and cinematic zoom pull-back for variety
+  const isZoomPush = activeIdx % 2 === 1;
+
   return (
-    <div className="relative w-full h-full select-none">
-      {/* Campaign Image Render with Smooth Crossfade */}
+    <div className="relative w-full h-full select-none overflow-hidden bg-black">
+      {/* Campaign Image Slides with Seamless Cinematic Zoom Transition Animation */}
       {HERO_CAMPAIGNS.map((camp, idx) => {
-        const isCurrent = idx === currentIndex;
+        const isIncoming = isTransitioning && idx === activeIdx;
+        const isOutgoing = isTransitioning && idx === prevIdx;
+        const isStaticActive = !isTransitioning && idx === activeIdx;
+
+        if (!isIncoming && !isOutgoing && !isStaticActive) {
+          return null;
+        }
+
+        let animationClasses = '';
+        if (isIncoming) {
+          animationClasses = `z-20 ${isZoomPush ? 'animate-billboard-push-in' : 'animate-billboard-pull-in'}`;
+        } else if (isOutgoing) {
+          animationClasses = `z-10 ${isZoomPush ? 'animate-billboard-push-out' : 'animate-billboard-pull-out'}`;
+        } else {
+          animationClasses = 'z-10 opacity-100';
+        }
+
         return (
           <div
-            key={camp.id}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              isCurrent ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-            }`}
+            key={`${camp.id}-${idx === activeIdx ? 'active' : 'outgoing'}`}
+            className={`absolute inset-0 overflow-hidden ${animationClasses}`}
           >
             <div className="relative w-full h-full overflow-hidden bg-black">
               <Image
@@ -129,67 +166,44 @@ export default function CampaignDisplay({
               {/* Cinematic contrast gradient overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/45 pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30 pointer-events-none" />
-
-              {/* Realistic LED Mesh Subpixel Texture */}
-              <div className="screen-mesh absolute inset-0 opacity-40" />
-
-              {/* Screen Glass Reflection Highlight */}
-              <div className="screen-glare absolute inset-0" />
             </div>
           </div>
         );
       })}
 
-      {/* Top Floating Information Overlays (Restrained Network HUD) */}
-      <div className="absolute top-3 left-3 right-3 sm:top-3.5 sm:left-4 sm:right-4 z-20 flex items-center justify-between pointer-events-none">
-        {/* Live Indicator */}
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/10 text-[10px] sm:text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#F4F1EC]">
+      {/* Subtle Ambient Lens Bloom Flash during Transition */}
+      {isTransitioning && (
+        <div className="absolute inset-0 pointer-events-none z-25 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,transparent_70%)] transition-opacity duration-1000" />
+      )}
+
+      {/* Realistic Physical LED Mesh Subpixel Texture (Fixed over glass) */}
+      <div className="screen-mesh absolute inset-0 opacity-40 z-15 pointer-events-none" />
+
+      {/* Realistic Screen Glass Reflection Highlight (Fixed over glass) */}
+      <div className="screen-glare absolute inset-0 z-15 pointer-events-none" />
+
+      {/* Top Left: Live Broadcast Indicator */}
+      <div className="absolute top-3 left-3 sm:top-3.5 sm:left-4 z-20 pointer-events-none select-none">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/10 text-[10px] sm:text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#F4F1EC] shadow-md">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
           </span>
           <span>LIVE CAMPAIGN</span>
         </div>
-
-        {/* Category Badge */}
-        <div className="px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/10 text-[9.5px] sm:text-[10px] font-bold tracking-[0.16em] uppercase text-[#929292]">
-          {active.tag}
-        </div>
       </div>
 
-      {/* Bottom Floating Sector Quick-Toggle Switcher (All 6 campaigns) */}
-      <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-4 sm:right-4 z-20 flex items-center justify-between gap-2">
-        <div className="flex items-center gap-1 sm:gap-1.5 bg-black/75 backdrop-blur-md p-1 rounded-lg border border-white/10 max-w-[85%] sm:max-w-none overflow-x-auto scrollbar-none">
-          {HERO_CAMPAIGNS.map((camp, idx) => {
-            const isSelected = idx === currentIndex;
-            return (
-              <button
-                key={camp.id}
-                type="button"
-                onClick={() => onSelectCampaign(idx)}
-                className={`px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[9px] sm:text-[10px] font-bold tracking-wider uppercase transition-all shrink-0 ${
-                  isSelected
-                    ? 'bg-white/20 text-[#F4F1EC] border border-white/30 shadow-[0_0_12px_rgba(255,255,255,0.15)]'
-                    : 'text-[#929292] hover:text-[#F4F1EC]'
-                }`}
-              >
-                {camp.shortLabel}
-              </button>
-            );
-          })}
+      {/* Bottom Right: MR ADS DOOH Network Branding */}
+      <div className="absolute bottom-3 right-3 sm:bottom-3.5 sm:right-4 z-20 pointer-events-none select-none">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/12 text-[#F4F1EC] shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+          <div className="relative flex items-center justify-center w-3.5 h-3.5 rounded bg-white/[0.08] border border-white/20">
+            <span className="font-serif text-[10px] font-bold text-[#F4F1EC] leading-none">M</span>
+            <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+          </div>
+          <span className="font-sans text-[10px] sm:text-[10.5px] font-extrabold tracking-[0.16em] uppercase text-[#F4F1EC]">
+            MR. ADS
+          </span>
         </div>
-
-        <div className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-white/10 text-[9.5px] font-semibold tracking-[0.16em] uppercase text-[#929292] shrink-0">
-          <span>CITY-WIDE</span>
-        </div>
-      </div>
-
-      {/* Real-time Commercial Countdown Bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10 z-20">
-        <div
-          className="h-full bg-[#D81F42] shadow-[0_0_8px_#ED3153] transition-all duration-75 ease-linear"
-          style={{ width: `${progress}%` }}
-        />
       </div>
     </div>
   );

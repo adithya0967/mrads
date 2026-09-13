@@ -4,7 +4,6 @@ import React from 'react';
 import HeroCopy from './HeroCopy';
 import HeroCtaGroup from './HeroCtaGroup';
 import BillboardScene from './BillboardScene';
-import NetworkIndicator from './NetworkIndicator';
 import ScrollIndicator from './ScrollIndicator';
 
 export default function Hero() {
@@ -41,7 +40,6 @@ export default function Hero() {
            * ===================================================================== */}
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center w-full">
             <BillboardScene />
-            <NetworkIndicator />
           </div>
 
         </div>

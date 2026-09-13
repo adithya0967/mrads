@@ -194,6 +194,83 @@
   animation-play-state: paused;
 }
 
+/* Cinematic Billboard Zoom Transitions */
+@keyframes billboard-zoom-push-in {
+  0% {
+    transform: scale(0.93);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes billboard-zoom-push-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.09);
+    opacity: 0;
+  }
+}
+
+@keyframes billboard-zoom-pull-in {
+  0% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes billboard-zoom-pull-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.93);
+    opacity: 0;
+  }
+}
+
+.animate-billboard-push-in {
+  animation: billboard-zoom-push-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-billboard-push-out {
+  animation: billboard-zoom-push-out 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-billboard-pull-in {
+  animation: billboard-zoom-pull-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-billboard-pull-out {
+  animation: billboard-zoom-pull-out 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
 /* Mr. Ads Custom Styles */
 html {
   scroll-behavior: smooth;

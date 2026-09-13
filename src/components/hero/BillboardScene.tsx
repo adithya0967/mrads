@@ -1,12 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import CampaignDisplay, { HERO_CAMPAIGNS } from './CampaignDisplay';
 
 export default function BillboardScene() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
@@ -15,26 +13,16 @@ export default function BillboardScene() {
   const DURATION_MS = 5500;
   const totalCampaigns = HERO_CAMPAIGNS.length;
 
-  // Commercial timer and progress loop
+  // Commercial rotation loop
   useEffect(() => {
-    const intervalMs = 50;
-    let elapsed = 0;
+    if (isHovered) return;
 
     const timer = setInterval(() => {
-      if (isHovered) return; // Pause subtle rotation on hover if user is inspecting
-      elapsed += intervalMs;
-      const currentProgress = Math.min(100, (elapsed / DURATION_MS) * 100);
-      setProgress(currentProgress);
-
-      if (elapsed >= DURATION_MS) {
-        elapsed = 0;
-        setProgress(0);
-        setCurrentIndex((prev) => (prev + 1) % totalCampaigns);
-      }
-    }, intervalMs);
+      setCurrentIndex((prev) => (prev + 1) % totalCampaigns);
+    }, DURATION_MS);
 
     return () => clearInterval(timer);
-  }, [currentIndex, isHovered, totalCampaigns]);
+  }, [isHovered, totalCampaigns]);
 
   // Subtle scroll parallax
   useEffect(() => {
@@ -61,11 +49,6 @@ export default function BillboardScene() {
   const handleMouseLeave = () => {
     setMouseOffset({ x: 0, y: 0 });
     setIsHovered(false);
-  };
-
-  const handleSelectCampaign = (index: number) => {
-    setCurrentIndex(index);
-    setProgress(0);
   };
 
   const scaleValue = 1.02 - scrollProgress * 0.02;
@@ -108,23 +91,7 @@ export default function BillboardScene() {
 
         {/* Digital Screen Display Area */}
         <div className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden border border-white/[0.08] bg-black shadow-inner">
-          <CampaignDisplay
-            currentIndex={currentIndex}
-            onSelectCampaign={handleSelectCampaign}
-            progress={progress}
-          />
-        </div>
-
-        {/* Bottom Realistic Structural Mount & Reflected Ambient Rim */}
-        <div className="mt-2 pt-1 px-3 flex items-center justify-between text-[10px] text-[#666666] border-t border-white/[0.04]">
-          <div className="flex items-center gap-2">
-            <span className="text-[#929292] font-medium">BENGALURU PRIME HUBS</span>
-            <span>•</span>
-            <span>KORAMANGALA / INDIRANAGAR / MG ROAD</span>
-          </div>
-          <div className="font-mono text-[#929292]">
-            CAMPAIGN {currentIndex + 1} OF {totalCampaigns}
-          </div>
+          <CampaignDisplay currentIndex={currentIndex} />
         </div>
       </div>
     </div>
