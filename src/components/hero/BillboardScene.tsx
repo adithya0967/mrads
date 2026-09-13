@@ -7,7 +7,6 @@ export default function BillboardScene() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
   const DURATION_MS = 5500;
@@ -37,29 +36,14 @@ export default function BillboardScene() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Subtle mouse movement for atmospheric depth
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setMouseOffset({ x: x * 10, y: y * 10 });
-  };
-
-  const handleMouseLeave = () => {
-    setMouseOffset({ x: 0, y: 0 });
-    setIsHovered(false);
-  };
-
   const scaleValue = 1.02 - scrollProgress * 0.02;
   const parallaxY = scrollProgress * -25;
 
   return (
     <div
       ref={containerRef}
-      onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
+      onMouseLeave={() => setIsHovered(false)}
       className="relative w-full flex flex-col items-center select-none"
       style={{
         transform: `translateY(${parallaxY}px)`,
@@ -73,7 +57,7 @@ export default function BillboardScene() {
       <div
         className="relative w-full rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-gradient-to-b from-[#1C1C1C] via-[#111111] to-[#0A0A0A] border border-white/[0.12] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95),0_0_45px_rgba(216,31,66,0.18)]"
         style={{
-          transform: `scale(${scaleValue}) translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`,
+          transform: `scale(${scaleValue})`,
           transition: 'transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
         }}
       >

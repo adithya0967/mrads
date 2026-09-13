@@ -16,7 +16,7 @@ export default function Hero() {
       {/* 1. Atmospheric Ambient Depth (Radial Vignette + Subliminal Crimson Tone) */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle crimson glow focused behind the billboard visual on the right */}
-        <div className="absolute top-1/3 right-0 w-[550px] lg:w-[750px] h-[550px] lg:h-[750px] bg-[#D81F42]/[0.07] rounded-full blur-[160px]" />
+        <div className="absolute top-[23%] lg:top-[25%] right-0 w-[550px] lg:w-[750px] h-[550px] lg:h-[750px] bg-[#D81F42]/[0.07] rounded-full blur-[160px]" />
         {/* Very soft slate top glow */}
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-white/[0.015] rounded-full blur-[140px]" />
         {/* Soft edge vignette */}
@@ -38,7 +38,7 @@ export default function Hero() {
           {/* =====================================================================
            * RIGHT COLUMN (52% Desktop): Photorealistic Cinematic Billboard Display
            * ===================================================================== */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center w-full">
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-start lg:self-start w-full -mt-6 sm:-mt-8 lg:-mt-16 xl:-mt-24 translate-y-[2.5cm]">
             <BillboardScene />
           </div>
 
