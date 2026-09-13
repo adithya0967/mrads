@@ -1,6 +1,7 @@
 import React from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import ScrollNavigation from './ui/ScrollNavigation';
 
 export default function TargetShell({ children }: { children: React.ReactNode }) {
   return (
@@ -8,6 +9,7 @@ export default function TargetShell({ children }: { children: React.ReactNode })
       <SiteHeader />
       <main id="main">{children}</main>
       <SiteFooter />
+      <ScrollNavigation />
     </div>
   );
 }

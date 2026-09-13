@@ -31,6 +31,12 @@
   --color-mute-2: #666666;
   --color-brand: #D81F42;
   --color-brand-hover: #ED3153;
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 200ms;
+  --duration-medium: 400ms;
+  --duration-slow: 800ms;
 }
 
 @layer base {
@@ -605,5 +611,171 @@ details[open] .faq-plus { transform: rotate(45deg); }
 
 .faq-item summary::-webkit-details-marker {
   display: none;
+}
+
+/* ==========================================================================
+   Motion System & Interaction Primitives
+   ========================================================================== */
+
+/* Premium Button Sheen & Micro-interactions */
+@keyframes sheen-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(260%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.btn-sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn-sheen:hover::after {
+  animation: sheen-sweep 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-sheen:active {
+  transform: scale(0.98);
+}
+
+/* Card Interactive Elevation */
+.card-interactive {
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.85),
+              0 0 30px -5px rgba(216, 31, 66, 0.18);
+  border-color: rgba(216, 31, 66, 0.45);
+}
+
+/* Image Reveal & Zoom Interaction */
+.img-reveal-box {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-reveal-box img {
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.5s ease;
+  will-change: transform;
+}
+
+.img-reveal-box:hover img {
+  transform: scale(1.055);
+}
+
+/* Animated Nav Sliding Underline */
+.nav-link-animated {
+  position: relative;
+  display: inline-block;
+  color: #929292;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #D81F42;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(216, 31, 66, 0.6);
+  transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              left 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-animated:hover {
+  color: #F4F1EC;
+}
+
+.nav-link-animated:hover::after,
+.nav-link-animated.is-active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Smooth Accordion Grid Animation */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-content.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #D81F42 0%, #ED3153 100%);
+  box-shadow: 0 0 10px rgba(237, 49, 83, 0.8);
+  pointer-events: none;
+  z-index: 60;
+  transition: width 0.08s linear;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .btn-sheen::after {
+    display: none !important;
+  }
+  .card-interactive:hover {
+    transform: none !important;
+  }
+  .img-reveal-box:hover img {
+    transform: none !important;
+  }
 }
 

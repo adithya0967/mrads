@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Plus } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 
 const faqs = [
@@ -31,10 +33,16 @@ const faqs = [
 ];
 
 export default function AboutFaq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFaq = (idx: number) => {
+    setOpenIndex(openIndex === idx ? null : idx);
+  };
+
   return (
-    <section className="border-b border-line bg-graphite">
+    <section className="border-b border-line bg-graphite relative overflow-hidden">
       <div className="container-site py-20 md:py-28">
-        <Reveal>
+        <Reveal variant="fade-up">
           <p className="eyebrow">FAQ</p>
           <h2 className="mt-4 font-serif text-[32px] leading-tight tracking-tight text-paper">
             Questions, answered briefly.
@@ -42,30 +50,55 @@ export default function AboutFaq() {
         </Reveal>
 
         <div className="mt-12 max-w-3xl">
-          {faqs.map((n) => (
-            <details key={n.q} className="faq-item group border-t border-line py-5">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[16px] font-medium text-paper">
-                {n.q}
-                <span className="mt-0.5 text-mute transition-transform duration-200 group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 max-w-2xl pr-10 text-[15px] leading-relaxed text-mute">
-                {n.a}
-              </p>
-            </details>
-          ))}
+          {faqs.map((n, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <Reveal key={n.q} variant="fade-up" staggerIndex={idx} delay={0.05}>
+                <div className="border-t border-line py-5 transition-colors">
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex cursor-pointer items-start justify-between gap-6 text-left text-[16px] font-medium text-paper group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="group-hover:text-brand transition-colors duration-200">
+                      {n.q}
+                    </span>
+                    <span
+                      className={`mt-0.5 flex items-center justify-center w-6 h-6 rounded-full border border-white/10 text-mute transition-all duration-300 shrink-0 ${
+                        isOpen ? 'rotate-45 border-brand text-brand bg-[#D81F42]/10' : 'group-hover:border-white/30'
+                      }`}
+                    >
+                      <Plus size={14} />
+                    </span>
+                  </button>
+
+                  <div
+                    className={`accordion-content overflow-hidden ${
+                      isOpen ? 'is-open mt-3' : ''
+                    }`}
+                  >
+                    <div className="accordion-inner pr-10">
+                      <p className="text-[15px] leading-relaxed text-mute">
+                        {n.a}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
 
-        <div className="mt-10">
+        <Reveal variant="fade-up" delay={0.2} className="mt-10">
           <Link
             href="/contact"
-            className="btn-arrow inline-flex items-center justify-center gap-2 rounded-sm bg-brand px-5 py-2.5 text-[13px] font-medium tracking-wide text-paper transition-colors duration-200 hover:bg-brand-hover"
+            className="btn-sheen btn-arrow inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-[13.5px] font-semibold text-paper shadow-md shadow-brand/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
           >
-            Request a Media Plan
-            <ArrowRight size={14} strokeWidth={1.75} />
+            <span>Request a Media Plan</span>
+            <ArrowRight size={14} strokeWidth={2} />
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

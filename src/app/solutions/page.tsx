@@ -5,106 +5,116 @@ import Link from 'next/link';
 import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
-import { ArrowRight, CheckCircle2, Monitor, Bus, Layers, Palette, Cpu, Sparkles } from 'lucide-react';
+import Reveal from '@/components/ui/Reveal';
+import {
+  Monitor,
+  Bus,
+  FileText,
+  Palette,
+  Globe,
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
+} from 'lucide-react';
 
 const solutionPillars = [
   {
     id: 'display',
-    title: 'Display Advertising (DOOH)',
+    title: 'Display Advertising Network (DOOH)',
+    tagline: 'Captive audience. High dwell time.',
     icon: Monitor,
-    tagline: 'High dwell-time screens in daily lifestyle environments',
-    image: '/images/display.jpg',
     href: '/locations',
+    image: '/images/display.jpg',
     summary:
-      'Place your brand inside high-definition digital screens across restaurants, luxury residential lift lobbies, corporate tech parks, shopping malls, fitness centres, play zones, and PG clusters.',
+      'Place your brand inside dining rooms, lift lobbies, gym floors, premium mall corridors and corporate tech parks. Where audiences pause and stay for 20 to 60+ minutes.',
     metrics: [
-      { label: 'Screen Opportunity', value: '4,500+' },
-      { label: 'Avg Dwell Time', value: '25–45 min' },
-      { label: 'Metropolitan Clusters', value: 'Key Hubs' },
+      { value: '2,400+', label: 'Dining screens' },
+      { value: '1,100+', label: 'Residential lifts' },
+      { value: '35 min', label: 'Avg. dwell time' },
     ],
     features: [
-      'Captive dining room and waiting lounge audiences',
-      'Unavoidable daily residential elevator lobby encounters',
-      'Corporate decision-maker reach during business hours',
-      'Weekend shopping mall retail intent surges',
+      'Digital screens running synchronized daytime & evening rotations',
+      'Hyperlocal venue clustering by neighbourhood and consumer demographics',
+      'Proof-of-play logs and scheduled campaign flight management',
+      'No clutter: high visual share of voice per screen',
     ],
   },
   {
     id: 'moving',
-    title: 'Advertising on the Move',
+    title: 'Advertising on the Move (Transit)',
+    tagline: 'Continuous circulation across urban arteries.',
     icon: Bus,
-    tagline: 'City-wide mobile visibility following arterial commuter routes',
-    image: '/images/streets.jpg',
     href: '/advertising-on-the-move',
+    image: '/images/streets.jpg',
     summary:
-      'Turn urban transportation into high-impact mobile billboards. Full and semi wraps on autorickshaws, fleet cabs, metropolitan buses, route-targeted mobile vans, and eye-level bus shelters.',
+      'Autos, city cabs, metropolitan buses and custom mobile LED vans that weave through residential lanes, arterial corridors and tech hubs.',
     metrics: [
-      { label: 'Vehicle Formats', value: '6 Types' },
-      { label: 'Route Coverage', value: 'Neighbourhood & Arterial' },
-      { label: 'Street Attention', value: 'Eye-Level' },
+      { value: 'Metropolitan', label: 'Fleet reach' },
+      { value: '12+ hrs', label: 'Daily road time' },
+      { value: 'Eye-level', label: 'Street impact' },
     ],
     features: [
-      'Autos weaving through dense residential lanes & markets',
-      'Branded cabs circulating across IT corridors and airports',
-      'Large-format buses dominating high-traffic arterial junctions',
-      'Routable mobile vans for roadshows and ground activations',
+      'Full exterior vinyl wraps on auto rickshaws for last-mile street recall',
+      'Corporate and airport route targeting through branded city cabs',
+      'High-capacity arterial visibility on metropolitan public transit buses',
+      'Geofenced mobile LED vans for event launches and targeted roadshows',
     ],
   },
   {
     id: 'offline',
     title: 'Offline & Print Distribution',
-    icon: Layers,
-    tagline: 'Direct-to-doorstep physical media delivered with area discipline',
-    image: '/images/flyers.jpg',
+    tagline: 'Delivered directly into neighbourhood households.',
+    icon: FileText,
     href: '/offline-print',
+    image: '/images/flyers.jpg',
     summary:
-      'Get physical branding directly into hands and living rooms. Supervised offline flyer drops, official morning newspaper inserts, quick-commerce dark store bag drops, and pharmacy covers.',
+      'Direct doorstep distribution, verified newspaper inserts, quick-commerce dark store drops, and neighbourhood pharmacy covers.',
     metrics: [
-      { label: 'Distribution Hubs', value: 'Dark Stores & Routes' },
-      { label: 'Household Entry', value: 'Direct In-Home' },
-      { label: 'Tracking', value: 'Area-Wise Discipline' },
+      { value: '100%', label: 'Doorstep reach' },
+      { value: 'PIN-code', label: 'Targeted delivery' },
+      { value: 'Multi-day', label: 'In-home retention' },
     ],
     features: [
-      'Area-targeted flyer distribution at metro hubs and societies',
-      'Verified newspaper inserts that reach breakfast tables',
-      'Quick-commerce delivery partner collateral insertion',
-      'High-utility reusable pharmacy covers with prolonged life',
+      'Supervised flyer distribution at transit hubs and gated societies',
+      'Official morning newspaper insertions delivered directly into homes',
+      'E-commerce dark store delivery bag inserts reaching active shoppers',
+      'Branded pharmacy medicine covers kept and seen repeatedly for weeks',
     ],
   },
   {
     id: 'creative',
     title: 'Print & Creative Design',
+    tagline: 'Built to stop footfall and command attention.',
     icon: Palette,
-    tagline: 'Studio-crafted visuals engineered for maximum real-world recall',
-    image: '/images/creative.jpg',
     href: '/print-creative',
+    image: '/images/creative.jpg',
     summary:
-      'From single brochures to multi-format retail campaigns, our creative team designs production-ready outdoor collateral, magazine spreads, event standees, pole kiosks, and social assets.',
+      'From standees, brochures, and outdoor hoarding graphics to social media kits and brand collateral designed with editorial restraint.',
     metrics: [
-      { label: 'Design Asset Types', value: '12+ Formats' },
-      { label: 'Print Readiness', value: '100% Pre-Press' },
-      { label: 'Brand Consistency', value: 'Physical to Digital' },
+      { value: 'Studio', label: 'Production quality' },
+      { value: 'CMYK & Web', label: 'Ready assets' },
+      { value: 'Fast', label: 'Turnaround times' },
     ],
     features: [
-      'Brochure, catalogue and product presentation design',
-      'Standees, roll-up banners and on-ground stall branding',
-      'Neighbourhood pole kiosks and high-impact no-parking boards',
-      'Social media creative kits matching real-world signage',
+      'Multi-page sales brochures and product catalogues with sharp typography',
+      'Pull-up standees and stall flexes for exhibition & mall activations',
+      'Weatherproof street pole boards and no-parking warning plaques',
+      'Editorial magazine layouts and high-contrast newspaper creative',
     ],
   },
   {
     id: 'digital',
     title: 'Website, Development & AI',
-    icon: Cpu,
-    tagline: 'The conversion infrastructure where real-world curiosity lands',
-    image: '/images/website.jpg',
+    tagline: 'Converting local footfall into digital pipeline.',
+    icon: Globe,
     href: '/digital',
+    image: '/images/website.jpg',
     summary:
-      'Ensure the demand generated by your offline ads converts effortlessly online. We build high-speed business sites, e-commerce storefronts, 24/7 AI lead-capture chatbots, and managed cloud hosting.',
+      'Modern, high-performance company websites, frictionless mobile e-commerce storefronts, and automated AI lead-qualification chatbots.',
     metrics: [
-      { label: 'Uptime & Security', value: '99.9%' },
-      { label: 'Mobile Optimization', value: 'Core Web Vitals' },
-      { label: 'AI Lead Capture', value: '24/7 Automated' },
+      { value: '99.9%', label: 'Uptime SLA' },
+      { value: '24/7', label: 'AI lead capture' },
+      { value: '< 1.5s', label: 'Page load speed' },
     ],
     features: [
       'Modern, editorial business websites tailored for local conversions',
@@ -135,12 +145,12 @@ export default function SolutionsPage() {
       {/* 2. Interactive Channel Filter Tabs */}
       <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-8 sm:py-10">
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-4 py-2 rounded-lg text-[13px] font-medium transition-all shrink-0 ${
+              className={`px-4 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 shrink-0 ${
                 activeTab === 'all'
-                  ? 'bg-brand text-white shadow-md shadow-brand/20'
+                  ? 'bg-brand text-white shadow-md shadow-brand/25'
                   : 'bg-white/[0.04] text-mute hover:text-paper hover:bg-white/[0.08]'
               }`}
             >
@@ -150,9 +160,9 @@ export default function SolutionsPage() {
               <button
                 key={p.id}
                 onClick={() => setActiveTab(p.id)}
-                className={`px-4 py-2 rounded-lg text-[13px] font-medium transition-all shrink-0 ${
+                className={`px-4 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 shrink-0 ${
                   activeTab === p.id
-                    ? 'bg-brand text-white shadow-md shadow-brand/20'
+                    ? 'bg-brand text-white shadow-md shadow-brand/25'
                     : 'bg-white/[0.04] text-mute hover:text-paper hover:bg-white/[0.08]'
                 }`}
               >
@@ -182,22 +192,25 @@ export default function SolutionsPage() {
                     isReversed ? 'lg:order-2' : ''
                   }`}
                 >
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
-                    <div className="img-zoom aspect-[16/10]">
-                      <img
-                        src={pillar.image}
-                        alt={pillar.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
+                  <Reveal variant={isReversed ? 'slide-right' : 'slide-left'}>
+                    <div className="card-interactive relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
+                      <div className="img-reveal-box aspect-[16/10]">
+                        <img
+                          src={pillar.image}
+                          alt={pillar.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
 
-                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                      <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[11px] font-semibold tracking-wider text-paper uppercase">
-                        {pillar.tagline}
-                      </span>
+                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                        <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[11px] font-semibold tracking-wider text-paper uppercase">
+                          {pillar.tagline}
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  </Reveal>
                 </div>
 
                 {/* Content Column */}
@@ -206,61 +219,63 @@ export default function SolutionsPage() {
                     isReversed ? 'lg:order-1' : ''
                   }`}
                 >
-                  <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-semibold text-brand tracking-wider uppercase mb-4">
-                      <IconComponent size={14} />
-                      <span>Channel Overview</span>
+                  <Reveal variant={isReversed ? 'slide-left' : 'slide-right'} delay={0.1}>
+                    <div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-semibold text-brand tracking-wider uppercase mb-4">
+                        <IconComponent size={14} />
+                        <span>Channel Overview</span>
+                      </div>
+
+                      <h2 className="font-serif text-[30px] sm:text-[38px] leading-tight tracking-tight text-paper font-normal">
+                        {pillar.title}
+                      </h2>
+
+                      <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-mute">
+                        {pillar.summary}
+                      </p>
+
+                      {/* Metric Badges */}
+                      <div className="mt-6 grid grid-cols-3 gap-3 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                        {pillar.metrics.map((m) => (
+                          <div key={m.label}>
+                            <p className="font-serif text-[18px] sm:text-[20px] font-bold text-paper">
+                              {m.value}
+                            </p>
+                            <p className="mt-0.5 text-[11px] text-[#888888] uppercase tracking-wider">
+                              {m.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Key Features Bullet Points */}
+                      <ul className="mt-6 space-y-2.5">
+                        {pillar.features.map((feat) => (
+                          <li key={feat} className="flex items-start gap-2.5 text-[14px] text-mute">
+                            <CheckCircle2 size={16} className="text-brand shrink-0 mt-0.5" />
+                            <span className="text-[#D8D4CE]">{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <h2 className="font-serif text-[30px] sm:text-[38px] leading-tight tracking-tight text-paper font-normal">
-                      {pillar.title}
-                    </h2>
+                    <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center gap-4">
+                      <Link
+                        href={pillar.href}
+                        className="btn-sheen btn-arrow inline-flex items-center gap-2 rounded-lg bg-brand hover:bg-brand-hover px-5 py-2.5 text-[13px] font-semibold text-paper shadow-md shadow-brand/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
+                      >
+                        <span>Explore Channel Page</span>
+                        <ArrowRight size={13} />
+                      </Link>
 
-                    <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-mute">
-                      {pillar.summary}
-                    </p>
-
-                    {/* Metric Badges */}
-                    <div className="mt-6 grid grid-cols-3 gap-3 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-                      {pillar.metrics.map((m) => (
-                        <div key={m.label}>
-                          <p className="font-serif text-[18px] sm:text-[20px] font-bold text-paper">
-                            {m.value}
-                          </p>
-                          <p className="mt-0.5 text-[11px] text-[#888888] uppercase tracking-wider">
-                            {m.label}
-                          </p>
-                        </div>
-                      ))}
+                      <Link
+                        href="/pricing"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] px-4 py-2.5 text-[13px] font-medium text-paper transition-all hover:-translate-y-0.5 active:translate-y-0"
+                      >
+                        <span>Get Plan</span>
+                      </Link>
                     </div>
-
-                    {/* Key Features Bullet Points */}
-                    <ul className="mt-6 space-y-2.5">
-                      {pillar.features.map((feat) => (
-                        <li key={feat} className="flex items-start gap-2.5 text-[14px] text-mute">
-                          <CheckCircle2 size={16} className="text-brand shrink-0 mt-0.5" />
-                          <span className="text-[#D8D4CE]">{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center gap-4">
-                    <Link
-                      href={pillar.href}
-                      className="btn-arrow inline-flex items-center gap-2 rounded-lg bg-brand hover:bg-brand-hover px-5 py-2.5 text-[13px] font-semibold text-paper shadow-md transition-all"
-                    >
-                      <span>Explore Channel Page</span>
-                      <ArrowRight size={13} />
-                    </Link>
-
-                    <Link
-                      href="/pricing"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] px-4 py-2.5 text-[13px] font-medium text-paper transition-all"
-                    >
-                      <span>Get Plan</span>
-                    </Link>
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             );
@@ -271,27 +286,29 @@ export default function SolutionsPage() {
       {/* 4. Multi-Channel Synergy Strip */}
       <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-16 sm:py-20">
-          <div className="rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/10 via-transparent to-brand/5 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-xl">
-              <span className="inline-flex items-center gap-2 text-[11px] font-bold text-brand uppercase tracking-widest mb-2">
-                <Sparkles size={13} /> Synchronized Flights
-              </span>
-              <h3 className="font-serif text-[28px] sm:text-[34px] font-normal leading-tight text-paper">
-                The Compound Multiplier Effect
-              </h3>
-              <p className="mt-3 text-[14.5px] leading-relaxed text-mute">
-                When an audience member spots your branded bus in the morning, sees your digital display during dinner, and receives your brochure at their doorstep, trust compounds 3x faster than any single-medium buy.
-              </p>
-            </div>
+          <Reveal variant="scale-up">
+            <div className="rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/10 via-transparent to-brand/5 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_15px_40px_rgba(0,0,0,0.6),0_0_25px_rgba(216,31,66,0.1)]">
+              <div className="max-w-xl">
+                <span className="inline-flex items-center gap-2 text-[11px] font-bold text-brand uppercase tracking-widest mb-2">
+                  <Sparkles size={13} className="animate-pulse" /> Synchronized Flights
+                </span>
+                <h3 className="font-serif text-[28px] sm:text-[34px] font-normal leading-tight text-paper">
+                  The Compound Multiplier Effect
+                </h3>
+                <p className="mt-3 text-[14.5px] leading-relaxed text-mute">
+                  When an audience member spots your branded bus in the morning, sees your digital display during dinner, and receives your brochure at their doorstep, trust compounds 3x faster than any single-medium buy.
+                </p>
+              </div>
 
-            <Link
-              href="/pricing"
-              className="btn-arrow inline-flex items-center justify-center gap-2.5 rounded-lg bg-brand hover:bg-brand-hover px-7 py-3.5 text-[14px] font-semibold text-paper shadow-lg shadow-brand/20 transition-all shrink-0"
-            >
-              <span>Build a Combined Media Plan</span>
-              <ArrowRight size={15} />
-            </Link>
-          </div>
+              <Link
+                href="/pricing"
+                className="btn-sheen btn-arrow inline-flex items-center justify-center gap-2.5 rounded-lg bg-brand hover:bg-brand-hover px-7 py-3.5 text-[14px] font-semibold text-paper shadow-lg shadow-brand/20 transition-all shrink-0 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Build a Combined Media Plan</span>
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

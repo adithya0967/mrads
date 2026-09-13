@@ -10,6 +10,7 @@ export { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLin
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [solutionsDropdown, setSolutionsDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -26,14 +27,33 @@ export default function SiteHeader() {
     };
   }, [mobileOpen]);
 
+  const [scrollDirection, setScrollDirection] = useState<'down' | 'up'>('up');
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 20);
+
+      if (Math.abs(scrollY - lastScrollY) > 8) {
+        if (scrollY > lastScrollY && scrollY > 100) {
+          setScrollDirection('down');
+        } else if (scrollY < lastScrollY) {
+          setScrollDirection('up');
+        }
+        setLastScrollY(scrollY);
+      }
+
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (scrollY / totalHeight) * 100)));
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -46,9 +66,15 @@ export default function SiteHeader() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const isHiddenOnScrollDown = scrollDirection === 'down' && scrolled && !mobileOpen && !solutionsDropdown;
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
+        isHiddenOnScrollDown
+          ? '-translate-y-[calc(100%-2px)] pointer-events-none'
+          : 'translate-y-0 pointer-events-auto'
+      } ${
         scrolled
           ? 'bg-[#080808]/95 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]'
           : 'bg-[#080808]/80 backdrop-blur-md border-b border-white/[0.05]'
@@ -82,27 +108,27 @@ export default function SiteHeader() {
             const isActive =
               item.to === '/'
                 ? pathname === '/'
-                : pathname === item.to || (isSolutions && (
-                    pathname.startsWith('/solutions') ||
-                    pathname.startsWith('/advertising-on-the-move') ||
-                    pathname.startsWith('/offline-print') ||
-                    pathname.startsWith('/print-creative') ||
-                    pathname.startsWith('/digital')
-                  ));
+                : pathname === item.to ||
+                  (isSolutions &&
+                    (pathname.startsWith('/solutions') ||
+                      pathname.startsWith('/advertising-on-the-move') ||
+                      pathname.startsWith('/offline-print') ||
+                      pathname.startsWith('/print-creative') ||
+                      pathname.startsWith('/digital')));
 
             if (isSolutions) {
               return (
                 <div
                   key={item.to}
                   ref={dropdownRef}
-                  className="relative group"
+                  className="relative"
                   onMouseEnter={() => setSolutionsDropdown(true)}
                   onMouseLeave={() => setSolutionsDropdown(false)}
                 >
                   <Link
                     href="/solutions"
-                    className={`inline-flex items-center gap-1.5 py-1 text-[13.5px] font-medium tracking-[0.03em] transition-colors duration-200 ${
-                      isActive ? 'text-[#F4F1EC]' : 'text-[#929292] hover:text-[#F4F1EC]'
+                    className={`nav-link-animated inline-flex items-center gap-1.5 py-1 text-[13.5px] font-medium tracking-[0.03em] ${
+                      isActive ? 'is-active text-[#F4F1EC]' : 'text-[#929292]'
                     }`}
                   >
                     <span>Solutions</span>
@@ -119,47 +145,50 @@ export default function SiteHeader() {
                     >
                       <path d="m6 9 6 6 6-6" />
                     </svg>
-                    {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D81F42] shadow-[0_0_8px_rgba(216,31,66,0.6)] rounded-full"></span>
-                    )}
                   </Link>
 
-                  {/* Dropdown Menu */}
-                  {solutionsDropdown && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-72 z-50">
-                      <div className="rounded-xl border border-white/10 bg-[#0D0D0D]/98 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                        <Link
-                          href="/solutions"
-                          className="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-[13px] font-semibold text-[#F4F1EC] bg-white/[0.04] hover:bg-[#D81F42]/15 hover:text-white transition-colors"
-                        >
-                          <span>All Solutions Overview</span>
-                          <span className="text-[10px] text-brand uppercase font-bold tracking-wider">Explore →</span>
-                        </Link>
-                        <div className="h-px bg-white/[0.06] my-1.5" />
-                        <div className="space-y-0.5">
-                          {servicesLinks.map((sub) => {
-                            const isSubActive = pathname === sub.to;
-                            return (
-                              <Link
-                                key={sub.to}
-                                href={sub.to}
-                                className={`flex items-center justify-between px-3.5 py-2 rounded-lg text-[13px] transition-colors ${
-                                  isSubActive
-                                    ? 'bg-[#D81F42]/15 text-[#F4F1EC] font-medium'
-                                    : 'text-[#929292] hover:bg-white/[0.04] hover:text-[#F4F1EC]'
-                                }`}
-                              >
-                                <span>{sub.label}</span>
-                                {isSubActive && (
-                                  <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42]"></span>
-                                )}
-                              </Link>
-                            );
-                          })}
-                        </div>
+                  {/* Dropdown Menu with Smooth Scale and Fade */}
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2.5 w-72 z-50 transition-all duration-200 ${
+                      solutionsDropdown
+                        ? 'opacity-100 scale-100 pointer-events-auto'
+                        : 'opacity-0 scale-95 pointer-events-none'
+                    }`}
+                  >
+                    <div className="rounded-xl border border-white/10 bg-[#0D0D0D]/98 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(216,31,66,0.12)]">
+                      <Link
+                        href="/solutions"
+                        className="group flex items-center justify-between px-3.5 py-2.5 rounded-lg text-[13px] font-semibold text-[#F4F1EC] bg-white/[0.04] hover:bg-[#D81F42]/15 hover:text-white transition-colors"
+                      >
+                        <span>All Solutions Overview</span>
+                        <span className="text-[10px] text-brand uppercase font-bold tracking-wider group-hover:translate-x-0.5 transition-transform">
+                          Explore →
+                        </span>
+                      </Link>
+                      <div className="h-px bg-white/[0.06] my-1.5" />
+                      <div className="space-y-0.5">
+                        {servicesLinks.map((sub) => {
+                          const isSubActive = pathname === sub.to;
+                          return (
+                            <Link
+                              key={sub.to}
+                              href={sub.to}
+                              className={`flex items-center justify-between px-3.5 py-2 rounded-lg text-[13px] transition-all duration-150 ${
+                                isSubActive
+                                  ? 'bg-[#D81F42]/15 text-[#F4F1EC] font-medium pl-4'
+                                  : 'text-[#929292] hover:bg-white/[0.04] hover:text-[#F4F1EC] hover:pl-4'
+                              }`}
+                            >
+                              <span>{sub.label}</span>
+                              {isSubActive && (
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+                              )}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             }
@@ -168,14 +197,11 @@ export default function SiteHeader() {
               <Link
                 key={item.to}
                 href={item.to}
-                className={`relative py-1 text-[13.5px] font-medium tracking-[0.03em] transition-colors duration-200 ${
-                  isActive ? 'text-[#F4F1EC]' : 'text-[#929292] hover:text-[#F4F1EC]'
+                className={`nav-link-animated py-1 text-[13.5px] font-medium tracking-[0.03em] ${
+                  isActive ? 'is-active text-[#F4F1EC]' : 'text-[#929292]'
                 }`}
               >
                 {item.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D81F42] shadow-[0_0_8px_rgba(216,31,66,0.6)] rounded-full"></span>
-                )}
               </Link>
             );
           })}
@@ -197,7 +223,7 @@ export default function SiteHeader() {
               strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-[#D81F42]"
+              className="text-[#D81F42] transition-transform duration-200 hover:scale-110"
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
@@ -206,7 +232,7 @@ export default function SiteHeader() {
 
           <Link
             href="/contact"
-            className="group hidden sm:inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-lg bg-[#D81F42] hover:bg-[#ED3153] text-[#F4F1EC] text-[13px] font-semibold tracking-wide shadow-[0_0_20px_rgba(216,31,66,0.25)] hover:shadow-[0_0_25px_rgba(237,49,83,0.45)] hover:-translate-y-0.5 transition-all duration-200"
+            className="btn-sheen group hidden sm:inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-lg bg-[#D81F42] hover:bg-[#ED3153] text-[#F4F1EC] text-[13px] font-semibold tracking-wide shadow-[0_0_20px_rgba(216,31,66,0.25)] hover:shadow-[0_0_28px_rgba(237,49,83,0.5)] hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Get a Media Plan</span>
             <svg
@@ -216,7 +242,7 @@ export default function SiteHeader() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="transform group-hover:translate-x-1 transition-transform duration-200"
+              className="transform group-hover:translate-x-1.5 transition-transform duration-200"
             >
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
@@ -226,7 +252,7 @@ export default function SiteHeader() {
           {/* Mobile Media Plan compact button */}
           <Link
             href="/contact"
-            className="sm:hidden inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-[#D81F42] text-[#F4F1EC] text-[12px] font-semibold"
+            className="btn-sheen sm:hidden inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-[#D81F42] text-[#F4F1EC] text-[12px] font-semibold"
           >
             Media Plan
           </Link>
@@ -256,64 +282,77 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Menu Sheet */}
-      {mobileOpen && (
-        <div id="mobile-menu" className="lg:hidden border-t border-white/[0.08] bg-[#080808]/98 backdrop-blur-2xl max-h-[calc(100vh-72px)] overflow-y-auto">
-          <nav className="px-6 py-6 flex flex-col gap-2" aria-label="Mobile Navigation">
-            {navLinks.map((item) => {
-              const isActive = item.to === '/' ? pathname === '/' : pathname.startsWith(item.to);
-              return (
-                <Link
-                  key={item.to}
-                  href={item.to}
-                  className={`flex items-center justify-between py-3 text-[16px] border-b border-white/[0.05] ${
-                    isActive ? 'text-[#F4F1EC] font-semibold' : 'text-[#929292]'
-                  }`}
-                >
-                  <span>{item.label}</span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42]"></span>}
-                </Link>
-              );
-            })}
+      {/* Dynamic Scroll Progress Bar */}
+      <div
+        className="scroll-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
 
-            {/* Mobile Service Sublinks */}
-            <div className="pt-2 pb-2">
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-[#666666] mb-2">
-                Advertising Channels
-              </p>
-              <div className="grid grid-cols-1 gap-1 pl-2">
-                {servicesLinks.map((s) => (
-                  <Link
-                    key={s.to}
-                    href={s.to}
-                    className="py-1.5 text-[14px] text-[#929292] hover:text-[#F4F1EC] transition-colors"
-                  >
-                    → {s.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-4 flex flex-col gap-3">
-              <a
-                href={phoneTel}
-                className="flex items-center gap-2.5 py-2.5 px-4 rounded-lg bg-white/[0.03] border border-white/10 text-[14px] text-[#F4F1EC]"
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="text-[#D81F42]">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                <span>Call {phoneText}</span>
-              </a>
+      {/* Animated Mobile Menu Sheet */}
+      <div
+        id="mobile-menu"
+        className={`lg:hidden border-t border-white/[0.08] bg-[#080808]/98 backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out ${
+          mobileOpen ? 'max-h-[calc(100vh-72px)] opacity-100 py-6' : 'max-h-0 opacity-0 py-0 pointer-events-none'
+        }`}
+      >
+        <nav className="px-6 flex flex-col gap-2" aria-label="Mobile Navigation">
+          {navLinks.map((item, idx) => {
+            const isActive = item.to === '/' ? pathname === '/' : pathname.startsWith(item.to);
+            return (
               <Link
-                href="/contact"
-                className="w-full py-3 rounded-lg bg-[#D81F42] hover:bg-[#ED3153] text-center text-[#F4F1EC] font-semibold text-[14px] transition-colors"
+                key={item.to}
+                href={item.to}
+                style={{
+                  transitionDelay: `${idx * 35}ms`,
+                }}
+                className={`flex items-center justify-between py-3 text-[16px] border-b border-white/[0.05] transition-all ${
+                  isActive ? 'text-[#F4F1EC] font-semibold pl-2' : 'text-[#929292] hover:text-[#F4F1EC] hover:pl-2'
+                }`}
               >
-                Get a Media Plan →
+                <span>{item.label}</span>
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>}
               </Link>
+            );
+          })}
+
+          {/* Mobile Service Sublinks */}
+          <div className="pt-3 pb-2">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#666666] mb-2">
+              Advertising Channels
+            </p>
+            <div className="grid grid-cols-1 gap-1 pl-2">
+              {servicesLinks.map((s) => (
+                <Link
+                  key={s.to}
+                  href={s.to}
+                  className="py-1.5 text-[14px] text-[#929292] hover:text-[#F4F1EC] hover:translate-x-1 transition-all"
+                >
+                  → {s.label}
+                </Link>
+              ))}
             </div>
-          </nav>
-        </div>
-      )}
+          </div>
+
+          <div className="pt-4 flex flex-col gap-3">
+            <a
+              href={phoneTel}
+              className="flex items-center gap-2.5 py-2.5 px-4 rounded-lg bg-white/[0.03] border border-white/10 text-[14px] text-[#F4F1EC] hover:border-white/20 transition-colors"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="text-[#D81F42]">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>Call {phoneText}</span>
+            </a>
+            <Link
+              href="/contact"
+              className="btn-sheen w-full py-3 rounded-lg bg-[#D81F42] hover:bg-[#ED3153] text-center text-[#F4F1EC] font-semibold text-[14px] transition-colors shadow-lg shadow-brand/20"
+            >
+              Get a Media Plan →
+            </Link>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

@@ -5,7 +5,8 @@ import Link from 'next/link';
 import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
-import { ArrowRight, Globe, ShoppingCart, Bot, Server, Sparkles, CheckCircle2, Shield, Smartphone, Zap } from 'lucide-react';
+import Reveal from '@/components/ui/Reveal';
+import { ArrowRight, Globe, ShoppingCart, Bot, Server, CheckCircle2, Shield, Smartphone, Zap } from 'lucide-react';
 
 const digitalSolutions = [
   {
@@ -113,25 +114,26 @@ export default function DigitalPage() {
       <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-12">
           <div className="grid gap-6 sm:grid-cols-3">
-            {standards.map((std) => {
+            {standards.map((std, idx) => {
               const IconComponent = std.icon;
               return (
-                <div
-                  key={std.title}
-                  className="rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.04] text-brand mb-4">
-                      <IconComponent size={18} />
+                <Reveal key={std.title} variant="fade-up" staggerIndex={idx} delay={0.1}>
+                  <div
+                    className="card-interactive rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] flex flex-col justify-between h-full"
+                  >
+                    <div>
+                      <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.04] text-brand mb-4 shadow-sm">
+                        <IconComponent size={18} />
+                      </div>
+                      <h3 className="text-[16px] font-semibold text-paper">
+                        {std.title}
+                      </h3>
+                      <p className="mt-2 text-[13.5px] leading-relaxed text-mute">
+                        {std.desc}
+                      </p>
                     </div>
-                    <h3 className="text-[16px] font-semibold text-paper">
-                      {std.title}
-                    </h3>
-                    <p className="mt-2 text-[13.5px] leading-relaxed text-mute">
-                      {std.desc}
-                    </p>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -156,23 +158,25 @@ export default function DigitalPage() {
                     isOdd ? 'lg:order-2' : ''
                   }`}
                 >
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
-                    <div className="img-zoom aspect-[16/10]">
-                      <img
-                        src={sol.image}
-                        alt={sol.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                  <Reveal variant={isOdd ? 'slide-right' : 'slide-left'}>
+                    <div className="card-interactive relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
+                      <div className="img-reveal-box aspect-[16/10]">
+                        <img
+                          src={sol.image}
+                          alt={sol.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="absolute bottom-4 left-4">
-                      <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[11px] font-semibold tracking-wider text-paper uppercase">
-                        Digital Capability
-                      </span>
+                      <div className="absolute bottom-4 left-4">
+                        <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[11px] font-semibold tracking-wider text-paper uppercase">
+                          Digital Capability
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  </Reveal>
                 </div>
 
                 {/* Content */}
@@ -181,44 +185,48 @@ export default function DigitalPage() {
                     isOdd ? 'lg:order-1' : ''
                   }`}
                 >
-                  <div className="inline-flex items-center gap-2 text-[11px] font-bold text-brand uppercase tracking-wider mb-2">
-                    <IconComponent size={13} />
-                    <span>Digital Architecture</span>
-                  </div>
+                  <Reveal variant={isOdd ? 'slide-left' : 'slide-right'} delay={0.1}>
+                    <div>
+                      <div className="inline-flex items-center gap-2 text-[11px] font-bold text-brand uppercase tracking-wider mb-2">
+                        <IconComponent size={14} />
+                        <span>Capability</span>
+                      </div>
 
-                  <h2 className="font-serif text-[30px] sm:text-[36px] leading-tight tracking-tight text-paper font-normal">
-                    {sol.title}
-                  </h2>
+                      <h2 className="font-serif text-[30px] sm:text-[36px] leading-tight tracking-tight text-paper font-normal">
+                        {sol.title}
+                      </h2>
 
-                  <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-mute">
-                    {sol.lead}
-                  </p>
+                      <p className="mt-4 text-[15px] leading-relaxed text-mute">
+                        {sol.lead}
+                      </p>
 
-                  <ul className="mt-6 space-y-2.5 border-t border-white/[0.08] pt-6">
-                    {sol.features.map((feat) => (
-                      <li key={feat} className="flex items-start gap-2.5 text-[14px] text-mute">
-                        <CheckCircle2 size={16} className="text-brand shrink-0 mt-0.5" />
-                        <span className="text-[#D8D4CE]">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                      <ul className="mt-6 space-y-2.5">
+                        {sol.features.map((feat) => (
+                          <li key={feat} className="flex items-start gap-2.5 text-[14px] text-mute">
+                            <CheckCircle2 size={16} className="text-brand shrink-0 mt-0.5" />
+                            <span className="text-[#D8D4CE]">{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  <div className="mt-8 flex items-center gap-4">
-                    <Link
-                      href={`/contact?requirement=${encodeURIComponent('Website / development / AI')}&brief=${encodeURIComponent(`Project requirement: ${sol.title}`)}`}
-                      className="btn-arrow inline-flex items-center gap-2 rounded-lg bg-brand hover:bg-brand-hover px-5 py-2.5 text-[13px] font-semibold text-paper shadow-md transition-all"
-                    >
-                      <span>Discuss {sol.title.split(' ')[0]}</span>
-                      <ArrowRight size={13} />
-                    </Link>
+                    <div className="mt-8 pt-6 border-t border-white/[0.08] flex items-center gap-4">
+                      <Link
+                        href="/contact"
+                        className="btn-sheen btn-arrow inline-flex items-center gap-2 rounded-lg bg-brand hover:bg-brand-hover px-5 py-2.5 text-[13px] font-semibold text-paper shadow-md shadow-brand/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
+                      >
+                        <span>Discuss Project</span>
+                        <ArrowRight size={13} />
+                      </Link>
 
-                    <Link
-                      href="/pricing"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 hover:border-white/20 px-4 py-2.5 text-[13px] text-mute hover:text-paper transition-all"
-                    >
-                      <span>Bundle in Media Plan</span>
-                    </Link>
-                  </div>
+                      <Link
+                        href="/pricing"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] px-4 py-2.5 text-[13px] font-medium text-paper transition-all hover:-translate-y-0.5 active:translate-y-0"
+                      >
+                        <span>Estimate Pricing</span>
+                      </Link>
+                    </div>
+                  </Reveal>
                 </div>
               </div>
             );
@@ -226,76 +234,36 @@ export default function DigitalPage() {
         </div>
       </section>
 
-      {/* 4. Engineering Delivery Process */}
+      {/* 4. Development Workflow */}
       <section className="border-b border-line bg-[#080808]">
-        <div className="container-site py-20 md:py-24">
-          <div className="max-w-xl">
-            <p className="eyebrow text-[#888888]">Process</p>
-            <h2 className="mt-4 font-serif text-[30px] sm:text-[38px] leading-tight tracking-tight text-paper font-normal">
-              From conception to live deployment.
-            </h2>
-            <p className="mt-3 text-[14.5px] leading-relaxed text-mute">
-              A disciplined, milestone-driven development process ensures your digital storefront goes live on schedule.
-            </p>
-          </div>
+        <div className="container-site py-20">
+          <Reveal variant="fade-up" className="max-w-xl mb-12">
+            <p className="eyebrow text-brand">Development Workflow</p>
+            <h3 className="mt-2 font-serif text-[28px] sm:text-[34px] leading-tight text-paper font-normal">
+              From brief to high-performance live release.
+            </h3>
+          </Reveal>
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step) => (
-              <div
-                key={step.step}
-                className="relative rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 flex flex-col justify-between"
-              >
-                <div>
-                  <span className="font-serif text-[28px] font-bold text-brand leading-none">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, idx) => (
+              <Reveal key={step.step} variant="fade-up" staggerIndex={idx} delay={0.1}>
+                <div className="card-interactive p-6 rounded-xl border border-white/[0.08] bg-[#0D0D0D] hover:bg-[#141414] transition-colors h-full">
+                  <span className="font-serif text-[26px] font-bold text-brand leading-none">
                     {step.step}
                   </span>
-                  <h3 className="mt-4 text-[16px] font-semibold text-paper">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-mute">
-                    {step.desc}
-                  </p>
+                  <h4 className="mt-3 text-[16px] font-semibold text-paper">{step.title}</h4>
+                  <p className="mt-2 text-[13.5px] leading-relaxed text-mute">{step.desc}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Cross Links */}
-      <section className="border-b border-line bg-[#0D0D0D]">
-        <div className="container-site py-16">
-          <p className="text-[14.5px] text-mute">
-            Explore offline distribution to drive online traffic:{' '}
-            <Link
-              href="/locations"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Digital Display Screens
-            </Link>
-            ,{' '}
-            <Link
-              href="/advertising-on-the-move"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Transit Moving Media
-            </Link>
-            , or{' '}
-            <Link
-              href="/print-creative"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Print & Creative Design
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* 6. Final CTA */}
+      {/* 5. Final CTA */}
       <FinalCta
-        title="Ready to Build a High-Converting Digital Foundation?"
-        copy="Tell us about your business model, target market and digital timeline — we will prepare an architectural roadmap and proposal."
+        title="Ready to Build or Upgrade Your Digital Presence?"
+        copy="Tell us about your business, website goals, or AI chatbot requirements. We will review and provide a detailed scope and delivery timeline."
       />
     </TargetShell>
   );

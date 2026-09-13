@@ -5,6 +5,8 @@ import Link from 'next/link';
 import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
+import CountUp from '@/components/ui/CountUp';
+import Reveal from '@/components/ui/Reveal';
 
 const categories = [
   { id: 'restaurant', label: 'Restaurant', image: '/images/restaurant.jpg' },
@@ -131,27 +133,29 @@ export default function LocationsPage() {
       />
 
       {/* Categories quick jump */}
-      <section className="border-b border-line">
-        <div className="container-site py-16 md:py-20">
-          <p className="eyebrow">Categories</p>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <a
-                key={cat.id}
-                href={`#${cat.id}`}
-                className="rounded-sm border border-line px-3.5 py-2 text-[13px] text-mute transition-colors duration-200 hover:border-paper/30 hover:text-paper"
-              >
-                {cat.label}
-              </a>
-            ))}
-          </div>
+      <section className="border-b border-line bg-[#080808]">
+        <div className="container-site py-12 md:py-16">
+          <Reveal variant="fade-up">
+            <p className="eyebrow">Categories</p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {categories.map((cat) => (
+                <a
+                  key={cat.id}
+                  href={`#${cat.id}`}
+                  className="rounded-lg border border-line bg-white/[0.02] px-4 py-2 text-[13px] text-mute transition-all duration-200 hover:border-brand/50 hover:bg-[#D81F42]/10 hover:text-paper hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  {cat.label}
+                </a>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Network Opportunity */}
-      <section className="border-b border-line bg-graphite">
+      <section className="border-b border-line bg-graphite relative overflow-hidden">
         <div className="container-site py-20 md:py-24">
-          <div>
+          <Reveal variant="fade-up">
             <p className="eyebrow">Network opportunity</p>
             <h2 className="mt-4 max-w-xl font-serif text-[28px] leading-tight tracking-tight md:text-[34px]">
               Scale to plan against — labelled clearly.
@@ -159,13 +163,13 @@ export default function LocationsPage() {
             <p className="mt-4 max-w-xl text-[14px] text-mute">
               Reach figures denote network opportunity to reach, not guaranteed impressions.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="mt-12 grid grid-cols-2 gap-px bg-line md:grid-cols-4 lg:grid-cols-7">
-            {networkStats.map((item) => (
-              <div key={item.label} className="bg-graphite px-4 py-6">
+          <div className="mt-12 grid grid-cols-2 gap-px bg-line md:grid-cols-4 lg:grid-cols-7 rounded-xl overflow-hidden border border-line">
+            {networkStats.map((item, idx) => (
+              <div key={item.label} className="bg-graphite px-4 py-6 hover:bg-white/[0.02] transition-colors">
                 <p className="font-serif text-[32px] leading-none tracking-tight text-paper md:text-[36px]">
-                  {item.value}
+                  <CountUp value={item.value} />
                 </p>
                 <p className="mt-3 text-[12px] leading-snug text-mute">
                   {item.label}
@@ -179,7 +183,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* Display Sections */}
+      {/* Display Sections with Staggered Visual Reveal */}
       {locationDisplays.map((disp, index) => (
         <section
           key={disp.id}
@@ -194,35 +198,40 @@ export default function LocationsPage() {
                 index % 2 === 1 ? 'md:order-2' : ''
               }`}
             >
-              <div className="img-zoom aspect-[16/10]">
-                <img
-                  src={disp.image}
-                  alt={disp.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <Reveal variant={index % 2 === 1 ? 'slide-right' : 'slide-left'}>
+                <div className="img-reveal-box rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] bg-black shadow-2xl">
+                  <img
+                    src={disp.image}
+                    alt={disp.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </Reveal>
             </div>
 
             <div className="md:col-span-5">
-              <p className="eyebrow">Display</p>
-              <h2 className="mt-4 font-serif text-[30px] leading-tight tracking-tight md:text-[36px]">
-                {disp.title}
-              </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-mute">
-                {disp.lead}
-              </p>
+              <Reveal variant={index % 2 === 1 ? 'slide-left' : 'slide-right'} delay={0.1}>
+                <p className="eyebrow">Display</p>
+                <h2 className="mt-4 font-serif text-[30px] leading-tight tracking-tight md:text-[36px]">
+                  {disp.title}
+                </h2>
+                <p className="mt-4 text-[15px] leading-relaxed text-mute">
+                  {disp.lead}
+                </p>
 
-              <dl className="mt-8 space-y-4 border-t border-line pt-6">
-                {disp.specs.map((spec) => (
-                  <div
-                    key={spec.label}
-                    className="grid grid-cols-3 gap-4 text-[13px]"
-                  >
-                    <dt className="text-mute-2">{spec.label}</dt>
-                    <dd className="col-span-2 text-paper">{spec.value}</dd>
-                  </div>
-                ))}
-              </dl>
+                <dl className="mt-8 space-y-3.5 border-t border-line pt-6">
+                  {disp.specs.map((spec) => (
+                    <div
+                      key={spec.label}
+                      className="grid grid-cols-3 gap-4 text-[13px] py-1 -mx-2 px-2 rounded hover:bg-white/[0.02] transition-colors"
+                    >
+                      <dt className="text-mute-2">{spec.label}</dt>
+                      <dd className="col-span-2 text-paper font-medium">{spec.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -231,37 +240,39 @@ export default function LocationsPage() {
       {/* Cross links */}
       <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-16">
-          <p className="text-[14.5px] text-mute">
-            Looking for transit, print, creative or digital as well?{' '}
-            <Link
-              href="/advertising-on-the-move"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Advertising on the Move
-            </Link>
-            ,{' '}
-            <Link
-              href="/offline-print"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Offline & Print
-            </Link>
-            ,{' '}
-            <Link
-              href="/print-creative"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Print & Creative Design
-            </Link>
-            , or{' '}
-            <Link
-              href="/digital"
-              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
-            >
-              Digital & AI Solutions
-            </Link>
-            .
-          </p>
+          <Reveal variant="fade-up">
+            <p className="text-[14.5px] text-mute">
+              Looking for transit, print, creative or digital as well?{' '}
+              <Link
+                href="/advertising-on-the-move"
+                className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
+              >
+                Advertising on the Move
+              </Link>
+              ,{' '}
+              <Link
+                href="/offline-print"
+                className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
+              >
+                Offline & Print
+              </Link>
+              ,{' '}
+              <Link
+                href="/print-creative"
+                className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
+              >
+                Print & Creative Design
+              </Link>
+              , or{' '}
+              <Link
+                href="/digital"
+                className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
+              >
+                Digital & AI Solutions
+              </Link>
+              .
+            </p>
+          </Reveal>
         </div>
       </section>
 

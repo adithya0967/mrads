@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { ArrowDown } from 'lucide-react';
 
 export default function ScrollIndicator() {
   const [opacity, setOpacity] = useState(1);
@@ -8,7 +9,7 @@ export default function ScrollIndicator() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const newOpacity = Math.max(0, 1 - scrollY / 120);
+      const newOpacity = Math.max(0, 1 - scrollY / 150);
       setOpacity(newOpacity);
     };
 
@@ -16,30 +17,34 @@ export default function ScrollIndicator() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollDown = () => {
+    const nextSection =
+      document.querySelector('main > section:nth-of-type(2)') ||
+      document.getElementById('solutions');
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollBy({ top: window.innerHeight * 0.88, behavior: 'smooth' });
+    }
+  };
+
   if (opacity <= 0.01) return null;
 
   return (
-    <div
-      className="flex flex-col items-center justify-center gap-1.5 pointer-events-none select-none transition-opacity duration-300"
+    <button
+      type="button"
+      onClick={handleScrollDown}
+      className="flex flex-col items-center justify-center gap-2 select-none cursor-pointer group transition-all duration-300 hover:scale-105 active:scale-95"
       style={{ opacity }}
+      aria-label="Scroll down to explore website sections"
     >
-      <span className="text-[10px] font-bold tracking-[0.25em] text-[#666666] uppercase">
-        Scroll to Explore
+      <span className="text-[10.5px] font-bold tracking-[0.25em] text-[#666666] group-hover:text-[#F4F1EC] uppercase transition-colors">
+        Scroll Down to Explore
       </span>
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="text-[#929292] animate-bounce"
-      >
-        <line x1="12" y1="5" x2="12" y2="19" />
-        <polyline points="19 12 12 19 5 12" />
-      </svg>
-    </div>
+      <div className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 group-hover:border-brand/60 group-hover:bg-brand/10 text-[#929292] group-hover:text-brand transition-all duration-200 shadow-sm group-hover:shadow-[0_0_12px_rgba(216,31,66,0.3)]">
+        <ArrowDown size={14} className="animate-bounce" />
+      </div>
+    </button>
   );
 }
