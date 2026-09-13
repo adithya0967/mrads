@@ -1,10 +1,7 @@
-'use client';
-
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import HeroSection from './components/HeroSection';
-import HeroStatsSection from './components/HeroStatsSection';
+import TargetShell from '@/components/TargetShell';
+import HomeHero from '@/components/home/HomeHero';
+import HomeStats from '@/components/home/HomeStats';
 import AboutSection from './components/AboutSection';
 import OfferSection from './components/OfferSection';
 import LocationsSection from './components/LocationsSection';
@@ -14,31 +11,25 @@ import HowItWorksSection from './components/HowItWorksSection';
 import PricingSection from './components/PricingSection';
 import SocialProofSection from './components/SocialProofSection';
 import DemoVideoSection from './components/DemoVideoSection';
-import ContactSection from './components/ContactSection';
+import FinalCta from '@/components/FinalCta';
 import WhatsAppButton from './components/WhatsAppButton';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#090A0C] text-[#F5F5F5] font-sans antialiased">
-      <Header />
-
-      <main>
-        <HeroSection />
-        <HeroStatsSection />
-        <AboutSection />
-        <OfferSection />
-        <LocationsSection />
-        <NetworkMapSection />
-        <WhyItWorksSection />
-        <HowItWorksSection />
-        <PricingSection />
-        <SocialProofSection />
-        <DemoVideoSection />
-        <ContactSection />
-      </main>
-
-      <Footer />
+    <TargetShell>
+      <HomeHero />
+      <HomeStats />
+      <AboutSection />
+      <OfferSection />
+      <LocationsSection />
+      <NetworkMapSection />
+      <WhyItWorksSection />
+      <HowItWorksSection />
+      <PricingSection />
+      <SocialProofSection />
+      <DemoVideoSection />
+      <FinalCta />
       <WhatsAppButton />
-    </div>
+    </TargetShell>
   );
 }
