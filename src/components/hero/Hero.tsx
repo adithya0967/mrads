@@ -27,7 +27,7 @@ export default function Hero() {
       {/* 2. Main Hero Composition Container */}
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 xl:gap-16 items-center">
-
+          
           {/* =====================================================================
            * LEFT COLUMN (48% Desktop): Editorial Typography & Conversion Flow
            * ===================================================================== */}
