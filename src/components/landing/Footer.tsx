@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -8,7 +9,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-extrabold">MR</div>
+              <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center p-1.5">
+                <Image
+                  src="/assets/images/app_logo.svg"
+                  alt="Mr. Ads logo"
+                  width={32}
+                  height={27}
+                  className="w-full h-auto"
+                />
+              </div>
               <div>
                 <p className="font-extrabold text-lg">Mr. Ads</p>
                 <p className="text-[11px] font-bold tracking-[.16em] uppercase" style={{ color: '#FF8A8E' }}>
