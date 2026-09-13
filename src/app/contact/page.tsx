@@ -2,15 +2,17 @@
 
 import React, { useState, useEffect } from 'react';
 import TargetShell from '@/components/TargetShell';
+import PageHero from '@/components/PageHero';
 import { phoneText, phoneTel, contactEmail, contactMailto } from '@/components/SiteHeader';
+import { ArrowRight, Phone, Mail, CheckCircle2, Shield, Clock, Send } from 'lucide-react';
 
 const requirements = [
-  'Display advertising',
-  'Advertising on the move',
-  'Offline & print distribution',
-  'Print & creative',
-  'Website / development / AI',
-  'A combined media plan',
+  'Display advertising (Screens)',
+  'Advertising on the move (Transit & Fleet)',
+  'Offline & print distribution (Flyers & Inserts)',
+  'Print & creative design',
+  'Website / development / AI solutions',
+  'A combined multi-channel media plan',
 ];
 
 const interestOptions = [
@@ -26,7 +28,13 @@ function ContactContent() {
   const [submitted, setSubmitted] = useState(false);
   const [interests, setInterests] = useState<string[]>(['Media Plans']);
   const [requirement, setRequirement] = useState('');
+  const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
   const [message, setMessage] = useState('');
+  const [refId, setRefId] = useState('');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -51,200 +59,240 @@ function ContactContent() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const generatedRef = 'MR-' + Math.floor(1000 + Math.random() * 9000);
+    setRefId(generatedRef);
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  const inputClass =
-    'mt-3 w-full border-0 border-b border-line bg-transparent py-3 text-[15px] text-paper placeholder:text-mute-2 focus:border-brand focus:outline-none';
-
   return (
-    <section className="border-b border-line">
+    <section className="border-b border-line bg-[#080808]">
       <div className="container-site grid gap-16 py-16 md:grid-cols-12 md:py-24">
-        {/* Left Column */}
+        {/* Left Column: Context & Contact Details */}
         <div className="md:col-span-5">
-          <p className="eyebrow">Contact</p>
-          <h1 className="mt-5 font-serif text-[40px] leading-[1.08] tracking-tight text-paper md:text-[52px]">
-            Request a Media Plan
+          <p className="eyebrow text-brand">Contact Planning Team</p>
+          <h1 className="mt-4 font-serif text-[38px] sm:text-[48px] leading-[1.08] tracking-tight text-paper font-normal">
+            Request a Considered Media Plan.
           </h1>
-          <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-mute">
-            Tell us who you need to reach, and where. A member of the planning
-            team will respond with a considered next step.
+          <p className="mt-6 text-[15px] sm:text-[16px] leading-relaxed text-mute">
+            Tell us who you need to reach, your target localities, and your timeline. A senior media planner will review your brief and respond with a customized proposal.
           </p>
 
-          <dl className="mt-12 space-y-6 border-t border-line pt-8">
-            <div>
-              <dt className="eyebrow">Phone</dt>
-              <dd className="mt-2 text-[16px]">
-                <a
-                  href={phoneTel}
-                  className="text-paper transition-colors duration-200 hover:text-brand"
-                >
+          <div className="mt-10 space-y-4">
+            <a
+              href={phoneTel}
+              className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.08] bg-[#0D0D0D] hover:border-brand/40 transition-colors group"
+            >
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand/10 text-brand group-hover:bg-brand group-hover:text-white transition-all">
+                <Phone size={18} />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold text-[#888888] uppercase tracking-wider">
+                  Direct Line
+                </p>
+                <p className="text-[15px] font-medium text-paper group-hover:text-white">
                   {phoneText}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="eyebrow">Email</dt>
-              <dd className="mt-2 text-[16px]">
-                <a
-                  href={contactMailto}
-                  className="text-paper transition-colors duration-200 hover:text-brand"
-                >
+                </p>
+              </div>
+            </a>
+
+            <a
+              href={contactMailto}
+              className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.08] bg-[#0D0D0D] hover:border-brand/40 transition-colors group"
+            >
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand/10 text-brand group-hover:bg-brand group-hover:text-white transition-all">
+                <Mail size={18} />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold text-[#888888] uppercase tracking-wider">
+                  Enquiries Desk
+                </p>
+                <p className="text-[15px] font-medium text-paper group-hover:text-white">
                   {contactEmail}
-                </a>
-              </dd>
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div className="mt-10 pt-8 border-t border-white/[0.06] space-y-3">
+            <div className="flex items-center gap-2.5 text-[13px] text-mute">
+              <Clock size={15} className="text-brand shrink-0" />
+              <span>Turnaround: Response within 24 business hours</span>
             </div>
-          </dl>
+            <div className="flex items-center gap-2.5 text-[13px] text-mute">
+              <Shield size={15} className="text-brand shrink-0" />
+              <span>Zero vendor spam • Strict confidentiality</span>
+            </div>
+          </div>
         </div>
 
-        {/* Right Column */}
+        {/* Right Column: Form Container */}
         <div className="md:col-span-7">
           {submitted ? (
-            <div className="border border-line bg-graphite p-10">
-              <p className="eyebrow">Received</p>
-              <h2 className="mt-4 font-serif text-[28px] leading-tight text-paper">
-                Thank you. We have the brief.
-              </h2>
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-mute">
-                The planning team will review your requirement and be in touch.
-                If the matter is urgent, call {phoneText}.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid gap-8 sm:grid-cols-2">
-                <label className="block">
-                  <span className="eyebrow">Name</span>
-                  <input
-                    required
-                    name="name"
-                    autoComplete="name"
-                    className={inputClass}
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="eyebrow">Company</span>
-                  <input
-                    required
-                    name="company"
-                    autoComplete="organization"
-                    className={inputClass}
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="eyebrow">Phone</span>
-                  <input
-                    required
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    className={inputClass}
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="eyebrow">Email</span>
-                  <input
-                    required
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    className={inputClass}
-                  />
-                </label>
-
-                <label className="block sm:col-span-2">
-                  <span className="eyebrow">City / Location</span>
-                  <input
-                    required
-                    name="city"
-                    autoComplete="address-level2"
-                    className={inputClass}
-                  />
-                </label>
-
-                <label className="block sm:col-span-2">
-                  <span className="eyebrow">Advertising requirement</span>
-                  <select
-                    name="requirement"
-                    value={requirement}
-                    onChange={(e) => setRequirement(e.target.value)}
-                    required
-                    className={`${inputClass} appearance-none`}
-                  >
-                    <option value="" className="bg-ink text-paper">
-                      Select a requirement
-                    </option>
-                    {requirements.map((req) => (
-                      <option key={req} value={req} className="bg-ink text-paper">
-                        {req}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+            <div className="rounded-2xl border border-brand/40 bg-gradient-to-b from-[#141414] to-[#0D0D0D] p-8 sm:p-12 shadow-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/15 border border-brand/30 text-[11px] font-bold text-brand uppercase tracking-wider mb-4">
+                <CheckCircle2 size={13} />
+                <span>Brief Successfully Received</span>
               </div>
 
-              <fieldset>
-                <legend className="eyebrow">I’m interested in</legend>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {interestOptions.map((item) => {
-                    const checked = interests.includes(item);
-                    return (
-                      <label key={item}>
-                        <input
-                          type="checkbox"
-                          className="sr-only"
-                          checked={checked}
-                          onChange={() => toggleInterest(item)}
-                        />
-                        <span
-                          className={`inline-block cursor-pointer rounded-sm border px-3.5 py-2 text-[13px] transition-colors duration-200 ${
+              <h2 className="font-serif text-[28px] sm:text-[34px] leading-tight text-paper font-normal">
+                Thank you, {name || 'Partner'}.
+              </h2>
+
+              <p className="mt-4 text-[15px] leading-relaxed text-mute">
+                We have assigned reference <span className="font-mono font-bold text-paper px-2 py-0.5 rounded bg-white/10">{refId}</span> to your enquiry. Our planning team is preparing route availability and venue metrics for your review.
+              </p>
+
+              <div className="mt-8 p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+                <p className="text-[13px] text-[#D8D4CE]">
+                  Need immediate activation or custom route mapping?
+                </p>
+                <a
+                  href={phoneTel}
+                  className="mt-3 inline-flex items-center gap-2 text-[14px] font-bold text-brand hover:text-brand-hover transition-colors"
+                >
+                  <Phone size={14} />
+                  <span>Call {phoneText} for urgent requirements</span>
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-white/10 bg-[#0D0D0D] p-8 sm:p-10 shadow-2xl">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <label className="block">
+                    <span className="eyebrow text-[#888888]">Your Full Name *</span>
+                    <input
+                      required
+                      name="name"
+                      autoComplete="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="e.g. Aditi Sharma"
+                      className="input-field mt-2"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="eyebrow text-[#888888]">Company / Brand Name *</span>
+                    <input
+                      required
+                      name="company"
+                      autoComplete="organization"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
+                      placeholder="e.g. Nexus Healthcare"
+                      className="input-field mt-2"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="eyebrow text-[#888888]">Phone Number *</span>
+                    <input
+                      required
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="+91 98765 43210"
+                      className="input-field mt-2"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="eyebrow text-[#888888]">Email Address *</span>
+                    <input
+                      required
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="name@company.com"
+                      className="input-field mt-2"
+                    />
+                  </label>
+
+                  <label className="block sm:col-span-2">
+                    <span className="eyebrow text-[#888888]">Target City & Localities *</span>
+                    <input
+                      required
+                      name="city"
+                      autoComplete="address-level2"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      placeholder="e.g. Bengaluru (Koramangala, Indiranagar, Whitefield)"
+                      className="input-field mt-2"
+                    />
+                  </label>
+
+                  <label className="block sm:col-span-2">
+                    <span className="eyebrow text-[#888888]">Primary Advertising Requirement *</span>
+                    <select
+                      name="requirement"
+                      value={requirement}
+                      onChange={(e) => setRequirement(e.target.value)}
+                      required
+                      className="input-field mt-2 appearance-none cursor-pointer"
+                    >
+                      <option value="" className="bg-[#0D0D0D] text-paper">
+                        Select a requirement
+                      </option>
+                      {requirements.map((req) => (
+                        <option key={req} value={req} className="bg-[#0D0D0D] text-paper">
+                          {req}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+
+                {/* Interest Multi-select */}
+                <div>
+                  <legend className="eyebrow text-[#888888] mb-2.5">Specific Deliverables of Interest</legend>
+                  <div className="flex flex-wrap gap-2">
+                    {interestOptions.map((item) => {
+                      const checked = interests.includes(item);
+                      return (
+                        <button
+                          key={item}
+                          type="button"
+                          onClick={() => toggleInterest(item)}
+                          className={`px-3.5 py-1.5 rounded-lg border text-[12.5px] font-medium transition-all ${
                             checked
-                              ? 'border-brand bg-brand/10 text-paper'
-                              : 'border-line text-mute hover:border-paper/30 hover:text-paper'
+                              ? 'border-brand bg-brand text-white shadow-sm'
+                              : 'border-white/10 bg-white/[0.02] text-mute hover:border-white/25 hover:text-paper'
                           }`}
                         >
                           {item}
-                        </span>
-                      </label>
-                    );
-                  })}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </fieldset>
 
-              <label className="block">
-                <span className="eyebrow">Message</span>
-                <textarea
-                  name="message"
-                  rows={6}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className={`${inputClass} resize-y`}
-                  placeholder="City, audience, goal, and anything we should know."
-                />
-              </label>
+                <label className="block">
+                  <span className="eyebrow text-[#888888]">Campaign Details & Special Requirements</span>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="input-field mt-2 resize-y"
+                    placeholder="Tell us about your target customer, campaign objectives, preferred dates or any specific venues."
+                  />
+                </label>
 
-              <button
-                type="submit"
-                className="btn-arrow inline-flex items-center justify-center gap-2 rounded-sm bg-brand px-5 py-2.5 text-[13px] font-medium tracking-wide text-paper transition-colors duration-200 hover:bg-brand-hover"
-              >
-                Request a Media Plan
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
+                <button
+                  type="submit"
+                  className="btn-arrow inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-brand hover:bg-brand-hover px-7 py-3.5 text-[14px] font-semibold tracking-wide text-paper shadow-lg shadow-brand/25 transition-all duration-200"
                 >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </button>
-            </form>
+                  <span>Submit Media Plan Request</span>
+                  <ArrowRight size={15} />
+                </button>
+              </form>
+            </div>
           )}
         </div>
       </div>

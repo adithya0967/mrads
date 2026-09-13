@@ -229,29 +229,36 @@ export default function LocationsPage() {
       ))}
 
       {/* Cross links */}
-      <section className="border-b border-line">
+      <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-16">
-          <p className="text-[14px] text-mute">
-            Looking for transit, print or digital as well?{' '}
+          <p className="text-[14.5px] text-mute">
+            Looking for transit, print, creative or digital as well?{' '}
             <Link
               href="/advertising-on-the-move"
-              className="text-paper underline decoration-line underline-offset-4 hover:decoration-brand"
+              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
             >
               Advertising on the Move
             </Link>
             ,{' '}
             <Link
               href="/offline-print"
-              className="text-paper underline decoration-line underline-offset-4 hover:decoration-brand"
+              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
             >
               Offline & Print
+            </Link>
+            ,{' '}
+            <Link
+              href="/print-creative"
+              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
+            >
+              Print & Creative Design
             </Link>
             , or{' '}
             <Link
               href="/digital"
-              className="text-paper underline decoration-line underline-offset-4 hover:decoration-brand"
+              className="text-paper underline decoration-brand/60 underline-offset-4 hover:text-brand transition-colors"
             >
-              Digital Solutions
+              Digital & AI Solutions
             </Link>
             .
           </p>

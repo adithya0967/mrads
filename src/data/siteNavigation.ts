@@ -6,6 +6,7 @@ export const contactMailto = 'mailto:knowus@mr-ads.in';
 export const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
+  { to: '/solutions', label: 'Solutions' },
   { to: '/locations', label: 'Locations' },
   { to: '/pricing', label: 'Pricing' },
   { to: '/contact', label: 'Contact' },

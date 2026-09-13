@@ -271,23 +271,23 @@
   will-change: transform, opacity;
 }
 
-/* Mr. Ads Custom Styles */
+/* Mr. Ads Design System */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
 }
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #090d16;
-  color: #f8fafc;
+  font-family: var(--font-sans);
+  background: #080808;
+  color: #F4F1EC;
   -webkit-font-smoothing: antialiased;
 }
 .serif {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-serif);
 }
 ::selection {
-  background: #D9232D;
-  color: #fff;
+  background: rgba(216, 31, 66, 0.4);
+  color: #F4F1EC;
 }
 .reveal {
   opacity: 0;
@@ -301,30 +301,6 @@ body {
 .reveal-d1 { transition-delay: .08s; }
 .reveal-d2 { transition-delay: .16s; }
 .reveal-d3 { transition-delay: .24s; }
-
-.nav-link {
-  position: relative;
-  font-weight: 600;
-  font-size: .86rem;
-  color: #94a3b8;
-  letter-spacing: .01em;
-  padding: .5rem .2rem;
-  white-space: nowrap;
-}
-.nav-link:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  height: 2px;
-  width: 0;
-  background: #D9232D;
-  border-radius: 2px;
-  transition: width .25s;
-}
-.nav-link:hover { color: #f8fafc; }
-.nav-link:hover:after, .nav-link.active:after { width: 100%; }
-.nav-link.active { color: #f8fafc; }
 
 .btn-primary {
   background: #D9232D;
@@ -579,22 +555,48 @@ details[open] .faq-plus { transform: rotate(45deg); }
 }
 
 .nav-link {
-  color: #8c8a85;
+  color: #929292;
   transition: color 0.18s ease;
   position: relative;
 }
 .nav-link:hover,
 .nav-link.is-active {
-  color: #f3f0ea;
+  color: #F4F1EC;
 }
 .nav-link.is-active:after {
   content: "";
-  background: #c41e3a;
-  height: 1px;
+  background: #D81F42;
+  height: 2px;
   position: absolute;
-  bottom: -7px;
+  bottom: -6px;
   left: 0;
   right: 0;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(216, 31, 66, 0.6);
+}
+
+.input-field {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  color: #F4F1EC;
+  transition: all 0.2s ease;
+  outline: none;
+}
+.input-field:hover {
+  border-color: rgba(255, 255, 255, 0.20);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.input-field:focus {
+  border-color: #D81F42;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(216, 31, 66, 0.2);
+}
+.input-field::placeholder {
+  color: #666666;
 }
 
 .font-serif {

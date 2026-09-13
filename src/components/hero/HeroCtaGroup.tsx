@@ -12,7 +12,7 @@ export interface HeroCtaGroupProps {
 
 export default function HeroCtaGroup({
   primaryText = 'PLAN YOUR CAMPAIGN',
-  primaryHref = '#contact',
+  primaryHref = '/contact',
   secondaryText = 'EXPLORE OUR NETWORK',
   secondaryHref = '#solutions',
 }: HeroCtaGroupProps) {
