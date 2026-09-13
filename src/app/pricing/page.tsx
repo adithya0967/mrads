@@ -301,7 +301,7 @@ export default function PricingPage() {
                 <div
                   className={`card-interactive h-full relative rounded-2xl border p-7 sm:p-8 flex flex-col justify-between ${
                     pkg.highlight === 'Most Popular'
-                      ? 'border-brand/40 bg-gradient-to-b from-[#141414] to-[#0D0D0D] shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(216,31,66,0.15)]'
+                      ? 'border-brand/40 bg-gradient-to-b from-[#141414] to-[#0D0D0D] shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(200,58,75,0.15)]'
                       : 'border-white/[0.08] bg-[#141414]/60 hover:border-white/20'
                   }`}
                 >

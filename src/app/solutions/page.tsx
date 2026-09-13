@@ -281,7 +281,7 @@ export default function SolutionsPage() {
       <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-16 sm:py-20">
           <Reveal variant="scale-up">
-            <div className="rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/10 via-transparent to-brand/5 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_15px_40px_rgba(0,0,0,0.6),0_0_25px_rgba(216,31,66,0.1)]">
+            <div className="rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/10 via-transparent to-brand/5 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_15px_40px_rgba(0,0,0,0.6),0_0_25px_rgba(200,58,75,0.1)]">
               <div className="max-w-xl">
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold text-brand uppercase tracking-widest mb-2">
                   <Sparkles size={13} className="animate-pulse" /> Synchronized Flights

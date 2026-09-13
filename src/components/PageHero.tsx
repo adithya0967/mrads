@@ -20,7 +20,7 @@ export default function PageHero({ eyebrow, title, copy }: PageHeroProps) {
   return (
     <section className="relative border-b border-line bg-ink overflow-hidden">
       {/* Ambient background depth */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#D81F42]/[0.04] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#C83A4B]/[0.04] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-site py-16 md:py-24 relative z-10">
         <div className="max-w-3xl">

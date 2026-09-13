@@ -57,7 +57,7 @@ export default function BillboardScene() {
 
         {/* 2. Realistic Outdoor Billboard Structure */}
         <div
-          className="relative w-full rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-gradient-to-b from-[#1C1C1C] via-[#111111] to-[#0A0A0A] border border-white/[0.12] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95),0_0_45px_rgba(216,31,66,0.18)]"
+          className="relative w-full rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-gradient-to-b from-[#1C1C1C] via-[#111111] to-[#0A0A0A] border border-white/[0.12] shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95),0_0_45px_rgba(200,58,75,0.18)]"
           style={{
             transform: `scale(${scaleValue})`,
             transition: 'transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
@@ -66,7 +66,7 @@ export default function BillboardScene() {
           {/* Physical Industrial Billboard Frame Top Architectural Bar */}
           <div className="flex items-center justify-between px-3 py-1.5 border-b border-white/[0.06] mb-1.5 text-[10px] font-mono tracking-wider text-[#666666]">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C83A4B] shadow-[0_0_6px_#C83A4B]"></span>
               <span className="font-semibold text-[#929292]">MR ADS // DOOH DISPLAY UNIT #01</span>
             </div>
             <div className="hidden sm:flex items-center gap-3">

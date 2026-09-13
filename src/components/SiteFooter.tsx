@@ -28,9 +28,9 @@ export default function SiteFooter() {
             {/* Brand Info */}
             <div className="md:col-span-5">
               <Link href="/" className="inline-flex items-center gap-3 group">
-                <span className="flex h-8 w-8 items-center justify-center rounded-md border border-line bg-slate group-hover:border-[#D81F42]/60 group-hover:bg-[#D81F42]/10 transition-all duration-200">
+                <span className="flex h-8 w-8 items-center justify-center rounded-md border border-line bg-slate group-hover:border-[#C83A4B]/60 group-hover:bg-[#C83A4B]/10 transition-all duration-200">
                   <span className="font-serif text-[17px] leading-none text-paper">M</span>
-                  <span className="mb-2 ml-px h-1.5 w-1.5 rounded-full bg-brand shadow-[0_0_6px_#D81F42]"></span>
+                  <span className="mb-2 ml-px h-1.5 w-1.5 rounded-full bg-brand shadow-[0_0_6px_#C83A4B]"></span>
                 </span>
                 <span className="font-serif text-[20px] text-paper group-hover:text-white transition-colors">
                   Mr. Ads

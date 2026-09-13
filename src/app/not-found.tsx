@@ -10,7 +10,7 @@ export default function NotFound() {
     <TargetShell>
       <div className="relative min-h-[70vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
         {/* Ambient Backlight */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D81F42]/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#C83A4B]/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="relative z-10 text-center max-w-xl">
           <p className="eyebrow text-brand">404 Error</p>

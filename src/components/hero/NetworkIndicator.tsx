@@ -24,7 +24,7 @@ export default function NetworkIndicator() {
         {items.map((item, idx) => (
           <div key={idx} className={`flex flex-col ${idx !== 0 ? 'pt-2.5 sm:pt-0 sm:pl-4' : ''}`}>
             <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C83A4B]"></span>
               <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.14em] uppercase text-[#F4F1EC]">
                 {item.title}
               </span>

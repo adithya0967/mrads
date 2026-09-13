@@ -40,7 +40,7 @@ export default function WhySection() {
   return (
     <section className="relative border-b border-line bg-[#0D0D0D] overflow-hidden">
       {/* Subtle Ambient Radial Highlight */}
-      <div className="absolute -top-24 left-1/3 w-[600px] h-[600px] bg-[#D81F42]/[0.025] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute -top-24 left-1/3 w-[600px] h-[600px] bg-[#C83A4B]/[0.025] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
@@ -75,10 +75,10 @@ export default function WhySection() {
               <div className="card-interactive group relative h-full rounded-xl border border-white/[0.08] bg-[#141414]/60 p-7 sm:p-8 hover:bg-[#141414] flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="font-serif text-[26px] font-bold text-[#D81F42] leading-none transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(216,31,66,0.6)]">
+                    <span className="font-serif text-[26px] font-bold text-[#C83A4B] leading-none transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(200,58,75,0.6)]">
                       {item.num}
                     </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-brand group-hover:shadow-[0_0_6px_#D81F42] transition-all"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-brand group-hover:shadow-[0_0_6px_#C83A4B] transition-all"></span>
                   </div>
                   <h3 className="mt-5 text-[17px] font-semibold tracking-tight text-paper group-hover:text-white transition-colors">
                     {item.title}

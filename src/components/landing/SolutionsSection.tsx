@@ -70,7 +70,7 @@ export default function SolutionsSection() {
   return (
     <section className="relative border-b border-line bg-[#080808] overflow-hidden" id="solutions">
       {/* Ambient background depth */}
-      <div className="absolute -top-32 right-10 w-[550px] h-[550px] bg-[#D81F42]/[0.035] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute -top-32 right-10 w-[550px] h-[550px] bg-[#C83A4B]/[0.035] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
@@ -129,7 +129,7 @@ export default function SolutionsSection() {
                       <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-semibold tracking-wider text-paper uppercase transition-transform duration-200 group-hover:scale-105">
                         {item.category}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-brand/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-sm transition-all duration-200 group-hover:shadow-[0_0_12px_rgba(216,31,66,0.6)]">
+                      <span className="px-2.5 py-0.5 rounded-full bg-brand/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-sm transition-all duration-200 group-hover:shadow-[0_0_12px_rgba(200,58,75,0.6)]">
                         {item.tag}
                       </span>
                     </div>

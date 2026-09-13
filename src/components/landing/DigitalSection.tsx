@@ -66,7 +66,7 @@ export default function DigitalSection() {
   return (
     <section className="relative border-b border-line bg-[#080808] overflow-hidden">
       {/* Subtle Ambient Glow */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-[#D81F42]/[0.03] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-[#C83A4B]/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
@@ -118,7 +118,7 @@ export default function DigitalSection() {
           <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 sm:p-6 flex flex-wrap items-center justify-between gap-4">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2.5 text-[13px] text-mute group">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand shadow-[0_0_6px_#D81F42]"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-brand shadow-[0_0_6px_#C83A4B]"></span>
                 <span className="text-[#D8D4CE] group-hover:text-white transition-colors">
                   {item}
                 </span>

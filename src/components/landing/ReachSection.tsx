@@ -131,7 +131,7 @@ export default function ReachSection({
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute left-1/2 -translate-x-1/2 -top-40 w-[700px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse,rgba(217,35,45,.25),transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse,rgba(200,58,75,.25),transparent 70%)' }}
         ></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 relative">

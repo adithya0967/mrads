@@ -99,7 +99,7 @@ export default function PrintCreativePage() {
       <section className="border-b border-line bg-[#080808]">
         <div className="container-site py-10">
           <Reveal variant="scale-up">
-            <div className="rounded-xl border border-brand/30 bg-brand/5 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_10px_30px_rgba(216,31,66,0.08)]">
+            <div className="rounded-xl border border-brand/30 bg-brand/5 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_10px_30px_rgba(200,58,75,0.08)]">
               <div className="max-w-xl">
                 <span className="text-[11px] font-bold text-brand tracking-widest uppercase">
                   Campaign Bundling
@@ -218,7 +218,7 @@ export default function PrintCreativePage() {
             ].map((std, idx) => (
               <Reveal key={std.title} variant="fade-up" staggerIndex={idx} delay={0.1}>
                 <div className="card-interactive p-6 rounded-xl border border-white/[0.08] bg-[#0D0D0D] hover:bg-[#141414] transition-colors h-full">
-                  <span className="w-2 h-2 rounded-full bg-brand inline-block mb-3 shadow-[0_0_6px_#D81F42]"></span>
+                  <span className="w-2 h-2 rounded-full bg-brand inline-block mb-3 shadow-[0_0_6px_#C83A4B]"></span>
                   <h4 className="text-[16px] font-semibold text-paper">{std.title}</h4>
                   <p className="mt-2 text-[13.5px] leading-relaxed text-mute">{std.desc}</p>
                 </div>

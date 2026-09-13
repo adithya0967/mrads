@@ -23,7 +23,7 @@ export default function HeroCtaGroup({
         {/* Primary CTA Button */}
         <Link
           href={primaryHref}
-          className="btn-sheen group relative inline-flex items-center justify-center gap-3 h-[56px] px-8 rounded-xl bg-[#D81F42] hover:bg-[#ED3153] text-[#F4F1EC] text-[13.5px] sm:text-[14px] font-bold tracking-[0.08em] uppercase transition-all duration-200 shadow-[0_4px_25px_rgba(216,31,66,0.35)] hover:shadow-[0_8px_35px_rgba(237,49,83,0.55)] hover:-translate-y-0.5 active:translate-y-0"
+          className="btn-sheen group relative inline-flex items-center justify-center gap-3 h-[56px] px-8 rounded-xl bg-[#C83A4B] hover:bg-[#DE4A5C] text-[#F4F1EC] text-[13.5px] sm:text-[14px] font-bold tracking-[0.08em] uppercase transition-all duration-200 shadow-[0_4px_25px_rgba(200,58,75,0.35)] hover:shadow-[0_8px_35px_rgba(222,74,92,0.55)] hover:-translate-y-0.5 active:translate-y-0"
         >
           <span>{primaryText}</span>
           <svg

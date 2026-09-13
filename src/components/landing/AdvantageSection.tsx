@@ -45,7 +45,7 @@ export default function AdvantageSection() {
   return (
     <section className="relative border-b border-line bg-[#080808] overflow-hidden">
       {/* Subtle Ambient Radial Highlight */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#D81F42]/[0.05] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-[#C83A4B]/[0.05] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
@@ -109,16 +109,16 @@ export default function AdvantageSection() {
 
           {/* Column 2: The Mr. Ads Approach (Slide from Right) */}
           <Reveal variant="slide-right" delay={0.2} className="h-full">
-            <div className="relative h-full rounded-2xl border border-[#D81F42]/30 bg-gradient-to-b from-[#141414] to-[#0A0A0A] p-7 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_30px_rgba(216,31,66,0.1)] flex flex-col justify-between transition-all duration-300 hover:border-[#D81F42]/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(216,31,66,0.2)]">
+            <div className="relative h-full rounded-2xl border border-[#C83A4B]/30 bg-gradient-to-b from-[#141414] to-[#0A0A0A] p-7 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_30px_rgba(200,58,75,0.1)] flex flex-col justify-between transition-all duration-300 hover:border-[#C83A4B]/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(200,58,75,0.2)]">
               {/* Subtle glow accent bar */}
-              <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-[#D81F42] to-transparent" />
+              <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-[#C83A4B] to-transparent" />
 
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-white/[0.08]">
-                  <span className="text-[12px] font-bold tracking-[0.2em] text-[#D81F42] uppercase">
+                  <span className="text-[12px] font-bold tracking-[0.2em] text-[#C83A4B] uppercase">
                     The Mr. Ads Solution
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D81F42]/15 text-[11px] text-[#ED3153] font-bold border border-[#D81F42]/30 shadow-[0_0_12px_rgba(216,31,66,0.2)]">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C83A4B]/15 text-[11px] text-[#DE4A5C] font-bold border border-[#C83A4B]/30 shadow-[0_0_12px_rgba(200,58,75,0.2)]">
                     Proven Impact
                   </span>
                 </div>
@@ -129,7 +129,7 @@ export default function AdvantageSection() {
                       key={item.title}
                       className="group/item flex items-start gap-4 -mx-2 px-2 py-1.5 rounded-lg transition-colors hover:bg-white/[0.03]"
                     >
-                      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#D81F42]/20 border border-[#D81F42]/40 text-[#ED3153] shrink-0 mt-0.5 group-hover/item:scale-110 group-hover/item:bg-[#D81F42]/30 transition-all">
+                      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#C83A4B]/20 border border-[#C83A4B]/40 text-[#DE4A5C] shrink-0 mt-0.5 group-hover/item:scale-110 group-hover/item:bg-[#C83A4B]/30 transition-all">
                         <Check size={13} strokeWidth={2.8} />
                       </span>
                       <div>

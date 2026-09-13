@@ -10,7 +10,7 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute -left-32 top-20 w-96 h-96 rounded-full"
-          style={{ background: 'radial-gradient(circle,rgba(217,35,45,.2),transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle,rgba(200,58,75,.2),transparent 70%)' }}
         ></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 relative">

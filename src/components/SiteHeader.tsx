@@ -89,9 +89,9 @@ export default function SiteHeader() {
       >
         {/* Left: Minimal & Premium Mr Ads Logo / Wordmark */}
         <Link href="/" className="flex items-center gap-3.5 group" aria-label="Mr Ads Home">
-          <div className="relative flex items-center justify-center w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 group-hover:border-[#D81F42]/60 group-hover:bg-[#D81F42]/10 transition-all duration-200">
+          <div className="relative flex items-center justify-center w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 group-hover:border-[#C83A4B]/60 group-hover:bg-[#C83A4B]/10 transition-all duration-200">
             <span className="font-serif text-[18px] font-bold text-[#F4F1EC] leading-none">M</span>
-            <span className="absolute bottom-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_8px_#D81F42]"></span>
+            <span className="absolute bottom-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#C83A4B] shadow-[0_0_8px_#C83A4B]"></span>
           </div>
           <div className="flex flex-col">
             <span className="font-sans font-extrabold text-[17px] tracking-[0.06em] text-[#F4F1EC] uppercase leading-tight group-hover:text-white transition-colors">
@@ -157,10 +157,10 @@ export default function SiteHeader() {
                         : 'opacity-0 scale-95 pointer-events-none'
                     }`}
                   >
-                    <div className="rounded-xl border border-white/10 bg-[#0D0D0D]/98 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(216,31,66,0.12)]">
+                    <div className="rounded-xl border border-white/10 bg-[#0D0D0D]/98 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(200,58,75,0.12)]">
                       <Link
                         href="/solutions"
-                        className="group flex items-center justify-between px-3.5 py-2.5 rounded-lg text-[13px] font-semibold text-[#F4F1EC] bg-white/[0.04] hover:bg-[#D81F42]/15 hover:text-white transition-colors"
+                        className="group flex items-center justify-between px-3.5 py-2.5 rounded-lg text-[13px] font-semibold text-[#F4F1EC] bg-white/[0.04] hover:bg-[#C83A4B]/15 hover:text-white transition-colors"
                       >
                         <span>All Solutions Overview</span>
                         <span className="text-[10px] text-brand uppercase font-bold tracking-wider group-hover:translate-x-0.5 transition-transform">
@@ -177,13 +177,13 @@ export default function SiteHeader() {
                               href={sub.to}
                               className={`flex items-center justify-between px-3.5 py-2 rounded-lg text-[13px] transition-all duration-150 ${
                                 isSubActive
-                                  ? 'bg-[#D81F42]/15 text-[#F4F1EC] font-medium pl-4'
+                                  ? 'bg-[#C83A4B]/15 text-[#F4F1EC] font-medium pl-4'
                                   : 'text-[#929292] hover:bg-white/[0.04] hover:text-[#F4F1EC] hover:pl-4'
                               }`}
                             >
                               <span>{sub.label}</span>
                               {isSubActive && (
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C83A4B] shadow-[0_0_6px_#C83A4B]"></span>
                               )}
                             </Link>
                           );
@@ -225,7 +225,7 @@ export default function SiteHeader() {
               strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-[#D81F42] transition-transform duration-200 hover:scale-110"
+              className="text-[#C83A4B] transition-transform duration-200 hover:scale-110"
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
@@ -234,7 +234,7 @@ export default function SiteHeader() {
 
           <Link
             href="/contact"
-            className="btn-sheen group hidden sm:inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-lg bg-[#D81F42] hover:bg-[#ED3153] text-[#F4F1EC] text-[13px] font-semibold tracking-wide shadow-[0_0_20px_rgba(216,31,66,0.25)] hover:shadow-[0_0_28px_rgba(237,49,83,0.5)] hover:-translate-y-0.5 active:translate-y-0"
+            className="btn-sheen group hidden sm:inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-lg bg-[#C83A4B] hover:bg-[#DE4A5C] text-[#F4F1EC] text-[13px] font-semibold tracking-wide shadow-[0_0_20px_rgba(200,58,75,0.25)] hover:shadow-[0_0_28px_rgba(222,74,92,0.5)] hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Get a Media Plan</span>
             <svg
@@ -254,7 +254,7 @@ export default function SiteHeader() {
           {/* Mobile Media Plan compact button */}
           <Link
             href="/contact"
-            className="btn-sheen sm:hidden inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-[#D81F42] text-[#F4F1EC] text-[12px] font-semibold"
+            className="btn-sheen sm:hidden inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-[#C83A4B] text-[#F4F1EC] text-[12px] font-semibold"
           >
             Media Plan
           </Link>
@@ -325,7 +325,7 @@ export default function SiteHeader() {
               >
                 <span>{item.label}</span>
                 {isActive && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C83A4B] shadow-[0_0_6px_#C83A4B]"></span>
                 )}
               </Link>
             );
@@ -361,7 +361,7 @@ export default function SiteHeader() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.8"
-                className="text-[#D81F42]"
+                className="text-[#C83A4B]"
               >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
@@ -369,7 +369,7 @@ export default function SiteHeader() {
             </a>
             <Link
               href="/contact"
-              className="btn-sheen w-full py-3 rounded-lg bg-[#D81F42] hover:bg-[#ED3153] text-center text-[#F4F1EC] font-semibold text-[14px] transition-colors shadow-lg shadow-brand/20"
+              className="btn-sheen w-full py-3 rounded-lg bg-[#C83A4B] hover:bg-[#DE4A5C] text-center text-[#F4F1EC] font-semibold text-[14px] transition-colors shadow-lg shadow-brand/20"
             >
               Get a Media Plan →
             </Link>

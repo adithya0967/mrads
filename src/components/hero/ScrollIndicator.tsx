@@ -42,7 +42,7 @@ export default function ScrollIndicator() {
       <span className="text-[10.5px] font-bold tracking-[0.25em] text-[#666666] group-hover:text-[#F4F1EC] uppercase transition-colors">
         Scroll Down to Explore
       </span>
-      <div className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 group-hover:border-brand/60 group-hover:bg-brand/10 text-[#929292] group-hover:text-brand transition-all duration-200 shadow-sm group-hover:shadow-[0_0_12px_rgba(216,31,66,0.3)]">
+      <div className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 group-hover:border-brand/60 group-hover:bg-brand/10 text-[#929292] group-hover:text-brand transition-all duration-200 shadow-sm group-hover:shadow-[0_0_12px_rgba(200,58,75,0.3)]">
         <ArrowDown size={14} className="animate-bounce" />
       </div>
     </button>

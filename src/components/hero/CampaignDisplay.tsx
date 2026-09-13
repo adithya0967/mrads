@@ -25,7 +25,7 @@ export const HERO_CAMPAIGNS: CampaignItem[] = [
     subheadline: 'Pure Electric Luxury',
     imageUrl: '/images/hero/campaign-valence-gt.jpg',
     tag: 'AUTOMOTIVE GT',
-    accent: '#D81F42',
+    accent: '#C83A4B',
   },
   {
     id: 'campaign-fashion',
@@ -196,7 +196,7 @@ export default function CampaignDisplay({ currentIndex }: CampaignDisplayProps) 
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/12 text-[#F4F1EC] shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
           <div className="relative flex items-center justify-center w-3.5 h-3.5 rounded bg-white/[0.08] border border-white/20">
             <span className="font-serif text-[10px] font-bold text-[#F4F1EC] leading-none">M</span>
-            <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+            <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#C83A4B] shadow-[0_0_6px_#C83A4B]"></span>
           </div>
           <span className="font-sans text-[10px] sm:text-[10.5px] font-extrabold tracking-[0.16em] uppercase text-[#F4F1EC]">
             MR. ADS

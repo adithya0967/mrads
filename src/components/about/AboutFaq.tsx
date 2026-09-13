@@ -67,7 +67,7 @@ export default function AboutFaq() {
                     <span
                       className={`mt-0.5 flex items-center justify-center w-6 h-6 rounded-full border border-white/10 text-mute transition-all duration-300 shrink-0 ${
                         isOpen
-                          ? 'rotate-45 border-brand text-brand bg-[#D81F42]/10'
+                          ? 'rotate-45 border-brand text-brand bg-[#C83A4B]/10'
                           : 'group-hover:border-white/30'
                       }`}
                     >

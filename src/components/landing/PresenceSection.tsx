@@ -58,7 +58,7 @@ export default function PresenceSection() {
   return (
     <section className="relative border-b border-line bg-[#0D0D0D] overflow-hidden">
       {/* Ambient background aura */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#D81F42]/[0.03] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#C83A4B]/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Split Header Reveal */}

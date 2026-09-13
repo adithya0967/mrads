@@ -30,8 +30,8 @@ export default function HeroCopy({
       <Reveal variant="fade-up" delay={0.1}>
         <div className="inline-flex items-center gap-2.5">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ED3153] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D81F42]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#DE4A5C] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C83A4B]"></span>
           </span>
           <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.22em] text-[#929292] uppercase">
             {eyebrow}
@@ -45,7 +45,7 @@ export default function HeroCopy({
           <span className="block">{headlineLine1}</span>
         </Reveal>
         <Reveal variant="fade-up" delay={0.28}>
-          <span className="block text-[#ED3153] italic font-normal my-0.5">{headlineAccent}</span>
+          <span className="block text-[#DE4A5C] italic font-normal my-0.5">{headlineAccent}</span>
         </Reveal>
         <Reveal variant="fade-up" delay={0.36}>
           <span className="block">{headlineLine3}</span>
@@ -69,7 +69,7 @@ export default function HeroCopy({
                 height="14"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#D81F42"
+                stroke="#C83A4B"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"

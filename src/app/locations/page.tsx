@@ -142,7 +142,7 @@ export default function LocationsPage() {
                 <a
                   key={cat.id}
                   href={`#${cat.id}`}
-                  className="rounded-lg border border-line bg-white/[0.02] px-4 py-2 text-[13px] text-mute transition-all duration-200 hover:border-brand/50 hover:bg-[#D81F42]/10 hover:text-paper hover:-translate-y-0.5 active:translate-y-0"
+                  className="rounded-lg border border-line bg-white/[0.02] px-4 py-2 text-[13px] text-mute transition-all duration-200 hover:border-brand/50 hover:bg-[#C83A4B]/10 hover:text-paper hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {cat.label}
                 </a>

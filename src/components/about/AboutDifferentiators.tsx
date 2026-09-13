@@ -56,7 +56,7 @@ export default function AboutDifferentiators() {
             >
               <article className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#141414]/60 p-7 hover:bg-[#141414] transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span className="font-serif text-[26px] font-bold text-brand leading-none transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(216,31,66,0.6)]">
+                  <span className="font-serif text-[26px] font-bold text-brand leading-none transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(200,58,75,0.6)]">
                     {n.num}
                   </span>
                   <h3 className="mt-4 text-[18px] font-semibold tracking-tight text-paper group-hover:text-white transition-colors">

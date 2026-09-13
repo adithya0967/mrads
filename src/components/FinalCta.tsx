@@ -15,7 +15,7 @@ export default function FinalCta({
   return (
     <section className="relative border-t border-line bg-[#0D0D0D] overflow-hidden">
       {/* Ambient Crimson Glow with subtle breathing pulse */}
-      <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[550px] h-[550px] bg-[#D81F42]/12 rounded-full blur-[150px] pointer-events-none animate-tv-pulse" />
+      <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[550px] h-[550px] bg-[#C83A4B]/12 rounded-full blur-[150px] pointer-events-none animate-tv-pulse" />
 
       <div className="container-site py-20 md:py-28 relative z-10">
         <Reveal variant="fade-up" className="max-w-2xl">

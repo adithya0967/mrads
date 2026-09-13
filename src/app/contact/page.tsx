@@ -68,7 +68,7 @@ function ContactContent() {
   return (
     <section className="border-b border-line bg-[#080808] relative overflow-hidden">
       {/* Subtle ambient red highlight */}
-      <div className="absolute top-1/4 right-10 w-[550px] h-[550px] bg-[#D81F42]/[0.035] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 right-10 w-[550px] h-[550px] bg-[#C83A4B]/[0.035] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container-site grid gap-16 py-16 md:grid-cols-12 md:py-24 relative z-10">
         {/* Left Column: Context & Contact Details */}
