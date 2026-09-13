@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
-import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const budgetOptions = [
   { value: '', label: 'Select Monthly Budget' },
@@ -22,259 +21,233 @@ export default function ContactSection() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Placeholder submit handler — connect to backend/CRM here
     setSubmitted(true);
   };
 
   return (
-    <section id="contact" className="bg-[#090A0C]">
-      {/* Major CTA Block */}
-      <div className="bg-[#111318] text-[#F5F5F5] py-20 md:py-28 border-b border-[#252830]">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
-          <ScrollReveal direction="up" delay={0} className="max-w-2xl">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
-              GET STARTED TODAY
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F5F5F5] leading-[1.15] mb-4">
-              Ready to Reach Your Next Customer?
-            </h2>
-            <p className="text-[#9A9CA5] text-base md:text-lg font-normal leading-relaxed">
-              Let's build a hyperlocal campaign around your audience, locations, and goals.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={100} className="flex flex-wrap items-center gap-4 shrink-0">
-            <a
-              href="#inquiry-form"
-              className="px-7 py-3.5 bg-[#B4233C] text-white rounded-lg font-bold text-base hover:bg-[#D13B55] transition-colors shadow-md shadow-black/50"
-            >
-              Book Your Ad Slot
-            </a>
-            <a
-              href="tel:+919686544644"
-              className="px-7 py-3.5 bg-[#090A0C] text-[#F5F5F5] border border-[#252830] rounded-lg font-bold text-base hover:border-[#F5F5F5] transition-colors"
-            >
-              Talk to Our Team
-            </a>
-          </ScrollReveal>
+    <section id="contact" className="py-24 md:py-32 bg-background">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+            Get In Touch
+          </span>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-foreground mb-4">
+            Get Your Brand Featured in High-Footfall Restaurants.
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-base">
+            Explore available locations and start reaching 2,000–3,000 customers daily per location.
+          </p>
         </div>
-      </div>
 
-      {/* Clean Lead Inquiry Form & Details */}
-      <div id="inquiry-form" className="py-20 md:py-28 border-b border-[#252830]">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-            {/* Left: Direct Contact Information */}
-            <div className="lg:col-span-5 flex flex-col justify-between items-start gap-8">
-              <ScrollReveal direction="right" delay={0}>
-                <div>
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
-                    CONTACT DETAILS
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F5F5F5] tracking-tight mb-4">
-                    Speak Directly With Our Campaign Team
-                  </h3>
-                  <p className="text-[#9A9CA5] text-base leading-relaxed mb-8">
-                    We'll provide exact screen counts, location availability, and campaign estimates
-                    for your brand.
-                  </p>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* Contact details panel */}
+          <div className="lg:col-span-2 flex flex-col gap-5">
+            {/* Contact info card */}
+            <div className="bg-accent text-accent-foreground rounded-3xl p-8 flex flex-col gap-6">
+              <div>
+                <div className="text-white/60 text-xs font-bold uppercase tracking-[0.4em] mb-2">Contact Us</div>
+                <h3 className="font-extrabold text-xl text-white">Connect with us to plan your campaign across high-footfall locations.</h3>
+              </div>
 
-                  <div className="flex flex-col gap-6">
-                    <a href="tel:+919686544644" className="pro-card p-4 rounded-2xl border border-white/10 flex items-center gap-4 group">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center group-hover:border-[#B4233C]/60 group-hover:scale-110 shadow-md transition-all">
-                        <Icon name="PhoneIcon" size={20} className="text-[#E85D75]" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider">
-                          Phone & WhatsApp
-                        </div>
-                        <div className="text-base font-extrabold text-[#F5F5F5] group-hover:text-white transition-colors">+91 96865 44644</div>
-                      </div>
-                    </a>
+              <div className="flex flex-col gap-4">
+                <a
+                  href="tel:+919686544644"
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <Icon name="PhoneIcon" size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Call / WhatsApp</div>
+                    <div className="font-bold text-white">+91 96865 44644</div>
+                  </div>
+                </a>
 
-                    <a href="mailto:Knowus@mr-ads.in" className="pro-card p-4 rounded-2xl border border-white/10 flex items-center gap-4 group">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center group-hover:border-[#B4233C]/60 group-hover:scale-110 shadow-md transition-all">
-                        <Icon name="EnvelopeIcon" size={20} className="text-[#E85D75]" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider">
-                          Email Inquiry
-                        </div>
-                        <div className="text-base font-extrabold text-[#F5F5F5] group-hover:text-white transition-colors">
-                          Knowus@mr-ads.in
-                        </div>
-                      </div>
-                    </a>
+                <a
+                  href="mailto:Knowus@mr-ads.in"
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <Icon name="EnvelopeIcon" size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Email Us</div>
+                    <div className="font-bold text-white">Knowus@mr-ads.in</div>
+                  </div>
+                </a>
 
-                    <div className="pro-card p-4 rounded-2xl border border-white/10 flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#252B3B] to-[#12151E] border border-white/15 flex items-center justify-center shadow-md">
-                        <Icon name="MapPinIcon" size={20} className="text-[#E85D75]" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-bold text-[#9A9CA5] uppercase tracking-wider">
-                          Headquarters
-                        </div>
-                        <div className="text-base font-extrabold text-[#F5F5F5]">
-                          Bengaluru, Karnataka, India
-                        </div>
-                      </div>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                    <Icon name="MapPinIcon" size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Location</div>
+                    <div className="font-bold text-white">Bengaluru, Karnataka</div>
                   </div>
                 </div>
+              </div>
 
-                <div className="glass-card-glow border border-white/10 rounded-2xl p-5 w-full mt-8 shadow-lg">
-                  <div className="text-xs font-extrabold text-[#F5F5F5] mb-1 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#16C784]" />
-                    Response Commitment
-                  </div>
-                  <p className="text-xs text-[#9A9CA5] leading-relaxed font-normal">
-                    All campaign inquiries receive a custom proposal within 24 business hours.
-                  </p>
-                </div>
-              </ScrollReveal>
+              {/* Action buttons */}
+              <div className="flex flex-col gap-3 pt-2">
+                <a
+                  href="tel:+919686544644"
+                  className="flex items-center justify-center gap-2 px-5 py-3 bg-white text-accent rounded-full font-bold text-sm hover:bg-white/90 transition-colors"
+                >
+                  <Icon name="PhoneIcon" size={16} />
+                  Click to Call
+                </a>
+                <a
+                  href="https://wa.me/919686544644?text=Hi%2C%20I%27m%20interested%20in%20advertising%20with%20Mr.%20Ads.%20Please%20share%20available%20locations%2C%20pricing%2C%20and%20current%20slot%20availability."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-5 py-3 bg-[#25D366] text-white rounded-full font-bold text-sm hover:bg-[#20ba59] transition-colors"
+                >
+                  <Icon name="ChatBubbleLeftRightIcon" size={16} />
+                  Chat on WhatsApp
+                </a>
+              </div>
             </div>
 
-            {/* Right: B2B Lead Form */}
-            <div className="lg:col-span-7">
-              <ScrollReveal direction="left" delay={100}>
-              <div className="glass-card-glow border border-white/15 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
-                {submitted ? (
-                  <div className="py-12 text-center flex flex-col items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-[#641C2B]/30 flex items-center justify-center text-[#B4233C]">
-                      <Icon name="CheckCircleIcon" size={28} />
-                    </div>
-                    <h4 className="text-2xl font-extrabold text-[#F5F5F5]">Inquiry Received</h4>
-                    <p className="text-sm text-[#9A9CA5] max-w-sm">
-                      Thank you. Our advertising specialists will contact you shortly with campaign
-                      recommendations.
-                    </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="mt-2 text-xs font-bold text-[#B4233C] uppercase tracking-wider hover:underline"
-                    >
-                      Submit Another Inquiry
-                    </button>
+            {/* Scarcity card */}
+            <div className="scarcity-strip rounded-2xl p-6 border border-red-900/40">
+              <div className="flex items-start gap-3">
+                <Icon name="ExclamationTriangleIcon" size={18} className="text-red-400 shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-red-300 text-sm mb-1">Slots Filling Fast</div>
+                  <p className="text-red-400/80 text-xs leading-relaxed">
+                    High-demand locations fill quickly. Secure your ad slot in advance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lead form */}
+          <div className="lg:col-span-3">
+            <div className="bg-card rounded-3xl p-8 border border-border shadow-sm">
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-green-900/30 flex items-center justify-center">
+                    <Icon name="CheckCircleIcon" size={32} variant="solid" className="text-green-400" />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label
-                          htmlFor="name"
-                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
-                        >
-                          Your Name *
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={form.name}
-                          onChange={handleChange}
-                          placeholder="e.g. Vikram Sharma"
-                          className="px-4 py-3 bg-[#090A0C] border border-[#252830] rounded-lg text-sm text-[#F5F5F5] placeholder:text-[#666666] focus:outline-none focus:border-[#B4233C] transition-colors"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <label
-                          htmlFor="business"
-                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
-                        >
-                          Company / Brand *
-                        </label>
-                        <input
-                          id="business"
-                          name="business"
-                          type="text"
-                          required
-                          value={form.business}
-                          onChange={handleChange}
-                          placeholder="e.g. Acme Tech Solutions"
-                          className="px-4 py-3 bg-[#090A0C] border border-[#252830] rounded-lg text-sm text-[#F5F5F5] placeholder:text-[#666666] focus:outline-none focus:border-[#B4233C] transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label
-                          htmlFor="phone"
-                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
-                        >
-                          Phone Number *
-                        </label>
-                        <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          value={form.phone}
-                          onChange={handleChange}
-                          placeholder="+91 98765 43210"
-                          className="px-4 py-3 bg-[#090A0C] border border-[#252830] rounded-lg text-sm text-[#F5F5F5] placeholder:text-[#666666] focus:outline-none focus:border-[#B4233C] transition-colors"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <label
-                          htmlFor="budget"
-                          className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
-                        >
-                          Monthly Campaign Budget
-                        </label>
-                        <select
-                          id="budget"
-                          name="budget"
-                          value={form.budget}
-                          onChange={handleChange}
-                          className="px-4 py-3 bg-[#090A0C] border border-[#252830] rounded-lg text-sm text-[#F5F5F5] focus:outline-none focus:border-[#B4233C] transition-colors cursor-pointer"
-                        >
-                          {budgetOptions.map((opt) => (
-                            <option key={opt.value} value={opt.value}>
-                              {opt.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
+                  <h3 className="font-extrabold text-xl text-foreground">Request Received!</h3>
+                  <p className="text-muted-foreground text-sm max-w-xs">
+                    Thank you for your interest. Our team will call you back within 24 hours to discuss available slots.
+                  </p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="mt-2 text-accent font-bold text-sm hover:underline"
+                  >
+                    Submit another request
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                      <label
-                        htmlFor="message"
-                        className="text-xs font-bold uppercase tracking-wider text-[#F5F5F5]"
-                      >
-                        Campaign Requirements (Optional)
+                      <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                        Your Name *
                       </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={4}
-                        value={form.message}
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={form.name}
                         onChange={handleChange}
-                        placeholder="Tell us your target areas in Bengaluru, desired advertising channels, or start date..."
-                        className="px-4 py-3 bg-[#090A0C] border border-[#252830] rounded-lg text-sm text-[#F5F5F5] placeholder:text-[#666666] focus:outline-none focus:border-[#B4233C] transition-colors resize-none"
+                        placeholder="Ravi Kumar"
+                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
                       />
                     </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="business" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                        Business Name *
+                      </label>
+                      <input
+                        id="business"
+                        name="business"
+                        type="text"
+                        required
+                        value={form.business}
+                        onChange={handleChange}
+                        placeholder="Your Brand / Company"
+                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+                      />
+                    </div>
+                  </div>
 
-                    <button
-                      type="submit"
-                      className="w-full py-4 bg-[#B4233C] text-white rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-[#D13B55] transition-colors shadow-md shadow-black/50"
-                    >
-                      Submit Campaign Request
-                    </button>
-                  </form>
-                )}
-              </div>
-              </ScrollReveal>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                        Phone Number *
+                      </label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={form.phone}
+                        onChange={handleChange}
+                        placeholder="+91 98765 43210"
+                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="budget" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                        Monthly Budget
+                      </label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        value={form.budget}
+                        onChange={handleChange}
+                        className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all appearance-none cursor-pointer"
+                      >
+                        {budgetOptions.map((opt) => (
+                          <option key={opt.value} value={opt.value}>
+                            {opt.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      Message (Optional)
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about your campaign goals, target areas, or any specific requirements..."
+                      className="px-4 py-3.5 bg-muted border border-border rounded-xl text-sm font-medium text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-4 bg-accent text-accent-foreground rounded-full font-extrabold text-sm uppercase tracking-widest hover:bg-red-700 transition-all duration-300 amber-glow flex items-center justify-center gap-2"
+                  >
+                    <Icon name="PhoneArrowDownLeftIcon" size={18} />
+                    Request a Callback
+                  </button>
+
+                  <p className="text-center text-xs text-muted-foreground">
+                    No commitment required. We'll reach out within 24 hours.
+                  </p>
+                </form>
+              )}
             </div>
           </div>
         </div>

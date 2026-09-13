@@ -1,83 +1,113 @@
 'use client';
 
-import React from 'react';
-import ScrollReveal from '@/components/ui/ScrollReveal';
+import React, { useEffect, useRef } from 'react';
+import Icon from '@/components/ui/AppIcon';
 
-const processSteps = [
+const steps = [
   {
-    step: '01',
-    title: 'Understand',
-    description: 'Understand your target audience, campaign objective, and geographic focus.',
+    number: '01',
+    icon: 'DocumentArrowUpIcon',
+    title: 'Share your ad creative',
+    description:
+      'Send us your 30-second video ad. Our team reviews and approves it for display across selected locations.',
   },
   {
-    step: '02',
-    title: 'Plan',
+    number: '02',
+    icon: 'TvIcon',
+    title: 'We display your ads across selected locations',
     description:
-      'Select optimal locations, screen networks, and multi-channel advertising formats.',
+      'Your ad goes live on high-quality digital screens inside our restaurant network. No setup hassle — we handle it all.',
   },
   {
-    step: '03',
-    title: 'Create',
+    number: '03',
+    icon: 'UsersIcon',
+    title: 'Customers see your brand while dining',
     description:
-      'Develop high-converting creative video assets or adapt existing brand collateral.',
-  },
-  {
-    step: '04',
-    title: 'Launch',
-    description:
-      'Deploy your campaign live across selected networks and monitor audience engagement.',
+      'Your ad repeats every 5 minutes, reaching 2,000–3,000 attentive customers per location each day.',
   },
 ];
 
 export default function HowItWorksSection() {
-  return (
-    <section
-      id="process"
-      className="py-20 md:py-28 bg-[#111318] border-b border-[#252830] relative overflow-hidden"
-    >
-      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-        {/* Header */}
-        <ScrollReveal direction="up" delay={0}>
-          <div className="max-w-2xl mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#B4233C] mb-3 block">
-              OUR PROCESS
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F5F5F5] leading-[1.15]">
-              Simple, Transparent Campaign Execution
-            </h2>
-          </div>
-        </ScrollReveal>
+  const sectionRef = useRef<HTMLElement>(null);
 
-        {/* 4-Step Horizontal Timeline */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          {processSteps.map((stepItem, idx) => (
-            <ScrollReveal
-              key={stepItem.step}
-              direction="up"
-              staggerIndex={idx}
-              totalItems={processSteps.length}
-              staggerDelay={160}
-            >
-              <div className="pro-card rounded-3xl p-8 flex flex-col justify-between h-full group relative overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[#B4233C] before:to-transparent before:opacity-0 group-hover:before:opacity-100 before:transition-opacity duration-300">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B4233C] to-[#E85D75] tracking-tight group-hover:scale-110 transition-transform block">
-                      {stepItem.step}
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-[#181C26] border border-white/10 text-[10px] font-extrabold uppercase tracking-widest text-[#9A9CA5] group-hover:border-[#B4233C]/50 group-hover:text-white transition-colors">
-                      Step {stepItem.step}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-extrabold text-[#F5F5F5] mb-3 tracking-tight group-hover:text-white transition-colors">
-                    {stepItem.title}
-                  </h3>
-                  <p className="text-sm text-[#9A9CA5] leading-relaxed font-normal group-hover:text-[#B0B3C3] transition-colors">
-                    {stepItem.description}
-                  </p>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.step-card').forEach((el, i) => {
+              setTimeout(() => {
+                (el as HTMLElement).style.opacity = '1';
+                (el as HTMLElement).style.transform = 'translateY(0)';
+              }, i * 180);
+            });
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="how-it-works" ref={sectionRef} className="py-24 md:py-32 bg-card">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-16">
+          <span className="text-accent text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+            The Process
+          </span>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-foreground">
+            Simple. Effective. Impactful.
+          </h2>
+        </div>
+
+        {/* Steps with connecting line */}
+        <div className="relative">
+          {/* Connecting line — desktop only */}
+          <div className="hidden md:block absolute top-14 left-[calc(16.6%+1.5rem)] right-[calc(16.6%+1.5rem)] h-0.5 bg-gradient-to-r from-border via-accent to-border" />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+            {steps.map((step, i) => (
+              <div
+                key={step.number}
+                className="step-card relative flex flex-col items-center text-center"
+                style={{
+                  opacity: 0,
+                  transform: 'translateY(40px)',
+                  transition: `opacity 0.7s cubic-bezier(0.23,1,0.32,1) ${i * 0.18}s, transform 0.7s cubic-bezier(0.23,1,0.32,1) ${i * 0.18}s`,
+                }}
+              >
+                {/* Step number circle */}
+                <div className="relative z-10 w-14 h-14 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-extrabold text-lg mb-6 border-4 border-card shadow-lg shadow-black/30">
+                  <Icon name={step.icon} size={22} className="text-accent" />
                 </div>
+
+                {/* Step label */}
+                <div className="text-accent text-[10px] font-bold uppercase tracking-[0.4em] mb-2">
+                  Step {step.number}
+                </div>
+
+                <h3 className="text-xl font-extrabold text-foreground mb-3 leading-tight">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-            </ScrollReveal>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-14">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground rounded-full font-bold text-sm uppercase tracking-widest hover:bg-red-700 transition-all duration-300"
+          >
+            Start Your Campaign
+            <Icon name="ArrowRightIcon" size={16} />
+          </a>
         </div>
       </div>
     </section>
