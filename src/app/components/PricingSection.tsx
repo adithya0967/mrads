@@ -99,8 +99,8 @@ export default function PricingSection() {
             Digital Display Screen Pricing
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Flexible packages based on number of display screens and campaign duration.
-            Volume pricing available for multi-location bookings.
+            Flexible packages based on number of display screens and campaign duration. Volume
+            pricing available for multi-location bookings.
           </p>
         </div>
 
@@ -137,20 +137,30 @@ export default function PricingSection() {
               {/* Plan header */}
               <div>
                 <div className="text-2xl mb-2">{plan.emoji}</div>
-                <h3 className={`font-extrabold text-xl mb-1 ${plan.highlight ? 'text-white' : 'text-foreground'}`}>
+                <h3
+                  className={`font-extrabold text-xl mb-1 ${plan.highlight ? 'text-white' : 'text-foreground'}`}
+                >
                   {plan.name}
                 </h3>
-                <p className={`text-sm leading-relaxed ${plan.highlight ? 'text-white/60' : 'text-muted-foreground'}`}>
+                <p
+                  className={`text-sm leading-relaxed ${plan.highlight ? 'text-white/60' : 'text-muted-foreground'}`}
+                >
                   {plan.description}
                 </p>
               </div>
 
               {/* Price */}
-              <div className={`border-t border-b py-5 ${plan.highlight ? 'border-white/10' : 'border-border'}`}>
-                <div className={`text-3xl font-extrabold tracking-tight ${plan.highlight ? 'text-white' : 'text-foreground'}`}>
+              <div
+                className={`border-t border-b py-5 ${plan.highlight ? 'border-white/10' : 'border-border'}`}
+              >
+                <div
+                  className={`text-3xl font-extrabold tracking-tight ${plan.highlight ? 'text-white' : 'text-foreground'}`}
+                >
                   {plan.price}
                 </div>
-                <div className={`text-xs font-bold uppercase tracking-widest mt-1 ${plan.highlight ? 'text-white/50' : 'text-muted-foreground'}`}>
+                <div
+                  className={`text-xs font-bold uppercase tracking-widest mt-1 ${plan.highlight ? 'text-white/50' : 'text-muted-foreground'}`}
+                >
                   {plan.unit}
                 </div>
               </div>
@@ -165,7 +175,9 @@ export default function PricingSection() {
                       variant="solid"
                       className="shrink-0 mt-0.5 text-accent"
                     />
-                    <span className={`text-sm font-medium ${plan.highlight ? 'text-white/80' : 'text-foreground/80'}`}>
+                    <span
+                      className={`text-sm font-medium ${plan.highlight ? 'text-white/80' : 'text-foreground/80'}`}
+                    >
                       {f}
                     </span>
                   </li>
@@ -195,7 +207,12 @@ export default function PricingSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {included.map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <Icon name="CheckCircleIcon" size={18} variant="solid" className="text-accent shrink-0" />
+                <Icon
+                  name="CheckCircleIcon"
+                  size={18}
+                  variant="solid"
+                  className="text-accent shrink-0"
+                />
                 <span className="text-sm font-semibold text-foreground/80">{item}</span>
               </div>
             ))}
@@ -209,9 +226,13 @@ export default function PricingSection() {
               <Icon name="SparklesIcon" size={24} className="text-accent" />
             </div>
             <div>
-              <h4 className="font-extrabold text-foreground text-base mb-1">Looking for Transit, Print inserts, Gifting or Tech solutions?</h4>
+              <h4 className="font-extrabold text-foreground text-base mb-1">
+                Looking for Transit, Print inserts, Gifting or Tech solutions?
+              </h4>
               <p className="text-muted-foreground text-sm max-w-xl leading-relaxed">
-                Because these campaigns are customized to your specific geography, audience, products, or software requirements, we offer tailor-made quotes to guarantee the best ROI.
+                Because these campaigns are customized to your specific geography, audience,
+                products, or software requirements, we offer tailor-made quotes to guarantee the
+                best ROI.
               </p>
             </div>
           </div>
@@ -227,7 +248,8 @@ export default function PricingSection() {
         <div className="mt-8 scarcity-strip rounded-2xl px-6 py-4 flex items-center gap-3 border border-red-900/40">
           <Icon name="ClockIcon" size={18} className="text-red-400 shrink-0" />
           <p className="text-sm font-semibold text-red-300">
-            <strong>Limited slots per display.</strong> High-demand screens get booked quickly—reserve your slot in advance.
+            <strong>Limited slots per display.</strong> High-demand screens get booked
+            quickly—reserve your slot in advance.
           </p>
         </div>
       </div>

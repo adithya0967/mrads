@@ -3,7 +3,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowUp } from 'lucide-react';
-import { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLinks } from '@/data/siteNavigation';
+import {
+  phoneText,
+  phoneTel,
+  contactEmail,
+  contactMailto,
+  navLinks,
+  servicesLinks,
+} from '@/data/siteNavigation';
 import Reveal from '@/components/ui/Reveal';
 
 export default function SiteFooter() {
@@ -25,14 +32,17 @@ export default function SiteFooter() {
                   <span className="font-serif text-[17px] leading-none text-paper">M</span>
                   <span className="mb-2 ml-px h-1.5 w-1.5 rounded-full bg-brand shadow-[0_0_6px_#D81F42]"></span>
                 </span>
-                <span className="font-serif text-[20px] text-paper group-hover:text-white transition-colors">Mr. Ads</span>
+                <span className="font-serif text-[20px] text-paper group-hover:text-white transition-colors">
+                  Mr. Ads
+                </span>
               </Link>
 
               <p className="mt-4 text-[13px] tracking-[0.16em] text-mute uppercase">
                 Your Hyperlocal Partner
               </p>
               <p className="mt-5 max-w-sm text-[14px] leading-relaxed text-mute">
-                Mr. Ads helps brands reach people where they live, work, travel, shop, exercise and spend time — through screens, streets, print and digital.
+                Mr. Ads helps brands reach people where they live, work, travel, shop, exercise and
+                spend time — through screens, streets, print and digital.
               </p>
 
               <Link
@@ -40,7 +50,14 @@ export default function SiteFooter() {
                 className="btn-arrow mt-7 inline-flex items-center gap-2 text-[13px] text-paper transition-colors duration-200 hover:text-brand"
               >
                 Get a Media Plan
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                >
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
                 </svg>
@@ -136,7 +153,10 @@ export default function SiteFooter() {
               aria-label="Back to top"
             >
               <span>Back to top</span>
-              <ArrowUp size={13} className="transform group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUp
+                size={13}
+                className="transform group-hover:-translate-y-0.5 transition-transform"
+              />
             </button>
           </div>
         </Reveal>

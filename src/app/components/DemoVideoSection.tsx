@@ -28,19 +28,19 @@ export default function DemoVideoSection() {
             alt="Restaurant interior with digital display screen showing advertisement, warm ambient lighting, occupied dining tables"
             fill
             className="object-cover opacity-60"
-            priority />
-          
+            priority
+          />
 
           {/* Dark scrim */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/30 to-transparent" />
 
           {/* Play button overlay */}
-          {!playing &&
-          <button
-            onClick={() => setPlaying(true)}
-            className="absolute inset-0 flex flex-col items-center justify-center gap-4 group/btn"
-            aria-label="Play demo video">
-            
+          {!playing && (
+            <button
+              onClick={() => setPlaying(true)}
+              className="absolute inset-0 flex flex-col items-center justify-center gap-4 group/btn"
+              aria-label="Play demo video"
+            >
               <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-2xl group-hover/btn:scale-110 group-hover/btn:bg-accent/80 transition-all duration-300">
                 <Icon name="PlayIcon" size={32} variant="solid" className="text-white ml-1" />
               </div>
@@ -48,25 +48,25 @@ export default function DemoVideoSection() {
                 Watch Demo
               </span>
             </button>
-          }
+          )}
 
-          {playing &&
-          <div className="absolute inset-0 flex items-center justify-center bg-background">
+          {playing && (
+            <div className="absolute inset-0 flex items-center justify-center bg-background">
               <div className="text-center text-white">
                 <Icon name="TvIcon" size={48} className="text-accent mx-auto mb-4" />
                 <p className="font-bold text-lg">Demo Video</p>
-                <p className="text-white/50 text-sm mt-1">
-                  Connect your video source here
-                </p>
+                <p className="text-white/50 text-sm mt-1">Connect your video source here</p>
               </div>
             </div>
-          }
+          )}
 
           {/* Bottom info bar */}
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
             <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
               <span className="w-2 h-2 rounded-full bg-red-400 animate-blink" />
-              <span className="text-white text-xs font-bold uppercase tracking-widest">Mr. Ads Network</span>
+              <span className="text-white text-xs font-bold uppercase tracking-widest">
+                Mr. Ads Network
+              </span>
             </div>
             <div className="bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
               <span className="text-white text-xs font-bold">30s spot · Bengaluru</span>
@@ -81,6 +81,6 @@ export default function DemoVideoSection() {
           </a>
         </p>
       </div>
-    </section>);
-
+    </section>
+  );
 }

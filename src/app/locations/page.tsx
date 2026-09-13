@@ -167,13 +167,14 @@ export default function LocationsPage() {
 
           <div className="mt-12 grid grid-cols-2 gap-px bg-line md:grid-cols-4 lg:grid-cols-7 rounded-xl overflow-hidden border border-line">
             {networkStats.map((item, idx) => (
-              <div key={item.label} className="bg-graphite px-4 py-6 hover:bg-white/[0.02] transition-colors">
+              <div
+                key={item.label}
+                className="bg-graphite px-4 py-6 hover:bg-white/[0.02] transition-colors"
+              >
                 <p className="font-serif text-[32px] leading-none tracking-tight text-paper md:text-[36px]">
                   <CountUp value={item.value} />
                 </p>
-                <p className="mt-3 text-[12px] leading-snug text-mute">
-                  {item.label}
-                </p>
+                <p className="mt-3 text-[12px] leading-snug text-mute">{item.label}</p>
                 <p className="mt-2 text-[10px] tracking-[0.14em] text-mute-2 uppercase">
                   {item.note}
                 </p>
@@ -193,11 +194,7 @@ export default function LocationsPage() {
           }`}
         >
           <div className="container-site grid items-center gap-10 py-16 md:grid-cols-12 md:gap-14 md:py-24">
-            <div
-              className={`md:col-span-7 ${
-                index % 2 === 1 ? 'md:order-2' : ''
-              }`}
-            >
+            <div className={`md:col-span-7 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
               <Reveal variant={index % 2 === 1 ? 'slide-right' : 'slide-left'}>
                 <div className="img-reveal-box rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] bg-black shadow-2xl">
                   <img
@@ -216,9 +213,7 @@ export default function LocationsPage() {
                 <h2 className="mt-4 font-serif text-[30px] leading-tight tracking-tight md:text-[36px]">
                   {disp.title}
                 </h2>
-                <p className="mt-4 text-[15px] leading-relaxed text-mute">
-                  {disp.lead}
-                </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-mute">{disp.lead}</p>
 
                 <dl className="mt-8 space-y-3.5 border-t border-line pt-6">
                   {disp.specs.map((spec) => (

@@ -73,19 +73,13 @@ const benchmarkPackages = [
 
 export default function PricingPage() {
   const router = useRouter();
-  const [selectedChannels, setSelectedChannels] = useState<string[]>([
-    'restaurant',
-    'apartment',
-  ]);
+  const [selectedChannels, setSelectedChannels] = useState<string[]>(['restaurant', 'apartment']);
   const [city, setCity] = useState('');
   const [duration, setDuration] = useState('3 months');
   const [budget, setBudget] = useState(budgetOptions[2]);
 
   const channelLabels = useMemo(
-    () =>
-      pricingChannels
-        .filter((ch) => selectedChannels.includes(ch.id))
-        .map((ch) => ch.label),
+    () => pricingChannels.filter((ch) => selectedChannels.includes(ch.id)).map((ch) => ch.label),
     [selectedChannels]
   );
 
@@ -113,9 +107,7 @@ export default function PricingPage() {
       city ? `City: ${city}` : 'City: not specified',
       `Duration: ${duration}`,
       `Monthly budget: ${budget}`,
-      channelLabels.length
-        ? `Channels: ${channelLabels.join(', ')}`
-        : 'Channels: to be advised',
+      channelLabels.length ? `Channels: ${channelLabels.join(', ')}` : 'Channels: to be advised',
     ].join('\n');
 
     const params = new URLSearchParams();
@@ -144,7 +136,9 @@ export default function PricingPage() {
               <Reveal variant="fade-up">
                 <fieldset>
                   <div className="flex items-center justify-between mb-4">
-                    <legend className="eyebrow text-[#888888]">1. Select Channels of Interest</legend>
+                    <legend className="eyebrow text-[#888888]">
+                      1. Select Channels of Interest
+                    </legend>
                     <span className="text-[12px] text-mute">
                       {selectedChannels.length} selected
                     </span>
@@ -250,15 +244,20 @@ export default function PricingPage() {
                     <dd className="text-brand font-semibold">{budget}</dd>
                   </div>
                   <div className="border-t border-white/[0.06] pt-3.5">
-                    <dt className="text-[#888888] mb-2">Selected Surfaces ({channelLabels.length})</dt>
+                    <dt className="text-[#888888] mb-2">
+                      Selected Surfaces ({channelLabels.length})
+                    </dt>
                     <dd className="text-[#D8D4CE] leading-relaxed text-[13px]">
-                      {channelLabels.length ? channelLabels.join(' • ') : 'No channels selected yet'}
+                      {channelLabels.length
+                        ? channelLabels.join(' • ')
+                        : 'No channels selected yet'}
                     </dd>
                   </div>
                 </dl>
 
                 <p className="mt-6 text-[12px] leading-relaxed text-[#777777]">
-                  We review your brief and reply with a complete media plan including verified screen lists, pricing discounts, and route maps.
+                  We review your brief and reply with a complete media plan including verified
+                  screen lists, pricing discounts, and route maps.
                 </p>
 
                 <div className="mt-6">
@@ -285,13 +284,20 @@ export default function PricingPage() {
               Benchmark configurations to guide your plan.
             </h2>
             <p className="mt-3 text-[15px] text-mute">
-              Select any package below to prefill your brief, or request custom configurations tailored to your exact budget.
+              Select any package below to prefill your brief, or request custom configurations
+              tailored to your exact budget.
             </p>
           </Reveal>
 
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {benchmarkPackages.map((pkg, idx) => (
-              <Reveal key={pkg.name} variant="fade-up" staggerIndex={idx} delay={0.1} className="h-full">
+              <Reveal
+                key={pkg.name}
+                variant="fade-up"
+                staggerIndex={idx}
+                delay={0.1}
+                className="h-full"
+              >
                 <div
                   className={`card-interactive h-full relative rounded-2xl border p-7 sm:p-8 flex flex-col justify-between ${
                     pkg.highlight === 'Most Popular'
@@ -311,9 +317,7 @@ export default function PricingPage() {
                       )}
                     </div>
 
-                    <h3 className="mt-4 text-[21px] font-semibold text-paper">
-                      {pkg.name}
-                    </h3>
+                    <h3 className="mt-4 text-[21px] font-semibold text-paper">{pkg.name}</h3>
 
                     <p className="mt-2 text-[13px] text-mute leading-relaxed min-h-[40px]">
                       {pkg.ideal}

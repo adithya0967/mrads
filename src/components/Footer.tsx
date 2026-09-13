@@ -24,7 +24,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground font-medium leading-relaxed">
-              India's Emerging Hyperlocal Advertising Network
+              India&apos;s Emerging Hyperlocal Advertising Network
             </p>
             <a
               href="tel:+919686544644"
@@ -89,8 +89,12 @@ export default function Footer() {
             © 2026 Mr. Ads. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs font-semibold text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

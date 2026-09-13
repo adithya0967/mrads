@@ -47,7 +47,13 @@ export default function AboutDifferentiators() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {differentiators.map((n, idx) => (
-            <Reveal key={n.title} variant="fade-up" staggerIndex={idx} delay={0.1} className="h-full">
+            <Reveal
+              key={n.title}
+              variant="fade-up"
+              staggerIndex={idx}
+              delay={0.1}
+              className="h-full"
+            >
               <article className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#141414]/60 p-7 hover:bg-[#141414] transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <span className="font-serif text-[26px] font-bold text-brand leading-none transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(216,31,66,0.6)]">
@@ -56,9 +62,7 @@ export default function AboutDifferentiators() {
                   <h3 className="mt-4 text-[18px] font-semibold tracking-tight text-paper group-hover:text-white transition-colors">
                     {n.title}
                   </h3>
-                  <p className="mt-3 text-[14px] leading-relaxed text-mute">
-                    {n.body}
-                  </p>
+                  <p className="mt-3 text-[14px] leading-relaxed text-mute">{n.body}</p>
                 </div>
               </article>
             </Reveal>

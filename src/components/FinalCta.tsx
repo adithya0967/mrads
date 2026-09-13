@@ -38,7 +38,10 @@ export default function FinalCta({
               href="/pricing"
               className="group inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 hover:border-white/25 bg-white/[0.03] hover:bg-white/[0.06] px-6 py-3.5 text-[13.5px] font-medium text-paper transition-all duration-200 w-full sm:w-auto hover:-translate-y-0.5 active:translate-y-0"
             >
-              <Compass size={14} className="text-mute group-hover:text-brand transform group-hover:rotate-45 transition-all duration-300" />
+              <Compass
+                size={14}
+                className="text-mute group-hover:text-brand transform group-hover:rotate-45 transition-all duration-300"
+              />
               <span>Interactive Plan Starter</span>
             </Link>
           </div>

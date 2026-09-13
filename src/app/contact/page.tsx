@@ -79,7 +79,8 @@ function ContactContent() {
               Request a Considered Media Plan.
             </h1>
             <p className="mt-6 text-[15px] sm:text-[16px] leading-relaxed text-mute">
-              Tell us who you need to reach, your target localities, and your timeline. A senior media planner will review your brief and respond with a customized proposal.
+              Tell us who you need to reach, your target localities, and your timeline. A senior
+              media planner will review your brief and respond with a customized proposal.
             </p>
 
             <div className="mt-10 space-y-4">
@@ -146,7 +147,12 @@ function ContactContent() {
                 </h2>
 
                 <p className="mt-4 text-[15px] leading-relaxed text-mute">
-                  We have assigned reference <span className="font-mono font-bold text-paper px-2 py-0.5 rounded bg-white/10">{refId}</span> to your enquiry. Our planning team is preparing route availability and venue metrics for your review.
+                  We have assigned reference{' '}
+                  <span className="font-mono font-bold text-paper px-2 py-0.5 rounded bg-white/10">
+                    {refId}
+                  </span>{' '}
+                  to your enquiry. Our planning team is preparing route availability and venue
+                  metrics for your review.
                 </p>
 
                 <div className="mt-8 p-5 rounded-xl border border-white/10 bg-white/[0.02]">
@@ -234,7 +240,9 @@ function ContactContent() {
                     </label>
 
                     <label className="block sm:col-span-2">
-                      <span className="eyebrow text-[#888888]">Primary Advertising Requirement *</span>
+                      <span className="eyebrow text-[#888888]">
+                        Primary Advertising Requirement *
+                      </span>
                       <select
                         name="requirement"
                         value={requirement}
@@ -256,7 +264,9 @@ function ContactContent() {
 
                   {/* Interest Multi-select */}
                   <div>
-                    <legend className="eyebrow text-[#888888] mb-2.5">Specific Deliverables of Interest</legend>
+                    <legend className="eyebrow text-[#888888] mb-2.5">
+                      Specific Deliverables of Interest
+                    </legend>
                     <div className="flex flex-wrap gap-2">
                       {interestOptions.map((item) => {
                         const checked = interests.includes(item);
@@ -279,7 +289,9 @@ function ContactContent() {
                   </div>
 
                   <label className="block">
-                    <span className="eyebrow text-[#888888]">Campaign Details & Special Requirements</span>
+                    <span className="eyebrow text-[#888888]">
+                      Campaign Details & Special Requirements
+                    </span>
                     <textarea
                       name="message"
                       rows={4}

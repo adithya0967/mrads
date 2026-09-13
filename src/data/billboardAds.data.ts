@@ -1,10 +1,5 @@
-export type CampaignCategory = 
-  | 'telecom' 
-  | 'fashion' 
-  | 'automotive' 
-  | 'culinary' 
-  | 'electronics' 
-  | 'hospitality';
+export type CampaignCategory =
+  'telecom' | 'fashion' | 'automotive' | 'culinary' | 'electronics' | 'hospitality';
 
 export interface CampaignSpec {
   label: string;
@@ -52,7 +47,8 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'RATING', value: '4.9 ★★★★★' },
     ],
     qrNotice: 'SCAN FOR RESERVATIONS',
-    visualUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop',
+    visualUrl:
+      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop',
     visualAlt: 'Artisan wood-fired pizza and craft cocktails spread on dark rustic table',
     accentColor: '#10B981',
     accentGlow: 'rgba(16, 185, 129, 0.35)',
@@ -77,8 +73,10 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'RELIABILITY', value: '99.99%' },
     ],
     qrNotice: 'SCAN TO ACTIVATE',
-    visualUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop',
-    visualAlt: 'Futuristic high-speed fiber optic and neon network trails across a cybernetic metropolis',
+    visualUrl:
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop',
+    visualAlt:
+      'Futuristic high-speed fiber optic and neon network trails across a cybernetic metropolis',
     accentColor: '#00F0FF',
     accentGlow: 'rgba(0, 240, 255, 0.35)',
     duration: 10,
@@ -101,8 +99,10 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'MATERIAL', value: 'Pure Cashmere' },
       { label: 'EDITION', value: 'Limited 150 Pcs' },
     ],
-    visualUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop',
-    visualAlt: 'Editorial haute couture model portrait in sculptural designer coat with dramatic warm lighting',
+    visualUrl:
+      'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop',
+    visualAlt:
+      'Editorial haute couture model portrait in sculptural designer coat with dramatic warm lighting',
     accentColor: '#D4AF37',
     accentGlow: 'rgba(212, 175, 55, 0.3)',
     duration: 11,
@@ -126,8 +126,10 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'FAST CHARGE', value: '10-80% IN 14M' },
     ],
     qrNotice: 'SCAN FOR AR DEMO',
-    visualUrl: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1600&auto=format&fit=crop',
-    visualAlt: 'Sleek luxury electric performance sports coupé in dramatic dark studio rim lighting',
+    visualUrl:
+      'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1600&auto=format&fit=crop',
+    visualAlt:
+      'Sleek luxury electric performance sports coupé in dramatic dark studio rim lighting',
     accentColor: '#FF385C',
     accentGlow: 'rgba(255, 56, 92, 0.4)',
     duration: 12,
@@ -151,8 +153,10 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'NOTES', value: 'Bergamot · Cacao' },
     ],
     qrNotice: 'ORDER VIA APP',
-    visualUrl: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1600&auto=format&fit=crop',
-    visualAlt: 'Artisanal velvet espresso extraction with delicate microfoam latte art in warm glowing café',
+    visualUrl:
+      'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1600&auto=format&fit=crop',
+    visualAlt:
+      'Artisanal velvet espresso extraction with delicate microfoam latte art in warm glowing café',
     accentColor: '#E69C24',
     accentGlow: 'rgba(230, 156, 36, 0.35)',
     duration: 10,
@@ -175,8 +179,10 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'DRIVERS', value: '40mm Beryllium' },
       { label: 'ACTIVE ANC', value: 'Hybrid Adaptive' },
     ],
-    visualUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1600&auto=format&fit=crop',
-    visualAlt: 'Premium matte black studio headphones floating with architectural lighting and acoustic soundwave reflections',
+    visualUrl:
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1600&auto=format&fit=crop',
+    visualAlt:
+      'Premium matte black studio headphones floating with architectural lighting and acoustic soundwave reflections',
     accentColor: '#38BDF8',
     accentGlow: 'rgba(56, 189, 248, 0.35)',
     duration: 10,
@@ -199,8 +205,10 @@ export const SAMPLE_CAMPAIGNS: AdCampaign[] = [
       { label: 'WELLNESS', value: 'Holistic Spa' },
       { label: 'SERVICE', value: '24/7 Island Butler' },
     ],
-    visualUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop',
-    visualAlt: 'Luxury overwater resort villa with private infinity pool overlooking pristine turquoise ocean waters at dawn',
+    visualUrl:
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop',
+    visualAlt:
+      'Luxury overwater resort villa with private infinity pool overlooking pristine turquoise ocean waters at dawn',
     accentColor: '#2DD4BF',
     accentGlow: 'rgba(45, 212, 191, 0.35)',
     duration: 11,

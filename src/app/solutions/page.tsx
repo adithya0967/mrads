@@ -129,9 +129,7 @@ export default function SolutionsPage() {
   const [activeTab, setActiveTab] = useState('all');
 
   const filteredPillars =
-    activeTab === 'all'
-      ? solutionPillars
-      : solutionPillars.filter((p) => p.id === activeTab);
+    activeTab === 'all' ? solutionPillars : solutionPillars.filter((p) => p.id === activeTab);
 
   return (
     <TargetShell>
@@ -187,11 +185,7 @@ export default function SolutionsPage() {
                 className="scroll-mt-28 grid gap-12 lg:grid-cols-12 items-center"
               >
                 {/* Visual Column */}
-                <div
-                  className={`lg:col-span-6 ${
-                    isReversed ? 'lg:order-2' : ''
-                  }`}
-                >
+                <div className={`lg:col-span-6 ${isReversed ? 'lg:order-2' : ''}`}>
                   <Reveal variant={isReversed ? 'slide-right' : 'slide-left'}>
                     <div className="card-interactive relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
                       <div className="img-reveal-box aspect-[16/10]">
@@ -296,7 +290,9 @@ export default function SolutionsPage() {
                   The Compound Multiplier Effect
                 </h3>
                 <p className="mt-3 text-[14.5px] leading-relaxed text-mute">
-                  When an audience member spots your branded bus in the morning, sees your digital display during dinner, and receives your brochure at their doorstep, trust compounds 3x faster than any single-medium buy.
+                  When an audience member spots your branded bus in the morning, sees your digital
+                  display during dinner, and receives your brochure at their doorstep, trust
+                  compounds 3x faster than any single-medium buy.
                 </p>
               </div>
 

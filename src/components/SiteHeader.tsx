@@ -3,14 +3,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLinks } from '@/data/siteNavigation';
+import {
+  phoneText,
+  phoneTel,
+  contactEmail,
+  contactMailto,
+  navLinks,
+  servicesLinks,
+} from '@/data/siteNavigation';
 
 export { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLinks };
 
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [solutionsDropdown, setSolutionsDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -43,11 +49,6 @@ export default function SiteHeader() {
         }
         setLastScrollY(scrollY);
       }
-
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        setScrollProgress(Math.min(100, Math.max(0, (scrollY / totalHeight) * 100)));
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -66,7 +67,8 @@ export default function SiteHeader() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isHiddenOnScrollDown = scrollDirection === 'down' && scrolled && !mobileOpen && !solutionsDropdown;
+  const isHiddenOnScrollDown =
+    scrollDirection === 'down' && scrolled && !mobileOpen && !solutionsDropdown;
 
   return (
     <header
@@ -267,12 +269,26 @@ export default function SiteHeader() {
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
             {mobileOpen ? (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />
               </svg>
             ) : (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <line x1="4" x2="20" y1="12" y2="12" />
                 <line x1="4" x2="20" y1="6" y2="6" />
                 <line x1="4" x2="20" y1="18" y2="18" />
@@ -282,18 +298,13 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Dynamic Scroll Progress Bar */}
-      <div
-        className="scroll-progress-bar"
-        style={{ width: `${scrollProgress}%` }}
-        aria-hidden="true"
-      />
-
       {/* Animated Mobile Menu Sheet */}
       <div
         id="mobile-menu"
         className={`lg:hidden border-t border-white/[0.08] bg-[#080808]/98 backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out ${
-          mobileOpen ? 'max-h-[calc(100vh-72px)] opacity-100 py-6' : 'max-h-0 opacity-0 py-0 pointer-events-none'
+          mobileOpen
+            ? 'max-h-[calc(100vh-72px)] opacity-100 py-6'
+            : 'max-h-0 opacity-0 py-0 pointer-events-none'
         }`}
       >
         <nav className="px-6 flex flex-col gap-2" aria-label="Mobile Navigation">
@@ -307,11 +318,15 @@ export default function SiteHeader() {
                   transitionDelay: `${idx * 35}ms`,
                 }}
                 className={`flex items-center justify-between py-3 text-[16px] border-b border-white/[0.05] transition-all ${
-                  isActive ? 'text-[#F4F1EC] font-semibold pl-2' : 'text-[#929292] hover:text-[#F4F1EC] hover:pl-2'
+                  isActive
+                    ? 'text-[#F4F1EC] font-semibold pl-2'
+                    : 'text-[#929292] hover:text-[#F4F1EC] hover:pl-2'
                 }`}
               >
                 <span>{item.label}</span>
-                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>}
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D81F42] shadow-[0_0_6px_#D81F42]"></span>
+                )}
               </Link>
             );
           })}
@@ -339,7 +354,15 @@ export default function SiteHeader() {
               href={phoneTel}
               className="flex items-center gap-2.5 py-2.5 px-4 rounded-lg bg-white/[0.03] border border-white/10 text-[14px] text-[#F4F1EC] hover:border-white/20 transition-colors"
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="text-[#D81F42]">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                className="text-[#D81F42]"
+              >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <span>Call {phoneText}</span>

@@ -17,14 +17,14 @@ export default function AboutPhilosophy() {
         <Reveal className="md:col-span-6 md:col-start-7" delay={0.06}>
           <div className="space-y-5 text-[16px] leading-relaxed text-mute">
             <p>
-              People do not live in media plans. They live in apartments, eat in restaurants,
-              work in offices, shop in malls, train in gyms, wait in play zones, and move through
+              People do not live in media plans. They live in apartments, eat in restaurants, work
+              in offices, shop in malls, train in gyms, wait in play zones, and move through
               streets. Mr. Ads starts there.
             </p>
             <p>
-              The company combines digital display advertising, advertising on the move,
-              offline distribution, print and creative, newspaper and quick-commerce inserts,
-              pharmacy cover advertising, and websites, development and AI solutions.
+              The company combines digital display advertising, advertising on the move, offline
+              distribution, print and creative, newspaper and quick-commerce inserts, pharmacy cover
+              advertising, and websites, development and AI solutions.
             </p>
             <p>
               The aim is simple: repeated, well-placed presence for brands that need to be known

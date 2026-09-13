@@ -5,10 +5,15 @@ export default function WhyFullSection() {
     <section id="why" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="text-center max-w-3xl mx-auto reveal in">
         <p className="crumb">
-          <a href="#home">Home</a>{' / Why Mr. Ads'}
+          <a href="#home">Home</a>
+          {' / Why Mr. Ads'}
         </p>
-        <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Why Mr. Ads</h2>
-        <p className="text-slate-400 mt-3">Six deck-supported differentiators — told simply, delivered consistently.</p>
+        <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">
+          Why Mr. Ads
+        </h2>
+        <p className="text-slate-400 mt-3">
+          Six deck-supported differentiators — told simply, delivered consistently.
+        </p>
       </div>
 
       <div className="mt-10 relative">
@@ -21,7 +26,8 @@ export default function WhyFullSection() {
               </span>
               <h3 className="font-extrabold text-lg text-white">Hyperlocal Reach</h3>
               <p className="text-slate-400 text-[14px] mt-2">
-                From apartment lifts to restaurant tables to gym floors — we place brands inside daily routines, not just alongside them.
+                From apartment lifts to restaurant tables to gym floors — we place brands inside
+                daily routines, not just alongside them.
               </p>
             </div>
             <div className="hidden lg:block"></div>
@@ -35,7 +41,8 @@ export default function WhyFullSection() {
               </span>
               <h3 className="font-extrabold text-lg text-white">Multiple Advertising Channels</h3>
               <p className="text-slate-400 text-[14px] mt-2">
-                Screens, streets, homes and print — orchestrated as one plan so frequency compounds instead of scattering.
+                Screens, streets, homes and print — orchestrated as one plan so frequency compounds
+                instead of scattering.
               </p>
             </div>
           </div>
@@ -47,7 +54,8 @@ export default function WhyFullSection() {
               </span>
               <h3 className="font-extrabold text-lg text-white">Creative & Digital Solutions</h3>
               <p className="text-slate-400 text-[14px] mt-2">
-                Design, print and web + AI under one roof — your campaign arrives looking sharp and launches with somewhere to convert.
+                Design, print and web + AI under one roof — your campaign arrives looking sharp and
+                launches with somewhere to convert.
               </p>
             </div>
             <div className="hidden lg:block"></div>
@@ -61,7 +69,8 @@ export default function WhyFullSection() {
               </span>
               <h3 className="font-extrabold text-lg text-white">Better Brand Visibility</h3>
               <p className="text-slate-400 text-[14px] mt-2">
-                Premium placements plus high-frequency repetition — the combination that turns glances into memory.
+                Premium placements plus high-frequency repetition — the combination that turns
+                glances into memory.
               </p>
             </div>
           </div>
@@ -73,7 +82,8 @@ export default function WhyFullSection() {
               </span>
               <h3 className="font-extrabold text-lg text-white">End-to-End Campaign Support</h3>
               <p className="text-slate-400 text-[14px] mt-2">
-                Media planning, creatives, deployment and coordination — you brief once, we handle the rest.
+                Media planning, creatives, deployment and coordination — you brief once, we handle
+                the rest.
               </p>
             </div>
             <div className="hidden lg:block"></div>
@@ -87,7 +97,8 @@ export default function WhyFullSection() {
               </span>
               <h3 className="font-extrabold text-lg text-white">One Partner, Multiple Solutions</h3>
               <p className="text-slate-300 text-[14px] mt-2">
-                Fewer vendors, clearer accountability, faster launches. Scale from one society to a whole city with the same team.
+                Fewer vendors, clearer accountability, faster launches. Scale from one society to a
+                whole city with the same team.
               </p>
               <a
                 href="#contact"
@@ -105,13 +116,20 @@ export default function WhyFullSection() {
         <div className="lg:col-span-4 reveal in">
           <h3 className="serif text-2xl text-white">Common questions</h3>
           <p className="text-slate-400 text-[14px] mt-2">
-            Short answers before you request a plan. For anything else, call or write — we reply fast.
+            Short answers before you request a plan. For anything else, call or write — we reply
+            fast.
           </p>
           <div className="mt-4 flex gap-2">
-            <a href="tel:+919686544644" className="btn-ghost font-bold text-sm px-5 py-3 rounded-full text-slate-200 hover:text-white">
+            <a
+              href="tel:+919686544644"
+              className="btn-ghost font-bold text-sm px-5 py-3 rounded-full text-slate-200 hover:text-white"
+            >
               <i className="fa-solid fa-phone mr-2 text-xs text-brand"></i>Call
             </a>
-            <a href="mailto:knowus@mr-ads.in" className="btn-ghost font-bold text-sm px-5 py-3 rounded-full text-slate-200 hover:text-white">
+            <a
+              href="mailto:knowus@mr-ads.in"
+              className="btn-ghost font-bold text-sm px-5 py-3 rounded-full text-slate-200 hover:text-white"
+            >
               <i className="fa-regular fa-envelope mr-2 text-brand"></i>Email
             </a>
           </div>
@@ -125,7 +143,8 @@ export default function WhyFullSection() {
               </span>
             </summary>
             <p className="text-slate-400 text-[14px] mt-3 leading-relaxed">
-              Share your city, audience and goal via the form below. We respond with a media plan covering recommended environments, formats, locations and pricing.
+              Share your city, audience and goal via the form below. We respond with a media plan
+              covering recommended environments, formats, locations and pricing.
             </p>
           </details>
 
@@ -137,7 +156,8 @@ export default function WhyFullSection() {
               </span>
             </summary>
             <p className="text-slate-400 text-[14px] mt-3 leading-relaxed">
-              Yes — that is the core Mr. Ads model. One partner across display, moving media, offline distribution, print & creative, and digital, planned as a single campaign.
+              Yes — that is the core Mr. Ads model. One partner across display, moving media,
+              offline distribution, print & creative, and digital, planned as a single campaign.
             </p>
           </details>
 
@@ -149,7 +169,9 @@ export default function WhyFullSection() {
               </span>
             </summary>
             <p className="text-slate-400 text-[14px] mt-3 leading-relaxed">
-              Published figures (e.g., 15M+ through 30,000+ apartment screens) describe network opportunity to reach — not guaranteed impressions. Your plan will specify locations, duration and frequency.
+              Published figures (e.g., 15M+ through 30,000+ apartment screens) describe network
+              opportunity to reach — not guaranteed impressions. Your plan will specify locations,
+              duration and frequency.
             </p>
           </details>
 
@@ -161,7 +183,9 @@ export default function WhyFullSection() {
               </span>
             </summary>
             <p className="text-slate-400 text-[14px] mt-3 leading-relaxed">
-              Yes. Print & creative design (brochures, flyers, standees, boards, magazine ads, social creatives) plus website design, development, e-commerce, AI chatbots, hosting and redesigns.
+              Yes. Print & creative design (brochures, flyers, standees, boards, magazine ads,
+              social creatives) plus website design, development, e-commerce, AI chatbots, hosting
+              and redesigns.
             </p>
           </details>
         </div>

@@ -5,7 +5,10 @@ import DigitalSignageBoard from '../signage/DigitalSignageBoard';
 
 export default function DigitalSignageSection() {
   return (
-    <section id="signage-demo" className="bg-[#0B101D] border-t border-slate-800 text-white py-16 lg:py-24 relative overflow-hidden">
+    <section
+      id="signage-demo"
+      className="bg-[#0B101D] border-t border-slate-800 text-white py-16 lg:py-24 relative overflow-hidden"
+    >
       {/* Background ambient lighting */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 -left-40 w-[600px] h-[600px] rounded-full bg-brand/10 blur-[120px]"></div>
@@ -22,7 +25,8 @@ export default function DigitalSignageSection() {
             24/7 Autonomous <span className="italic text-slate-300">Advertising Player</span>
           </h2>
           <p className="mt-4 text-slate-400 text-base leading-relaxed">
-            Continuous commercial broadcast player with dual-buffer preloading, Ken Burns motion design, zero-flicker transitions, time-of-day scheduling, and an operator control desk.
+            Continuous commercial broadcast player with dual-buffer preloading, Ken Burns motion
+            design, zero-flicker transitions, time-of-day scheduling, and an operator control desk.
           </p>
         </div>
 

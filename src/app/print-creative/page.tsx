@@ -6,7 +6,15 @@ import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 import Reveal from '@/components/ui/Reveal';
-import { ArrowRight, Palette, FileText, Image as ImageIcon, BookOpen, Share2, Layers } from 'lucide-react';
+import {
+  ArrowRight,
+  Palette,
+  FileText,
+  Image as ImageIcon,
+  BookOpen,
+  Share2,
+  Layers,
+} from 'lucide-react';
 
 const creativeServices = [
   {
@@ -100,7 +108,8 @@ export default function PrintCreativePage() {
                   Bundle Creative Design with Any Media Flight
                 </h3>
                 <p className="mt-2 text-[14px] text-mute leading-relaxed">
-                  Save time and cost by commissioning creative assets directly with your display screen or transit media package.
+                  Save time and cost by commissioning creative assets directly with your display
+                  screen or transit media package.
                 </p>
               </div>
               <Link
@@ -122,10 +131,14 @@ export default function PrintCreativePage() {
             {creativeServices.map((service, idx) => {
               const IconComp = service.icon;
               return (
-                <Reveal key={service.title} variant="fade-up" staggerIndex={idx} delay={0.1} className="h-full">
-                  <div
-                    className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#141414] overflow-hidden flex flex-col justify-between"
-                  >
+                <Reveal
+                  key={service.title}
+                  variant="fade-up"
+                  staggerIndex={idx}
+                  delay={0.1}
+                  className="h-full"
+                >
+                  <div className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#141414] overflow-hidden flex flex-col justify-between">
                     <div>
                       <div className="img-reveal-box aspect-[16/10] relative overflow-hidden bg-black">
                         <img
@@ -135,7 +148,7 @@ export default function PrintCreativePage() {
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent pointer-events-none" />
-                        
+
                         <div className="absolute top-3 left-3 w-9 h-9 rounded-lg bg-black/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-brand shadow-sm">
                           <IconComp size={16} />
                         </div>
@@ -145,13 +158,14 @@ export default function PrintCreativePage() {
                         <h3 className="text-[18px] font-semibold text-paper group-hover:text-brand transition-colors">
                           {service.title}
                         </h3>
-                        <p className="mt-2 text-[14px] leading-relaxed text-mute">
-                          {service.lead}
-                        </p>
+                        <p className="mt-2 text-[14px] leading-relaxed text-mute">{service.lead}</p>
 
                         <dl className="mt-5 space-y-2 border-t border-white/[0.06] pt-4 text-[12.5px]">
                           {service.specs.map((s) => (
-                            <div key={s.label} className="grid grid-cols-3 gap-1 py-0.5 -mx-1.5 px-1.5 rounded hover:bg-white/[0.02] transition-colors">
+                            <div
+                              key={s.label}
+                              className="grid grid-cols-3 gap-1 py-0.5 -mx-1.5 px-1.5 rounded hover:bg-white/[0.02] transition-colors"
+                            >
                               <dt className="text-[#888888]">{s.label}</dt>
                               <dd className="col-span-2 text-[#D8D4CE] font-medium">{s.value}</dd>
                             </div>

@@ -109,11 +109,7 @@ export default function OfflinePrintPage() {
             }`}
           >
             <div className="container-site grid items-center gap-12 py-16 md:grid-cols-12 md:py-24">
-              <div
-                className={`md:col-span-7 ${
-                  isOdd ? 'md:order-2' : ''
-                }`}
-              >
+              <div className={`md:col-span-7 ${isOdd ? 'md:order-2' : ''}`}>
                 <Reveal variant={isOdd ? 'slide-right' : 'slide-left'}>
                   <div className="card-interactive relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
                     <div className="img-reveal-box aspect-[16/10]">
@@ -125,7 +121,7 @@ export default function OfflinePrintPage() {
                       />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-                    
+
                     <div className="absolute bottom-4 left-4">
                       <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-semibold tracking-wider text-paper uppercase">
                         Doorstep Distribution
@@ -146,9 +142,7 @@ export default function OfflinePrintPage() {
                     {item.title}
                   </h2>
 
-                  <p className="mt-4 text-[15px] leading-relaxed text-mute">
-                    {item.lead}
-                  </p>
+                  <p className="mt-4 text-[15px] leading-relaxed text-mute">{item.lead}</p>
 
                   {/* Key Coverage Zones */}
                   <div className="mt-6">
@@ -170,7 +164,10 @@ export default function OfflinePrintPage() {
                   {/* Specs Table */}
                   <dl className="mt-8 space-y-3.5 border-t border-white/[0.08] pt-6">
                     {item.specs.map((spec) => (
-                      <div key={spec.label} className="grid grid-cols-3 gap-2 text-[13px] py-1 -mx-2 px-2 rounded hover:bg-white/[0.02] transition-colors">
+                      <div
+                        key={spec.label}
+                        className="grid grid-cols-3 gap-2 text-[13px] py-1 -mx-2 px-2 rounded hover:bg-white/[0.02] transition-colors"
+                      >
                         <dt className="text-[#888888]">{spec.label}</dt>
                         <dd className="col-span-2 text-paper font-medium">{spec.value}</dd>
                       </div>

@@ -3,12 +3,7 @@
 import React, { useState } from 'react';
 
 interface MediaPlanBuilderProps {
-  onSendBrief: (
-    city: string,
-    duration: string,
-    budget: string,
-    channels: string[]
-  ) => void;
+  onSendBrief: (city: string, duration: string, budget: string, channels: string[]) => void;
   onToast: (msg: string) => void;
 }
 
@@ -29,10 +24,7 @@ const channelsList = [
   'Website / AI',
 ];
 
-export default function MediaPlanBuilderSection({
-  onSendBrief,
-  onToast,
-}: MediaPlanBuilderProps) {
+export default function MediaPlanBuilderSection({ onSendBrief, onToast }: MediaPlanBuilderProps) {
   const [selectedChannels, setSelectedChannels] = useState<string[]>([]);
   const [city, setCity] = useState('');
   const [duration, setDuration] = useState('1 month');
@@ -69,9 +61,12 @@ export default function MediaPlanBuilderSection({
                 Media-plan starter
               </h2>
               <p className="text-slate-400 text-[14.5px] mt-2">
-                Select channels, set a city & duration — we’ll draft your brief instantly and pre-fill the enquiry form.
+                Select channels, set a city & duration — we’ll draft your brief instantly and
+                pre-fill the enquiry form.
               </p>
-              <p className="spec-label mt-7 mb-3 text-slate-400">1 · Choose channels (tap to select)</p>
+              <p className="spec-label mt-7 mb-3 text-slate-400">
+                1 · Choose channels (tap to select)
+              </p>
               <div className="flex flex-wrap gap-2" id="builderChips">
                 {channelsList.map((ch) => {
                   const isSelected = selectedChannels.includes(ch);
@@ -160,16 +155,23 @@ export default function MediaPlanBuilderSection({
                     <p className="mt-3">
                       Please share a media plan across the above ({selectedChannels.length} channel
                       {selectedChannels.length > 1 ? 's' : ''}) for{' '}
-                      <b className="text-white">{displayCity}</b> — with recommended locations, formats, frequency, pricing and creative options.
+                      <b className="text-white">{displayCity}</b> — with recommended locations,
+                      formats, frequency, pricing and creative options.
                     </p>
                   </>
                 )}
               </div>
               <div className="mt-4 flex items-center justify-between text-[12.5px] font-bold text-slate-400">
                 <span id="chanCount">
-                  {selectedChannels.length} channel{selectedChannels.length === 1 ? '' : 's'} selected
+                  {selectedChannels.length} channel{selectedChannels.length === 1 ? '' : 's'}{' '}
+                  selected
                 </span>
-                <button id="builderClear" type="button" onClick={handleClear} className="underline text-slate-300 hover:text-white">
+                <button
+                  id="builderClear"
+                  type="button"
+                  onClick={handleClear}
+                  className="underline text-slate-300 hover:text-white"
+                >
                   Clear
                 </button>
               </div>

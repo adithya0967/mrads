@@ -123,7 +123,11 @@ export default function ReachSection({
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} id="reach" className="bg-[#090D16] text-white relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="reach"
+      className="bg-[#090D16] text-white relative overflow-hidden"
+    >
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute left-1/2 -translate-x-1/2 -top-40 w-[700px] h-[400px] rounded-full"
@@ -132,14 +136,18 @@ export default function ReachSection({
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 relative">
         <div className="text-center max-w-3xl mx-auto reveal in">
-          <p className="text-[12px] font-bold tracking-[.2em] uppercase" style={{ color: '#FF8A8E' }}>
+          <p
+            className="text-[12px] font-bold tracking-[.2em] uppercase"
+            style={{ color: '#FF8A8E' }}
+          >
             Impact & Reach
           </p>
           <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-3 text-white">
             Opportunity to reach, at neighbourhood scale
           </h2>
           <p className="text-slate-400 mt-3 text-[14.5px]">
-            Figures below represent network opportunity to reach (not guaranteed impressions). Actual delivery depends on plan, locations and duration.
+            Figures below represent network opportunity to reach (not guaranteed impressions).
+            Actual delivery depends on plan, locations and duration.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-10">
@@ -174,7 +182,9 @@ export default function ReachSection({
                   idx % 2 === 1 ? 'reveal-d1' : idx === 2 ? 'reveal-d2' : ''
                 }`}
               >
-                <p className="text-[11px] font-bold tracking-[.14em] uppercase text-slate-400">{item.category}</p>
+                <p className="text-[11px] font-bold tracking-[.14em] uppercase text-slate-400">
+                  {item.category}
+                </p>
                 <p className="num text-[40px] font-extrabold mt-2 text-white">
                   <span>{counts[item.key]}</span>M+
                 </p>

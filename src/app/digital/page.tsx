@@ -6,7 +6,17 @@ import TargetShell from '@/components/TargetShell';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 import Reveal from '@/components/ui/Reveal';
-import { ArrowRight, Globe, ShoppingCart, Bot, Server, CheckCircle2, Shield, Smartphone, Zap } from 'lucide-react';
+import {
+  ArrowRight,
+  Globe,
+  ShoppingCart,
+  Bot,
+  Server,
+  CheckCircle2,
+  Shield,
+  Smartphone,
+  Zap,
+} from 'lucide-react';
 
 const digitalSolutions = [
   {
@@ -118,19 +128,13 @@ export default function DigitalPage() {
               const IconComponent = std.icon;
               return (
                 <Reveal key={std.title} variant="fade-up" staggerIndex={idx} delay={0.1}>
-                  <div
-                    className="card-interactive rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] flex flex-col justify-between h-full"
-                  >
+                  <div className="card-interactive rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] flex flex-col justify-between h-full">
                     <div>
                       <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.04] text-brand mb-4 shadow-sm">
                         <IconComponent size={18} />
                       </div>
-                      <h3 className="text-[16px] font-semibold text-paper">
-                        {std.title}
-                      </h3>
-                      <p className="mt-2 text-[13.5px] leading-relaxed text-mute">
-                        {std.desc}
-                      </p>
+                      <h3 className="text-[16px] font-semibold text-paper">{std.title}</h3>
+                      <p className="mt-2 text-[13.5px] leading-relaxed text-mute">{std.desc}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -148,16 +152,9 @@ export default function DigitalPage() {
             const IconComponent = sol.icon;
 
             return (
-              <div
-                key={sol.title}
-                className="grid gap-12 lg:grid-cols-12 items-center"
-              >
+              <div key={sol.title} className="grid gap-12 lg:grid-cols-12 items-center">
                 {/* Visual */}
-                <div
-                  className={`lg:col-span-6 ${
-                    isOdd ? 'lg:order-2' : ''
-                  }`}
-                >
+                <div className={`lg:col-span-6 ${isOdd ? 'lg:order-2' : ''}`}>
                   <Reveal variant={isOdd ? 'slide-right' : 'slide-left'}>
                     <div className="card-interactive relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black group">
                       <div className="img-reveal-box aspect-[16/10]">
@@ -180,11 +177,7 @@ export default function DigitalPage() {
                 </div>
 
                 {/* Content */}
-                <div
-                  className={`lg:col-span-6 ${
-                    isOdd ? 'lg:order-1' : ''
-                  }`}
-                >
+                <div className={`lg:col-span-6 ${isOdd ? 'lg:order-1' : ''}`}>
                   <Reveal variant={isOdd ? 'slide-left' : 'slide-right'} delay={0.1}>
                     <div>
                       <div className="inline-flex items-center gap-2 text-[11px] font-bold text-brand uppercase tracking-wider mb-2">
@@ -196,9 +189,7 @@ export default function DigitalPage() {
                         {sol.title}
                       </h2>
 
-                      <p className="mt-4 text-[15px] leading-relaxed text-mute">
-                        {sol.lead}
-                      </p>
+                      <p className="mt-4 text-[15px] leading-relaxed text-mute">{sol.lead}</p>
 
                       <ul className="mt-6 space-y-2.5">
                         {sol.features.map((feat) => (

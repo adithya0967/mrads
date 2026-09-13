@@ -14,13 +14,14 @@ export default function NotFound() {
 
         <div className="relative z-10 text-center max-w-xl">
           <p className="eyebrow text-brand">404 Error</p>
-          
+
           <h1 className="mt-4 font-serif text-[64px] sm:text-[88px] leading-none tracking-tight text-paper font-normal">
             Page not found.
           </h1>
-          
+
           <p className="mt-6 text-[16px] sm:text-[18px] text-mute leading-relaxed max-w-md mx-auto">
-            The media placement or page you’re looking for has moved or does not exist. Let’s get your campaign back on route.
+            The media placement or page you’re looking for has moved or does not exist. Let’s get
+            your campaign back on route.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

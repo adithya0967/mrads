@@ -10,11 +10,7 @@ interface NavbarProps {
   navShadow: boolean;
 }
 
-export default function Navbar({
-  mobileMenuOpen,
-  setMobileMenuOpen,
-  navShadow,
-}: NavbarProps) {
+export default function Navbar({ mobileMenuOpen, setMobileMenuOpen, navShadow }: NavbarProps) {
   const pathname = usePathname();
 
   const navItems = [
@@ -41,7 +37,8 @@ export default function Navbar({
             </div>
             <div className="leading-none">
               <div className="font-extrabold text-[19px] tracking-tight text-white">
-                Mr. Ads <span className="font-medium text-slate-400 text-[13px] align-middle">| MR</span>
+                Mr. Ads{' '}
+                <span className="font-medium text-slate-400 text-[13px] align-middle">| MR</span>
               </div>
               <div className="text-[11px] font-semibold tracking-[.16em] uppercase text-brand mt-1">
                 Hyperlocal Advertising
@@ -51,7 +48,8 @@ export default function Navbar({
 
           <nav className="nav-desktop hidden lg:flex items-center gap-6" aria-label="Primary">
             {navItems.map((item) => {
-              const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+              const isActive =
+                item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
@@ -92,7 +90,10 @@ export default function Navbar({
       </div>
 
       {/* Mobile menu */}
-      <div id="mobileMenu" className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} border-t border-slate-800 bg-[#090D16] text-slate-100`}>
+      <div
+        id="mobileMenu"
+        className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} border-t border-slate-800 bg-[#090D16] text-slate-100`}
+      >
         <div className="px-5 py-4 grid gap-1 max-h-[70vh] overflow-auto">
           {navItems.map((item) => (
             <Link
@@ -112,7 +113,10 @@ export default function Navbar({
             >
               Get a Media Plan
             </Link>
-            <a href="tel:+919686544644" className="btn-ghost px-5 py-3.5 rounded-full font-bold text-sm text-slate-200">
+            <a
+              href="tel:+919686544644"
+              className="btn-ghost px-5 py-3.5 rounded-full font-bold text-sm text-slate-200"
+            >
               <i className="fa-solid fa-phone"></i>
             </a>
           </div>

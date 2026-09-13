@@ -39,16 +39,22 @@ export default function AboutProcess() {
             Discover → Plan → Create → Deploy → Support
           </h2>
           <p className="mt-3 text-[15px] text-mute max-w-xl">
-            A single, accountable partner managing discovery, production, field installation, and real-world reporting.
+            A single, accountable partner managing discovery, production, field installation, and
+            real-world reporting.
           </p>
         </Reveal>
 
         <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {steps.map((n, idx) => (
-            <Reveal key={n.step} variant="fade-up" staggerIndex={idx} delay={0.1} as="li" className="h-full">
-              <div
-                className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] transition-all flex flex-col justify-between"
-              >
+            <Reveal
+              key={n.step}
+              variant="fade-up"
+              staggerIndex={idx}
+              delay={0.1}
+              as="li"
+              className="h-full"
+            >
+              <div className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] transition-all flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3">
                     <span className="font-serif text-[28px] font-bold text-brand leading-none">
@@ -59,9 +65,7 @@ export default function AboutProcess() {
                   <h3 className="mt-4 text-[17px] font-semibold text-paper group-hover:text-white transition-colors">
                     {n.title}
                   </h3>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-mute">
-                    {n.body}
-                  </p>
+                  <p className="mt-2 text-[13.5px] leading-relaxed text-mute">{n.body}</p>
                 </div>
               </div>
             </Reveal>

@@ -31,10 +31,30 @@ const adSlides = [
 ];
 
 const highlightChips = [
-  { label: '30,000+ Active Screens', icon: 'TvIcon', color: 'text-red-400 bg-red-950/30 border-red-900/40 hover:bg-red-950/50 hover:border-red-700/60' },
-  { label: 'Zepto & Instamart Inserts', icon: 'ShoppingBagIcon', color: 'text-amber-400 bg-amber-950/30 border-amber-900/40 hover:bg-amber-950/50 hover:border-amber-700/60' },
-  { label: 'Transit & Outdoor Media', icon: 'TruckIcon', color: 'text-blue-400 bg-blue-950/30 border-blue-900/40 hover:bg-blue-950/50 hover:border-blue-700/60' },
-  { label: 'Gifting & Tech Solutions', icon: 'SparklesIcon', color: 'text-emerald-400 bg-emerald-950/30 border-emerald-900/40 hover:bg-emerald-950/50 hover:border-emerald-700/60' },
+  {
+    label: '30,000+ Active Screens',
+    icon: 'TvIcon',
+    color:
+      'text-red-400 bg-red-950/30 border-red-900/40 hover:bg-red-950/50 hover:border-red-700/60',
+  },
+  {
+    label: 'Zepto & Instamart Inserts',
+    icon: 'ShoppingBagIcon',
+    color:
+      'text-amber-400 bg-amber-950/30 border-amber-900/40 hover:bg-amber-950/50 hover:border-amber-700/60',
+  },
+  {
+    label: 'Transit & Outdoor Media',
+    icon: 'TruckIcon',
+    color:
+      'text-blue-400 bg-blue-950/30 border-blue-900/40 hover:bg-blue-950/50 hover:border-blue-700/60',
+  },
+  {
+    label: 'Gifting & Tech Solutions',
+    icon: 'SparklesIcon',
+    color:
+      'text-emerald-400 bg-emerald-950/30 border-emerald-900/40 hover:bg-emerald-950/50 hover:border-emerald-700/60',
+  },
 ];
 
 export default function HeroSection() {
@@ -70,24 +90,27 @@ export default function HeroSection() {
 
       <div className="max-w-6xl mx-auto px-4 md:px-6 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
           {/* Left: Text Content */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             {/* Eyebrow badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/40 border border-red-800/40 w-fit">
               <span className="w-2 h-2 rounded-full bg-accent animate-blink" />
               <span className="text-xs font-bold tracking-widest uppercase text-red-400">
-                Bengaluru's Premier Hyperlocal Ad & Tech Network
+                Bengaluru&apos;s Premier Hyperlocal Ad & Tech Network
               </span>
             </div>
 
             <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold leading-[1.1] tracking-tight text-foreground">
-              Reach Customers<br />
+              Reach Customers
+              <br />
               <span className="text-accent block mt-1">Everywhere They Live & Work</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-xl">
-              Connect your brand through <strong className="text-foreground font-bold">30,000+ screens</strong>, outdoor transit media, official Q-Commerce inserts, premium corporate gifting, and bespoke digital/AI solutions.
+              Connect your brand through{' '}
+              <strong className="text-foreground font-bold">30,000+ screens</strong>, outdoor
+              transit media, official Q-Commerce inserts, premium corporate gifting, and bespoke
+              digital/AI solutions.
             </p>
 
             <p className="text-sm font-semibold text-foreground/70 flex items-center gap-2">
@@ -145,15 +168,21 @@ export default function HeroSection() {
                   {adSlides.map((slide, i) => (
                     <div
                       key={slide.brand}
-                      ref={(el) => { slideRefs.current[i] = el; }}
+                      ref={(el) => {
+                        slideRefs.current[i] = el;
+                      }}
                       className={`absolute inset-0 bg-gradient-to-br ${slide.bg} flex flex-col items-center justify-center p-6 transition-all duration-700`}
                       style={{
                         opacity: i === 0 ? 1 : 0,
                         transform: i === 0 ? 'scale(1)' : 'scale(0.97)',
                       }}
                     >
-                      <div className="text-white/30 text-xs font-bold uppercase tracking-widest mb-2">Advertisement</div>
-                      <div className="text-white font-extrabold text-3xl tracking-tight mb-1">{slide.brand}</div>
+                      <div className="text-white/30 text-xs font-bold uppercase tracking-widest mb-2">
+                        Advertisement
+                      </div>
+                      <div className="text-white font-extrabold text-3xl tracking-tight mb-1">
+                        {slide.brand}
+                      </div>
                       <div className="text-white/90 font-bold text-base">{slide.tagline}</div>
                       <div className="text-white/60 text-xs mt-1">{slide.sub}</div>
                     </div>
@@ -181,7 +210,9 @@ export default function HeroSection() {
                     <div className="w-2 h-2 rounded-full bg-white/20" />
                     <div className="w-2 h-2 rounded-full bg-white/20" />
                   </div>
-                  <div className="text-white/30 text-[8px] font-bold tracking-widest uppercase">Mr.Ads Display</div>
+                  <div className="text-white/30 text-[8px] font-bold tracking-widest uppercase">
+                    Mr.Ads Display
+                  </div>
                   <div className="w-6 h-1 rounded-full bg-white/20" />
                 </div>
               </div>
@@ -196,12 +227,20 @@ export default function HeroSection() {
 
               {/* Floating stats */}
               <div className="absolute -top-4 -right-4 bg-card border border-border rounded-2xl px-4 py-3 shadow-lg shadow-black/40">
-                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Total Reach</div>
-                <div className="text-xl font-extrabold text-foreground tracking-tight">20 Million+</div>
-                <div className="text-[10px] text-muted-foreground font-semibold">Bengaluru Audience</div>
+                <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                  Total Reach
+                </div>
+                <div className="text-xl font-extrabold text-foreground tracking-tight">
+                  20 Million+
+                </div>
+                <div className="text-[10px] text-muted-foreground font-semibold">
+                  Bengaluru Audience
+                </div>
               </div>
               <div className="absolute -bottom-2 -left-4 bg-accent text-accent-foreground rounded-2xl px-4 py-3 shadow-lg">
-                <div className="text-[10px] font-bold uppercase tracking-widest opacity-70">Solutions</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest opacity-70">
+                  Solutions
+                </div>
                 <div className="text-base font-extrabold">6 Core Channels</div>
               </div>
             </div>
@@ -212,7 +251,8 @@ export default function HeroSection() {
         <div className="mt-14 scarcity-strip rounded-2xl px-6 py-4 flex items-center gap-3 border border-red-900/40">
           <Icon name="ExclamationTriangleIcon" size={18} className="text-red-400 shrink-0" />
           <p className="text-sm font-semibold text-red-300">
-            <strong>Limited ad slots per display.</strong> High-demand locations fill quickly. Secure your ad slot in advance.
+            <strong>Limited ad slots per display.</strong> High-demand locations fill quickly.
+            Secure your ad slot in advance.
           </p>
           <a
             href="#contact"
@@ -225,8 +265,12 @@ export default function HeroSection() {
 
       <style jsx>{`
         @keyframes progress-bar {
-          0% { width: 0%; }
-          100% { width: 100%; }
+          0% {
+            width: 0%;
+          }
+          100% {
+            width: 100%;
+          }
         }
       `}</style>
     </section>

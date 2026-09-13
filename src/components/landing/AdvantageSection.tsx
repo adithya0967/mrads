@@ -50,7 +50,7 @@ export default function AdvantageSection() {
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <Reveal variant="fade-down" className="max-w-2xl">
+          <Reveal variant="fade-up" className="max-w-2xl">
             <p className="eyebrow text-[#929292]">The Hyperlocal Advantage</p>
             <h2 className="mt-4 font-serif text-[34px] sm:text-[42px] leading-[1.08] tracking-tight text-paper font-normal">
               Mass media speaks to a city. Hyperlocal speaks to a neighbourhood.
@@ -58,7 +58,8 @@ export default function AdvantageSection() {
           </Reveal>
           <Reveal variant="fade-up" delay={0.15} className="max-w-md">
             <p className="text-[15px] leading-relaxed text-mute">
-              When you place your message where people actually spend their days, you stop competing for digital seconds and start owning real-world attention.
+              When you place your message where people actually spend their days, you stop competing
+              for digital seconds and start owning real-world attention.
             </p>
           </Reveal>
         </div>
@@ -135,9 +136,7 @@ export default function AdvantageSection() {
                         <h3 className="text-[15px] font-semibold text-paper group-hover/item:text-white transition-colors">
                           {item.title}
                         </h3>
-                        <p className="mt-1.5 text-[14px] leading-relaxed text-mute">
-                          {item.desc}
-                        </p>
+                        <p className="mt-1.5 text-[14px] leading-relaxed text-mute">{item.desc}</p>
                       </div>
                     </li>
                   ))}

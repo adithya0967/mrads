@@ -24,7 +24,7 @@ export default function PageHero({ eyebrow, title, copy }: PageHeroProps) {
 
       <div className="container-site py-16 md:py-24 relative z-10">
         <div className="max-w-3xl">
-          <Reveal variant="fade-down">
+          <Reveal variant="fade-up">
             <p className="eyebrow text-[#929292]">{eyebrow}</p>
           </Reveal>
           <Reveal variant="fade-up" delay={0.1}>
@@ -34,9 +34,7 @@ export default function PageHero({ eyebrow, title, copy }: PageHeroProps) {
           </Reveal>
           {copy && (
             <Reveal variant="fade-up" delay={0.2}>
-              <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-mute">
-                {copy}
-              </p>
+              <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-mute">{copy}</p>
             </Reveal>
           )}
 

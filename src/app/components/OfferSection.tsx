@@ -8,7 +8,8 @@ const categories = [
     icon: 'TvIcon',
     title: 'Digital Display Network',
     tagline: 'High-Impact Digital Screens',
-    description: 'Get premium visibility on carefully placed digital screens where your target audience naturally gathers and dwells.',
+    description:
+      'Get premium visibility on carefully placed digital screens where your target audience naturally gathers and dwells.',
     metrics: '30,000+ Screens · 20M+ Combined Reach',
     accent: false,
     colSpan: 'lg:col-span-6',
@@ -17,14 +18,15 @@ const categories = [
       { label: 'Restaurants', spec: '100+ screens' },
       { label: 'Corporate Offices', spec: '1,300+ screens' },
       { label: 'Gyms & Malls', spec: '300+ screens' },
-      { label: 'Playzones / Hostels', spec: 'Common zones' }
-    ]
+      { label: 'Playzones / Hostels', spec: 'Common zones' },
+    ],
   },
   {
     icon: 'TruckIcon',
     title: 'Transit & Outdoor Media',
     tagline: 'Advertising on the Move',
-    description: 'Drive city-wide brand awareness by placing your message on moving vehicles and highly visible transit corridors.',
+    description:
+      'Drive city-wide brand awareness by placing your message on moving vehicles and highly visible transit corridors.',
     metrics: 'Mysuru & Bengaluru Key Routes',
     accent: false,
     colSpan: 'lg:col-span-6',
@@ -33,14 +35,15 @@ const categories = [
       { label: 'Cab Branding', spec: 'Urban routes' },
       { label: 'Bus Branding', spec: 'High-traffic' },
       { label: 'Bus Shelters', spec: 'Mysuru (10 Shelters)' },
-      { label: 'Mobile Vans & Road Shows', spec: 'Promotional' }
-    ]
+      { label: 'Mobile Vans & Road Shows', spec: 'Promotional' },
+    ],
   },
   {
     icon: 'DocumentTextIcon',
     title: 'Offline & Dark Store inserts',
     tagline: 'Direct-to-Home Delivery',
-    description: 'Reach customers straight at home through flyers and official inserts inside bags from top quick-commerce apps.',
+    description:
+      'Reach customers straight at home through flyers and official inserts inside bags from top quick-commerce apps.',
     metrics: 'Swiggy Instamart · Zepto · Blinkit Partner',
     accent: false,
     colSpan: 'lg:col-span-7',
@@ -49,14 +52,15 @@ const categories = [
       { label: 'Newspaper Inserts', spec: 'Hyperlocal targeting' },
       { label: 'Pharmacy Cover Ads', spec: 'Take-home branding' },
       { label: 'Flyer Distribution', spec: 'Hand-to-Hand & Door-to-Door' },
-      { label: 'Apartment Campaigns', spec: 'Event promotions' }
-    ]
+      { label: 'Apartment Campaigns', spec: 'Event promotions' },
+    ],
   },
   {
     icon: 'FilmIcon',
     title: 'Content Creation & Production',
     tagline: 'End-to-End Creative Assets',
-    description: 'From creative concept to final delivery, we produce engaging promotional videos and motion graphics that convert.',
+    description:
+      'From creative concept to final delivery, we produce engaging promotional videos and motion graphics that convert.',
     metrics: 'Plan · Shoot · Edit · Deliver',
     accent: true,
     colSpan: 'lg:col-span-5',
@@ -64,14 +68,15 @@ const categories = [
       { label: 'Promo Video Shoots', spec: 'Professional' },
       { label: 'Motion Graphics & VFX', spec: 'Modern' },
       { label: 'Creative Campaign Concepts', spec: 'Tailored' },
-      { label: 'Ready-to-Publish Ads', spec: 'Optimized' }
-    ]
+      { label: 'Ready-to-Publish Ads', spec: 'Optimized' },
+    ],
   },
   {
     icon: 'GiftIcon',
     title: 'Corporate Gifting Solutions',
     tagline: 'Premium Custom Merchandise',
-    description: 'Strengthen business relationships and build internal brand affinity with thoughtful, premium, custom-branded gifts.',
+    description:
+      'Strengthen business relationships and build internal brand affinity with thoughtful, premium, custom-branded gifts.',
     metrics: 'Curated & Customized Products',
     accent: false,
     colSpan: 'lg:col-span-5',
@@ -80,14 +85,15 @@ const categories = [
       { label: 'Joining & Milestone Kits', spec: 'Corporate' },
       { label: 'Festive Gift Hampers', spec: 'Premium curated' },
       { label: 'Custom Merchandise', spec: 'Branded shirts, bags' },
-      { label: 'Event & Conference Gifts', spec: 'Bulk order' }
-    ]
+      { label: 'Event & Conference Gifts', spec: 'Bulk order' },
+    ],
   },
   {
     icon: 'CodeBracketIcon',
     title: 'Web Design & AI Solutions',
     tagline: 'Smart Digital Tech',
-    description: 'Establish a powerful, scalable online presence with modern web development, e-commerce stores, and custom AI integrations.',
+    description:
+      'Establish a powerful, scalable online presence with modern web development, e-commerce stores, and custom AI integrations.',
     metrics: 'Mobile Friendly · SEO Ready · Secure',
     accent: false,
     colSpan: 'lg:col-span-7',
@@ -96,9 +102,9 @@ const categories = [
       { label: 'E-Commerce Platforms', spec: 'Shopify / Custom' },
       { label: 'Custom AI Chatbots', spec: 'Lead generation' },
       { label: 'Hosting & Maintenance', spec: '24x7 support' },
-      { label: 'Website Redesigns', spec: 'Optimized speed' }
-    ]
-  }
+      { label: 'Website Redesigns', spec: 'Optimized speed' },
+    ],
+  },
 ];
 
 export default function OfferSection() {
@@ -134,11 +140,14 @@ export default function OfferSection() {
               What We Do
             </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight leading-[1.1] text-foreground">
-              Hyperlocal Advertising.<br />Digital Solutions.
+              Hyperlocal Advertising.
+              <br />
+              Digital Solutions.
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm text-sm font-medium leading-relaxed">
-            Every campaign is built on high-impact channels—reaching your audience where they live, work, dine, travel, and buy.
+            Every campaign is built on high-impact channels—reaching your audience where they live,
+            work, dine, travel, and buy.
           </p>
         </div>
 
@@ -155,32 +164,39 @@ export default function OfferSection() {
               style={{
                 opacity: 0,
                 transform: 'translateY(40px)',
-                transition: 'opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)'
+                transition:
+                  'opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)',
               }}
             >
               {/* Card Header */}
               <div>
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 border ${
-                  cat.accent
-                    ? 'bg-white/20 border-white/30'
-                    : 'bg-accent/10 border-accent/20'
-                }`}>
+                <div
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 border ${
+                    cat.accent ? 'bg-white/20 border-white/30' : 'bg-accent/10 border-accent/20'
+                  }`}
+                >
                   <Icon
                     name={cat.icon}
                     size={24}
                     className={cat.accent ? 'text-white' : 'text-accent'}
                   />
                 </div>
-                
-                <span className={`text-[10px] font-bold uppercase tracking-widest ${cat.accent ? 'text-white/60' : 'text-accent/80'} mb-1.5 block`}>
+
+                <span
+                  className={`text-[10px] font-bold uppercase tracking-widest ${cat.accent ? 'text-white/60' : 'text-accent/80'} mb-1.5 block`}
+                >
                   {cat.tagline}
                 </span>
-                
-                <h3 className={`text-2xl font-extrabold mb-3 tracking-tight ${cat.accent ? 'text-white' : 'text-foreground'}`}>
+
+                <h3
+                  className={`text-2xl font-extrabold mb-3 tracking-tight ${cat.accent ? 'text-white' : 'text-foreground'}`}
+                >
                   {cat.title}
                 </h3>
-                
-                <p className={`text-sm leading-relaxed mb-6 ${cat.accent ? 'text-white/70' : 'text-muted-foreground'}`}>
+
+                <p
+                  className={`text-sm leading-relaxed mb-6 ${cat.accent ? 'text-white/70' : 'text-muted-foreground'}`}
+                >
                   {cat.description}
                 </p>
               </div>
@@ -202,9 +218,13 @@ export default function OfferSection() {
               </div>
 
               {/* Card Footer Metric info */}
-              <div className={`pt-4 border-t flex items-center justify-between ${
-                cat.accent ? 'border-white/10 text-white/80' : 'border-border text-muted-foreground'
-              }`}>
+              <div
+                className={`pt-4 border-t flex items-center justify-between ${
+                  cat.accent
+                    ? 'border-white/10 text-white/80'
+                    : 'border-border text-muted-foreground'
+                }`}
+              >
                 <span className="text-xs font-extrabold uppercase tracking-wider">
                   {cat.metrics}
                 </span>

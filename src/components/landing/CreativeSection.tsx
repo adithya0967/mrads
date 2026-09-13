@@ -10,17 +10,21 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
       <div className="grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4 reveal in">
           <p className="crumb">
-            <a href="#home">Home</a>{' / Print & Creative'}
+            <a href="#home">Home</a>
+            {' / Print & Creative'}
           </p>
           <h2 className="serif text-3xl sm:text-[40px] tracking-tight mt-2 text-white">
             Print & Creative Design Solutions
           </h2>
           <p className="text-slate-400 mt-3 text-[15px] leading-relaxed">
-            Refined creatives that make every screen, street and home placement work harder. One design language — from standee to social.
+            Refined creatives that make every screen, street and home placement work harder. One
+            design language — from standee to social.
           </p>
           <div className="mt-6 bg-[#121B2D] border border-slate-800 rounded-2xl p-5 text-white">
             <p className="font-extrabold text-[15px] text-white">Need creatives with your media?</p>
-            <p className="text-slate-400 text-[13.5px] mt-1">Bundle design with any display, moving-media or offline plan.</p>
+            <p className="text-slate-400 text-[13.5px] mt-1">
+              Bundle design with any display, moving-media or offline plan.
+            </p>
             <a
               href="#contact"
               onClick={() => onPrefill('Print & Creative Design', 'Creative Services')}
@@ -39,8 +43,12 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
                 <i className="fa-regular fa-file-lines"></i>
               </span>
               <div>
-                <h3 className="font-extrabold text-[15px] text-white">Brochure & Catalogue Design</h3>
-                <p className="text-slate-400 text-[13px] mt-1">Structured, print-ready layouts that sell the full story.</p>
+                <h3 className="font-extrabold text-[15px] text-white">
+                  Brochure & Catalogue Design
+                </h3>
+                <p className="text-slate-400 text-[13px] mt-1">
+                  Structured, print-ready layouts that sell the full story.
+                </p>
               </div>
             </div>
 
@@ -49,8 +57,12 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
                 <i className="fa-regular fa-image"></i>
               </span>
               <div>
-                <h3 className="font-extrabold text-[15px] text-white">Flyer / Poster / Banner Design</h3>
-                <p className="text-slate-400 text-[13px] mt-1">High-impact singles for distribution, walls and roadsides.</p>
+                <h3 className="font-extrabold text-[15px] text-white">
+                  Flyer / Poster / Banner Design
+                </h3>
+                <p className="text-slate-400 text-[13px] mt-1">
+                  High-impact singles for distribution, walls and roadsides.
+                </p>
               </div>
             </div>
 
@@ -60,7 +72,9 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
               </span>
               <div>
                 <h3 className="font-extrabold text-[15px] text-white">Standee & Stall Branding</h3>
-                <p className="text-slate-400 text-[13px] mt-1">Event and retail presence that stops footfall.</p>
+                <p className="text-slate-400 text-[13px] mt-1">
+                  Event and retail presence that stops footfall.
+                </p>
               </div>
             </div>
 
@@ -69,8 +83,12 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
                 <i className="fa-solid fa-signs-post"></i>
               </span>
               <div>
-                <h3 className="font-extrabold text-[15px] text-white">Pole Boards & No-Parking Boards</h3>
-                <p className="text-slate-400 text-[13px] mt-1">Everyday street furniture turned into recall assets.</p>
+                <h3 className="font-extrabold text-[15px] text-white">
+                  Pole Boards & No-Parking Boards
+                </h3>
+                <p className="text-slate-400 text-[13px] mt-1">
+                  Everyday street furniture turned into recall assets.
+                </p>
               </div>
             </div>
 
@@ -80,7 +98,9 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
               </span>
               <div>
                 <h3 className="font-extrabold text-[15px] text-white">Magazine Advertisements</h3>
-                <p className="text-slate-400 text-[13px] mt-1">Editorial-grade print ads with clean hierarchy.</p>
+                <p className="text-slate-400 text-[13px] mt-1">
+                  Editorial-grade print ads with clean hierarchy.
+                </p>
               </div>
             </div>
 
@@ -90,7 +110,9 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
               </span>
               <div>
                 <h3 className="font-extrabold text-[15px] text-white">Social Media Creatives</h3>
-                <p className="text-slate-400 text-[13px] mt-1">Feed-ready visuals that extend offline recall online.</p>
+                <p className="text-slate-400 text-[13px] mt-1">
+                  Feed-ready visuals that extend offline recall online.
+                </p>
               </div>
             </div>
 
@@ -107,7 +129,9 @@ export default function CreativeSection({ onPrefill }: CreativeSectionProps) {
               >
                 <div>
                   <p className="text-white font-extrabold">Promotional marketing materials</p>
-                  <p className="text-slate-300 text-[13px]">A complete kit — designed once, deployed everywhere.</p>
+                  <p className="text-slate-300 text-[13px]">
+                    A complete kit — designed once, deployed everywhere.
+                  </p>
                 </div>
               </div>
             </div>

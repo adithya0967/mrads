@@ -67,7 +67,7 @@ export default function DigitalSignageBoard() {
   useEffect(() => {
     if (isPaused || activePlaylist.length <= 1) return;
 
-    const durationMs = Math.min((activeCampaign?.duration || 10), 6) * 1000;
+    const durationMs = Math.min(activeCampaign?.duration || 10, 6) * 1000;
     const crossfadeMs = 700;
     const intervalMs = 50;
     const startTime = Date.now();
@@ -116,7 +116,8 @@ export default function DigitalSignageBoard() {
       badge: 'FEATURED LAUNCH',
       headline: newHeadline.toUpperCase(),
       subheadline: newSubheadline || 'Next-Generation Experience',
-      supportingCopy: newSupporting || 'Crafted with uncompromising precision and designed for modern life.',
+      supportingCopy:
+        newSupporting || 'Crafted with uncompromising precision and designed for modern life.',
       ctaText: (newCtaText || 'DISCOVER MORE').toUpperCase(),
       visualUrl: newVisualUrl,
       visualAlt: newHeadline,
@@ -199,7 +200,9 @@ export default function DigitalSignageBoard() {
             }`}
             title={isPaused ? 'Resume Broadcast' : 'Freeze Ad Frame'}
           >
-            <i className={`fa-solid ${isPaused ? 'fa-play text-amber-400' : 'fa-pause'} text-xs`}></i>
+            <i
+              className={`fa-solid ${isPaused ? 'fa-play text-amber-400' : 'fa-pause'} text-xs`}
+            ></i>
             <span className="hidden sm:inline">{isPaused ? 'Paused' : 'Playing'}</span>
           </button>
 
@@ -232,7 +235,9 @@ export default function DigitalSignageBoard() {
         {/* ---------------------------------------------------------------------
          * MAIN COMMERCIAL DISPLAY HARDWARE ENCLOSURE (16:9 Cinema Viewport)
          * --------------------------------------------------------------------- */}
-        <div className={`${isCmsOpen ? 'lg:col-span-8' : 'lg:col-span-12'} transition-all duration-300`}>
+        <div
+          className={`${isCmsOpen ? 'lg:col-span-8' : 'lg:col-span-12'} transition-all duration-300`}
+        >
           {/* Exterior Hardware Bezel & Housing */}
           <div className="w-full p-3.5 sm:p-5 bg-gradient-to-b from-slate-700 via-slate-800 to-[#0A0F1D] rounded-[30px] sm:rounded-[42px] border-2 border-slate-600/70 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95),0_0_40px_rgba(255,77,82,0.18)] relative">
             {/* 16:9 Screen Panel Viewport (Holds PURE AD CREATIVE without any overlays) */}
@@ -311,7 +316,9 @@ export default function DigitalSignageBoard() {
                 <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                   Active Campaign Schedule ({activePlaylist.length})
                 </span>
-                <span className="text-[10px] font-bold text-brand uppercase">Click to Dispatch</span>
+                <span className="text-[10px] font-bold text-brand uppercase">
+                  Click to Dispatch
+                </span>
               </div>
               <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
                 {activePlaylist.map((camp, idx) => (
@@ -398,13 +405,13 @@ export default function DigitalSignageBoard() {
                   Main Headline
                 </label>
                 <input
-                    type="text"
-                    placeholder="e.g. INTELLIGENCE IN MOTION"
-                    value={newHeadline}
-                    onChange={(e) => setNewHeadline(e.target.value)}
-                    required
-                    className="w-full bg-[#121B2D] border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-slate-500"
-                  />
+                  type="text"
+                  placeholder="e.g. INTELLIGENCE IN MOTION"
+                  value={newHeadline}
+                  onChange={(e) => setNewHeadline(e.target.value)}
+                  required
+                  className="w-full bg-[#121B2D] border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-slate-500"
+                />
               </div>
 
               <div>
@@ -412,13 +419,13 @@ export default function DigitalSignageBoard() {
                   Image URL (Unsplash or CDN)
                 </label>
                 <input
-                    type="url"
-                    placeholder="https://images.unsplash.com/..."
-                    value={newVisualUrl}
-                    onChange={(e) => setNewVisualUrl(e.target.value)}
-                    required
-                    className="w-full bg-[#121B2D] border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-slate-500"
-                  />
+                  type="url"
+                  placeholder="https://images.unsplash.com/..."
+                  value={newVisualUrl}
+                  onChange={(e) => setNewVisualUrl(e.target.value)}
+                  required
+                  className="w-full bg-[#121B2D] border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-slate-500"
+                />
               </div>
 
               <div className="grid grid-cols-2 gap-2">

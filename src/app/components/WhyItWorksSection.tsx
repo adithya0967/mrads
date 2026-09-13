@@ -60,7 +60,11 @@ export default function WhyItWorksSection() {
   }, []);
 
   return (
-    <section id="why" ref={sectionRef} className="py-24 md:py-32 bg-[#0a0a14] text-foreground overflow-hidden">
+    <section
+      id="why"
+      ref={sectionRef}
+      className="py-24 md:py-32 bg-[#0a0a14] text-foreground overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
@@ -69,11 +73,14 @@ export default function WhyItWorksSection() {
               The Science Behind It
             </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight text-white leading-[1.1]">
-              Why Hyperlocal<br />Advertising Works
+              Why Hyperlocal
+              <br />
+              Advertising Works
             </h2>
           </div>
           <p className="text-white/40 max-w-xs text-sm font-medium leading-relaxed">
-            Multi-channel physical presence combined with smart digital tech maximizes brand recall and user action.
+            Multi-channel physical presence combined with smart digital tech maximizes brand recall
+            and user action.
           </p>
         </div>
 
@@ -109,7 +116,9 @@ export default function WhyItWorksSection() {
             }}
           >
             <div>
-              <div className="text-3xl font-extrabold text-accent-foreground mb-2">Ready to scale?</div>
+              <div className="text-3xl font-extrabold text-accent-foreground mb-2">
+                Ready to scale?
+              </div>
               <p className="text-accent-foreground/70 text-sm leading-relaxed">
                 Connect your business with our extensive hyperlocal network.
               </p>

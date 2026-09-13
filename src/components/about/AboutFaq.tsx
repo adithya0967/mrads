@@ -66,7 +66,9 @@ export default function AboutFaq() {
                     </span>
                     <span
                       className={`mt-0.5 flex items-center justify-center w-6 h-6 rounded-full border border-white/10 text-mute transition-all duration-300 shrink-0 ${
-                        isOpen ? 'rotate-45 border-brand text-brand bg-[#D81F42]/10' : 'group-hover:border-white/30'
+                        isOpen
+                          ? 'rotate-45 border-brand text-brand bg-[#D81F42]/10'
+                          : 'group-hover:border-white/30'
                       }`}
                     >
                       <Plus size={14} />
@@ -74,14 +76,10 @@ export default function AboutFaq() {
                   </button>
 
                   <div
-                    className={`accordion-content overflow-hidden ${
-                      isOpen ? 'is-open mt-3' : ''
-                    }`}
+                    className={`accordion-content overflow-hidden ${isOpen ? 'is-open mt-3' : ''}`}
                   >
                     <div className="accordion-inner pr-10">
-                      <p className="text-[15px] leading-relaxed text-mute">
-                        {n.a}
-                      </p>
+                      <p className="text-[15px] leading-relaxed text-mute">{n.a}</p>
                     </div>
                   </div>
                 </div>

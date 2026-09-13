@@ -8,29 +8,44 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-extrabold">MR</div>
+              <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-extrabold">
+                MR
+              </div>
               <div>
                 <p className="font-extrabold text-lg">Mr. Ads</p>
-                <p className="text-[11px] font-bold tracking-[.16em] uppercase" style={{ color: '#FF8A8E' }}>
+                <p
+                  className="text-[11px] font-bold tracking-[.16em] uppercase"
+                  style={{ color: '#FF8A8E' }}
+                >
                   Your Hyperlocal Partner
                 </p>
               </div>
             </div>
             <p className="text-white/60 text-[14px] mt-4 leading-relaxed">
-              Mr. Ads connects brands with the right local audience through display advertising, moving media, offline distribution, creative services and digital solutions — planned end-to-end.
+              Mr. Ads connects brands with the right local audience through display advertising,
+              moving media, offline distribution, creative services and digital solutions — planned
+              end-to-end.
             </p>
             <div className="mt-5 grid gap-2 text-[14px] font-semibold">
-              <a href="tel:+919686544644" className="flex items-center gap-2.5 hover:text-white text-white/80">
+              <a
+                href="tel:+919686544644"
+                className="flex items-center gap-2.5 hover:text-white text-white/80"
+              >
                 <i className="fa-solid fa-phone text-xs text-white/40"></i> +91 96865 44644
               </a>
-              <a href="mailto:knowus@mr-ads.in" className="flex items-center gap-2.5 hover:text-white text-white/80">
+              <a
+                href="mailto:knowus@mr-ads.in"
+                className="flex items-center gap-2.5 hover:text-white text-white/80"
+              >
                 <i className="fa-regular fa-envelope text-sm text-white/40"></i> knowus@mr-ads.in
               </a>
             </div>
           </div>
 
           <div className="md:col-span-2">
-            <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">Explore</p>
+            <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">
+              Explore
+            </p>
             <ul className="mt-4 space-y-2.5 text-[14px] font-semibold text-white/75">
               <li>
                 <Link href="/" className="hover:text-white">
@@ -61,7 +76,9 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">Services</p>
+            <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">
+              Services
+            </p>
             <ul className="mt-4 space-y-2.5 text-[14px] font-semibold text-white/75">
               <li>
                 <Link href="/locations" className="hover:text-white">
@@ -92,7 +109,9 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">Get a media plan</p>
+            <p className="text-[11px] font-bold tracking-[.16em] uppercase text-white/40">
+              Get a media plan
+            </p>
             <p className="text-white/60 text-[13.5px] mt-4">
               Share your city & goal — receive environments, locations & pricing.
             </p>

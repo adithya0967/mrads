@@ -45,7 +45,7 @@ export default function WhySection() {
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <Reveal variant="fade-down" className="max-w-xl">
+          <Reveal variant="fade-up" className="max-w-xl">
             <p className="eyebrow text-[#929292]">Why Mr. Ads</p>
             <h2 className="mt-4 font-serif text-[32px] sm:text-[40px] leading-tight tracking-tight text-paper font-normal">
               Six reasons brands choose one hyperlocal partner.
@@ -65,10 +65,14 @@ export default function WhySection() {
         {/* 3-Column Luxury Grid with Staggered Reveals */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((item, idx) => (
-            <Reveal key={item.num} variant="fade-up" staggerIndex={idx} delay={0.1} className="h-full">
-              <div
-                className="card-interactive group relative h-full rounded-xl border border-white/[0.08] bg-[#141414]/60 p-7 sm:p-8 hover:bg-[#141414] flex flex-col justify-between"
-              >
+            <Reveal
+              key={item.num}
+              variant="fade-up"
+              staggerIndex={idx}
+              delay={0.1}
+              className="h-full"
+            >
+              <div className="card-interactive group relative h-full rounded-xl border border-white/[0.08] bg-[#141414]/60 p-7 sm:p-8 hover:bg-[#141414] flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="font-serif text-[26px] font-bold text-[#D81F42] leading-none transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(216,31,66,0.6)]">
@@ -79,16 +83,17 @@ export default function WhySection() {
                   <h3 className="mt-5 text-[17px] font-semibold tracking-tight text-paper group-hover:text-white transition-colors">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[14px] leading-relaxed text-mute">
-                    {item.body}
-                  </p>
+                  <p className="mt-3 text-[14px] leading-relaxed text-mute">{item.body}</p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center justify-between opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-200">
                   <span className="text-[11px] font-semibold tracking-wider text-brand uppercase">
                     Mr. Ads Advantage
                   </span>
-                  <ArrowRight size={13} className="text-brand transform group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight
+                    size={13}
+                    className="text-brand transform group-hover:translate-x-0.5 transition-transform"
+                  />
                 </div>
               </div>
             </Reveal>

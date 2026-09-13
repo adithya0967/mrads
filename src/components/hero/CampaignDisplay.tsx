@@ -88,9 +88,7 @@ interface CampaignDisplayProps {
   currentIndex: number;
 }
 
-export default function CampaignDisplay({
-  currentIndex,
-}: CampaignDisplayProps) {
+export default function CampaignDisplay({ currentIndex }: CampaignDisplayProps) {
   const [activeIdx, setActiveIdx] = useState(currentIndex);
   const [prevIdx, setPrevIdx] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);

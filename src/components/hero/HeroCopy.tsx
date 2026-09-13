@@ -27,7 +27,7 @@ export default function HeroCopy({
   return (
     <div className="flex flex-col gap-6 lg:gap-8 max-w-2xl">
       {/* Eyebrow Beacon */}
-      <Reveal variant="fade-down" delay={0.1}>
+      <Reveal variant="fade-up" delay={0.1}>
         <div className="inline-flex items-center gap-2.5">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ED3153] opacity-75"></span>
@@ -45,9 +45,7 @@ export default function HeroCopy({
           <span className="block">{headlineLine1}</span>
         </Reveal>
         <Reveal variant="fade-up" delay={0.28}>
-          <span className="block text-[#ED3153] italic font-normal my-0.5">
-            {headlineAccent}
-          </span>
+          <span className="block text-[#ED3153] italic font-normal my-0.5">{headlineAccent}</span>
         </Reveal>
         <Reveal variant="fade-up" delay={0.36}>
           <span className="block">{headlineLine3}</span>

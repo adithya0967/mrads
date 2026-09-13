@@ -6,9 +6,12 @@ export default function WhyPreviewSection() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 reveal in">
         <div>
           <p className="crumb">Why Mr. Ads</p>
-          <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">One partner. Every local surface.</h2>
+          <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">
+            One partner. Every local surface.
+          </h2>
           <p className="text-slate-400 mt-3 max-w-2xl">
-            Six practical reasons growing brands plan with Mr. Ads — from reach to creative to campaign support.
+            Six practical reasons growing brands plan with Mr. Ads — from reach to creative to
+            campaign support.
           </p>
         </div>
         <a

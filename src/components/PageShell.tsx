@@ -71,19 +71,23 @@ export default function PageShell({ children }: PageShellProps) {
       />
 
       {/* Main Content */}
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       {/* Footer */}
       <Footer />
 
       {/* Mobile sticky CTA */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur border-t border-slate-800 px-4 py-3 flex gap-2">
-        <a href="tel:+919686544644" className="btn-ghost flex-1 text-center font-bold text-sm py-3 rounded-full text-slate-100">
+        <a
+          href="tel:+919686544644"
+          className="btn-ghost flex-1 text-center font-bold text-sm py-3 rounded-full text-slate-100"
+        >
           <i className="fa-solid fa-phone mr-1.5 text-xs"></i> Call
         </a>
-        <Link href="/contact" className="btn-primary flex-[2] text-center font-bold text-sm py-3 rounded-full">
+        <Link
+          href="/contact"
+          className="btn-primary flex-[2] text-center font-bold text-sm py-3 rounded-full"
+        >
           Get a Media Plan
         </Link>
       </div>
@@ -98,7 +102,10 @@ export default function PageShell({ children }: PageShellProps) {
       />
 
       {/* Toast Notification */}
-      <div id="toast" className={`fixed bottom-24 sm:bottom-6 left-1/2 -translate-x-1/2 z-[95] ${showToast ? 'block' : 'hidden'}`}>
+      <div
+        id="toast"
+        className={`fixed bottom-24 sm:bottom-6 left-1/2 -translate-x-1/2 z-[95] ${showToast ? 'block' : 'hidden'}`}
+      >
         <div className="bg-[#121B2D] border border-slate-700 text-white text-[13.5px] font-bold px-5 py-3.5 rounded-full shadow-lift flex items-center gap-2.5 whitespace-nowrap">
           <i className="fa-solid fa-circle-check text-emerald-400"></i>
           <span id="toastMsg">{toastMsg}</span>

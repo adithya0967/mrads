@@ -37,9 +37,10 @@ export default function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
+  const [position, setPosition] = useState<'below' | 'above'>('below');
   const [reducedMotion, setReducedMotion] = useState(false);
 
-  // Calculate compound delay
+  // Calculate compound delay for entrance cascade
   const totalDelay = Math.max(0, delay + staggerIndex * 0.07);
 
   useEffect(() => {
@@ -55,6 +56,14 @@ export default function Reveal({
       }
     }
 
+    // Initialize relative position on mount
+    const rect = el.getBoundingClientRect();
+    if (rect.bottom < 0) {
+      setPosition('above');
+    } else {
+      setPosition('below');
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -64,8 +73,17 @@ export default function Reveal({
               observer.unobserve(entry.target);
             }
           } else if (!once) {
-            // Re-arm when element is scrolled completely out of view
-            // to allow dynamic scroll-down and scroll-up reveal effects
+            // Re-arm when element is scrolled completely out of view.
+            // Dynamically record exit direction so subsequent entry from opposite direction
+            // provides the exact opposite motion vector.
+            const entryRect = entry.boundingClientRect;
+            if (entryRect.top < 0) {
+              // Element exited off top of viewport
+              setPosition('above');
+            } else {
+              // Element exited off bottom of viewport
+              setPosition('below');
+            }
             setInView(false);
           }
         });
@@ -85,27 +103,45 @@ export default function Reveal({
     );
   }
 
-  // Determine initial vs in-view styles per variant
+  // Determine transform based on variant and whether element is below or above viewport
   const getTransform = () => {
     if (inView) {
       return variant === 'scale-up' ? 'scale(1) translate3d(0, 0, 0)' : 'translate3d(0, 0, 0)';
     }
 
+    const isAbove = position === 'above';
+
     switch (variant) {
       case 'fade-down':
-        // Downward entrance momentum (scroll-down effect)
-        return 'translate3d(0, -32px, 0)';
+        // Explicit inverted fade
+        return isAbove ? 'translate3d(0, 30px, 0)' : 'translate3d(0, -30px, 0)';
+
       case 'slide-left':
-        return 'translate3d(-32px, 0, 0)';
+        // Scroll-down entrance: enters from bottom-left (-32px, +16px) -> 0
+        // Scroll-up entrance: enters from top-right (+32px, -16px) -> 0 (exact opposite)
+        return isAbove ? 'translate3d(32px, -16px, 0)' : 'translate3d(-32px, 16px, 0)';
+
       case 'slide-right':
-        return 'translate3d(32px, 0, 0)';
+        // Scroll-down entrance: enters from bottom-right (+32px, +16px) -> 0
+        // Scroll-up entrance: enters from top-left (-32px, -16px) -> 0 (exact opposite)
+        return isAbove ? 'translate3d(-32px, -16px, 0)' : 'translate3d(32px, 16px, 0)';
+
       case 'scale-up':
-        return 'scale(0.94) translate3d(0, 16px, 0)';
+        // Scroll-down entrance: scale-up from below
+        // Scroll-up entrance: scale-up from above
+        return isAbove
+          ? 'scale(0.94) translate3d(0, -16px, 0)'
+          : 'scale(0.94) translate3d(0, 16px, 0)';
+
       case 'blur-in':
-        return 'translate3d(0, 0, 0)';
+        return isAbove ? 'translate3d(0, -14px, 0)' : 'translate3d(0, 14px, 0)';
+
       case 'fade-up':
       default:
-        return 'translate3d(0, 28px, 0)';
+        // Standard vertical reveal:
+        // Scroll-down entrance: enters from below (+30px -> 0), exits upward (0 -> -30px)
+        // Scroll-up entrance: enters from above (-30px -> 0), exits downward (0 -> +30px)
+        return isAbove ? 'translate3d(0, -30px, 0)' : 'translate3d(0, 30px, 0)';
     }
   };
 
@@ -115,6 +151,9 @@ export default function Reveal({
   };
 
   const luxuryEase = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  const currentDuration = inView ? duration : Math.min(0.35, duration);
+  const currentTiming = inView ? luxuryEase : 'ease-out';
+  const currentDelay = inView ? totalDelay : 0;
 
   return (
     <Component
@@ -124,7 +163,7 @@ export default function Reveal({
         opacity: inView ? 1 : 0,
         transform: getTransform(),
         filter: getFilter(),
-        transition: `opacity ${duration}s ${luxuryEase} ${totalDelay}s, transform ${duration}s ${luxuryEase} ${totalDelay}s, filter ${duration}s ${luxuryEase} ${totalDelay}s`,
+        transition: `opacity ${currentDuration}s ${currentTiming} ${currentDelay}s, transform ${currentDuration}s ${currentTiming} ${currentDelay}s, filter ${currentDuration}s ${currentTiming} ${currentDelay}s`,
         willChange: 'opacity, transform',
       }}
     >

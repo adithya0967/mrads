@@ -80,11 +80,15 @@ export default function ContactSection({
     <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 text-white">
       <div className="reveal in">
         <p className="crumb">
-          <a href="#home">Home</a>{' / Contact · Request a Media Plan'}
+          <a href="#home">Home</a>
+          {' / Contact · Request a Media Plan'}
         </p>
-        <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">Request a Media Plan</h2>
+        <h2 className="serif text-3xl sm:text-[42px] tracking-tight mt-2 text-white">
+          Request a Media Plan
+        </h2>
         <p className="text-slate-400 mt-3 max-w-2xl">
-          Tell us where your audience is — we’ll come back with environments, locations, pricing and creative options.
+          Tell us where your audience is — we’ll come back with environments, locations, pricing and
+          creative options.
         </p>
       </div>
 
@@ -97,7 +101,9 @@ export default function ContactSection({
               </div>
               <div>
                 <p className="font-extrabold text-white">Mr. Ads (MR)</p>
-                <p className="text-[12px] text-slate-400 font-semibold">Your Hyperlocal Advertising Partner</p>
+                <p className="text-[12px] text-slate-400 font-semibold">
+                  Your Hyperlocal Advertising Partner
+                </p>
               </div>
             </div>
             <div className="mt-6 grid gap-3">
@@ -109,7 +115,9 @@ export default function ContactSection({
                   <i className="fa-solid fa-phone text-sm"></i>
                 </span>
                 <span>
-                  <span className="block text-[11px] font-bold tracking-widest uppercase text-slate-400">Call us</span>
+                  <span className="block text-[11px] font-bold tracking-widest uppercase text-slate-400">
+                    Call us
+                  </span>
                   <span className="font-extrabold text-white">+91 96865 44644</span>
                 </span>
               </a>
@@ -121,7 +129,9 @@ export default function ContactSection({
                   <i className="fa-regular fa-envelope"></i>
                 </span>
                 <span>
-                  <span className="block text-[11px] font-bold tracking-widest uppercase text-slate-400">Email</span>
+                  <span className="block text-[11px] font-bold tracking-widest uppercase text-slate-400">
+                    Email
+                  </span>
                   <span className="font-extrabold break-all text-white">knowus@mr-ads.in</span>
                 </span>
               </a>
@@ -190,7 +200,9 @@ export default function ContactSection({
 
             <p className="spec-label mt-6 mb-3 text-slate-400">
               I’m interested in <span className="text-brand">*</span>{' '}
-              <span className="normal-case font-medium tracking-normal text-slate-400">(tap all that apply)</span>
+              <span className="normal-case font-medium tracking-normal text-slate-400">
+                (tap all that apply)
+              </span>
             </p>
             <div className="flex flex-wrap gap-2" id="interestChips">
               {interestOptions.map((opt) => {
@@ -296,7 +308,9 @@ export default function ContactSection({
                   onChange={(e) => setFormReq(e.target.value)}
                   className="mt-2 w-full border border-slate-700 rounded-xl px-4 py-3 text-sm bg-[#090D16] text-white font-semibold"
                 >
-                  <option value="" className="bg-[#090D16]">Select a requirement…</option>
+                  <option value="" className="bg-[#090D16]">
+                    Select a requirement…
+                  </option>
                   {requirementOptions.map((opt) => (
                     <option key={opt} value={opt} className="bg-[#090D16]">
                       {opt}
@@ -321,7 +335,10 @@ export default function ContactSection({
             </div>
 
             {formErr && (
-              <p id="formErr" className="mt-4 text-[13px] font-bold text-brand bg-brand/10 border border-brand/40 rounded-xl px-4 py-3">
+              <p
+                id="formErr"
+                className="mt-4 text-[13px] font-bold text-brand bg-brand/10 border border-brand/40 rounded-xl px-4 py-3"
+              >
                 {formErr}
               </p>
             )}
@@ -346,13 +363,22 @@ export default function ContactSection({
             </p>
 
             {formSuccess && (
-              <div id="formSuccess" className="mt-6 bg-emerald-950/80 border border-emerald-800/80 rounded-2xl p-6 text-center text-white">
+              <div
+                id="formSuccess"
+                className="mt-6 bg-emerald-950/80 border border-emerald-800/80 rounded-2xl p-6 text-center text-white"
+              >
                 <span className="w-12 h-12 rounded-full bg-emerald-500 text-white inline-flex items-center justify-center text-xl">
                   <i className="fa-solid fa-check"></i>
                 </span>
-                <h4 className="font-extrabold text-lg mt-3 text-white">Brief received. We’ll be in touch shortly.</h4>
+                <h4 className="font-extrabold text-lg mt-3 text-white">
+                  Brief received. We’ll be in touch shortly.
+                </h4>
                 <p className="text-[13.5px] text-slate-300 mt-1">
-                  Reference: <b id="refId" className="text-emerald-400">{refId}</b> · A copy of your brief is ready below — or reach us instantly:
+                  Reference:{' '}
+                  <b id="refId" className="text-emerald-400">
+                    {refId}
+                  </b>{' '}
+                  · A copy of your brief is ready below — or reach us instantly:
                 </p>
                 <div className="mt-4 flex flex-col sm:flex-row gap-2 justify-center">
                   <a

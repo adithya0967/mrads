@@ -71,7 +71,7 @@ export default function DigitalSection() {
       <div className="container-site py-20 md:py-28 relative z-10">
         {/* Header Reveal */}
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <Reveal variant="fade-down" className="max-w-xl">
+          <Reveal variant="fade-up" className="max-w-xl">
             <p className="eyebrow text-[#929292]">Digital Solutions</p>
             <h2 className="mt-4 font-serif text-[32px] sm:text-[42px] leading-tight tracking-tight text-paper font-normal">
               The online presence that supports the local one.
@@ -79,7 +79,8 @@ export default function DigitalSection() {
           </Reveal>
           <Reveal variant="fade-up" delay={0.15} className="max-w-md">
             <p className="text-[15px] leading-relaxed text-mute">
-              When street and screen ads generate high curiosity, a polished digital presence is where real conversions happen.
+              When street and screen ads generate high curiosity, a polished digital presence is
+              where real conversions happen.
             </p>
           </Reveal>
         </div>
@@ -89,10 +90,14 @@ export default function DigitalSection() {
           {services.map((item, idx) => {
             const IconComponent = item.icon;
             return (
-              <Reveal key={item.title} variant="fade-up" staggerIndex={idx} delay={0.1} className="h-full">
-                <div
-                  className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] flex flex-col justify-between"
-                >
+              <Reveal
+                key={item.title}
+                variant="fade-up"
+                staggerIndex={idx}
+                delay={0.1}
+                className="h-full"
+              >
+                <div className="card-interactive group h-full rounded-xl border border-white/[0.08] bg-[#0D0D0D] p-6 hover:bg-[#141414] flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/[0.04] border border-white/10 text-brand group-hover:bg-brand group-hover:text-white group-hover:scale-110 transition-all duration-200 shadow-sm">
                       <IconComponent size={18} />
@@ -100,9 +105,7 @@ export default function DigitalSection() {
                     <h3 className="mt-5 text-[16px] font-semibold text-paper group-hover:text-white transition-colors">
                       {item.title}
                     </h3>
-                    <p className="mt-2.5 text-[13.5px] leading-relaxed text-mute">
-                      {item.body}
-                    </p>
+                    <p className="mt-2.5 text-[13.5px] leading-relaxed text-mute">{item.body}</p>
                   </div>
                 </div>
               </Reveal>
@@ -116,7 +119,9 @@ export default function DigitalSection() {
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2.5 text-[13px] text-mute group">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand shadow-[0_0_6px_#D81F42]"></span>
-                <span className="text-[#D8D4CE] group-hover:text-white transition-colors">{item}</span>
+                <span className="text-[#D8D4CE] group-hover:text-white transition-colors">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
@@ -129,19 +134,22 @@ export default function DigitalSection() {
           </Reveal>
           <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((item, idx) => (
-              <Reveal key={item.step} variant="fade-up" staggerIndex={idx} delay={0.15} as="li" className="relative">
+              <Reveal
+                key={item.step}
+                variant="fade-up"
+                staggerIndex={idx}
+                delay={0.15}
+                as="li"
+                className="relative"
+              >
                 <div className="flex items-center gap-3">
                   <p className="font-serif text-[30px] font-bold text-brand leading-none">
                     {item.step}
                   </p>
                   <div className="hidden lg:block flex-1 h-px bg-white/[0.08]" />
                 </div>
-                <h3 className="mt-3 text-[16px] font-semibold text-paper">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-mute">
-                  {item.body}
-                </p>
+                <h3 className="mt-3 text-[16px] font-semibold text-paper">{item.title}</h3>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-mute">{item.body}</p>
               </Reveal>
             ))}
           </ol>

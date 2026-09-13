@@ -33,13 +33,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mr. Ads (MR) — Hyperlocal Advertising Partner',
     description: 'Display, Outdoor, Offline & Digital Advertising Solutions.',
-    images: [{ url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1400&auto=format&fit=crop', width: 1200, height: 630 }],
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1400&auto=format&fit=crop',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',

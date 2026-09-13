@@ -16,7 +16,10 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 relative">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div className="reveal in">
-            <p className="text-[12px] font-bold tracking-[.2em] uppercase" style={{ color: '#FF8A8E' }}>
+            <p
+              className="text-[12px] font-bold tracking-[.2em] uppercase"
+              style={{ color: '#FF8A8E' }}
+            >
               <a href="#home" className="hover:text-white">
                 Home
               </a>{' '}
@@ -26,7 +29,8 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
               Website Design, Development & AI Solutions
             </h2>
             <p className="text-slate-400 mt-3">
-              A premium digital foundation so the demand your offline campaign creates has somewhere excellent to land.
+              A premium digital foundation so the demand your offline campaign creates has somewhere
+              excellent to land.
             </p>
             <div className="mt-7 grid gap-3">
               <div className="bg-[#121B2D] border border-slate-800 rounded-2xl p-5 flex gap-4">
@@ -35,7 +39,9 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                 </span>
                 <div>
                   <h3 className="font-extrabold text-white">Business Websites</h3>
-                  <p className="text-slate-400 text-[13.5px] mt-1">Fast, credible company sites built to convert enquiries.</p>
+                  <p className="text-slate-400 text-[13.5px] mt-1">
+                    Fast, credible company sites built to convert enquiries.
+                  </p>
                 </div>
               </div>
               <div className="bg-[#121B2D] border border-slate-800 rounded-2xl p-5 flex gap-4">
@@ -44,7 +50,9 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                 </span>
                 <div>
                   <h3 className="font-extrabold text-white">E-Commerce Solutions</h3>
-                  <p className="text-slate-400 text-[13.5px] mt-1">Catalogues, carts and checkout — ready to sell online.</p>
+                  <p className="text-slate-400 text-[13.5px] mt-1">
+                    Catalogues, carts and checkout — ready to sell online.
+                  </p>
                 </div>
               </div>
               <div className="bg-[#121B2D] border border-slate-800 rounded-2xl p-5 flex gap-4">
@@ -53,7 +61,9 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                 </span>
                 <div>
                   <h3 className="font-extrabold text-white">AI Chatbots</h3>
-                  <p className="text-slate-400 text-[13.5px] mt-1">Instant answers and lead capture, even after hours.</p>
+                  <p className="text-slate-400 text-[13.5px] mt-1">
+                    Instant answers and lead capture, even after hours.
+                  </p>
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -61,13 +71,18 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                   <h3 className="font-extrabold text-[15px] text-white">
                     <i className="fa-solid fa-server mr-2 text-brand"></i>Hosting & Maintenance
                   </h3>
-                  <p className="text-slate-400 text-[13px] mt-1.5">Secure hosting with ongoing care.</p>
+                  <p className="text-slate-400 text-[13px] mt-1.5">
+                    Secure hosting with ongoing care.
+                  </p>
                 </div>
                 <div className="bg-[#121B2D] border border-slate-800 rounded-2xl p-5">
                   <h3 className="font-extrabold text-[15px] text-white">
-                    <i className="fa-solid fa-wand-magic-sparkles mr-2 text-brand"></i>Website Redesign
+                    <i className="fa-solid fa-wand-magic-sparkles mr-2 text-brand"></i>Website
+                    Redesign
                   </h3>
-                  <p className="text-slate-400 text-[13px] mt-1.5">Modernise dated sites without losing SEO.</p>
+                  <p className="text-slate-400 text-[13px] mt-1.5">
+                    Modernise dated sites without losing SEO.
+                  </p>
                 </div>
               </div>
             </div>
@@ -101,7 +116,10 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                       1
                     </span>
                     <span>
-                      <b className="text-white">Discover</b> <span className="text-slate-400">— goals, audience, pages & chatbot flows.</span>
+                      <b className="text-white">Discover</b>{' '}
+                      <span className="text-slate-400">
+                        — goals, audience, pages & chatbot flows.
+                      </span>
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -109,7 +127,10 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                       2
                     </span>
                     <span>
-                      <b className="text-white">Design</b> <span className="text-slate-400">— clean layouts matched to your offline branding.</span>
+                      <b className="text-white">Design</b>{' '}
+                      <span className="text-slate-400">
+                        — clean layouts matched to your offline branding.
+                      </span>
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -117,7 +138,10 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                       3
                     </span>
                     <span>
-                      <b className="text-white">Build & launch</b> <span className="text-slate-400">— developed, tested, SEO-ready and hosted.</span>
+                      <b className="text-white">Build & launch</b>{' '}
+                      <span className="text-slate-400">
+                        — developed, tested, SEO-ready and hosted.
+                      </span>
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -125,7 +149,10 @@ export default function DigitalAiSection({ onPrefill }: DigitalAiSectionProps) {
                       4
                     </span>
                     <span>
-                      <b className="text-white">Support</b> <span className="text-slate-400">— maintenance, updates and improvements.</span>
+                      <b className="text-white">Support</b>{' '}
+                      <span className="text-slate-400">
+                        — maintenance, updates and improvements.
+                      </span>
                     </span>
                   </li>
                 </ol>

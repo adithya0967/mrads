@@ -53,7 +53,7 @@ export default function CountUp({ value, duration = 1.6, className = '' }: Count
           const animate = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
             const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-            
+
             // Luxury ease-out: 1 - Math.pow(1 - progress, 3)
             const easeOutProgress = 1 - Math.pow(1 - progress, 3);
             const currentNum = Math.floor(easeOutProgress * targetNumber);

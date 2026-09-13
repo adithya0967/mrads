@@ -15,7 +15,10 @@ export default function TopBar() {
           <a href="tel:+919686544644" className="hover:text-white flex items-center gap-1.5">
             <i className="fa-solid fa-phone text-[11px] text-white/60"></i> +91 96865 44644
           </a>
-          <a href="mailto:knowus@mr-ads.in" className="hidden sm:flex hover:text-white items-center gap-1.5">
+          <a
+            href="mailto:knowus@mr-ads.in"
+            className="hidden sm:flex hover:text-white items-center gap-1.5"
+          >
             <i className="fa-regular fa-envelope text-[12px] text-white/60"></i> knowus@mr-ads.in
           </a>
         </div>

@@ -60,7 +60,10 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative overflow-hidden bg-ink pt-8 lg:pt-14 pb-12 lg:pb-16 border-b border-line">
+    <section
+      id="home"
+      className="relative overflow-hidden bg-ink pt-8 lg:pt-14 pb-12 lg:pb-16 border-b border-line"
+    >
       {/* Subtle Warm Atmospheric Background Lighting (Seamless with website theme) */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-5 w-[650px] h-[650px] rounded-full bg-brand/10 blur-[150px]" />
@@ -70,12 +73,10 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
           {/* =========================================================================
            * LEFT COLUMN: Punchy Value Proposition & Conversion Controls
            * ========================================================================= */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-
             {/* Eyebrow Pill Badge (Red outline with glowing beacon) */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand/10 border border-brand/40 shadow-[0_0_20px_rgba(196,30,58,0.2)] w-fit">
               <span className="relative flex h-2 w-2">
@@ -83,7 +84,7 @@ export default function HeroSection() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
               </span>
               <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-brand-hover">
-                Bengaluru's Premium Advertising Network
+                Bengaluru&apos;s Premium Advertising Network
               </span>
             </div>
 
@@ -97,7 +98,9 @@ export default function HeroSection() {
 
             {/* Subtitle Value Proposition */}
             <p className="text-[15px] sm:text-[17px] text-paper/85 font-normal leading-relaxed max-w-xl">
-              Mr. Ads connects brands with high-intent audiences across Bengaluru through 30,000+ digital screens, transit media, Q-commerce inserts, corporate gifting, and bespoke digital solutions.
+              Mr. Ads connects brands with high-intent audiences across Bengaluru through 30,000+
+              digital screens, transit media, Q-commerce inserts, corporate gifting, and bespoke
+              digital solutions.
             </p>
 
             {/* Feature / Channel Highlight Chips */}
@@ -167,14 +170,12 @@ export default function HeroSection() {
                 Street-by-Street Planning
               </span>
             </div>
-
           </div>
 
           {/* =========================================================================
            * RIGHT COLUMN: Next-Gen Smart DOOH Display Kiosk & Live Metrics Console
            * ========================================================================= */}
           <div className="lg:col-span-5 relative w-full flex flex-col items-center">
-
             {/* Interactive Sector Switcher Pills (Allows visitor to preview formats) */}
             <div className="w-full flex items-center justify-between gap-1 mb-2.5 px-1 overflow-x-auto pb-1 scrollbar-none">
               <span className="text-[10px] font-bold tracking-wider uppercase text-mute shrink-0 mr-1">
@@ -182,17 +183,17 @@ export default function HeroSection() {
               </span>
               <div className="flex items-center gap-1.5">
                 {SAMPLE_CAMPAIGNS.slice(0, 5).map((camp, idx) => {
-                  const isSelected = (currentIndex % totalAds) === idx;
+                  const isSelected = currentIndex % totalAds === idx;
                   const label =
                     camp.layoutVariant === 'culinary' && camp.brandName.includes('BISTRO')
                       ? 'Dining'
                       : camp.layoutVariant === 'telecom'
-                      ? '5G'
-                      : camp.layoutVariant === 'fashion'
-                      ? 'Luxury'
-                      : camp.layoutVariant === 'automotive'
-                      ? 'Auto'
-                      : 'Coffee';
+                        ? '5G'
+                        : camp.layoutVariant === 'fashion'
+                          ? 'Luxury'
+                          : camp.layoutVariant === 'automotive'
+                            ? 'Auto'
+                            : 'Coffee';
 
                   return (
                     <button
@@ -214,10 +215,8 @@ export default function HeroSection() {
 
             {/* Smart DOOH Screen Enclosure (Carbon Graphite Bezel matching website aesthetic) */}
             <div className="w-full p-2.5 sm:p-3.5 bg-gradient-to-b from-[#242424] via-graphite to-ink rounded-[26px] sm:rounded-[34px] border-2 border-line shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95),0_0_35px_rgba(196,30,58,0.15)] relative">
-
               {/* Inner Digital Screen */}
               <div className="w-full relative rounded-[18px] sm:rounded-[24px] overflow-hidden border border-line-soft bg-black aspect-[16/10] shadow-2xl">
-
                 {/* Top HUD Floating Overlays ([● LIVE] & [GOURMET DINING]) */}
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-30 flex items-center gap-2 pointer-events-none">
                   <div className="flex items-center gap-1.5 bg-black/75 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full shadow-md">
@@ -266,9 +265,7 @@ export default function HeroSection() {
                     style={{ width: `${progress}%` }}
                   />
                 </div>
-
               </div>
-
             </div>
 
             {/* =========================================================================
@@ -276,7 +273,6 @@ export default function HeroSection() {
              * ========================================================================= */}
             <div className="w-full mt-3.5 bg-graphite/95 backdrop-blur-md border border-line rounded-2xl p-4 sm:p-5 shadow-2xl shadow-black/80">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 items-center">
-
                 {/* Metric 1: Active Screens + Online Now Pulse */}
                 <div className="flex flex-col">
                   <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-mute">
@@ -317,17 +313,12 @@ export default function HeroSection() {
                     <span className="text-xl sm:text-2xl font-black tracking-tight text-paper">
                       450+
                     </span>
-                    <span className="ml-1.5 text-[11px] font-medium text-mute">
-                      Bengaluru
-                    </span>
+                    <span className="ml-1.5 text-[11px] font-medium text-mute">Bengaluru</span>
                   </div>
                 </div>
-
               </div>
             </div>
-
           </div>
-
         </div>
 
         {/* =========================================================================
@@ -376,7 +367,6 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

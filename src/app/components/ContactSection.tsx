@@ -21,7 +21,9 @@ export default function ContactSection() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -53,33 +55,35 @@ export default function ContactSection() {
             {/* Contact info card */}
             <div className="bg-accent text-accent-foreground rounded-3xl p-8 flex flex-col gap-6">
               <div>
-                <div className="text-white/60 text-xs font-bold uppercase tracking-[0.4em] mb-2">Contact Us</div>
-                <h3 className="font-extrabold text-xl text-white">Connect with us to plan your campaign across high-footfall locations.</h3>
+                <div className="text-white/60 text-xs font-bold uppercase tracking-[0.4em] mb-2">
+                  Contact Us
+                </div>
+                <h3 className="font-extrabold text-xl text-white">
+                  Connect with us to plan your campaign across high-footfall locations.
+                </h3>
               </div>
 
               <div className="flex flex-col gap-4">
-                <a
-                  href="tel:+919686544644"
-                  className="flex items-center gap-3 group"
-                >
+                <a href="tel:+919686544644" className="flex items-center gap-3 group">
                   <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                     <Icon name="PhoneIcon" size={18} className="text-white" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Call / WhatsApp</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">
+                      Call / WhatsApp
+                    </div>
                     <div className="font-bold text-white">+91 96865 44644</div>
                   </div>
                 </a>
 
-                <a
-                  href="mailto:Knowus@mr-ads.in"
-                  className="flex items-center gap-3 group"
-                >
+                <a href="mailto:Knowus@mr-ads.in" className="flex items-center gap-3 group">
                   <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                     <Icon name="EnvelopeIcon" size={18} className="text-white" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Email Us</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">
+                      Email Us
+                    </div>
                     <div className="font-bold text-white">Knowus@mr-ads.in</div>
                   </div>
                 </a>
@@ -89,7 +93,9 @@ export default function ContactSection() {
                     <Icon name="MapPinIcon" size={18} className="text-white" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Location</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">
+                      Location
+                    </div>
                     <div className="font-bold text-white">Bengaluru, Karnataka</div>
                   </div>
                 </div>
@@ -119,7 +125,11 @@ export default function ContactSection() {
             {/* Scarcity card */}
             <div className="scarcity-strip rounded-2xl p-6 border border-red-900/40">
               <div className="flex items-start gap-3">
-                <Icon name="ExclamationTriangleIcon" size={18} className="text-red-400 shrink-0 mt-0.5" />
+                <Icon
+                  name="ExclamationTriangleIcon"
+                  size={18}
+                  className="text-red-400 shrink-0 mt-0.5"
+                />
                 <div>
                   <div className="font-bold text-red-300 text-sm mb-1">Slots Filling Fast</div>
                   <p className="text-red-400/80 text-xs leading-relaxed">
@@ -136,11 +146,17 @@ export default function ContactSection() {
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-green-900/30 flex items-center justify-center">
-                    <Icon name="CheckCircleIcon" size={32} variant="solid" className="text-green-400" />
+                    <Icon
+                      name="CheckCircleIcon"
+                      size={32}
+                      variant="solid"
+                      className="text-green-400"
+                    />
                   </div>
                   <h3 className="font-extrabold text-xl text-foreground">Request Received!</h3>
                   <p className="text-muted-foreground text-sm max-w-xs">
-                    Thank you for your interest. Our team will call you back within 24 hours to discuss available slots.
+                    Thank you for your interest. Our team will call you back within 24 hours to
+                    discuss available slots.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -153,7 +169,10 @@ export default function ContactSection() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      <label
+                        htmlFor="name"
+                        className="text-xs font-bold uppercase tracking-widest text-muted-foreground"
+                      >
                         Your Name *
                       </label>
                       <input
@@ -168,7 +187,10 @@ export default function ContactSection() {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="business" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      <label
+                        htmlFor="business"
+                        className="text-xs font-bold uppercase tracking-widest text-muted-foreground"
+                      >
                         Business Name *
                       </label>
                       <input
@@ -186,7 +208,10 @@ export default function ContactSection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      <label
+                        htmlFor="phone"
+                        className="text-xs font-bold uppercase tracking-widest text-muted-foreground"
+                      >
                         Phone Number *
                       </label>
                       <input
@@ -201,7 +226,10 @@ export default function ContactSection() {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="budget" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      <label
+                        htmlFor="budget"
+                        className="text-xs font-bold uppercase tracking-widest text-muted-foreground"
+                      >
                         Monthly Budget
                       </label>
                       <select
@@ -221,7 +249,10 @@ export default function ContactSection() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                    <label
+                      htmlFor="message"
+                      className="text-xs font-bold uppercase tracking-widest text-muted-foreground"
+                    >
                       Message (Optional)
                     </label>
                     <textarea
@@ -244,7 +275,7 @@ export default function ContactSection() {
                   </button>
 
                   <p className="text-center text-xs text-muted-foreground">
-                    No commitment required. We'll reach out within 24 hours.
+                    No commitment required. We&apos;ll reach out within 24 hours.
                   </p>
                 </form>
               )}

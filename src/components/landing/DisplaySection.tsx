@@ -22,13 +22,20 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
         <div className="reveal in">
           <p className="crumb">
-            <a href="#home">Home</a>{' / '}<a href="#solutions">Solutions</a>{' / Display Advertising'}
+            <a href="#home">Home</a>
+            {' / '}
+            <a href="#solutions">Solutions</a>
+            {' / Display Advertising'}
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mt-2">
             <div>
-              <h2 className="serif text-3xl sm:text-[42px] tracking-tight text-white">Display Advertising</h2>
+              <h2 className="serif text-3xl sm:text-[42px] tracking-tight text-white">
+                Display Advertising
+              </h2>
               <p className="text-slate-400 mt-3 max-w-2xl">
-                Premium digital screens placed where attention lives — dining, living, working, shopping, training and playing. Each environment below shows Audience · Placement · Format · Frequency · Operating Hours.
+                Premium digital screens placed where attention lives — dining, living, working,
+                shopping, training and playing. Each environment below shows Audience · Placement ·
+                Format · Frequency · Operating Hours.
               </p>
             </div>
             <a
@@ -44,7 +51,12 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
         </div>
 
         {/* Env sub-nav */}
-        <div className="mt-8 flex gap-2 overflow-x-auto pb-2 reveal in" id="envTabs" role="tablist" aria-label="Display environments">
+        <div
+          className="mt-8 flex gap-2 overflow-x-auto pb-2 reveal in"
+          id="envTabs"
+          role="tablist"
+          aria-label="Display environments"
+        >
           <button
             onClick={() => handleTabClick('env-restaurant')}
             className={`tab-btn text-[13px] font-bold px-4 py-2.5 rounded-full border border-slate-700 bg-[#121B2D] text-slate-200 ${
@@ -105,7 +117,10 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
 
         <div className="grid gap-6 mt-6">
           {/* RESTAURANT */}
-          <article id="env-restaurant" className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32">
+          <article
+            id="env-restaurant"
+            className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32"
+          >
             <div className="grid lg:grid-cols-2">
               <div className="relative h-64 lg:h-auto img-zoom overflow-hidden">
                 <img
@@ -122,28 +137,39 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <p className="crumb">Display · Restaurant</p>
                 <h3 className="text-2xl font-extrabold mt-2 text-white">Restaurant Displays</h3>
                 <p className="text-slate-400 text-[14.5px] mt-2 leading-relaxed">
-                  Reach 2,000–3,000 customers daily in premium dining & waiting areas. High-intent engagement while guests wait, order and dine — repeated every 5 minutes.
+                  Reach 2,000–3,000 customers daily in premium dining & waiting areas. High-intent
+                  engagement while guests wait, order and dine — repeated every 5 minutes.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Audience</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Diners & waiting guests</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Diners & waiting guests
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Placement</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Dining / waiting areas</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Dining / waiting areas
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Format</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">50” screen · 25-sec slot</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      50” screen · 25-sec slot
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Frequency</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">180 plays/day · every 5 min</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      180 plays/day · every 5 min
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4 col-span-2">
                     <p className="spec-label">Operating Hours</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">7:30 AM – 10 PM (14.5 H)</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      7:30 AM – 10 PM (14.5 H)
+                    </p>
                     <div className="mt-2 h-1.5 bg-[#090D16] rounded-full overflow-hidden border border-slate-700">
                       <div className="h-full bg-brand rounded-full" style={{ width: '60%' }}></div>
                     </div>
@@ -175,7 +201,10 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
           </article>
 
           {/* APARTMENT */}
-          <article id="env-apartment" className="env-card bg-[#121B2D] rounded-3xl border-2 border-slate-700 shadow-card overflow-hidden reveal in scroll-mt-32">
+          <article
+            id="env-apartment"
+            className="env-card bg-[#121B2D] rounded-3xl border-2 border-slate-700 shadow-card overflow-hidden reveal in scroll-mt-32"
+          >
             <div className="grid lg:grid-cols-2">
               <div className="p-6 sm:p-9 order-2 lg:order-1">
                 <p className="crumb">Display · Apartment</p>
@@ -186,7 +215,8 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                   </span>
                 </h3>
                 <p className="text-slate-400 text-[14.5px] mt-2 leading-relaxed">
-                  Reach households in premium apartments via lift & lobby screens. Influence household decisions and build lasting local recall, right at home.
+                  Reach households in premium apartments via lift & lobby screens. Influence
+                  household decisions and build lasting local recall, right at home.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
@@ -195,15 +225,21 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Placement</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Lift / lobby screens</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Lift / lobby screens
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Format</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">32” screen · 10-sec slot</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      32” screen · 10-sec slot
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Frequency</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">720 plays/day · every 90 sec</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      720 plays/day · every 90 sec
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4 col-span-2">
                     <p className="spec-label">Operating Hours</p>
@@ -216,10 +252,18 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <div className="mt-5">
                   <p className="spec-label mb-2">Also available</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Posters</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Digital screens</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Bike stations</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">BTL activation</span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Posters
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Digital screens
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Bike stations
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      BTL activation
+                    </span>
                   </div>
                 </div>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3 items-center">
@@ -250,7 +294,10 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
           </article>
 
           {/* CORPORATE */}
-          <article id="env-corporate" className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32">
+          <article
+            id="env-corporate"
+            className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32"
+          >
             <div className="grid lg:grid-cols-2">
               <div className="relative h-64 lg:h-auto img-zoom overflow-hidden">
                 <img
@@ -267,24 +314,33 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <p className="crumb">Display · Corporate</p>
                 <h3 className="text-2xl font-extrabold mt-2 text-white">Corporate Displays</h3>
                 <p className="text-slate-400 text-[14.5px] mt-2 leading-relaxed">
-                  Working professionals & decision-makers in premium placements. Repeated visibility among high-value urban audiences through the workday.
+                  Working professionals & decision-makers in premium placements. Repeated visibility
+                  among high-value urban audiences through the workday.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Audience</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Professionals & decision-makers</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Professionals & decision-makers
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Placement</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Premium office points</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Premium office points
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Format</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">32” screen · 10-sec slot</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      32” screen · 10-sec slot
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Frequency</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">420 plays/day · every 2 min</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      420 plays/day · every 2 min
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4 col-span-2">
                     <p className="spec-label">Operating Hours</p>
@@ -297,9 +353,15 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <div className="mt-5">
                   <p className="spec-label mb-2">Mediums</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Large-format digital displays</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">BTL activation</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Static screens</span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Large-format digital displays
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      BTL activation
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Static screens
+                    </span>
                   </div>
                 </div>
                 <div className="mt-6">
@@ -316,13 +378,17 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
           </article>
 
           {/* MALL */}
-          <article id="env-mall" className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32">
+          <article
+            id="env-mall"
+            className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32"
+          >
             <div className="grid lg:grid-cols-2">
               <div className="p-6 sm:p-9 order-2 lg:order-1">
                 <p className="crumb">Display · Mall</p>
                 <h3 className="text-2xl font-extrabold mt-2 text-white">Mall Displays</h3>
                 <p className="text-slate-400 text-[14.5px] mt-2 leading-relaxed">
-                  High-footfall shoppers in shopping & entertainment environments. Influence purchase decisions through repeated visibility close to the point of sale.
+                  High-footfall shoppers in shopping & entertainment environments. Influence
+                  purchase decisions through repeated visibility close to the point of sale.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
@@ -331,19 +397,27 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Placement</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Retail & entertainment zones</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Retail & entertainment zones
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Format</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Digital screens + BTL</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Digital screens + BTL
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Frequency</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Repeated visibility, all day</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Repeated visibility, all day
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4 col-span-2">
                     <p className="spec-label">Operating Hours</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">10 AM – 10 PM (12 H)</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      10 AM – 10 PM (12 H)
+                    </p>
                     <div className="mt-2 h-1.5 bg-[#090D16] rounded-full overflow-hidden border border-slate-700">
                       <div className="h-full bg-brand rounded-full" style={{ width: '50%' }}></div>
                     </div>
@@ -352,10 +426,18 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <div className="mt-5">
                   <p className="spec-label mb-2">Mediums</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">BTL activation</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Digital screens</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Bike station</span>
-                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">Posters</span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      BTL activation
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Digital screens
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Bike station
+                    </span>
+                    <span className="text-[12px] font-bold bg-[#162238] border border-slate-700 text-slate-200 px-3 py-1.5 rounded-full">
+                      Posters
+                    </span>
                   </div>
                 </div>
                 <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -383,7 +465,10 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
           </article>
 
           {/* FITNESS */}
-          <article id="env-fitness" className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32">
+          <article
+            id="env-fitness"
+            className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32"
+          >
             <div className="grid lg:grid-cols-2">
               <div className="relative h-64 lg:h-auto img-zoom overflow-hidden">
                 <img
@@ -400,24 +485,33 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <p className="crumb">Display · Fitness</p>
                 <h3 className="text-2xl font-extrabold mt-2 text-white">Fitness Space Displays</h3>
                 <p className="text-slate-400 text-[14.5px] mt-2 leading-relaxed">
-                  Health-conscious, active audiences in premium fitness-centre placements. Reach young urban consumers in workout & waiting areas with high dwell time.
+                  Health-conscious, active audiences in premium fitness-centre placements. Reach
+                  young urban consumers in workout & waiting areas with high dwell time.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Audience</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Active & health-conscious</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Active & health-conscious
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Placement</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">Workout / waiting areas</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      Workout / waiting areas
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Format</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">55” screen · 15-sec slot</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      55” screen · 15-sec slot
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4">
                     <p className="spec-label">Frequency</p>
-                    <p className="font-bold text-[13.5px] mt-1.5 text-white">480 plays/day · every 2 min</p>
+                    <p className="font-bold text-[13.5px] mt-1.5 text-white">
+                      480 plays/day · every 2 min
+                    </p>
                   </div>
                   <div className="bg-[#162238] border border-slate-700/80 rounded-2xl p-4 col-span-2">
                     <p className="spec-label">Operating Hours</p>
@@ -442,7 +536,10 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
 
           {/* PLAY + PG */}
           <div className="grid lg:grid-cols-2 gap-6">
-            <article id="env-play" className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32 flex flex-col">
+            <article
+              id="env-play"
+              className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in scroll-mt-32 flex flex-col"
+            >
               <div className="h-52 overflow-hidden img-zoom relative">
                 <img
                   src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=900&auto=format&fit=crop"
@@ -458,7 +555,8 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <p className="crumb">Display · Play Zone</p>
                 <h3 className="text-xl font-extrabold mt-2 text-white">Play Zone Displays</h3>
                 <p className="text-slate-400 text-[14px] mt-2 leading-relaxed">
-                  Parents, families and young children in play / waiting areas. Shape family purchase conversations where kids and parents spend quality time.
+                  Parents, families and young children in play / waiting areas. Shape family
+                  purchase conversations where kids and parents spend quality time.
                 </p>
                 <div className="grid grid-cols-2 gap-3 mt-5 text-[13px]">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-xl p-3.5">
@@ -478,7 +576,9 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                     <p className="font-bold mt-1 text-white">Per facility hours</p>
                   </div>
                 </div>
-                <p className="text-[12px] text-slate-400 mt-4 font-semibold">Mediums: digital screens · BTL activation</p>
+                <p className="text-[12px] text-slate-400 mt-4 font-semibold">
+                  Mediums: digital screens · BTL activation
+                </p>
                 <a
                   href="#contact"
                   onClick={() => onPrefill('Play Zone Displays')}
@@ -489,7 +589,10 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
               </div>
             </article>
 
-            <article id="env-pg" className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in reveal-d1 scroll-mt-32 flex flex-col">
+            <article
+              id="env-pg"
+              className="env-card bg-[#121B2D] rounded-3xl border border-slate-800 shadow-card overflow-hidden reveal in reveal-d1 scroll-mt-32 flex flex-col"
+            >
               <div className="h-52 overflow-hidden img-zoom relative">
                 <img
                   src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=900&auto=format&fit=crop"
@@ -505,7 +608,8 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                 <p className="crumb">Display · PG & Hostel</p>
                 <h3 className="text-xl font-extrabold mt-2 text-white">PG & Hostel Displays</h3>
                 <p className="text-slate-400 text-[14px] mt-2 leading-relaxed">
-                  Students and young working professionals via common-area visibility. Perfect for brands, apps, food and local businesses targeting youth.
+                  Students and young working professionals via common-area visibility. Perfect for
+                  brands, apps, food and local businesses targeting youth.
                 </p>
                 <div className="grid grid-cols-2 gap-3 mt-5 text-[13px]">
                   <div className="bg-[#162238] border border-slate-700/80 rounded-xl p-3.5">
@@ -525,7 +629,9 @@ export default function DisplaySection({ onPrefill }: DisplaySectionProps) {
                     <p className="font-bold mt-1 text-white">Per facility hours</p>
                   </div>
                 </div>
-                <p className="text-[12px] text-slate-400 mt-4 font-semibold">Mediums: digital screens · posters · BTL activation</p>
+                <p className="text-[12px] text-slate-400 mt-4 font-semibold">
+                  Mediums: digital screens · posters · BTL activation
+                </p>
                 <a
                   href="#contact"
                   onClick={() => onPrefill('PG & Hostel Displays')}

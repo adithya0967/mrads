@@ -5,12 +5,24 @@ import React from 'react';
 const brandLogos = [
   { name: 'Nandini', initials: 'NN', color: 'bg-blue-950/40 text-blue-300 border-blue-900/40' },
   { name: 'ZEE5', initials: 'Z5', color: 'bg-purple-950/40 text-purple-300 border-purple-900/40' },
-  { name: 'Bachpan Play School', initials: 'BP', color: 'bg-orange-950/40 text-orange-300 border-orange-900/40' },
+  {
+    name: 'Bachpan Play School',
+    initials: 'BP',
+    color: 'bg-orange-950/40 text-orange-300 border-orange-900/40',
+  },
   { name: 'Decathlon', initials: 'DC', color: 'bg-blue-950/40 text-blue-300 border-blue-900/40' },
   { name: 'Lenskart', initials: 'LK', color: 'bg-teal-950/40 text-teal-300 border-teal-900/40' },
   { name: 'Boat Lifestyle', initials: 'BL', color: 'bg-muted text-foreground/70 border-border' },
-  { name: 'Byju\'s', initials: 'BJ', color: 'bg-indigo-950/40 text-indigo-300 border-indigo-900/40' },
-  { name: 'Swiggy', initials: 'SW', color: 'bg-orange-950/40 text-orange-300 border-orange-900/40' },
+  {
+    name: "Byju's",
+    initials: 'BJ',
+    color: 'bg-indigo-950/40 text-indigo-300 border-indigo-900/40',
+  },
+  {
+    name: 'Swiggy',
+    initials: 'SW',
+    color: 'bg-orange-950/40 text-orange-300 border-orange-900/40',
+  },
 ];
 
 const doubledLogos = [...brandLogos, ...brandLogos];
