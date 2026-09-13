@@ -1,38 +1,44 @@
 'use client';
 
 import React from 'react';
-import TargetShell from '@/components/TargetShell';
-import Hero from '@/components/hero/Hero';
-import PresenceSection from '@/components/landing/PresenceSection';
-import AdvantageSection from '@/components/landing/AdvantageSection';
-import WhySection from '@/components/landing/WhySection';
-import SolutionsSection from '@/components/landing/SolutionsSection';
-import DigitalSection from '@/components/landing/DigitalSection';
-import FinalCta from '@/components/FinalCta';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import HeroSection from './components/HeroSection';
+import HeroStatsSection from './components/HeroStatsSection';
+import AboutSection from './components/AboutSection';
+import OfferSection from './components/OfferSection';
+import LocationsSection from './components/LocationsSection';
+import NetworkMapSection from './components/NetworkMapSection';
+import WhyItWorksSection from './components/WhyItWorksSection';
+import HowItWorksSection from './components/HowItWorksSection';
+import PricingSection from './components/PricingSection';
+import SocialProofSection from './components/SocialProofSection';
+import DemoVideoSection from './components/DemoVideoSection';
+import ContactSection from './components/ContactSection';
+import WhatsAppButton from './components/WhatsAppButton';
 
-export default function HomePage() {
+export default function LandingPage() {
   return (
-    <TargetShell>
-      {/* Production-Quality Mr. Ads Hero Experience: Own the City's Attention */}
-      <Hero />
+    <div className="min-h-screen bg-[#090A0C] text-[#F5F5F5] font-sans antialiased">
+      <Header />
 
-      {/* 2. Presence section: Where your audience is. */}
-      <PresenceSection />
+      <main>
+        <HeroSection />
+        <HeroStatsSection />
+        <AboutSection />
+        <OfferSection />
+        <LocationsSection />
+        <NetworkMapSection />
+        <WhyItWorksSection />
+        <HowItWorksSection />
+        <PricingSection />
+        <SocialProofSection />
+        <DemoVideoSection />
+        <ContactSection />
+      </main>
 
-      {/* 3. The hyperlocal advantage: The problem vs The Mr. Ads approach */}
-      <AdvantageSection />
-
-      {/* 4. Why Mr. Ads: Six reasons brands stay with one partner. */}
-      <WhySection />
-
-      {/* 5. Advertising solutions: One network. Several ways to be seen. */}
-      <SolutionsSection />
-
-      {/* 6. Digital solutions: The online presence that supports the local one. */}
-      <DigitalSection />
-
-      {/* 7. Final Call to Action */}
-      <FinalCta />
-    </TargetShell>
+      <Footer />
+      <WhatsAppButton />
+    </div>
   );
 }
