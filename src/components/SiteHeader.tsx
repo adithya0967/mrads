@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -27,9 +28,15 @@ export default function SiteHeader() {
       <div className="container-site flex h-[68px] items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Mr. Ads home">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border border-line bg-graphite">
-            <span className="font-serif text-[17px] leading-none text-paper">M</span>
-            <span className="mb-2 ml-px h-1.5 w-1.5 rounded-[1px] bg-brand"></span>
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border border-line bg-paper p-1">
+            <Image
+              src="/assets/images/app_logo.svg"
+              alt="Mr. Ads logo"
+              width={24}
+              height={20}
+              className="h-auto w-full"
+              priority
+            />
           </span>
           <span className="min-w-0">
             <span className="block font-serif text-[19px] leading-none tracking-tight text-paper">Mr. Ads</span>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -36,8 +37,15 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="flex items-center gap-3 group" aria-label="Mr Ads Home">
-            <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center text-white font-extrabold text-lg tracking-tight shadow-card group-hover:scale-105 transition">
-              MR
+            <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center p-1.5 shadow-card group-hover:scale-105 transition">
+              <Image
+                src="/assets/images/app_logo.svg"
+                alt="Mr. Ads logo"
+                width={32}
+                height={27}
+                className="w-full h-auto"
+                priority
+              />
             </div>
             <div className="leading-none">
               <div className="font-extrabold text-[19px] tracking-tight text-white">

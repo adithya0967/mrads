@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLinks } from '@/data/siteNavigation';
 
@@ -10,9 +11,14 @@ export default function SiteFooter() {
           {/* Brand Info */}
           <div className="md:col-span-5">
             <Link href="/" className="inline-flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-line bg-slate">
-                <span className="font-serif text-[17px] leading-none text-paper">M</span>
-                <span className="mb-2 ml-px h-1.5 w-1.5 rounded-[1px] bg-brand"></span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-line bg-paper p-1">
+                <Image
+                  src="/assets/images/app_logo.svg"
+                  alt="Mr. Ads logo"
+                  width={24}
+                  height={20}
+                  className="h-auto w-full"
+                />
               </span>
               <span className="font-serif text-[20px] text-paper">Mr. Ads</span>
             </Link>
