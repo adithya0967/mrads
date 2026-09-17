@@ -3,12 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 export type RevealVariant =
-  | 'fade-up'
-  | 'fade-down'
-  | 'slide-left'
-  | 'slide-right'
-  | 'scale-up'
-  | 'blur-in';
+  'fade-up' | 'fade-down' | 'slide-left' | 'slide-right' | 'scale-up' | 'blur-in';
 
 interface RevealProps {
   children: React.ReactNode;

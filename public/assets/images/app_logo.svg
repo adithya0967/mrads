@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 54" width="220" height="54" fill="none">
+  <g>
+    <path d="M 20 4 L 74 4 A 6 6 0 0 1 80 10 L 80 32 A 6 6 0 0 1 74 38 L 10 38 A 6 6 0 0 1 4 32 L 4 20" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 42 38 L 42 48" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="106" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="-0.01em" fill="currentColor">Mr. Ads</text>
+</svg>

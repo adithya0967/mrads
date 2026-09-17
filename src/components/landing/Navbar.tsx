@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import AppLogoMark from '@/components/ui/AppLogoMark';
 
 interface NavbarProps {
   mobileMenuOpen: boolean;
@@ -31,15 +32,12 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen, navShadow }:
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[72px]">
-          <Link href="/" className="flex items-center gap-3 group" aria-label="Mr Ads Home">
-            <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center text-white font-extrabold text-lg tracking-tight shadow-card group-hover:scale-105 transition">
-              MR
+          <Link href="/" className="flex items-center gap-3 group" aria-label="Mr. Ads Home">
+            <div className="w-10 h-10 rounded-xl bg-brand flex items-center justify-center text-white shadow-card group-hover:scale-105 transition">
+              <AppLogoMark size={22} className="text-white" />
             </div>
             <div className="leading-none">
-              <div className="font-extrabold text-[19px] tracking-tight text-white">
-                Mr. Ads{' '}
-                <span className="font-medium text-slate-400 text-[13px] align-middle">| MR</span>
-              </div>
+              <div className="font-extrabold text-[19px] tracking-tight text-white">Mr. Ads</div>
               <div className="text-[11px] font-semibold tracking-[.16em] uppercase text-brand mt-1">
                 Hyperlocal Advertising
               </div>

@@ -47,15 +47,13 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group" aria-label="Mr. Ads Home">
+          <a href="#" className="flex items-center gap-2.5 group" aria-label="Mr. Ads Home">
             <AppLogo
-              size={36}
-              iconName="TvIcon"
-              className="group-hover:scale-110 transition-transform duration-300"
+              variant="mark"
+              size={28}
+              className="group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="font-extrabold text-lg tracking-tight text-foreground">
-              Mr.<span className="text-accent">Ads</span>
-            </span>
+            <span className="font-extrabold text-lg tracking-tight text-foreground">Mr. Ads</span>
           </a>
 
           {/* Desktop Nav */}

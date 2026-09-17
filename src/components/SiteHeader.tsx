@@ -11,6 +11,7 @@ import {
   navLinks,
   servicesLinks,
 } from '@/data/siteNavigation';
+import AppLogoMark from '@/components/ui/AppLogoMark';
 
 export { phoneText, phoneTel, contactEmail, contactMailto, navLinks, servicesLinks };
 
@@ -87,15 +88,17 @@ export default function SiteHeader() {
           scrolled ? 'h-[62px]' : 'h-[72px]'
         }`}
       >
-        {/* Left: Minimal & Premium Mr Ads Logo / Wordmark */}
-        <Link href="/" className="flex items-center gap-3.5 group" aria-label="Mr Ads Home">
+        {/* Left: Official Mr. Ads Logo / Wordmark */}
+        <Link href="/" className="flex items-center gap-3 group" aria-label="Mr. Ads Home">
           <div className="relative flex items-center justify-center w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 group-hover:border-[#C83A4B]/60 group-hover:bg-[#C83A4B]/10 transition-all duration-200">
-            <span className="font-serif text-[18px] font-bold text-[#F4F1EC] leading-none">M</span>
-            <span className="absolute bottom-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#C83A4B] shadow-[0_0_8px_#C83A4B]"></span>
+            <AppLogoMark
+              size={20}
+              className="text-[#F4F1EC] group-hover:text-white transition-colors"
+            />
           </div>
           <div className="flex flex-col">
-            <span className="font-sans font-extrabold text-[17px] tracking-[0.06em] text-[#F4F1EC] uppercase leading-tight group-hover:text-white transition-colors">
-              MR. ADS
+            <span className="font-sans font-extrabold text-[17px] tracking-[-0.01em] text-[#F4F1EC] leading-tight group-hover:text-white transition-colors">
+              Mr. Ads
             </span>
             <span className="text-[9px] font-semibold tracking-[0.22em] text-[#929292] uppercase leading-none mt-0.5">
               Hyperlocal Advertising

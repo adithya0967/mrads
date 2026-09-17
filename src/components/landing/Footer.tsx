@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import AppLogoMark from '@/components/ui/AppLogoMark';
 
 export default function Footer() {
   return (
@@ -8,8 +9,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-extrabold">
-                MR
+              <div className="w-10 h-10 rounded-xl bg-brand flex items-center justify-center text-white shadow-card">
+                <AppLogoMark size={22} className="text-white" />
               </div>
               <div>
                 <p className="font-extrabold text-lg">Mr. Ads</p>

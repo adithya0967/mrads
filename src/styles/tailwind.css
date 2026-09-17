@@ -871,7 +871,6 @@ details[open] .faq-plus {
   overflow: hidden;
 }
 
-
 /* Reduced Motion Safety */
 @media (prefers-reduced-motion: reduce) {
   *,

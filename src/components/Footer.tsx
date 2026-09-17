@@ -17,11 +17,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-10">
           {/* Left: Logo + Tagline */}
           <div className="flex flex-col gap-3 max-w-xs">
-            <div className="flex items-center gap-2">
-              <AppLogo size={32} iconName="TvIcon" />
-              <span className="font-extrabold text-lg tracking-tight text-foreground">
-                Mr.<span className="text-accent">Ads</span>
-              </span>
+            <div className="flex items-center gap-2.5">
+              <AppLogo variant="mark" size={28} />
+              <span className="font-extrabold text-lg tracking-tight text-foreground">Mr. Ads</span>
             </div>
             <p className="text-sm text-muted-foreground font-medium leading-relaxed">
               India&apos;s Emerging Hyperlocal Advertising Network
