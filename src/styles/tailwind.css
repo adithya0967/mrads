@@ -825,7 +825,8 @@ details[open] .faq-plus {
 /* Animated Nav Sliding Underline */
 .nav-link-animated {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   color: #929292;
   transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }

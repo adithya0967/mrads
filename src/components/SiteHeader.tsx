@@ -129,7 +129,8 @@ export default function SiteHeader() {
                 >
                   <Link
                     href="/solutions"
-                    className={`nav-link-animated inline-flex items-center gap-1.5 py-1 text-[13.5px] font-medium tracking-[0.03em] ${
+                    onClick={() => setSolutionsDropdown(false)}
+                    className={`nav-link-animated inline-flex items-center gap-1.5 py-1 text-[13.5px] font-medium tracking-[0.03em] whitespace-nowrap ${
                       isActive ? 'is-active text-[#F4F1EC]' : 'text-[#929292]'
                     }`}
                   >
@@ -141,7 +142,7 @@ export default function SiteHeader() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
-                      className={`text-[#929292] transition-transform duration-200 ${
+                      className={`shrink-0 text-[#929292] transition-transform duration-200 ${
                         solutionsDropdown ? 'rotate-180 text-brand' : ''
                       }`}
                     >
@@ -157,9 +158,10 @@ export default function SiteHeader() {
                         : 'opacity-0 scale-95 pointer-events-none'
                     }`}
                   >
-                    <div className="rounded-xl border border-white/10 bg-[#0D0D0D]/98 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(200,58,75,0.12)]">
+                    <div className="rounded-xl border border-white/10 bg-[#0D0D0D] backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_25px_rgba(200,58,75,0.12)]">
                       <Link
                         href="/solutions"
+                        onClick={() => setSolutionsDropdown(false)}
                         className="group flex items-center justify-between px-3.5 py-2.5 rounded-lg text-[13px] font-semibold text-[#F4F1EC] bg-white/[0.04] hover:bg-[#C83A4B]/15 hover:text-white transition-colors"
                       >
                         <span>All Solutions Overview</span>
@@ -175,6 +177,7 @@ export default function SiteHeader() {
                             <Link
                               key={sub.to}
                               href={sub.to}
+                              onClick={() => setSolutionsDropdown(false)}
                               className={`flex items-center justify-between px-3.5 py-2 rounded-lg text-[13px] transition-all duration-150 ${
                                 isSubActive
                                   ? 'bg-[#C83A4B]/15 text-[#F4F1EC] font-medium pl-4'
@@ -301,7 +304,7 @@ export default function SiteHeader() {
       {/* Animated Mobile Menu Sheet */}
       <div
         id="mobile-menu"
-        className={`lg:hidden border-t border-white/[0.08] bg-[#080808]/98 backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out ${
+        className={`lg:hidden border-t border-white/[0.08] bg-[#080808] backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out ${
           mobileOpen
             ? 'max-h-[calc(100vh-72px)] opacity-100 py-6'
             : 'max-h-0 opacity-0 py-0 pointer-events-none'

@@ -21,6 +21,7 @@ const solutionPillars = [
   {
     id: 'display',
     title: 'Display Advertising Network (DOOH)',
+    tabLabel: 'Display Advertising',
     tagline: 'Captive audience. High dwell time.',
     icon: Monitor,
     href: '/locations',
@@ -42,6 +43,7 @@ const solutionPillars = [
   {
     id: 'moving',
     title: 'Advertising on the Move (Transit)',
+    tabLabel: 'Advertising on the Move',
     tagline: 'Continuous circulation across urban arteries.',
     icon: Bus,
     href: '/advertising-on-the-move',
@@ -63,6 +65,7 @@ const solutionPillars = [
   {
     id: 'offline',
     title: 'Offline & Print Distribution',
+    tabLabel: 'Offline & Print',
     tagline: 'Delivered directly into neighbourhood households.',
     icon: FileText,
     href: '/offline-print',
@@ -84,6 +87,7 @@ const solutionPillars = [
   {
     id: 'creative',
     title: 'Print & Creative Design',
+    tabLabel: 'Print & Creative',
     tagline: 'Built to stop footfall and command attention.',
     icon: Palette,
     href: '/print-creative',
@@ -105,6 +109,7 @@ const solutionPillars = [
   {
     id: 'digital',
     title: 'Website, Development & AI',
+    tabLabel: 'Digital Solutions',
     tagline: 'Converting local footfall into digital pipeline.',
     icon: Globe,
     href: '/digital',
@@ -164,7 +169,7 @@ export default function SolutionsPage() {
                     : 'bg-white/[0.04] text-mute hover:text-paper hover:bg-white/[0.08]'
                 }`}
               >
-                {p.title.split(' ')[0]} {p.title.split(' ')[1]}
+                {p.tabLabel}
               </button>
             ))}
           </div>
