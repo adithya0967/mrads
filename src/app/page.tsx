@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import TargetShell from '@/components/TargetShell';
 import Hero from '@/components/hero/Hero';
