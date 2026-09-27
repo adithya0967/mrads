@@ -39,7 +39,6 @@ export default function MovingServicesShowcase() {
     { id: 'display', label: 'Display DOOH', icon: Tv },
     { id: 'quick-commerce', label: 'Quick Commerce', icon: Zap },
     { id: 'software-tech', label: 'Software & AI', icon: Code2 },
-    { id: 'transit', label: 'Transit & Fleet', icon: Bus },
     { id: 'content-video', label: 'Video & Creative', icon: Film },
     { id: 'corporate-gifting', label: 'Corporate Gifting', icon: Gift },
   ];

@@ -17,18 +17,6 @@ export const presenceVenues = [
     to: '/locations#apartment',
   },
   {
-    label: 'Corporate Tech Parks',
-    screens: '420+ locations',
-    image: '/images/corporate.jpg',
-    to: '/locations#corporate',
-  },
-  {
-    label: 'Shopping Malls',
-    screens: '85+ hubs',
-    image: '/images/mall.jpg',
-    to: '/locations#mall',
-  },
-  {
     label: 'Fitness & Gym Centres',
     screens: '310+ locations',
     image: '/images/fitness.jpg',
@@ -45,12 +33,6 @@ export const presenceVenues = [
     screens: '180+ clusters',
     image: '/images/hostel.jpg',
     to: '/locations#pg-hostel',
-  },
-  {
-    label: 'Streets & City Transit',
-    screens: 'Metropolitan Fleet',
-    image: '/images/streets.jpg',
-    to: '/advertising-on-the-move',
   },
 ];
 
@@ -78,7 +60,7 @@ export default function PresenceSection() {
         </div>
 
         {/* Staggered Venue Cards Grid */}
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6">
+        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
           {presenceVenues.map((item, idx) => (
             <Reveal key={item.label} variant="fade-up" staggerIndex={idx} delay={0.1}>
               <Link

@@ -112,47 +112,6 @@ export const PITCH_DECK_SERVICES: PitchDeckService[] = [
     link: '/locations#apartment',
     ctaText: 'View Apartment Coverage',
   },
-  {
-    id: 'display-corporate',
-    title: 'Corporate Tech Park Displays',
-    subtitle: '1.6 Million+ Reach · 1,300+ Screens',
-    category: 'display',
-    categoryLabel: 'Display Advertising (DOOH)',
-    badge: '1.6M+ Decision Makers',
-    badgeColor: 'brand',
-    isPriority: true,
-    image: '/images/corporate.jpg',
-    description:
-      'Target high-earning IT professionals, founders, and corporate decision-makers in prime tech parks, cafeterias, and tower lobbies.',
-    metrics: [
-      { label: 'Tech Park Reach', value: '1.6M+ Professionals' },
-      { label: 'Corporate Screens', value: '1,300+ Displays' },
-      { label: 'Ad Slot', value: '10 Seconds' },
-      { label: 'Daily Plays', value: '420x / Day' },
-    ],
-    specs: {
-      screenSize: '32" & Large Format DOOH',
-      adSlot: '10 Seconds Slot',
-      playsPerDay: '420 Times Per Day',
-      repeats: 'Once Every 2 Minutes',
-      uptime: '8:00 AM – 10:00 PM (14 Hours)',
-      reach: '1.6 Million+ working professionals and decision-makers',
-      availableMediums: [
-        'Large Format Digital Displays',
-        'Cafeteria Video Walls',
-        'BTL Activation Booths',
-        'Static Pillar Displays',
-      ],
-      coreBenefits: [
-        'Reach working professionals with high disposable income',
-        'Premium corporate screen placements in Tier-1 parks',
-        'Repeated daily visibility throughout the workday',
-        'Engage high-value urban decision-makers',
-      ],
-    },
-    link: '/locations#corporate',
-    ctaText: 'Explore Corporate Parks',
-  },
   // ==========================================
   // 2. QUICK COMMERCE & OFFLINE DISTRIBUTION
   // ==========================================
@@ -302,47 +261,7 @@ export const PITCH_DECK_SERVICES: PitchDeckService[] = [
     ctaText: 'Deploy AI Chatbot',
   },
   // ==========================================
-  // 4. TRANSIT & OUTDOOR (ADVERTISING ON THE MOVE)
-  // ==========================================
-  {
-    id: 'transit-fleet',
-    title: 'Advertising on the Move: Metropolitan Fleet',
-    subtitle: 'Auto, Cab, Bus & Mobile Van Branding',
-    category: 'transit',
-    categoryLabel: 'Advertising on the Move',
-    badge: 'Metropolitan Fleet',
-    badgeColor: 'brand',
-    isPriority: false,
-    image: '/images/streets.jpg',
-    description:
-      'Moving brand visibility across high-traffic urban corridors with auto branding, cab wraps, city bus panels, and high-impact mobile LED vans.',
-    metrics: [
-      { label: 'Vehicles', value: 'Autos, Cabs, Buses & Vans' },
-      { label: 'Circulation', value: 'Arterial City Routes' },
-      { label: 'Exposure', value: 'Daily Commuters & Drivers' },
-      { label: 'Activations', value: 'Roadshows & Vans' },
-    ],
-    specs: {
-      reach: 'Millions of daily commuters across prime commercial roads',
-      availableMediums: [
-        'Auto Hood & Back Branding',
-        'Cab Wraps',
-        'Bus Branding',
-        'Mobile Van Branding',
-        'Road Shows & Promotional Campaigns',
-      ],
-      coreBenefits: [
-        'Continuous dynamic visibility along high-traffic routes',
-        'Covers dense tech corridors, shopping avenues, and transit hubs',
-        'Eye-level mobile presence that cannot be skipped or blocked',
-        'Experiential roadshows with audio-visual setups',
-      ],
-    },
-    link: '/advertising-on-the-move',
-    ctaText: 'View Transit Options',
-  },
-  // ==========================================
-  // 5. CONTENT CREATION & VIDEO PRODUCTION
+  // 4. CONTENT CREATION & VIDEO PRODUCTION
   // ==========================================
   {
     id: 'content-video-production',
